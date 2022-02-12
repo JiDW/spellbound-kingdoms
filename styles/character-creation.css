@@ -1,0 +1,49 @@
+.chargen .chargen-roll {
+    width: 40px;
+    height: 40px;
+
+    background-image: url("../assets/rolling-dices.png");
+    background-size: 30px 30px;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.chargen .chargen-roll:hover {
+    background-image: url("../assets/rolling-dices.png");
+    background-size: 50px 50px;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.chargen select {
+    width: 100%;
+}
+
+.chargen .chargen-section {
+    border-bottom: 4px solid var(--border-color);
+    padding: 6px;
+    margin-bottom: 10px;
+}
+
+.chargen .chargen-section-content {
+    width: 100%;
+}
+
+.chargen .chargen-description {
+    width: 100%;
+    font-style: italic;
+}
+
+.chargen .chargen-list {
+    margin-left: 20px;
+    min-width: 135px;
+}
+
+.chargen-list ul:not(:last-of-type)::after {
+    content: "or"    
+}
+
+.chargen-list ul {
+    margin: 0;
+    font-family: TheSans-Bold-Caps;
+    font-size: 12px;
+}

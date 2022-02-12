@@ -1,0 +1,209 @@
+{
+  "name": "Chosen One",
+  "identifier": "chosen-one-magic",
+  "type": "magic",
+  "journal": "Chosen One",
+  "progression": [
+    {"level": 0},
+    {"level": 1,
+      "title": "Awakened",
+      "increases": {
+        "amount": 0,
+        "stats": ["strength", "quickness", "magic"]
+      },
+      "fighting-styles": [2],
+      "abilities": ["destiny-history"],
+      "talents": []
+    },
+    {"level": 2,
+      "title": "",
+      "increases": {
+        "amount": 1,
+        "stats": ["strength", "quickness", "magic"]
+      },
+      "fighting-styles": [2],
+      "abilities": ["destiny-history"],
+      "talents": []
+    },
+    {"level": 3,
+      "title": "",
+      "increases": {
+        "amount": 1,
+        "stats": ["strength", "quickness", "magic"]
+      },
+      "fighting-styles": [2],
+      "abilities": ["destiny-history"],
+      "talents": [1]
+    },
+    {"level": 4,
+      "title": "",
+      "increases": {
+        "amount": 1,
+        "stats": ["strength", "quickness", "magic"]
+      },
+      "fighting-styles": [2, 2],
+      "abilities": ["destiny-history"],
+      "talents": [1]
+    },
+    {"level": 5,
+      "title": "Annointed",
+      "increases": {
+        "amount": 1,
+        "stats": ["strength", "quickness", "magic"]
+      },
+      "fighting-styles": [3, 2],
+      "abilities": ["destiny-history", "destiny-inspiration"],
+      "talents": [1, 1]
+    },
+    {"level": 6,
+      "title": "",
+      "increases": {
+        "amount": 2,
+        "stats": ["strength", "quickness", "magic"]
+      },
+      "fighting-styles": [3, 2],
+      "abilities": ["destiny-history", "destiny-inspiration"],
+      "talents": [1, 1]
+    },
+    {"level": 7,
+      "title": "",
+      "increases": {
+        "amount": 2,
+        "stats": ["strength", "quickness", "magic"]
+      },
+      "fighting-styles": [3, 2],
+      "abilities": ["destiny-history", "destiny-inspiration"],
+      "talents": [1, 1, 1]
+    },
+    {"level": 8,
+      "title": "",
+      "increases": {
+        "amount": 2,
+        "stats": ["strength", "quickness", "magic"]
+      },
+      "fighting-styles": [3, 3],
+      "abilities": ["destiny-history", "destiny-inspiration"],
+      "talents": [1, 1, 1]
+    },
+    {"level": 9,
+      "title": "",
+      "increases": {
+        "amount": 2,
+        "stats": ["strength", "quickness", "magic"]
+      },
+      "fighting-styles": [3, 3],
+      "abilities": ["destiny-history", "destiny-inspiration"],
+      "talents": [2, 1, 1]
+    },
+    {"level": 10,
+      "title": "Chosen",
+      "increases": {
+        "amount": 2,
+        "stats": ["strength", "quickness", "magic"]
+      },
+      "fighting-styles": [3, 3, 2],
+      "abilities": ["destiny-history", "destiny-inspiration", "zealots"],
+      "talents": [2, 1, 1]
+    },
+    {"level": 11,
+      "title": "",
+      "increases": {
+        "amount": 2,
+        "stats": ["strength", "quickness", "magic"]
+      },
+      "fighting-styles": [3, 3, 2],
+      "abilities": ["destiny-history", "destiny-inspiration", "zealots"],
+      "talents": [2, 2, 1]
+    },
+    {"level": 12,
+      "title": "",
+      "increases": {
+        "amount": 3,
+        "stats": ["strength", "quickness", "magic"]
+      },
+      "fighting-styles": [3, 3, 2],
+      "abilities": ["destiny-history", "destiny-inspiration", "zealots"],
+      "talents": [2, 2, 1]
+    },
+    {"level": 13,
+      "title": "",
+      "increases": {
+        "amount": 3,
+        "stats": ["strength", "quickness", "magic"]
+      },
+      "fighting-styles": [3, 3, 2],
+      "abilities": ["destiny-history", "destiny-inspiration", "zealots"],
+      "talents": [2, 2, 2]
+    },
+    {"level": 14,
+      "title": "",
+      "increases": {
+        "amount": 3,
+        "stats": ["strength", "quickness", "magic"]
+      },
+      "fighting-styles": [3, 3, 3],
+      "abilities": ["destiny-history", "destiny-inspiration", "zealots"],
+      "talents": [2, 2, 2]
+    },
+    {"level": 15,
+      "title": "Destined",
+      "increases": {
+        "amount": 3,
+        "stats": ["strength", "quickness", "magic"]
+      },
+      "fighting-styles": [3, 3, 3],
+      "abilities": ["destiny-history", "destiny-inspiration", "zealots", "mass-following"],
+      "talents": [3, 2, 2]
+    },
+    {"level": 16,
+      "title": "",
+      "increases": {
+        "amount": 3,
+        "stats": ["strength", "quickness", "magic"]
+      },
+      "fighting-styles": [3, 3, 3, 2],
+      "abilities": ["destiny-history", "destiny-inspiration", "zealots", "mass-following"],
+      "talents": [3, 2, 2]
+    },
+    {"level": 17,
+      "title": "",
+      "increases": {
+        "amount": 3,
+        "stats": ["strength", "quickness", "magic"]
+      },
+      "fighting-styles": [3, 3, 3, 2],
+      "abilities": ["destiny-history", "destiny-inspiration", "zealots", "mass-following"],
+      "talents": [3, 3, 2]
+    },
+    {"level": 18,
+      "title": "",
+      "increases": {
+        "amount": 4,
+        "stats": ["strength", "quickness", "magic"]
+      },
+      "fighting-styles": [3, 3, 3, 2],
+      "abilities": ["destiny-history", "destiny-inspiration", "zealots", "mass-following"],
+      "talents": [3, 3, 2]
+    },
+    {"level": 19,
+      "title": "",
+      "increases": {
+        "amount": 4,
+        "stats": ["strength", "quickness", "magic"]
+      },
+      "fighting-styles": [3, 3, 3, 2],
+      "abilities": ["destiny-history", "destiny-inspiration", "zealots", "mass-following"],
+      "talents": [3, 3, 3]
+    },
+    {"level": 20,
+      "title": "The One",
+      "increases": {
+        "amount": 5,
+        "stats": ["strength", "quickness", "magic"]
+      },
+      "fighting-styles": [3, 3, 3, 3],
+      "abilities": ["destiny-history", "destiny-inspiration", "zealots", "mass-following", "revolution"],
+      "talents": [3, 3, 3]
+    }
+  ]
+}

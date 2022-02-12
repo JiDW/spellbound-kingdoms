@@ -1,0 +1,186 @@
+textarea.ability-description, textarea.skill-description {
+    height: 60px;
+}
+
+button.add-active-effect {
+    width: fit-content;
+    margin: 0px;
+    font-size: 12px;
+    height: 18px;
+    vertical-align: middle;
+    line-height: 18px;
+    border: 0px;
+}
+
+.effects-list {
+    max-height: 150px;
+    overflow-y: scroll;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    margin-top: 4px;
+}
+
+.effects-list li {
+    border-bottom: 1px solid;
+    padding-bottom: 4px;
+    margin-bottom: 4px;
+}
+.effect-icon {
+  flex: 0 0 24px;
+  height: 24px;
+  margin-right: 4px;
+  border: none;
+}
+.effect-label {
+  flex: 1;
+  line-height: 24px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.effect-controls {
+  line-height: 24px;
+  flex: 0 0 60px;
+  text-align: center;
+}
+.effect-controls a button {
+    cursor: pointer;
+}
+.fa-power-off {
+  color: black;
+}
+
+.disabled-effect .effect-label {
+    text-decoration: line-through;
+    text-decoration-thickness: 2px;
+}
+
+.bounty-hunter.item .profile-img {
+    min-width: 60px;
+    max-width: 60px;
+    margin-right: 10px;
+}
+
+.form-gear-label, .form-ability-label, .form-skill-label, .form-component-label {
+    white-space: nowrap;
+    line-height: 25px;
+}
+
+/* *************** WEAPON ******************* */
+
+/* .sheet.weapon .section {
+    border: 4px solid var(--border-color);
+} */
+.sheet.item label {
+    margin-right: 2px;
+}
+.sheet.item .window-content {
+    background-color: var(--alternate-background-color);
+}
+.sheet.item .gear-description, 
+.sheet.item .skill-description, 
+.sheet.item .ability-description,
+.sheet.item .component-description {
+    height: 70px;
+}
+
+.sheet.item .grid {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr [col-start]);
+    grid-template-rows: repeat(4, 34px);
+    column-gap: 4px;
+    row-gap: 4px;
+}
+.sheet.item .grid > div {
+    background-color: white;
+    padding: 4px 6px;
+}
+
+/* ---- common ---- */
+.grid .avatar {
+    grid-column: span 2;
+    grid-row: span 2;
+}
+.grid .item-name {
+    grid-column: span 8;
+}
+.grid .item-cost {
+    grid-column: span 4;
+}
+.grid .item-encumbrance {
+    grid-column: span 4;
+}
+.grid .item-uses {
+    grid-column: span 5;
+}
+.grid .item-refresh {
+    grid-column: span 5;
+}
+.grid .item-description {
+    grid-column: span 10;
+    grid-row: span 3;
+}
+
+/* ---- weapon ---- */
+.grid .weapon-damage {
+    grid-column: span 3;
+}
+.grid .weapon-ammo {
+    grid-column: span 7;
+}
+.grid .weapon-skill {
+    grid-column: span 5;
+}
+.grid .weapon-range {
+    grid-column: span 5;
+}
+
+/* ---- gear ---- */
+.grid .gear-category {
+    grid-column: span 10;
+}
+.grid .gear-charge-level {
+    grid-column: span 4;
+}
+.grid .gear-charge-usage {
+    grid-column: span 3;
+}
+.grid .gear-charge-recharge {
+    grid-column: span 3;
+}
+
+/* ---- cargo ---- */
+.grid .cargo-name {
+    grid-column: span 6;
+}
+.grid .cargo-weight {
+    grid-column: span 4;
+}
+.grid .cargo-description {
+    grid-column: span 8;
+    grid-row: span 3;
+}
+
+/* ---- ability ---- */
+.grid .form-ability-name {
+    grid-column: span 10;
+}
+
+/* ---- skill ---- */
+.grid .form-skill-name {
+    grid-column: span 6;
+}
+.grid .form-skill-type {
+    grid-column: span 4;
+}
+
+/* ---- component ---- */
+.grid .component-pp {
+    grid-column: span 8;
+}
+.grid .form-component-damage {
+    grid-column: span 4;
+}
+.grid .form-component-range {
+    grid-column: span 6;
+}

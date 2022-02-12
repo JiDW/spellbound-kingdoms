@@ -1,0 +1,50 @@
+{
+    "name": "spellbound-kingdoms",
+    "title": "Spellbound Kingdoms",
+    "description": "Spellbound Kingdoms Tabletop RPG system by Frank Brunner",
+    "version": "0.1.0",
+    "minimumCoreVersion": "9.249",
+    "compatibleCoreVersion": "9.249",
+    "author": "Maxter",
+    "scripts": [
+        "scripts/settings-extender.js"
+    ],
+    "esmodules": ["script/init.js", "script/import.js"],
+    "styles": [
+        "styles/common.css",
+        "styles/character.css",
+        "styles/item.css",
+        "styles/chat.css",
+        "styles/combat.css",
+        "styles/character-creation.css"
+    ],
+    "packs": [
+        {
+          "name": "welcome-journal",
+          "label": "Welcome journal",
+          "system": "spellbound-kingdoms",
+          "path": "./packs/welcome-journal.db",
+          "entity": "JournalEntry"
+        }
+    ],
+    "languages": [
+        {
+            "lang": "en",
+            "name": "English",
+            "path": "lang/en.json"
+        },
+        {
+            "lang": "ru",
+            "name": "Russian",
+            "path": "lang/ru.json"
+        }
+    ],
+    "gridDistance": 5,
+    "gridUnits": "ft",
+    "primaryTokenAttribute": "stats.body",
+    "secondaryTokenAttribute": "stats.mood",
+    "url": "https://github.com/maxstar/spellbound-kingdoms",
+    "socket": true,
+    "manifest": "https://raw.githubusercontent.com/maxstar/spellbound-kingdoms/master/system.json",
+    "download": ""
+}

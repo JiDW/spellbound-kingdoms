@@ -1,0 +1,300 @@
+{
+  "Actor": {
+    "types": ["character", "organization", "troop", "army"],
+    "character": {
+      "bio": {
+        "race": {
+          "value": ""
+        },
+        "age": {
+          "value": 0
+        },
+        "class": {
+        },
+        "note": {
+          "value": ""
+        }
+      },
+      "stats": {
+        "strength": {
+          "value": 4,
+          "max": 4
+        },
+        "quickness": {
+          "value": 4,
+          "max": 4
+        },
+        "reason": {
+          "value": 4,
+          "max": 4
+        },
+        "charisma": {
+          "value": 4,
+          "max": 4
+        },
+        "magic": {
+          "value": 4,
+          "max": 4
+        },
+        "heart": {
+          "value": 4,
+          "max": 4
+        },
+        "body": {
+          "value": 5,
+          "max": 5
+        },
+        "mood": {
+          "value": 2,
+          "max": 4
+        }
+      },
+      "wealth": {
+        "level": {
+          "value": 2
+        },
+        "cash": {
+          "value": 0
+        }
+      },
+      "organization": {
+        "id": {
+          "value": ""
+        }
+      },
+      "conditions": {
+        "spellbound": false,
+        "encumbered": false,
+        "food-deprivation": 0,
+        "water-deprivation": 0
+      },
+      "magic": {
+        "trapped-spells": {
+          "value": 0,
+          "max": 0,
+          "note": ""
+        }
+      }
+    },
+    "organization": {
+      "bio": {
+        "note": {
+          "value": ""
+        }
+      },
+      "stats": {
+        "force": {
+          "value": 1,
+          "note": ""
+        },
+        "arcana": {
+          "value": 1,
+          "note": ""
+        },
+        "shadow": {
+          "value": 1,
+          "note": ""
+        },
+        "efficiency": {
+          "value": 1,
+          "note": ""
+        },
+        "scope": {
+          "value": 1,
+          "note": ""
+        }
+      }
+    },
+    "troop": {
+      "bio": {
+        "note":{
+          "value": ""
+        }
+      },
+      "stats": {
+        "speed": {
+          "value": 1
+        },
+        "health": {
+          "value": 2,
+          "max": 2
+        },
+        "spirit": {
+          "value": 2,
+          "max": 2
+        }
+      },
+      "wealth-level": {
+        "value": 0
+      }
+    },
+    "army": {
+      "bio": {
+        "note":{
+          "value": ""
+        }
+      },
+      "command-points": {
+        "value": 0,
+        "max": 0
+      }
+    }
+  },
+  "Item": {
+    "types": [
+      "gear",
+      "fighting-style",
+      "maneuver",
+      "talent",
+      "scar",
+      "spell",
+      "building",
+      "vehicle",
+      "wonder",
+      "inspiration",
+      "history",
+      "ability",
+      "troop-ability"
+    ],
+    "templates": {
+      "item": {
+        "quality": {"value": 1, "max": 1},
+        "wealth-level": {"value": 2},
+        "cash-cost": {"value": 0},
+        "description": ""
+      },
+      "usable": {
+        "use-description": "",
+        "uses": {
+          "value": 0,
+          "max": 0
+        },
+        "refresh": "scene/day"
+      },
+      "identifier": {
+        "identifier": {
+          "value": ""
+        }
+      },
+      "defense": {
+        "defense": {
+          "value": 0,
+          "max": 0
+        }
+      }
+    },
+    "gear": {
+      "templates": ["item", "identifier"],
+      "category": "weapon",
+      "stat-requirement": {
+        "strength": 0,
+        "quickness": 0,
+        "reason": 0,
+        "charisma": 0,
+        "magic": 0,
+        "heart": 0,
+        "body": 0
+      }
+    },
+    "fighting-style": {
+      "templates": ["identifier"],
+      "type": "fighting",
+      "level": 2,
+      "info": "",
+      "requirements": "",
+      "description": "",
+      "journal": ""
+    },
+    "maneuver": {
+      "templates": ["identifier"],
+      "type": 0,
+      "attack": [
+        {
+          "die": 4,
+          "vs": "defense",
+          "type": "physical",
+          "damage": {
+            "body": 1,
+            "mood": 0,
+            "strength": 0,
+            "quickness": 0,
+            "reason": 0,
+            "charisma": 0,
+            "magic": 0,
+            "heart": 0
+          },
+          "short-description": ""
+        }
+      ],
+      "defense": [4],
+      "learned": false,
+      "grid-position": {
+        "x": 0,
+        "y": 0
+      },
+      "grid-arrows": [],
+      "short-description": "",
+      "description": ""
+    },
+    "talent": {
+      "level": 1,
+      "description": ""
+    },
+    "scar": {
+      "description": ""
+    },
+    "spell": {
+      "templates": ["identifier"],
+      "type": "close",
+      "description": ""
+    },
+    "building": {
+      "templates": ["item", "defense"],
+      "effect": {
+        "value": ""
+      },
+      "description": ""
+    },
+    "vehicle": {
+      "templates": ["item", "defense"],
+      "effect": {
+        "value": ""
+      },
+      "description": ""
+    },
+    "wonder": {
+      "templates": ["item", "defense"],
+      "effect": {
+        "value": ""
+      },
+      "description": ""
+    },
+    "inspiration": {
+      "templates": ["usable"],
+      "value": 1,
+      "description": ""
+    },
+    "history": {
+      "type": "history",
+      "value": 1,
+      "description": ""
+    },
+    "ability": {
+      "templates": ["identifier"],
+      "description": ""
+    },
+    "troop-ability": {
+      "templates": ["identifier"],
+      "type": "maneuver",
+      "range": "melee",
+      "attack": 4,
+      "defense": 4,
+      "damage": {
+        "health": 1,
+        "spirit": 0
+      },
+      "move": 0,
+      "description": ""
+    }
+  }
+}

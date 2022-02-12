@@ -1,0 +1,168 @@
+
+.chat-message {
+    background: white;
+    --border-color: #5F0A30;
+}
+.chat-message .chat-card-post {
+    --border-color: #8BD2EF;
+}
+
+
+/* ***** COMMON ***** */
+
+.chat-card {
+    border: 4px solid var(--border-color);
+    padding: 6px;
+    text-align: center;
+}
+
+.chat-card-subject {
+    font-family: TheSans-Bold-Caps;
+    font-size: 20px;
+    margin-top: 4px;
+}
+
+.chat-card-description {
+    margin: 6px 0px;
+    background-color: white;
+    padding: 4px 6px;
+}
+
+.chat-card-note {
+    font-style: italic;
+    font-size: 12px;
+}
+.chat-card-note span {
+    margin: 0px 4px;
+}
+
+/* ***** WEAPON ***** */
+
+.chat-card-associated-skill {
+    font-family: TheSans-Bold-Caps;
+    font-size: 12px;
+}
+
+.chat-card-notice {
+    font-weight: bold;
+    font-size: 22px;
+}
+
+.chat-card-stats {
+    font-family: AgencyFB-Bold;
+    font-size: 14px;
+}
+.chat-card-stat {
+    color: var(--label-color);
+    margin-left: 4px;
+    white-space: nowrap;
+}
+.chat-card-stat-value {
+    margin-right: 4px;
+}
+
+/* ***** STARSHIP ACTION ***** */
+
+.chat-card-skill {
+    margin: 0px 4px;
+    white-space: nowrap;
+}
+
+
+/* ***** GRID ***** */
+.chat-card-post {
+    background-color: var(--alternate-background-color);
+}
+
+.chat-message .grid {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr [col-start]);
+    grid-template-rows: repeat(1, 24px);
+    column-gap: 4px;
+    row-gap: 4px;
+
+    font-size: 15px;
+}
+.chat-message .grid > div {
+    background-color: white;
+    padding: 4px 6px;
+}
+
+.grid-cell-category {
+    grid-column: span 10;
+
+    font-family: TheSans-Bold-Caps;
+    font-size: 16px;
+}
+.grid-cell-cost {
+    grid-column: span 5;
+}
+.grid-cell-encumbrance {
+    grid-column: span 5;
+}
+.grid-cell-charge-level {
+    grid-column: span 10;
+}
+.grid-cell-charge-usage {
+    grid-column: span 5;
+}
+.grid-cell-rehcarge {
+    grid-column: span 5;
+}
+.grid-cell-uses {
+    grid-column: span 5;
+}
+.grid-cell-refresh {
+    grid-column: span 5;
+}
+.grid-cell-skill {
+    grid-column: span 10;
+}
+.grid-cell-ammo {
+    grid-column: span 10;
+}
+.grid-cell-damage {
+    grid-column: span 5;
+}
+.grid-cell-range {
+    grid-column: span 5;
+}
+.grid-cell-skill-type {
+    grid-column: span 10;
+}
+.grid-cell-weight {
+    grid-column: span 10;
+}
+
+/* ***** SKILL CHALLENGE ***** */
+
+.skill-challenge {
+    border: 1px solid;
+    padding: 4px 6px 6px 6px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.skill-challenge-title {
+    border-bottom: 1px solid;
+    font-weight: bold;
+}
+
+.skill-challenge-info {
+    margin-top: 6px;
+    font-size: 18px;
+}
+
+.skill-challenge-ap-cost {
+    margin-top: 2px;
+    color: gray;
+    font-style: italic;
+}
+
+.skill-challenge-characters {
+    margin-top: 6px;
+}
+
+.skill-challenge-succeed {
+    margin-top: 10px;
+}

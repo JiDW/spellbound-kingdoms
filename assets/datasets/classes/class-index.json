@@ -1,0 +1,14 @@
+{
+  "chosen-one-magic": "./chosen-one-magic.json",
+  "chosen-one-martial": "./chosen-one-martial.json",
+  "engineer": "./engineer.json",
+  "fixer": "./fixer.json",
+  "noble": "./noble.json",
+  "coutesan": "./courtesan.json",
+  "rogue": "./rogue.json",
+  "assassin": "./assassin.json",
+  "savage": "./savage.json",
+  "trader": "./trader.json",
+  "wizard": "./wizard.json",
+  "warrior": "./warrior.json"
+}

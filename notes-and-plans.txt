@@ -1,0 +1,95 @@
+Spellbound Kingdoms
+
+Character Sheet
+    Basic info
+        Name
+        Classes & levels
+        Race
+    Stats
+        Core stats (Str, Qck, Rsn, Cha, Magic, Heart)
+        Mood (val/max ???)
+        Body (cur/max)
+    Narrative Stats
+        Inspirations
+        History & Skills
+        Reputations
+    Scars 
+    Fighting/Magic Styles Tab
+    Spells
+    Abilities
+        Racial
+        Class
+    Talents
+    Wealth Level & associated gear
+        "Purchace" interface
+    Gear
+
+Gear Sheet
+Fighting Style Sheet
+    type: "fighting", "magic"
+    level: 1 - neophyte, 2 - apprentice, 3 - master
+    Maneuvers
+        type: 0 - rebalancing, 1 - normal, 2 - mastery
+        learned: only relevent if neophyte, if false - cannot be used
+        Attack
+            die: [0-20] - die size, stat name - stat's die
+            vs: "defense" - target's def, stat name - target's stat, "doom"
+            type: "physical", "magic"
+            damage: damage values to various stats
+        Grid
+            Maneuvers are arranged on a virtual grid.
+            Grid's [0,0] cell is in the bottom left
+            grid-position
+                x and y coordinates point to a cell on the grid
+                x and y can be floats, this allows to put certain maneuvers off the established rows and columns
+            grid-arrows: an array of maneuver identifiers
+                it means that there are arrows from the current maneuver to the listed maneuvers
+
+
+Talent Sheet
+Scar Sheet
+Spell Sheet
+Inspiration Sheet
+History Sheet
+Ability Sheet
+    
+Dice Roller
+    Bonus/penalty dice
+    Mood/inspiration bonuses
+
+Organization Sheet
+    Name
+    Stats (Force, Shadow, Arcana, Efficiency, Scope)
+    Troops
+    Characters
+    Notes (for each stat ???)
+
+Character generator ???
+
+Combat
+    Flow
+        Declare manuever
+        ??? Declare target
+        Lock in decision
+        GM reveals all manuevers
+        Maneuvers are resolved
+    GM's interface for action declaration
+    Status effects (disarm, rebalance, dice/damage buffs/penalties)
+
+War
+    Troops
+        Formations
+        Maneuvers
+    Army Sheet
+        Command points (cur/max)
+        Brigade grouping ???
+        Order assignment
+    
+Chases
+    Chase UI ???
+
+
+
+Modules
+    Filthiness ???
+    Comfort ???
