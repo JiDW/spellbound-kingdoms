@@ -24,6 +24,11 @@ Character Sheet
         "Purchace" interface
     Gear
 
+
+            <div class="tab" data-group="primary" data-tab="main">
+    {{> systems/spellbound-kingdoms/template/tab-main.html}}
+            </div>
+
 Gear Sheet
 Fighting Style Sheet
     type: "fighting", "magic"

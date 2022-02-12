@@ -9,7 +9,7 @@
     "scripts": [
         "scripts/settings-extender.js"
     ],
-    "esmodules": ["script/init.js", "script/import.js"],
+    "esmodules": ["scripts/init.js"],
     "styles": [
         "styles/common.css",
         "styles/character.css",

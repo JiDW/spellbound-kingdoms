@@ -1,0 +1,114 @@
+<div class="flex">
+    <div class="column">
+        <div class="section section-abilities">
+            <div class="heading">
+                <span class="label">{{localize "HEADER.ABILITIES"}} ({{data.data.abilityCount}}/{{data.data.allowedAbilityCount}})</span>
+                <span><button class="add-ability">{{localize "BH.ADD_ABILITY"}}</button></span>
+            </div>
+            <div class="abilities border">
+                {{#each data.itemsByCategory.ability as |ability key|}}
+                    {{> systems/spellbound-kingdoms/template/partial/ability.html ability=ability key=key}}
+                {{/each}}
+            </div>
+        </div>
+
+        <div class="section section-skills">
+            <div class="heading">
+                <span class="label">{{localize "HEADER.SKILLS"}} ({{data.data.skillCount}}/{{data.data.allowedSkillCount}})</span>
+                <span><button class="add-skill">{{localize "BH.ADD_SKILL"}}</button></span>
+                <span class="help-popup help-popup-container">
+                    <a class="help-popup-trigger"><i class="far fa-question-circle"></i></a>
+                    <div class="help-popup-content">
+                        <p>{{localize "BH.HELP.SKILLS.CLICK"}}</p><hr/>
+                        <p>{{localize "BH.HELP.CLICK_SETTING"}}</p>
+                    </div>
+                </span>
+            </div>
+            <div class="skills border">
+                {{#if data.displayWizard}}
+                <button class="character-creation-wizard"><i class="fas fa-magic"></i>{{localize "BH.CHARACTER_CREATION_WIZARD"}}</button>
+                {{/if}}
+                {{#each data.itemsByCategory.skill as |skill key|}}
+                    {{> systems/spellbound-kingdoms/template/partial/skill.html skill=skill key=key}}
+                {{/each}}
+            </div>
+        </div>
+    </div>
+
+    <div class="column">
+        <div class="section section-items">
+            <div class="heading">
+                <span class="label">{{localize "HEADER.ITEMS"}} ({{data.data.encumbrance.value}}/{{data.data.encumbrance.max}})</span>
+                <a class="item-control item-create" data-type="gear" title="{{localize 'BH.ADD'}}"><i class="far fa-plus-square"></i></a>
+            </div>
+            <div class="item-categories">
+                <div class="item-category border">
+                    <div class="item-category-header">
+                        {{localize "BH.WEAPON.TITLE"}}
+                        <a class="item-control item-create" data-type="weapon" title="{{localize 'BH.ADD'}}"><i class="far fa-plus-square"></i></a>
+                        <span class="help-popup help-popup-container">
+                            <a class="help-popup-trigger"><i class="far fa-question-circle"></i></a>
+                            <div class="help-popup-content">
+                                <p>{{localize "BH.HELP.WEAPON.CLICK"}}</p><hr/>
+                                <p>{{localize "BH.HELP.CLICK_SETTING"}}</p>
+                            </div>
+                        </span>
+                    </div>
+                    <div class="items">
+                        {{#each data.itemsByCategory.weapon as |item id|}}
+                            {{> systems/spellbound-kingdoms/template/partial/inventory-item.html item=item}}
+                        {{/each}}
+                    </div>
+                </div>
+                {{#each data.itemsByCategory.gear as |items categoryName|}}
+                <div class="item-category border">
+                    <div class="item-category-header">{{categoryName}}</div>
+                    <div class="items">
+                        {{#each items as |item id|}}
+                            {{> systems/spellbound-kingdoms/template/partial/inventory-item.html item=item}}
+                        {{/each}}
+                    </div>
+                </div>
+                {{/each}}
+            </div>
+        </div>
+    </div>
+    <div class="column">
+        <div class="section section-currency">
+            <div class="heading">
+                <span class="label">{{localize "BH.HEADER.CURRENCY"}}</span>
+            </div>
+            <div>
+                <input class="medium-num" name="data.currency.dc.value" type="number" value="{{data.data.currency.dc.value}}" min="0" data-dtype="Number" />
+                {{localize "BH.DECA_CREDITS"}}
+            </div>
+            <div>
+                <input class="medium-num" name="data.currency.marks.value" type="number" value="{{data.data.currency.marks.value}}" min="0" data-dtype="Number" />
+                {{localize "BH.MARKS"}}
+            </div>
+        </div>
+        <div class="section section-recover">
+            <div class="recover-text">{{localize 'BH.RECOVER_USES'}}</div>
+            <button type="button" class="recover-uses recover-uses-scene" data-attribute="{{key}}" title="{{localize 'BH.RECOVER_SCENE_HINT'}}">{{localize 'BH.RECOVER_SCENE'}}</button>
+            <button type="button" class="recover-uses recover-uses-day" data-attribute="{{key}}" title="{{localize 'BH.RECOVER_DAY_HINT'}}">{{localize 'BH.RECOVER_DAY'}}</button>
+        </div>
+        <div class="section section-qualifications">
+            <div class="heading">
+                <span class="label">{{localize "HEADER.QUALIFICATIONS"}}</span>
+            </div>
+            {{#each data.data.qualifications as |role key|}}
+            <div class="qualification-role">
+                <div><span class="qualification-role-name">{{localize role.name}}:</span> {{role.canDoFunctions}}/{{role.totalFunctions}}</div>
+                <!-- <div>
+                    Missing: 
+                    <i>
+                        {{#each role.missingSkills as |skill|}}
+                        {{skill}}; 
+                        {{/each}}
+                    </i>
+                </div> -->
+            </div>
+            {{/each}}
+        </div>
+    </div>
+</div>
