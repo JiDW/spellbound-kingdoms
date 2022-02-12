@@ -1,0 +1,50 @@
+{
+  "nineblood": {
+    "name": "Human: Nineblood",
+    "identifier": "nineblood",
+    "race": "Human",
+    "subrace": "Nineblood",
+    "abilities": [{"heart": 1}, ["determined", "resistant"]],
+    "journal": "Human: Nineblood"
+  },
+  "islander": {
+    "name": "Human: Islander",
+    "identifier": "islander",
+    "race": "Human",
+    "subrace": "Islander",
+    "abilities": [{"heart": 1}, ["edgy", "resistant"]],
+    "journal": "Human: Islander"
+  },
+  "wight": {
+    "name": "Human: Wight",
+    "identifier": "wight",
+    "race": "Human",
+    "subrace": "Wight",
+    "abilities": [{"heart": 1}, ["haunting", "resistant"]],
+    "journal": "Human: Wight"
+  },
+  "prince-of-wolves": {
+    "name": "Human: Prince of Wolves",
+    "identifier": "prince-of-wolves",
+    "race": "Human",
+    "subrace": "Prince of Wolves",
+    "abilities": [{"heart": 1}, ["companionship", "resistant"]],
+    "journal": "Human: Prince of Wolves"
+  },
+  "rain-troll": {
+    "name": "Rain Troll",
+    "identifier": "rain-troll",
+    "race": "Troll",
+    "subrace": "Rain Troll",
+    "abilities": ["regenerate", ["enlightened", {"body": 1}]],
+    "journal": "Rain Troll"
+  },
+  "seradynn": {
+    "name": "Troll: Seradynn",
+    "identifier": "seradynn",
+    "race": "Troll",
+    "subrace": "Seradynn",
+    "abilities": ["regenerate", [{"magic": 1}, {"body": 1}]],
+    "journal": "Troll: Seradynn"
+  }
+}

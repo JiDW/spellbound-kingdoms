@@ -1,0 +1,209 @@
+{
+  "name": "Rogue",
+  "identifier": "rogue",
+  "type": "shadow",
+  "journal": "Rogue",
+  "progression": [
+    {"level": 0},
+    {"level": 1,
+      "title": "Right Person",
+      "increases": {
+        "quickness": 0,
+        "charisma": 0
+      },
+      "fighting-styles": [2, 1],
+      "abilities": ["hunted"],
+      "talents": []
+    },
+    {"level": 2,
+      "title": "",
+      "increases": {
+        "quickness": 1,
+        "charisma": 0
+      },
+      "fighting-styles": [2, 2],
+      "abilities": ["hunted"],
+      "talents": []
+    },
+    {"level": 3,
+      "title": "",
+      "increases": {
+        "quickness": 1,
+        "charisma": 0
+      },
+      "fighting-styles": [2, 2],
+      "abilities": ["hunted"],
+      "talents": [1]
+    },
+    {"level": 4,
+      "title": "Rogue",
+      "increases": {
+        "quickness": 1,
+        "charisma": 0
+      },
+      "fighting-styles": [2, 2],
+      "abilities": ["hunted", "trickster"],
+      "talents": [1]
+    },
+    {"level": 5,
+      "title": "",
+      "increases": {
+        "quickness": 1,
+        "charisma": 0
+      },
+      "fighting-styles": [3, 2],
+      "abilities": ["hunted", "trickster"],
+      "talents": [1, 1]
+    },
+    {"level": 6,
+      "title": "",
+      "increases": {
+        "quickness": 2,
+        "charisma": 0
+      },
+      "fighting-styles": [3, 2],
+      "abilities": ["hunted", "trickster", "ambush"],
+      "talents": [1, 1]
+    },
+    {"level": 7,
+      "title": "",
+      "increases": {
+        "quickness": 2,
+        "charisma": 0
+      },
+      "fighting-styles": [3, 2],
+      "abilities": ["hunted", "trickster", "ambush"],
+      "talents": [1, 1, 1]
+    },
+    {"level": 8,
+      "title": "",
+      "increases": {
+        "quickness": 2,
+        "charisma": 0
+      },
+      "fighting-styles": [3, 2, 1],
+      "abilities": ["hunted", "trickster", "ambush"],
+      "talents": [1, 1, 1]
+    },
+    {"level": 9,
+      "title": "",
+      "increases": {
+        "quickness": 2,
+        "charisma": 0
+      },
+      "fighting-styles": [3, 3],
+      "abilities": ["hunted", "trickster", "ambush"],
+      "talents": [2, 1, 1]
+    },
+    {"level": 10,
+      "title": "Boss",
+      "increases": {
+        "quickness": 2,
+        "charisma": 1
+      },
+      "fighting-styles": [3, 3, 1],
+      "abilities": ["hunted", "trickster", "ambush", "false-identity"],
+      "talents": [2, 1, 1]
+    },
+    {"level": 11,
+      "title": "",
+      "increases": {
+        "quickness": 2,
+        "charisma": 1
+      },
+      "fighting-styles": [3, 3, 1],
+      "abilities": ["hunted", "trickster", "ambush", "false-identity"],
+      "talents": [2, 2, 1]
+    },
+    {"level": 12,
+      "title": "",
+      "increases": {
+        "quickness": 3,
+        "charisma": 1
+      },
+      "fighting-styles": [3, 3, 2],
+      "abilities": ["hunted", "trickster", "ambush", "false-identity"],
+      "talents": [2, 2, 1]
+    },
+    {"level": 13,
+      "title": "",
+      "increases": {
+        "quickness": 3,
+        "charisma": 1
+      },
+      "fighting-styles": [3, 3, 2],
+      "abilities": ["hunted", "trickster", "ambush", "false-identity"],
+      "talents": [2, 2, 2]
+    },
+    {"level": 14,
+      "title": "",
+      "increases": {
+        "quickness": 3,
+        "charisma": 1
+      },
+      "fighting-styles": [3, 3, 2, 1],
+      "abilities": ["hunted", "trickster", "ambush", "false-identity"],
+      "talents": [2, 2, 2]
+    },
+    {"level": 15,
+      "title": "Duke Below",
+      "increases": {
+        "quickness": 3,
+        "charisma": 2
+      },
+      "fighting-styles": [3, 3, 2, 1],
+      "abilities": ["hunted", "trickster", "ambush", "false-identity", "headhunter", "rogues-life"],
+      "talents": [3, 2, 2]
+    },
+    {"level": 16,
+      "title": "",
+      "increases": {
+        "quickness": 3,
+        "charisma": 2
+      },
+      "fighting-styles": [3, 3, 2, 2],
+      "abilities": ["hunted", "trickster", "ambush", "false-identity", "headhunter", "rogues-life"],
+      "talents": [3, 2, 2]
+    },
+    {"level": 17,
+      "title": "",
+      "increases": {
+        "quickness": 3,
+        "charisma": 2
+      },
+      "fighting-styles": [3, 3, 2, 2],
+      "abilities": ["hunted", "trickster", "ambush", "false-identity", "headhunter", "rogues-life"],
+      "talents": [3, 3, 2]
+    },
+    {"level": 18,
+      "title": "",
+      "increases": {
+        "quickness": 4,
+        "charisma": 2
+      },
+      "fighting-styles": [3, 3, 3, 2],
+      "abilities": ["hunted", "trickster", "ambush", "false-identity", "headhunter", "rogues-life"],
+      "talents": [3, 3, 2]
+    },
+    {"level": 19,
+      "title": "",
+      "increases": {
+        "quickness": 4,
+        "charisma": 2
+      },
+      "fighting-styles": [3, 3, 3, 2],
+      "abilities": ["hunted", "trickster", "ambush", "false-identity", "headhunter", "rogues-life"],
+      "talents": [3, 3, 3]
+    },
+    {"level": 20,
+      "title": "King Below",
+      "increases": {
+        "quickness": 4,
+        "charisma": 3
+      },
+      "fighting-styles": [3, 3, 3, 2],
+      "abilities": ["hunted", "trickster", "ambush", "false-identity", "headhunter", "rogues-life", "impostor", "haunt-the-memory-halls"],
+      "talents": [3, 3, 3]
+    }
+  ]
+}

@@ -1,0 +1,209 @@
+{
+  "name": "Warrior",
+  "identifier": "warrior",
+  "type": "martial",
+  "journal": "Warrior",
+  "progression": [
+    {"level": 0},
+    {"level": 1,
+      "title": "Fighter",
+      "increases": {
+        "amount": 0,
+        "stats": ["strength", "quickness"]
+      },
+      "fighting-styles": [2, 2],
+      "abilities": ["armor"],
+      "talents": []
+    },
+    {"level": 2,
+      "title": "",
+      "increases": {
+        "amount": 1,
+        "stats": ["strength", "quickness"]
+      },
+      "fighting-styles": [2, 2, 1],
+      "abilities": ["armor"],
+      "talents": []
+    },
+    {"level": 3,
+      "title": "",
+      "increases": {
+        "amount": 1,
+        "stats": ["strength", "quickness"]
+      },
+      "fighting-styles": [2, 2, 1],
+      "abilities": ["armor"],
+      "talents": [1]
+    },
+    {"level": 4,
+      "title": "",
+      "increases": {
+        "amount": 1,
+        "stats": ["strength", "quickness"]
+      },
+      "fighting-styles": [3, 2, 1],
+      "abilities": ["armor"],
+      "talents": [1]
+    },
+    {"level": 5,
+      "title": "Warrior",
+      "increases": {
+        "amount": 1,
+        "stats": ["strength", "quickness"]
+      },
+      "fighting-styles": [3, 2, 1],
+      "abilities": ["armor", "combat-mastery"],
+      "talents": [1, 1]
+    },
+    {"level": 6,
+      "title": "",
+      "increases": {
+        "amount": 2,
+        "stats": ["strength", "quickness"]
+      },
+      "fighting-styles": [3, 2, 1],
+      "abilities": ["armor", "combat-mastery", "training"],
+      "talents": [1, 1]
+    },
+    {"level": 7,
+      "title": "",
+      "increases": {
+        "amount": 2,
+        "stats": ["strength", "quickness"]
+      },
+      "fighting-styles": [3, 2, 2],
+      "abilities": ["armor", "combat-mastery", "training"],
+      "talents": [1, 1, 1]
+    },
+    {"level": 8,
+      "title": "Veteran",
+      "increases": {
+        "amount": 2,
+        "stats": ["strength", "quickness"]
+      },
+      "fighting-styles": [3, 3, 2],
+      "abilities": ["armor", "combat-mastery", "training", "war-stories"],
+      "talents": [1, 1, 1]
+    },
+    {"level": 9,
+      "title": "",
+      "increases": {
+        "amount": 2,
+        "stats": ["strength", "quickness"]
+      },
+      "fighting-styles": [3, 3, 2],
+      "abilities": ["armor", "combat-mastery", "training", "war-stories"],
+      "talents": [2, 1, 1]
+    },
+    {"level": 10,
+      "title": "Hero",
+      "increases": {
+        "amount": 2,
+        "stats": ["strength", "quickness"]
+      },
+      "fighting-styles": [3, 3, 2, 1],
+      "abilities": ["armor", "combat-mastery", "training", "detect-spellbound", "war-stories", "warriors-life"],
+      "talents": [2, 1, 1]
+    },
+    {"level": 11,
+      "title": "",
+      "increases": {
+        "amount": 2,
+        "stats": ["strength", "quickness"]
+      },
+      "fighting-styles": [3, 3, 2, 1],
+      "abilities": ["armor", "combat-mastery", "training", "detect-spellbound", "war-stories", "warriors-life"],
+      "talents": [2, 2, 1]
+    },
+    {"level": 12,
+      "title": "",
+      "increases": {
+        "amount": 3,
+        "stats": ["strength", "quickness"]
+      },
+      "fighting-styles": [3, 3, 2, 2],
+      "abilities": ["armor", "combat-mastery", "training", "detect-spellbound", "war-stories", "warriors-life"],
+      "talents": [2, 2, 1]
+    },
+    {"level": 13,
+      "title": "",
+      "increases": {
+        "amount": 3,
+        "stats": ["strength", "quickness"]
+      },
+      "fighting-styles": [3, 3, 2, 2],
+      "abilities": ["armor", "combat-mastery", "training", "detect-spellbound", "war-stories", "warriors-life"],
+      "talents": [2, 2, 2]
+    },
+    {"level": 14,
+      "title": "",
+      "increases": {
+        "amount": 3,
+        "stats": ["strength", "quickness"]
+      },
+      "fighting-styles": [3, 3, 3, 2],
+      "abilities": ["armor", "combat-mastery", "training", "detect-spellbound", "war-stories", "warriors-life"],
+      "talents": [2, 2, 2]
+    },
+    {"level": 15,
+      "title": "Master",
+      "increases": {
+        "amount": 3,
+        "stats": ["strength", "quickness"]
+      },
+      "fighting-styles": [3, 3, 3, 2],
+      "abilities": ["armor", "combat-mastery", "training", "detect-spellbound", "war-stories", "warriors-life", "devastation"],
+      "talents": [3, 2, 2]
+    },
+    {"level": 16,
+      "title": "",
+      "increases": {
+        "amount": 3,
+        "stats": ["strength", "quickness"]
+      },
+      "fighting-styles": [3, 3, 3, 2, 1],
+      "abilities": ["armor", "combat-mastery", "training", "detect-spellbound", "war-stories", "warriors-life", "devastation"],
+      "talents": [3, 2, 2]
+    },
+    {"level": 17,
+      "title": "",
+      "increases": {
+        "amount": 3,
+        "stats": ["strength", "quickness"]
+      },
+      "fighting-styles": [3, 3, 3, 2, 1],
+      "abilities": ["armor", "combat-mastery", "training", "detect-spellbound", "war-stories", "warriors-life", "devastation"],
+      "talents": [3, 3, 2]
+    },
+    {"level": 18,
+      "title": "",
+      "increases": {
+        "amount": 4,
+        "stats": ["strength", "quickness"]
+      },
+      "fighting-styles": [3, 3, 3, 2, 2],
+      "abilities": ["armor", "combat-mastery", "training", "detect-spellbound", "war-stories", "warriors-life", "devastation"],
+      "talents": [3, 3, 2]
+    },
+    {"level": 19,
+      "title": "",
+      "increases": {
+        "amount": 4,
+        "stats": ["strength", "quickness"]
+      },
+      "fighting-styles": [3, 3, 3, 2, 2],
+      "abilities": ["armor", "combat-mastery", "training", "detect-spellbound", "war-stories", "warriors-life", "devastation"],
+      "talents": [3, 3, 3]
+    },
+    {"level": 20,
+      "title": "Living Legend",
+      "increases": {
+        "amount": 4,
+        "stats": ["strength", "quickness"]
+      },
+      "fighting-styles": [3, 3, 3, 3, 2],
+      "abilities": ["armor", "combat-mastery", "training", "detect-spellbound", "war-stories", "warriors-life", "devastation", "combat-supremacy"],
+      "talents": [3, 3, 3]
+    }
+  ]
+}

@@ -1,0 +1,189 @@
+{
+  "name": "Trader",
+  "identifier": "trader",
+  "type": "social",
+  "journal": "Trader",
+  "progression": [
+    {"level": 0},
+    {"level": 1,
+      "title": "Clerk",
+      "increases": {
+        "charisma": 0
+      },
+      "fighting-styles": [1],
+      "abilities": ["to-the-heart", "exotica"],
+      "talents": []
+    },
+    {"level": 2,
+      "title": "",
+      "increases": {
+        "charisma": 1
+      },
+      "fighting-styles": [2],
+      "abilities": ["to-the-heart", "exotica", "polyglot"],
+      "talents": []
+    },
+    {"level": 3,
+      "title": "",
+      "increases": {
+        "charisma": 1
+      },
+      "fighting-styles": [2],
+      "abilities": ["to-the-heart", "exotica", "polyglot"],
+      "talents": [1]
+    },
+    {"level": 4,
+      "title": "",
+      "increases": {
+        "charisma": 1
+      },
+      "fighting-styles": [2],
+      "abilities": ["to-the-heart", "exotica", "polyglot", "leader"],
+      "talents": [1]
+    },
+    {"level": 5,
+      "title": "Trader",
+      "increases": {
+        "charisma": 1
+      },
+      "fighting-styles": [2, 1],
+      "abilities": ["to-the-heart", "exotica", "polyglot", "leader"],
+      "talents": [1, 1]
+    },
+    {"level": 6,
+      "title": "",
+      "increases": {
+        "charisma": 2
+      },
+      "fighting-styles": [2, 1],
+      "abilities": ["to-the-heart", "exotica", "polyglot", "leader"],
+      "talents": [1, 1]
+    },
+    {"level": 7,
+      "title": "",
+      "increases": {
+        "charisma": 2
+      },
+      "fighting-styles": [2, 2],
+      "abilities": ["to-the-heart", "exotica", "polyglot", "leader", "sell"],
+      "talents": [1, 1, 1]
+    },
+    {"level": 8,
+      "title": "",
+      "increases": {
+        "charisma": 2
+      },
+      "fighting-styles": [2, 2],
+      "abilities": ["to-the-heart", "exotica", "polyglot", "leader", "sell"],
+      "talents": [1, 1, 1]
+    },
+    {"level": 9,
+      "title": "",
+      "increases": {
+        "charisma": 2
+      },
+      "fighting-styles": [2, 2],
+      "abilities": ["to-the-heart", "exotica", "polyglot", "leader", "sell"],
+      "talents": [2, 1, 1]
+    },
+    {"level": 10,
+      "title": "Far Trader",
+      "increases": {
+        "charisma": 2
+      },
+      "fighting-styles": [3, 2],
+      "abilities": ["to-the-heart", "exotica", "polyglot", "leader", "sell"],
+      "talents": [2, 1, 1]
+    },
+    {"level": 11,
+      "title": "",
+      "increases": {
+        "charisma": 2
+      },
+      "fighting-styles": [3, 2],
+      "abilities": ["to-the-heart", "exotica", "polyglot", "leader", "sell"],
+      "talents": [2, 2, 1]
+    },
+    {"level": 12,
+      "title": "",
+      "increases": {
+        "charisma": 3
+      },
+      "fighting-styles": [3, 2],
+      "abilities": ["to-the-heart", "exotica", "polyglot", "leader", "sell"],
+      "talents": [2, 2, 1]
+    },
+    {"level": 13,
+      "title": "",
+      "increases": {
+        "charisma": 3
+      },
+      "fighting-styles": [3, 2],
+      "abilities": ["to-the-heart", "exotica", "polyglot", "leader", "sell", "friend-in-every-port"],
+      "talents": [2, 2, 2]
+    },
+    {"level": 14,
+      "title": "",
+      "increases": {
+        "charisma": 3
+      },
+      "fighting-styles": [3, 2, 1],
+      "abilities": ["to-the-heart", "exotica", "polyglot", "leader", "sell", "friend-in-every-port"],
+      "talents": [2, 2, 2]
+    },
+    {"level": 15,
+      "title": "Magnate",
+      "increases": {
+        "charisma": 3
+      },
+      "fighting-styles": [3, 2, 1],
+      "abilities": ["to-the-heart", "exotica", "polyglot", "leader", "sell", "friend-in-every-port", "new-society"],
+      "talents": [3, 2, 2]
+    },
+    {"level": 16,
+      "title": "",
+      "increases": {
+        "charisma": 3
+      },
+      "fighting-styles": [3, 2, 1],
+      "abilities": ["to-the-heart", "exotica", "polyglot", "leader", "sell", "friend-in-every-port", "new-society"],
+      "talents": [3, 2, 2]
+    },
+    {"level": 17,
+      "title": "",
+      "increases": {
+        "charisma": 3
+      },
+      "fighting-styles": [3, 2, 1],
+      "abilities": ["to-the-heart", "exotica", "polyglot", "leader", "sell", "friend-in-every-port", "new-society"],
+      "talents": [3, 3, 2]
+    },
+    {"level": 18,
+      "title": "",
+      "increases": {
+        "charisma": 4
+      },
+      "fighting-styles": [3, 2, 2],
+      "abilities": ["to-the-heart", "exotica", "polyglot", "leader", "sell", "friend-in-every-port", "new-society"],
+      "talents": [3, 3, 2]
+    },
+    {"level": 19,
+      "title": "",
+      "increases": {
+        "charisma": 4
+      },
+      "fighting-styles": [3, 2, 2],
+      "abilities": ["to-the-heart", "exotica", "polyglot", "leader", "sell", "friend-in-every-port", "new-society"],
+      "talents": [3, 3, 3]
+    },
+    {"level": 20,
+      "title": "Merchant Prince",
+      "increases": {
+        "charisma": 4
+      },
+      "fighting-styles": [3, 2, 2],
+      "abilities": ["to-the-heart", "exotica", "polyglot", "leader", "sell", "friend-in-every-port", "new-society"],
+      "talents": [3, 3, 3]
+    }
+  ]
+}

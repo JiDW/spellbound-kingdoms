@@ -1,4 +1,5 @@
 {
+  "races": "./races.json",
   "classes": "./classes/class-index.json",
   "fighting-styles": "./fighting-styles/fighting-style-index.json"
 }

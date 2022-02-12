@@ -1,0 +1,189 @@
+{
+  "name": "Savage",
+  "identifier": "savage",
+  "type": "martial",
+  "journal": "Savage",
+  "progression": [
+    {"level": 0},
+    {"level": 1,
+      "title": "Brave",
+      "increases": {
+        "strength": 0
+      },
+      "fighting-styles": [2],
+      "abilities": ["bloodlust"],
+      "talents": []
+    },
+    {"level": 2,
+      "title": "",
+      "increases": {
+        "strength": 1
+      },
+      "fighting-styles": [2, 2],
+      "abilities": ["bloodlust", "beast-world"],
+      "talents": []
+    },
+    {"level": 3,
+      "title": "",
+      "increases": {
+        "strength": 1
+      },
+      "fighting-styles": [2, 2],
+      "abilities": ["bloodlust", "beast-world"],
+      "talents": [1]
+    },
+    {"level": 4,
+      "title": "Savage",
+      "increases": {
+        "strength": 1
+      },
+      "fighting-styles": [3, 2],
+      "abilities": ["bloodlust", "beast-world", "visionquest"],
+      "talents": [1]
+    },
+    {"level": 5,
+      "title": "",
+      "increases": {
+        "strength": 1
+      },
+      "fighting-styles": [3, 2],
+      "abilities": ["bloodlust", "beast-world", "visionquest"],
+      "talents": [1, 1]
+    },
+    {"level": 6,
+      "title": "",
+      "increases": {
+        "strength": 2
+      },
+      "fighting-styles": [3, 2],
+      "abilities": ["bloodlust", "beast-world", "visionquest"],
+      "talents": [1, 1]
+    },
+    {"level": 7,
+      "title": "",
+      "increases": {
+        "strength": 2
+      },
+      "fighting-styles": [3, 2],
+      "abilities": ["bloodlust", "beast-world", "visionquest"],
+      "talents": [1, 1, 1]
+    },
+    {"level": 8,
+      "title": "",
+      "increases": {
+        "strength": 2
+      },
+      "fighting-styles": [3, 3],
+      "abilities": ["bloodlust", "beast-world", "visionquest", "shake-it-off"],
+      "talents": [1, 1, 1]
+    },
+    {"level": 9,
+      "title": "",
+      "increases": {
+        "strength": 2
+      },
+      "fighting-styles": [3, 3],
+      "abilities": ["bloodlust", "beast-world", "visionquest", "shake-it-off"],
+      "talents": [2, 1, 1]
+    },
+    {"level": 10,
+      "title": "Chief",
+      "increases": {
+        "strength": 2
+      },
+      "fighting-styles": [3, 3, 2],
+      "abilities": ["bloodlust", "beast-world", "visionquest", "shake-it-off", "frenzy"],
+      "talents": [2, 1, 1]
+    },
+    {"level": 11,
+      "title": "",
+      "increases": {
+        "strength": 2
+      },
+      "fighting-styles": [3, 3, 2],
+      "abilities": ["bloodlust", "beast-world", "visionquest", "shake-it-off", "frenzy"],
+      "talents": [2, 2, 1]
+    },
+    {"level": 12,
+      "title": "",
+      "increases": {
+        "strength": 3
+      },
+      "fighting-styles": [3, 3, 2],
+      "abilities": ["bloodlust", "beast-world", "visionquest", "shake-it-off", "frenzy"],
+      "talents": [2, 2, 1]
+    },
+    {"level": 13,
+      "title": "",
+      "increases": {
+        "strength": 3
+      },
+      "fighting-styles": [3, 3, 2, 2],
+      "abilities": ["bloodlust", "beast-world", "visionquest", "shake-it-off", "frenzy"],
+      "talents": [2, 2, 2]
+    },
+    {"level": 14,
+      "title": "",
+      "increases": {
+        "strength": 3
+      },
+      "fighting-styles": [3, 3, 3, 2],
+      "abilities": ["bloodlust", "beast-world", "visionquest", "shake-it-off", "frenzy"],
+      "talents": [2, 2, 2]
+    },
+    {"level": 15,
+      "title": "War Chief",
+      "increases": {
+        "strength": 3
+      },
+      "fighting-styles": [3, 3, 3, 2],
+      "abilities": ["bloodlust", "beast-world", "visionquest", "shake-it-off", "frenzy", "horde"],
+      "talents": [3, 2, 2]
+    },
+    {"level": 16,
+      "title": "",
+      "increases": {
+        "strength": 3
+      },
+      "fighting-styles": [3, 3, 3, 2],
+      "abilities": ["bloodlust", "beast-world", "visionquest", "shake-it-off", "frenzy", "horde"],
+      "talents": [3, 2, 2]
+    },
+    {"level": 17,
+      "title": "",
+      "increases": {
+        "strength": 3
+      },
+      "fighting-styles": [3, 3, 3, 2],
+      "abilities": ["bloodlust", "beast-world", "visionquest", "shake-it-off", "frenzy", "horde"],
+      "talents": [3, 3, 2]
+    },
+    {"level": 18,
+      "title": "",
+      "increases": {
+        "strength": 4
+      },
+      "fighting-styles": [3, 3, 3, 3],
+      "abilities": ["bloodlust", "beast-world", "visionquest", "shake-it-off", "frenzy", "horde"],
+      "talents": [3, 3, 2]
+    },
+    {"level": 19,
+      "title": "",
+      "increases": {
+        "strength": 4
+      },
+      "fighting-styles": [3, 3, 3, 3],
+      "abilities": ["bloodlust", "beast-world", "visionquest", "shake-it-off", "frenzy", "horde"],
+      "talents": [3, 3, 3]
+    },
+    {"level": 20,
+      "title": "Beast Warrior",
+      "increases": {
+        "strength": 4
+      },
+      "fighting-styles": [3, 3, 3, 3],
+      "abilities": ["bloodlust", "beast-world", "visionquest", "shake-it-off", "frenzy", "horde", "totem-beast"],
+      "talents": [3, 3, 3]
+    }
+  ]
+}

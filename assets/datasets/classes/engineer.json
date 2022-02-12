@@ -1,0 +1,189 @@
+{
+  "name": "Engineer",
+  "identifier": "engineer",
+  "type": "social",
+  "journal": "Engineer",
+  "progression": [
+    {"level": 0},
+    {"level": 1,
+      "title": "Draftsman",
+      "increases": {
+        "reason": 0
+      },
+      "fighting-styles": [1],
+      "abilities": ["engineering"],
+      "talents": []
+    },
+    {"level": 2,
+      "title": "",
+      "increases": {
+        "reason": 0
+      },
+      "fighting-styles": [2],
+      "abilities": ["engineering", "signature-item"],
+      "talents": []
+    },
+    {"level": 3,
+      "title": "",
+      "increases": {
+        "reason": 1
+      },
+      "fighting-styles": [2],
+      "abilities": ["engineering", "signature-item"],
+      "talents": []
+    },
+    {"level": 4,
+      "title": "",
+      "increases": {
+        "reason": 1
+      },
+      "fighting-styles": [2],
+      "abilities": ["engineering", "signature-item"],
+      "talents": [1]
+    },
+    {"level": 5,
+      "title": "Engineer",
+      "increases": {
+        "reason": 1
+      },
+      "fighting-styles": [2],
+      "abilities": ["engineering", "signature-item", "combat-engineer"],
+      "talents": [1]
+    },
+    {"level": 6,
+      "title": "",
+      "increases": {
+        "reason": 1
+      },
+      "fighting-styles": [2],
+      "abilities": ["engineering", "signature-item", "combat-engineer"],
+      "talents": [1, 1]
+    },
+    {"level": 7,
+      "title": "",
+      "increases": {
+        "reason": 2
+      },
+      "fighting-styles": [2, 1],
+      "abilities": ["engineering", "signature-item", "combat-engineer"],
+      "talents": [1, 1]
+    },
+    {"level": 8,
+      "title": "",
+      "increases": {
+        "reason": 2
+      },
+      "fighting-styles": [2, 1],
+      "abilities": ["engineering", "signature-item", "combat-engineer"],
+      "talents": [1, 1, 1]
+    },
+    {"level": 9,
+      "title": "",
+      "increases": {
+        "reason": 2
+      },
+      "fighting-styles": [2, 2],
+      "abilities": ["engineering", "signature-item", "combat-engineer"],
+      "talents": [1, 1, 1]
+    },
+    {"level": 10,
+      "title": "Chief Engineer",
+      "increases": {
+        "reason": 2
+      },
+      "fighting-styles": [2, 2],
+      "abilities": ["engineering", "signature-item", "combat-engineer", "mechanical-advantage"],
+      "talents": [2, 1, 1]
+    },
+    {"level": 11,
+      "title": "",
+      "increases": {
+        "reason": 2
+      },
+      "fighting-styles": [2, 2],
+      "abilities": ["engineering", "signature-item", "combat-engineer", "mechanical-advantage", "scholar"],
+      "talents": [2, 1, 1]
+    },
+    {"level": 12,
+      "title": "",
+      "increases": {
+        "reason": 2
+      },
+      "fighting-styles": [2, 2],
+      "abilities": ["engineering", "signature-item", "combat-engineer", "mechanical-advantage", "scholar"],
+      "talents": [2, 2, 1]
+    },
+    {"level": 13,
+      "title": "",
+      "increases": {
+        "reason": 3
+      },
+      "fighting-styles": [2, 2],
+      "abilities": ["engineering", "signature-item", "combat-engineer", "mechanical-advantage", "scholar"],
+      "talents": [2, 2, 1]
+    },
+    {"level": 14,
+      "title": "",
+      "increases": {
+        "reason": 3
+      },
+      "fighting-styles": [2, 2],
+      "abilities": ["engineering", "signature-item", "combat-engineer", "mechanical-advantage", "scholar"],
+      "talents": [2, 2, 2]
+    },
+    {"level": 15,
+      "title": "",
+      "increases": {
+        "reason": 3
+      },
+      "fighting-styles": [2, 2, 1],
+      "abilities": ["engineering", "signature-item", "combat-engineer", "mechanical-advantage", "scholar", "masterworks"],
+      "talents": [2, 2, 2]
+    },
+    {"level": 16,
+      "title": "",
+      "increases": {
+        "reason": 3
+      },
+      "fighting-styles": [2, 2, 1],
+      "abilities": ["engineering", "signature-item", "combat-engineer", "mechanical-advantage", "scholar", "masterworks"],
+      "talents": [3, 2, 2]
+    },
+    {"level": 17,
+      "title": "",
+      "increases": {
+        "reason": 3
+      },
+      "fighting-styles": [2, 2, 1],
+      "abilities": ["engineering", "signature-item", "combat-engineer", "mechanical-advantage", "scholar", "masterworks"],
+      "talents": [3, 2, 2]
+    },
+    {"level": 18,
+      "title": "Architect of Wonder",
+      "increases": {
+        "reason": 3
+      },
+      "fighting-styles": [2, 2, 2],
+      "abilities": ["engineering", "signature-item", "combat-engineer", "mechanical-advantage", "scholar", "masterworks", "wonder-worker"],
+      "talents": [3, 3, 2]
+    },
+    {"level": 19,
+      "title": "",
+      "increases": {
+        "reason": 3
+      },
+      "fighting-styles": [2, 2, 2],
+      "abilities": ["engineering", "signature-item", "combat-engineer", "mechanical-advantage", "scholar", "masterworks", "wonder-worker"],
+      "talents": [3, 3, 2]
+    },
+    {"level": 20,
+      "title": "Prime Mover",
+      "increases": {
+        "reason": 4
+      },
+      "fighting-styles": [2, 2, 2],
+      "abilities": ["engineering", "signature-item", "combat-engineer", "mechanical-advantage", "scholar", "masterworks", "wonders-without-end"],
+      "talents": [3, 3, 3]
+    }
+  ]
+}
