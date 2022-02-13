@@ -23,34 +23,42 @@
       },
       "stats": {
         "strength": {
+          "label": "SK.STAT.STRENGTH",
           "value": 4,
           "max": 4
         },
         "quickness": {
+          "label": "SK.STAT.QUICKNESS",
           "value": 4,
           "max": 4
         },
         "reason": {
+          "label": "SK.STAT.REASON",
           "value": 4,
           "max": 4
         },
         "charisma": {
+          "label": "SK.STAT.CHARISMA",
           "value": 4,
           "max": 4
         },
         "magic": {
+          "label": "SK.STAT.MAGIC",
           "value": 4,
           "max": 4
         },
         "heart": {
+          "label": "SK.STAT.HEART",
           "value": 4,
           "max": 4
         },
         "body": {
+          "label": "SK.STAT.BODY",
           "value": 5,
           "max": 5
         },
         "mood": {
+          "label": "SK.STAT.MOOD",
           "value": 2,
           "max": 4
         }

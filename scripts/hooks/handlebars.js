@@ -12,6 +12,9 @@ function preloadHandlebarsTemplates() {
     "systems/spellbound-kingdoms/templates/character/partial/narrative-item.html",
     "systems/spellbound-kingdoms/templates/character/partial/scar.html",
     "systems/spellbound-kingdoms/templates/character/partial/ability.html",
+    "systems/spellbound-kingdoms/templates/character/partial/stat.html",
+    
+    "systems/spellbound-kingdoms/templates/components/roll-engine/dialog.html",
   ];
   return loadTemplates(templatePaths);
 }

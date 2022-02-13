@@ -90,6 +90,10 @@ input.grid-input { width: 81%; }
     font-size: 20px;
     font-family: Mordred-Bold;
 }
+.spellbound-kingdoms .character .tab-main .character-stat-label:hover {
+    background: linear-gradient(to left, rgba(153,82,0,1) -40%,  rgba(224,221,212,1) 100%);
+    cursor: pointer;
+}
 
 .spellbound-kingdoms .character .tab-main .frame-character-abilities {
     /* height: 100%; */

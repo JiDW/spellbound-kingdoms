@@ -83,15 +83,15 @@ input:read-only {
 
 .spellbound-kingdoms h1, .spellbound-kingdoms .h1, .journal-sheet h1 {
     background: rgb(2,0,36);
-    background: radial-gradient(circle, rgba(224,221,212,1) 0%, rgba(153,82,0,1) 90%);
+    background: radial-gradient(at 50% 100%, rgba(224,221,212,1) 20%, rgba(153,82,0,1) 100%);
     /* color: white; */
 
     font-family: Mordred-Bold;
     text-transform: uppercase;
     text-align: center;
-    border-bottom: 0;
-    border-left: 1px solid;
-    border-right: 1px solid;
+    border: 2px solid;
+    /* border-left: 1px solid;
+    border-right: 1px solid; */
     font-size: 18px;
     font-weight: bold;
     margin: 0;
@@ -100,8 +100,11 @@ input:read-only {
 }
 
 .spellbound-kingdoms h1.active, .spellbound-kingdoms .h1:active {
-    text-decoration-line: underline overline;
-    text-decoration-style: double;
+    /* text-decoration-line: underline overline;
+    text-decoration-style: double; */
+    border-bottom: 0px;
+    /* background: none; */
+    background: radial-gradient(at 50% 100%, rgba(224,221,212,1) 30%, rgba(153,82,0,1) 130%);
     /* text-decoration-color: #00AEEF; */
 }
 

@@ -42,6 +42,7 @@ export class SpellboundKingdomsCharacterSheet extends SpellboundKingdomsActorShe
     data.data.races = CONFIG.SpellboundKingdoms.races;
     data.data.classes = CONFIG.SpellboundKingdoms.classes;
     data.data['fighting-styles'] = CONFIG.SpellboundKingdoms['fighting-styles'];
+    data.data.stats = this.getStatsForCharateristicsBlock(data.data.data.stats);
     data.data.data.itemsByType = this.categorizeItems();
     this.computeTalentData(data.data);
     return data;
@@ -235,6 +236,14 @@ export class SpellboundKingdomsCharacterSheet extends SpellboundKingdomsActorShe
   }
   
   // ********** PREPARE DATA *************
+
+  getStatsForCharateristicsBlock(stats) {
+    let filteredStats = JSON.parse(JSON.stringify(stats));
+    delete filteredStats.body;
+    delete filteredStats.mood;
+
+    return filteredStats;
+  }
 
   computeEncumbrance(data) {
     let itemsCarried = 0;

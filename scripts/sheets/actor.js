@@ -1,5 +1,6 @@
 
 // import { CharacterPickerDialog } from "../dialog/character-picker-dialog.js";
+import { SKRollHandler } from "../components/roll-engine/engine.js";
 
 export class SpellboundKingdomsActorSheet extends ActorSheet {
 
@@ -9,6 +10,12 @@ export class SpellboundKingdomsActorSheet extends ActorSheet {
 
   activateListeners(html) {
     super.activateListeners(html);
+
+    // Rolls
+		html.find(".roll-stat").click((ev) => {
+			const statName = $(ev.currentTarget).data("stat");
+			return this.rollStat(statName);
+		});
 
     // Items
     html.find(".item-edit").click((ev) => {
@@ -94,6 +101,17 @@ export class SpellboundKingdomsActorSheet extends ActorSheet {
   
   // ********** HANDLERS *************
 
+  rollStat(statIdentifier) {
+		const data = {
+			title: this.actor.data.data.stats[statIdentifier].label,
+			stat: this.getStat(statIdentifier),
+		};
+		// const options = {
+		// 	...this.getRollOptions(statIdentifier),
+		// };
+		return SKRollHandler.createRoll(data, {}/*options*/);
+	}
+
   handleItemDelete(event) {
     const div = $(event.currentTarget).parents(".item");
     this.actor.deleteEmbeddedDocuments("Item", [div.data("entity-id")]);
@@ -146,6 +164,16 @@ export class SpellboundKingdomsActorSheet extends ActorSheet {
   }
   
   // ********** HELPERS *************
+
+  getStat(identifier) {
+		const statName = identifier;
+		const stat = this.actor.data.data.stats[statName];
+		if (!stat) return {};
+		return {
+			name: statName,
+			...stat,
+		};
+	}
 
   _getPlayerActors(item) {
     return game.actors.filter(a => a.hasPlayerOwner && a.id !== this.actor.id);
