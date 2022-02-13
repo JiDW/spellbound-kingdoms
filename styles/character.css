@@ -22,14 +22,22 @@
 .header-section .character-avatar       { grid-area: 1 / 1 / 4 / 2; }
 .header-section .character-name         { grid-area: 1 / 2 / 2 / 5; }
 .header-section .character-race         { grid-area: 1 / 5 / 2 / 8; }
-.header-section .character-mood         { grid-area: 2 / 2 / 3 / 3; }
-.header-section .character-body         { grid-area: 2 / 3 / 3 / 4; }
-.header-section .character-armor        { grid-area: 2 / 4 / 3 / 5; }
-.header-section .character-wealth-level { grid-area: 2 / 5 / 3 / 7; }
-.header-section .character-gold         { grid-area: 2 / 7 / 3 / 8; }
-.header-section .character-classes      { grid-area: 3 / 2 / 4 / 8; }
+.header-section .character-mood         { grid-area: 3 / 2 / 4 / 3; }
+.header-section .character-body         { grid-area: 3 / 3 / 4 / 4; }
+.header-section .character-armor        { grid-area: 3 / 4 / 4 / 5; }
+.header-section .character-wealth-level { grid-area: 3 / 5 / 4 / 7; }
+.header-section .character-gold         { grid-area: 3 / 7 / 4 / 8; }
+.header-section .character-class-0      { grid-area: 2 / 2 / 3 / 4; }
+.header-section .character-class-1      { grid-area: 2 / 4 / 3 / 6; }
+.header-section .character-class-2      { grid-area: 2 / 6 / 3 / 8; }
 
 input.grid-input { width: 81%; }
+
+.character-class select {
+    width: 140px;
+}
+
+
 
 .spellbound-kingdoms .tab {
     height: 100%;

@@ -9,7 +9,10 @@
         "age": {
           "value": 0
         },
-        "class": {
+        "classes": {
+          "0": { "class": "", "level": 0 },
+          "1": { "class": "", "level": 0 },
+          "2": { "class": "", "level": 0 }
         },
         "backstory": {
           "value": ""

@@ -43,8 +43,45 @@
                 <label>{{localize "SK.LABEL.GOLD"}}:</label>
                 <input class="shortest-num" name="data.wealth.gold.value" type="number" value="{{data.data.wealth.gold.value}}" data-dtype="Number" />
             </div>
-            <div class="character-classes">
-                <label>...</label>
+            <div class="character-class character-class-0">
+                <label>{{localize "SK.LABEL.CLASS"}}:</label>
+                <select class="" name="data.bio.classes.0.class">
+                    <option value="">Class</option>
+                    {{#select data.data.bio.classes.0.class}}
+                        <optgroup label="Core">
+                            {{#each data.classes as |class classIdentifier|}}
+                            <option value="{{classIdentifier}}">{{class.name}}</option>
+                            {{/each}}
+                        </optgroup>
+                    {{/select}}
+                    <input class="shortest-num" name="data.bio.classes.0.level" type="number" value="{{data.data.bio.classes.0.level}}" data-dtype="Number" />
+                </select>
+            </div>
+            <div class="character-class character-class-1">
+                <select class="" name="data.bio.classes.1.class">
+                    <option value="">Multiclass</option>
+                    {{#select data.data.bio.classes.1.class}}
+                        <optgroup label="Core">
+                            {{#each data.classes as |class classIdentifier|}}
+                            <option value="{{classIdentifier}}">{{class.name}}</option>
+                            {{/each}}
+                        </optgroup>
+                    {{/select}}
+                    <input class="shortest-num" name="data.bio.classes.1.level" type="number" value="{{data.data.bio.classes.1.level}}" data-dtype="Number" />
+                </select>
+            </div>
+            <div class="character-class character-class-2">
+                <select class="" name="data.bio.classes.2.class">
+                    <option value="">Multiclass</option>
+                    {{#select data.data.bio.classes.2.class}}
+                        <optgroup label="Core">
+                            {{#each data.classes as |class classIdentifier|}}
+                            <option value="{{classIdentifier}}">{{class.name}}</option>
+                            {{/each}}
+                        </optgroup>
+                    {{/select}}
+                    <input class="shortest-num" name="data.bio.classes.2.level" type="number" value="{{data.data.bio.classes.2.level}}" data-dtype="Number" />
+                </select>
             </div>
         </div>
         <!-- <div class="character-age">
