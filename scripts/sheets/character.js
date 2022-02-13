@@ -10,9 +10,8 @@ export class SpellboundKingdomsCharacterSheet extends SpellboundKingdomsActorShe
   static get defaultOptions() {
     return mergeObject(super.defaultOptions, {
       classes: ["spellbound-kingdoms", "sheet", "actor"],
-      templates: "systems/spellbound-kingdoms/templates/character/character.html",
-      width: 620,
-      height: 740,
+      width: 700,
+      height: 780,
       resizable: false,
       scrollY: [
         ".armors .item-list .items",

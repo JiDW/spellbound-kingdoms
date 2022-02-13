@@ -1,44 +1,78 @@
 <form class="{{cssClass}}" autocomplete="off">
     <div class="character">
-        <div class="bio border">
-            <div class="flex row align-center">
-                <div class="avatar">
-                    <img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}" />
-                </div>
-                <table>
-                    <tr class="row-alternate">
-                        <td>
-                            <label>{{localize "BIO.NAME"}}:</label>
-                        </td>
-                        <td colspan="3">
-                            <input name="name" type="text" value="{{actor.name}}" />
-                        </td>
-                        <td>
-                            <label>{{localize "BIO.AGE"}}:</label>
-                        </td>
-                        <td>
-                            <input class="short-num" name="data.bio.age.value" type="number" value="{{data.data.bio.age.value}}"
-                                data-dtype="Number" />
-                        </td>
-                    </tr>
-                    <tr class="row">
-                        <td>
-                            <label>{{localize "BIO.RACE"}}:</label>
-                        </td>
-                        <td colspan="3">
-                            <input name="data.bio.race.value" type="text" value="{{data.data.bio.race.value}}" />
-                        </td>
-                    </tr>
-                </table>
+        <div class="header-section">
+            <div class="character-avatar">
+                <img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}" />
+            </div>
+            <div class="character-name">
+                <label>{{localize "SK.LABEL.NAME"}}:</label>
+                <input class="grid-input" name="name" type="text" value="{{actor.name}}" />
+            </div>
+            <div class="character-race">
+                <label>{{localize "SK.LABEL.RACE"}}:</label>
+                <input class="grid-input" name="data.bio.race.value" type="text" value="{{data.data.bio.race.value}}" />
+            </div>
+            <div class="character-mood">
+                <label>{{localize "SK.LABEL.MOOD"}}:</label>
+                <input class="shortest-num" name="data.stats.mood.value" type="number" value="{{data.data.stats.mood.value}}" data-dtype="Number" /> / 
+                <span class="character-max-mood">{{data.data.stats.heart.value}}</span>
+            </div>
+            <div class="character-body">
+                <label>{{localize "SK.LABEL.BODY"}}:</label>
+                <input class="shortest-num" name="data.stats.body.value" type="number" value="{{data.data.stats.body.value}}" data-dtype="Number" /> / 
+                <input class="shortest-num" name="data.stats.body.max" type="number" value="{{data.data.stats.body.max}}" data-dtype="Number" />
+            </div>
+            <div class="character-armor">
+                <label>{{localize "SK.LABEL.ARMOR"}}:</label>
+                <span class="character-max-mood">{{data.armor.value}}</span> / 
+                <span class="character-max-mood">{{data.armor.max}}</span>
+            </div>
+            <div class="character-wealth-level">
+                <label>{{localize "SK.LABEL.WEALTH_LEVEL"}}:</label>
+                <input class="shortest-num" name="data.wealth.level.value" type="number" value="{{data.data.wealth.level.value}}" data-dtype="Number" />
+            </div>
+            <div class="character-gold">
+                <label>{{localize "SK.LABEL.GOLD"}}:</label>
+                <input class="shortest-num" name="data.wealth.gold.value" type="number" value="{{data.data.wealth.gold.value}}" data-dtype="Number" />
+            </div>
+            <div class="character-classes">
+                <label>...</label>
             </div>
         </div>
+        <!-- <div class="character-age">
+            <label>{{localize "SK.LABEL.AGE"}}:</label>
+            <input class="short-num" name="data.bio.age.value" type="number" value="{{data.data.bio.age.value}}"
+                            data-dtype="Number" />
+        </div> -->
 
         <div class="sheet-tabs tabs flex row" data-group="primary">
-            <!-- <h1 data-tab="main">{{localize "TAB.MAIN"}}</h1>
-            <h1 data-tab="bio">{{localize "TAB.BIO"}}</h1> -->
-            <h1 data-tab="note">{{localize "TAB.NOTE"}}</h1>
+            <h1 data-tab="main">{{localize "SK.TAB.MAIN"}}</h1>
+            <h1 data-tab="combat">{{localize "SK.TAB.COMBAT"}}</h1>
+            <h1 data-tab="inventory">{{localize "SK.TAB.INVENTORY"}}</h1>
+            <h1 data-tab="wealth">{{localize "SK.TAB.WEALTH"}}</h1>
+            <h1 data-tab="magic">{{localize "SK.TAB.MAGIC"}}</h1>
+            <h1 data-tab="backstory">{{localize "SK.TAB.BACKSTORY"}}</h1>
+            <h1 data-tab="note">{{localize "SK.TAB.NOTE"}}</h1>
         </div>
         <div class="sheet-body">
+            <div class="tab" data-group="primary" data-tab="main">
+    {{> systems/spellbound-kingdoms/templates/character/tab-main.html}}
+            </div>
+            <div class="tab" data-group="primary" data-tab="combat">
+    {{> systems/spellbound-kingdoms/templates/character/tab-combat.html}}
+            </div>
+            <div class="tab" data-group="primary" data-tab="inventory">
+    {{> systems/spellbound-kingdoms/templates/character/tab-inventory.html}}
+            </div>
+            <div class="tab" data-group="primary" data-tab="wealth">
+    {{> systems/spellbound-kingdoms/templates/character/tab-wealth.html}}
+            </div>
+            <div class="tab" data-group="primary" data-tab="magic">
+    {{> systems/spellbound-kingdoms/templates/character/tab-magic.html}}
+            </div>
+            <div class="tab backstory" data-group="primary" data-tab="backstory">
+{{editor content=data.data.bio.backstory.value target="data.bio.backstory.value" button=true owner=owner editable=true}}
+            </div>
             <div class="tab note" data-group="primary" data-tab="note">
 {{editor content=data.data.bio.note.value target="data.bio.note.value" button=true owner=owner editable=true}}
             </div>

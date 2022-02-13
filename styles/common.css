@@ -1,33 +1,28 @@
 @font-face {
-    font-family: AgencyFB-Bold;
-    src: url(font/AgencyFB-Bold.ttf);
-}
-@font-face {
-    font-family: TheSans-Bold-Caps;
-    src: url(font/thesans-bold-caps.ttf);
+    font-family: Mordred-Bold;
+    src: url(../assets/fonts/Mordred-Bold.ttf);
 }
 
 :root {
-    --border-color: #8BD2EF;
+    --border-color: #995200;
     --label-color: #6B233D;
     --alternate-background-color: #DFECF8;
 }
 
-.bounty-hunter .flex {
+.spellbound-kingdoms .flex {
     display: flex;
 }
 
-.bounty-hunter .row {
+.spellbound-kingdoms .row {
   flex-direction: row;
-  background-color: white;
 }
 
-.bounty-hunter .row-alternate {
+.spellbound-kingdoms .row-alternate {
   flex-direction: row;
   background-color: var(--alternate-background-color);
 }
 
-.bounty-hunter .column {
+.spellbound-kingdoms .column {
   flex-direction: column;
 }
 
@@ -39,15 +34,6 @@ table {
 
 .faded {
     opacity: 0.5;
-}
-
-.skill-challenge-link {
-    background: #DDD;
-    padding: 1px 4px;
-    border: 1px solid #4b4a44;
-    border-radius: 2px;
-    white-space: nowrap;
-    word-break: break-all;
 }
 
 /* Inserting this collapsed row between two flex items will make 
@@ -82,47 +68,53 @@ input.medium-num {
     width: 60px;
     text-align: center;
 }
+input.inline-full-width {
+
+}
 input:read-only {
     border: 0 solid;
 }
 
-.bounty-hunter .item-controls {
+.spellbound-kingdoms .item-controls {
     width: fit-content;
     white-space: nowrap;
 }
 
-.window-app.bounty-hunter .window-content, .window-app.journal-sheet .window-content {
+/* .window-app.spellbound-kingdoms .window-content, .window-app.journal-sheet .window-content {
     background: white;
-}
+} */
 
-.bounty-hunter h1, .bounty-hunter .h1, .journal-sheet h1 {
+.spellbound-kingdoms h1, .spellbound-kingdoms .h1, .journal-sheet h1 {
     background: rgb(2,0,36);
-    background: radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(0,138,198,1) 90%);
-    color: white;
+    background: radial-gradient(circle, rgba(224,221,212,1) 0%, rgba(153,82,0,1) 90%);
+    /* color: white; */
 
-    font-family: AgencyFB-Bold;
+    font-family: Mordred-Bold;
     text-transform: uppercase;
     text-align: center;
-    border: 0 none;
+    border-bottom: 0;
+    border-left: 1px solid;
+    border-right: 1px solid;
     font-size: 18px;
     font-weight: bold;
     margin: 0;
     padding: 4px 4px;
+    width: 100%;
 }
 
-.bounty-hunter h1.active, .bounty-hunter .h1:active {
+.spellbound-kingdoms h1.active, .spellbound-kingdoms .h1:active {
     text-decoration-line: underline overline;
     text-decoration-style: double;
-    text-decoration-color: #00AEEF;
+    /* text-decoration-color: #00AEEF; */
 }
 
-.bounty-hunter h2, .bounty-hunter .h2, .journal-sheet h2 {
+.spellbound-kingdoms h2, .spellbound-kingdoms .h2, .journal-sheet h2 {
     color: var(--label-color);
     text-decoration-line: underline overline;
     text-decoration-style: solid;
     text-decoration-color: #A7A9AC;
 
-    font-family: AgencyFB-Bold;
+    font-family: Mordred-Bold;
     text-transform: uppercase;
     text-align: center;
     border: 0 none;
@@ -132,10 +124,10 @@ input:read-only {
     padding: 4px 4px;
 }
 
-.bounty-hunter h3, .bounty-hunter .h3, .journal-sheet h3 {
+.spellbound-kingdoms h3, .spellbound-kingdoms .h3, .journal-sheet h3 {
     color: var(--label-color);
 
-    font-family: AgencyFB-Bold;
+    font-family: Mordred-Bold;
     text-align: center;
     border: 0 none;
     font-size: 13px;
@@ -143,13 +135,13 @@ input:read-only {
     padding: 4px 4px;
 }
 
-.bounty-hunter label, .bounty-hunter .label {
+.spellbound-kingdoms label, .spellbound-kingdoms .label {
     color: var(--label-color);
-    font-size: 15px;
-    font-family: AgencyFB-Bold;
+    font-size: 18px;
+    font-family: Mordred-Bold;
 }
 
-.bounty-hunter .section-heading {
+.spellbound-kingdoms .section-heading {
     background: rgb(2,0,36);
     background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(95,10,48,1) 85%);
 
@@ -163,7 +155,7 @@ input:read-only {
     padding: 3px;
 }
 
-.bounty-hunter button {
+.spellbound-kingdoms button {
     background-color: var(--alternate-background-color);
     border-color: var(--border-color);
     border-radius: 10px;

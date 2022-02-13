@@ -1,28 +1,49 @@
-.bounty-hunter .character {
+/* .spellbound-kingdoms .character {
     display: flex;
     flex-direction: column;
     height: 100%;
     width: 100%;
-}
+} */
 
-.bounty-hunter .sheet-body {
+.spellbound-kingdoms .sheet-body {
   overflow: hidden;
   flex-grow: 1;
 }
 
-.bounty-hunter .tab {
+.spellbound-kingdoms .character .header-section {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-column-gap: 10px;
+    grid-row-gap: 0px;
+    white-space: nowrap;
+}
+    
+.header-section .character-avatar       { grid-area: 1 / 1 / 4 / 2; }
+.header-section .character-name         { grid-area: 1 / 2 / 2 / 5; }
+.header-section .character-race         { grid-area: 1 / 5 / 2 / 8; }
+.header-section .character-mood         { grid-area: 2 / 2 / 3 / 3; }
+.header-section .character-body         { grid-area: 2 / 3 / 3 / 4; }
+.header-section .character-armor        { grid-area: 2 / 4 / 3 / 5; }
+.header-section .character-wealth-level { grid-area: 2 / 5 / 3 / 7; }
+.header-section .character-gold         { grid-area: 2 / 7 / 3 / 8; }
+.header-section .character-classes      { grid-area: 3 / 2 / 4 / 8; }
+
+input.grid-input { width: 81%; }
+
+.spellbound-kingdoms .tab {
     height: 100%;
     width: 100%;
 }
 
-.bounty-hunter .editor,
-.bounty-hunter .editor-content {
+.spellbound-kingdoms .editor,
+.spellbound-kingdoms .editor-content {
   height: 100%;
   padding: 5px;
   width: 100%;
 }
   
-.bounty-hunter .bio .profile-img {
+.spellbound-kingdoms .bio .profile-img {
     width: 100px;
     min-width: 100px;
 }
@@ -43,7 +64,7 @@
 .skills, .abilities {
     width: 150px;
 }
-.skill:nth-child(odd), .ability:nth-child(odd), .bounty-hunter .item:nth-child(odd) {
+.skill:nth-child(odd), .ability:nth-child(odd), .spellbound-kingdoms .item:nth-child(odd) {
     background-color: var(--alternate-background-color);
 }
 
@@ -235,7 +256,7 @@ input.item-picker-checkbox {
     border-bottom: 1px dotted;
 }
 
-.bounty-hunter .item {
+.spellbound-kingdoms .item {
     font-family: AgencyFB-Bold;
 }
 
