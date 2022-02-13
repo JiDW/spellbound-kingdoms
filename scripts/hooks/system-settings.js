@@ -37,27 +37,6 @@ async function loadJson(sourceDir, relativePath, depth = 1) {
   return dataset;
 }
 
-async function loadRaces() {
-  return {};
-  // const datasetDir = game.settings.get("spellbound-kingdoms", "datasetDir");
-  // const resp = await fetch(datasetDir + '/reputation.json').catch(err => { return {} });
-  // return resp.json();
-}
-
-async function loadClasses() {
-  return {};
-  // const datasetDir = game.settings.get("spellbound-kingdoms", "datasetDir");
-  // const resp = await fetch(datasetDir + '/starship-roles.json').catch(err => { return {} });
-  // return resp.json();
-}
-
-async function loadFightingStyles() {
-  return {};
-  // const datasetDir = game.settings.get("spellbound-kingdoms", "datasetDir");
-  // const resp = await fetch(datasetDir + '/character-creation.json').catch(err => { return {} });
-  // return resp.json();
-}
-
 export function registerSettings() {
   game.settings.register("spellbound-kingdoms", "worldSchemaVersion", {
     name: game.i18n.localize("SK.SETTINGS.WORLD_VERSION"),

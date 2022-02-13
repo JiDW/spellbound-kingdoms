@@ -244,6 +244,7 @@
     },
     "talent": {
       "level": 1,
+      "short-description": "",
       "description": ""
     },
     "scar": {
@@ -287,6 +288,7 @@
     },
     "ability": {
       "templates": ["identifier"],
+      "short-description": "",
       "description": ""
     },
     "troop-ability": {

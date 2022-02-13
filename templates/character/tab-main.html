@@ -1,58 +1,107 @@
 
 <div class="main-column">
-    <div class="frame character-stats">
-        <div class="character-stat-label character-stat-strength-label">
-            <span>{{localize "SK.STAT.STRENGTH"}}</span>
-        </div>
-        <div class="character-stat-value character-stat-strength-value">
-            <input class="shortest-num" name="data.stats.strength.value" type="number" value="{{data.data.stats.strength.value}}" data-dtype="Number" /> / 
-            <input class="shortest-num" name="data.stats.strength.max" type="number" value="{{data.data.stats.strength.max}}" data-dtype="Number" />
-        </div>
+    <div class="frame">
+        <div class="frame-label">{{localize "SK.LABEL.STATS"}}</div>
+        <div class="character-stats">
+            <div class="character-stat-label character-stat-strength-label">
+                <span>{{localize "SK.STAT.STRENGTH"}}</span>
+            </div>
+            <div class="character-stat-value character-stat-strength-value">
+                <input class="shortest-num" name="data.stats.strength.value" type="number" value="{{data.data.stats.strength.value}}" data-dtype="Number" /> / 
+                <input class="shortest-num" name="data.stats.strength.max" type="number" value="{{data.data.stats.strength.max}}" data-dtype="Number" />
+            </div>
 
-        <div class="character-stat-label character-stat-quickness-label">
-            <span>{{localize "SK.STAT.QUICKNESS"}}</span>
-        </div>
-        <div class="character-stat-value character-stat-quickness-value">
-            <input class="shortest-num" name="data.stats.quickness.value" type="number" value="{{data.data.stats.quickness.value}}" data-dtype="Number" /> / 
-            <input class="shortest-num" name="data.stats.quickness.max" type="number" value="{{data.data.stats.quickness.max}}" data-dtype="Number" />
-        </div>
-        
-        <div class="character-stat-label character-stat-reason-label">
-            <span>{{localize "SK.STAT.REASON"}}</span>
-        </div>
-        <div class="character-stat-value character-stat-reason-value">
-            <input class="shortest-num" name="data.stats.reason.value" type="number" value="{{data.data.stats.reason.value}}" data-dtype="Number" /> / 
-            <input class="shortest-num" name="data.stats.reason.max" type="number" value="{{data.data.stats.reason.max}}" data-dtype="Number" />
-        </div>
+            <div class="character-stat-label character-stat-quickness-label">
+                <span>{{localize "SK.STAT.QUICKNESS"}}</span>
+            </div>
+            <div class="character-stat-value character-stat-quickness-value">
+                <input class="shortest-num" name="data.stats.quickness.value" type="number" value="{{data.data.stats.quickness.value}}" data-dtype="Number" /> / 
+                <input class="shortest-num" name="data.stats.quickness.max" type="number" value="{{data.data.stats.quickness.max}}" data-dtype="Number" />
+            </div>
+            
+            <div class="character-stat-label character-stat-reason-label">
+                <span>{{localize "SK.STAT.REASON"}}</span>
+            </div>
+            <div class="character-stat-value character-stat-reason-value">
+                <input class="shortest-num" name="data.stats.reason.value" type="number" value="{{data.data.stats.reason.value}}" data-dtype="Number" /> / 
+                <input class="shortest-num" name="data.stats.reason.max" type="number" value="{{data.data.stats.reason.max}}" data-dtype="Number" />
+            </div>
 
-        <div class="character-stat-label character-stat-charisma-label">
-            <span>{{localize "SK.STAT.CHARISMA"}}</span>
-        </div>
-        <div class="character-stat-value character-stat-charisma-value">
-            <input class="shortest-num" name="data.stats.charisma.value" type="number" value="{{data.data.stats.charisma.value}}" data-dtype="Number" /> / 
-            <input class="shortest-num" name="data.stats.charisma.max" type="number" value="{{data.data.stats.charisma.max}}" data-dtype="Number" />
-        </div>
+            <div class="character-stat-label character-stat-charisma-label">
+                <span>{{localize "SK.STAT.CHARISMA"}}</span>
+            </div>
+            <div class="character-stat-value character-stat-charisma-value">
+                <input class="shortest-num" name="data.stats.charisma.value" type="number" value="{{data.data.stats.charisma.value}}" data-dtype="Number" /> / 
+                <input class="shortest-num" name="data.stats.charisma.max" type="number" value="{{data.data.stats.charisma.max}}" data-dtype="Number" />
+            </div>
 
-        <div class="character-stat-label character-stat-magic-label">
-            <span>{{localize "SK.STAT.MAGIC"}}</span>
-        </div>
-        <div class="character-stat-value character-stat-magic-value">
-            <input class="shortest-num" name="data.stats.magic.value" type="number" value="{{data.data.stats.magic.value}}" data-dtype="Number" /> / 
-            <input class="shortest-num" name="data.stats.magic.max" type="number" value="{{data.data.stats.magic.max}}" data-dtype="Number" />
-        </div>
+            <div class="character-stat-label character-stat-magic-label">
+                <span>{{localize "SK.STAT.MAGIC"}}</span>
+            </div>
+            <div class="character-stat-value character-stat-magic-value">
+                <input class="shortest-num" name="data.stats.magic.value" type="number" value="{{data.data.stats.magic.value}}" data-dtype="Number" /> / 
+                <input class="shortest-num" name="data.stats.magic.max" type="number" value="{{data.data.stats.magic.max}}" data-dtype="Number" />
+            </div>
 
-        <div class="character-stat-label character-stat-heart-label">
-            <span>{{localize "SK.STAT.HEART"}}</span>
+            <div class="character-stat-label character-stat-heart-label">
+                <span>{{localize "SK.STAT.HEART"}}</span>
+            </div>
+            <div class="character-stat-value character-stat-heart-value">
+                <input class="shortest-num" name="data.stats.heart.value" type="number" value="{{data.data.stats.heart.value}}" data-dtype="Number" /> / 
+                <input class="shortest-num" name="data.stats.heart.max" type="number" value="{{data.data.stats.heart.max}}" data-dtype="Number" />
+            </div>
         </div>
-        <div class="character-stat-value character-stat-heart-value">
-            <input class="shortest-num" name="data.stats.heart.value" type="number" value="{{data.data.stats.heart.value}}" data-dtype="Number" /> / 
-            <input class="shortest-num" name="data.stats.heart.max" type="number" value="{{data.data.stats.heart.max}}" data-dtype="Number" />
+    </div>
+    <div class="frame">
+        <div class="frame-label">{{localize "SK.LABEL.HISTORY"}}</div>
+        <div class="character-histories">
+            {{#each data.itemsByType.histories as |history key|}}
+                {{> systems/spellbound-kingdoms/templates/character/partial/narrative-item.html type="history" title=history.name value=history.data.value faded=false key=key}}
+            {{/each}}
         </div>
     </div>
 </div>
 <div class="main-column">
-2
+    <div class="frame">
+        <div class="frame-label">{{localize "SK.LABEL.INSPIRATIONS"}}</div>
+        <div class="character-inspirations">
+            {{#each data.itemsByType.inspirations as |inspiration key|}}
+                {{> systems/spellbound-kingdoms/templates/character/partial/narrative-item.html type="inspiration" title=inspiration.name value=inspiration.data.value faded=false key=key}}
+            {{/each}}
+        </div>
+    </div>
+    <div class="frame">
+        <div class="frame-label">{{localize "SK.LABEL.REPUTATIONS"}}</div>
+        <div class="character-reputations">
+            {{#each data.itemsByType.reputations as |reputation key|}}
+                {{> systems/spellbound-kingdoms/templates/character/partial/narrative-item.html type="reputation" title=reputation.name value=reputation.data.value faded=false key=key}}
+            {{/each}}
+        </div>
+    </div>
+    <div class="frame">
+        <div class="frame-label">{{localize "SK.LABEL.SCARS"}}</div>
+        <div class="character-scars">
+            {{#each data.itemsByType.scars as |scars key|}}
+                {{> systems/spellbound-kingdoms/templates/character/partial/scar.html scar=scar key=key}}
+            {{/each}}
+        </div>
+    </div>
 </div>
 <div class="main-column">
-3
+    <div class="frame">
+        <div class="frame-label">{{localize "SK.LABEL.TALENTS"}}</div>
+        <div class="character-talents">
+            {{#each data.itemsByType.talents as |talent key|}}
+                {{> systems/spellbound-kingdoms/templates/character/partial/talent.html talent=talent key=key}}
+            {{/each}}
+        </div>
+    </div>
+    <div class="frame frame-character-abilities">
+        <div class="frame-label">{{localize "SK.LABEL.ABILITIES"}}</div>
+        <div class="character-abilities">
+            {{#each data.itemsByType.abilities as |ability key|}}
+                {{> systems/spellbound-kingdoms/templates/character/partial/ability.html ability=ability key=key}}
+            {{/each}}
+        </div>
+    </div>
 </div>

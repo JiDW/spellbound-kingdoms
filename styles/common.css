@@ -68,9 +68,6 @@ input.medium-num {
     width: 60px;
     text-align: center;
 }
-input.inline-full-width {
-
-}
 input:read-only {
     border: 0 solid;
 }

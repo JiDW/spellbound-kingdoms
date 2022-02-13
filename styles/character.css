@@ -1,9 +1,9 @@
-/* .spellbound-kingdoms .character {
+.spellbound-kingdoms .character {
     display: flex;
     flex-direction: column;
     height: 100%;
     width: 100%;
-} */
+}
 
 .spellbound-kingdoms .sheet-body {
   overflow: hidden;
@@ -40,7 +40,19 @@ input.grid-input { width: 81%; }
 .spellbound-kingdoms .character .frame {
     border: 6px ridge;
     border-color: var(--border-color);
-    padding: 8px;
+    padding: 6px;
+    margin-bottom: 8px;
+    min-height: 150px;
+}
+.spellbound-kingdoms .character .frame .frame-label {
+    text-transform: uppercase;
+    font-family: Mordred-Bold;
+    font-size: 18px;
+    text-align: center;
+    width: 100%;
+    border-bottom: 1px solid;
+    margin-bottom: 6px;
+    color: var(--label-color);
 }
 
 /* ######## MAIN TAB ######### */
@@ -77,6 +89,10 @@ input.grid-input { width: 81%; }
     line-height: 25px;
     font-size: 20px;
     font-family: Mordred-Bold;
+}
+
+.spellbound-kingdoms .character .tab-main .frame-character-abilities {
+    /* height: 100%; */
 }
 
 
