@@ -10,7 +10,15 @@
             </div>
             <div class="character-race">
                 <label>{{localize "SK.LABEL.RACE"}}:</label>
-                <input class="grid-input" name="data.bio.race.value" type="text" value="{{data.data.bio.race.value}}" />
+                <select class="" name="data.bio.race.value">
+                    {{#select data.data.bio.race.value}}
+                        <optgroup label="Core">
+                            {{#each data.races as |race raceIdentifier|}}
+                            <option value="{{raceIdentifier}}">{{race.subrace}}</option>
+                            {{/each}}
+                        </optgroup>
+                    {{/select}}
+                </select>
             </div>
             <div class="character-mood">
                 <label>{{localize "SK.LABEL.MOOD"}}:</label>

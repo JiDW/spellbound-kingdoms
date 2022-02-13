@@ -39,6 +39,9 @@ export class SpellboundKingdomsCharacterSheet extends SpellboundKingdomsActorShe
   getData() {
     const data = super.getData();
     data.data.user = game.user;
+    data.data.races = CONFIG.SpellboundKingdoms.races;
+    data.data.classes = CONFIG.SpellboundKingdoms.classes;
+    data.data['fighting-styles'] = CONFIG.SpellboundKingdoms['fighting-styles'];
     data.data.data.itemsByType = this.categorizeItems();
     this.computeTalentData(data.data);
     return data;
