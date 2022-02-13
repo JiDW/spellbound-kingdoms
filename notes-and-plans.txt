@@ -1,28 +1,28 @@
 Spellbound Kingdoms
 
 Character Sheet
-    Basic info
-        Name
-        Classes & levels
-        Race
-    Stats
-        Core stats (Str, Qck, Rsn, Cha, Magic, Heart)
-        Mood (val/max ???)
-        Body (cur/max)
-    Narrative Stats
-        Inspirations
-        History & Skills
-        Reputations
-    Scars 
-    Fighting/Magic Styles Tab
-    Spells
-    Abilities
-        Racial
-        Class
-    Talents
-    Wealth Level & associated gear
-        "Purchace" interface
-    Gear
+    [done] Basic info
+        [done] Name
+        [done] Classes & levels
+        [done] Race
+    [    ] Stats
+        [    ] Core stats (Str, Qck, Rsn, Cha, Magic, Heart)
+        [done] Mood (val/max ???)
+        [done] Body (cur/max)
+    [    ] Narrative Stats
+        [    ] Inspirations
+        [    ] History & Skills
+        [    ] Reputations
+    [    ] Scars 
+    [    ] Fighting/Magic Styles Tab
+    [    ] Spells
+    [    ] Abilities
+        [    ] Racial
+        [    ] Class
+    [    ] Talents
+    [    ] Wealth Level & associated gear
+        [    ] "Purchace" interface
+    [    ] Gear
 
 Gear Sheet
 Fighting Style Sheet

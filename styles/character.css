@@ -33,11 +33,54 @@
 
 input.grid-input { width: 81%; }
 
-.character-class select {
+.spellbound-kingdoms .character-class select {
     width: 140px;
 }
 
+.spellbound-kingdoms .character .frame {
+    border: 6px ridge;
+    border-color: var(--border-color);
+    padding: 8px;
+}
 
+/* ######## MAIN TAB ######### */
+
+.spellbound-kingdoms .character .tab-main .main-column {
+    float: left;
+    width: 33.33%;
+    padding: 4px;
+}
+
+.spellbound-kingdoms .character .tab-main .character-stats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    grid-column-gap: 10px;
+    grid-row-gap: 0px;
+}
+    
+.character-stat-strength-label  { grid-area: 1 / 1 / 2 / 2; }
+.character-stat-strength-value  { grid-area: 1 / 2 / 2 / 3; }
+.character-stat-quickness-label { grid-area: 2 / 1 / 3 / 2; }
+.character-stat-quickness-value { grid-area: 2 / 2 / 3 / 3; }
+.character-stat-reason-label    { grid-area: 3 / 1 / 4 / 2; }
+.character-stat-reason-value    { grid-area: 3 / 2 / 4 / 3; }
+.character-stat-charisma-label  { grid-area: 4 / 1 / 5 / 2; }
+.character-stat-charisma-value  { grid-area: 4 / 2 / 5 / 3; }
+.character-stat-magic-label     { grid-area: 5 / 1 / 6 / 2; }
+.character-stat-magic-value     { grid-area: 5 / 2 / 6 / 3; }
+.character-stat-heart-label     { grid-area: 6 / 1 / 7 / 2; }
+.character-stat-heart-value     { grid-area: 6 / 2 / 7 / 3; }
+
+.spellbound-kingdoms .character .tab-main .character-stat-label {
+    text-align: right;
+    line-height: 25px;
+    font-size: 20px;
+    font-family: Mordred-Bold;
+}
+
+
+/* ##### END OF MAIN TAB ###### */
 
 .spellbound-kingdoms .tab {
     height: 100%;

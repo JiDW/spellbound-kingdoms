@@ -100,25 +100,25 @@
             <h1 data-tab="note">{{localize "SK.TAB.NOTE"}}</h1>
         </div>
         <div class="sheet-body">
-            <div class="tab" data-group="primary" data-tab="main">
+            <div class="tab tab-main" data-group="primary" data-tab="main">
     {{> systems/spellbound-kingdoms/templates/character/tab-main.html}}
             </div>
-            <div class="tab" data-group="primary" data-tab="combat">
+            <div class="tab tab-combat" data-group="primary" data-tab="combat">
     {{> systems/spellbound-kingdoms/templates/character/tab-combat.html}}
             </div>
-            <div class="tab" data-group="primary" data-tab="inventory">
+            <div class="tab tab-inventory" data-group="primary" data-tab="inventory">
     {{> systems/spellbound-kingdoms/templates/character/tab-inventory.html}}
             </div>
-            <div class="tab" data-group="primary" data-tab="wealth">
+            <div class="tab tab-wealth" data-group="primary" data-tab="wealth">
     {{> systems/spellbound-kingdoms/templates/character/tab-wealth.html}}
             </div>
-            <div class="tab" data-group="primary" data-tab="magic">
+            <div class="tab tab-magic" data-group="primary" data-tab="magic">
     {{> systems/spellbound-kingdoms/templates/character/tab-magic.html}}
             </div>
-            <div class="tab backstory" data-group="primary" data-tab="backstory">
+            <div class="tab tab-backstory" data-group="primary" data-tab="backstory">
 {{editor content=data.data.bio.backstory.value target="data.bio.backstory.value" button=true owner=owner editable=true}}
             </div>
-            <div class="tab note" data-group="primary" data-tab="note">
+            <div class="tab tab-note" data-group="primary" data-tab="note">
 {{editor content=data.data.bio.note.value target="data.bio.note.value" button=true owner=owner editable=true}}
             </div>
         </div>

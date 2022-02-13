@@ -26,7 +26,13 @@
   "SK.TAB.BACKSTORY": "BACKSTORY",
   "SK.TAB.NOTE": "NOTE",
 
-  "SK.TAB.MAIN": "MAIN",
+  "SK.STAT.STRENGTH": "Strength",
+  "SK.STAT.QUICKNESS": "Quickness",
+  "SK.STAT.REASON": "Reason",
+  "SK.STAT.CHARISMA": "Charisma",
+  "SK.STAT.MAGIC": "Magic",
+  "SK.STAT.HEART": "Heart",
+
   "SK.TAB.CONTROL": "STARSHIP CONTROL",
   "SK.NOTE": "NOTE",
 
