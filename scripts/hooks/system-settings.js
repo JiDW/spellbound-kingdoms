@@ -1,17 +1,40 @@
 // import { CharacterCreation } from "../component/character-creation.js";
+import { mergeDeep, dirname } from "../util.js";
 
 export async function loadSystemSettings() {
-  CONFIG.SpellboundKingdoms = loadDatasets();
+  CONFIG.SpellboundKingdoms = await loadDatasets();
+  console.log(CONFIG.SpellboundKingdoms);
 }
 
 async function loadDatasets() {
-  let datasets = {};
-  
-  datasets['races'] = loadRaces();
-  datasets['classes'] = loadClasses();
-  datasets['fighting-styles'] = loadFightingStyles();
+  const datasetDir = game.settings.get("spellbound-kingdoms", "datasetDir");
+  return loadJson(datasetDir, '/index.json');
+}
 
-  return datasets;
+async function loadJson(sourceDir, relativePath, depth = 1) {
+  if (relativePath.substring(relativePath.length - 5) !== '.json') {
+    throw `Load JSON Error! Given path is not a JSON: ${relativePath}`
+  }
+  if (depth > 20) {
+    throw `Load JSON Error! Infinite recursion detected. Please make sure that your datasets don't have circular references.`
+  }
+
+  const absolutePath = sourceDir + relativePath;
+  const resp = await fetch(absolutePath).catch(err => { return {} });
+  let index = await resp.json();
+
+  let data, dataset = {};
+  for (const [datasetName, value] of Object.entries(index)) {
+    if (typeof value === 'string' && value.substring(value.length - 5) === '.json') {
+      data = await loadJson(dirname(absolutePath), value, ++depth);
+    } else {
+      data = value;
+    }
+
+    dataset[datasetName] = data;
+	}
+
+  return dataset;
 }
 
 async function loadRaces() {
