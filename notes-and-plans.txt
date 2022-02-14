@@ -56,9 +56,26 @@ Region Sheet
     hide/reveal region info to PCs
     Sidebar with info (like calendar/weather)
     
-Dice Roller
-    Bonus/penalty dice
-    Mood/inspiration bonuses
+[    ] Dice Roller
+    [    ] Roll Dialog
+        [    ] Name of the roll
+        [    ] Die of appropriate size is auto chosen
+        [    ] Increase/decrease die size buttons
+            [    ] Handle d20 increase properly
+        [    ] 3 dropdowns for penalty dice
+        [    ] 3 dropdowns for bonus dice (specific die sizes)
+        [ ?? ] penalty/bonus UI improvement: filterable list of all stats/Histories/reputation/items(categorized)/?organization stats?
+    [    ] Roll Execution
+        [    ] Handle exploding dice
+        [    ] Properly handle penalty and bonus dice order
+    [    ] Post-roll adjustments
+        [    ] Use Mood to maximize 1 die (take max non-penalty die size)
+            [    ] Properly handle d20: take a reroll value or 12
+        [    ] Use inspiration to explode dice
+            [    ] Weak inspiration (value 1 or non-narrated): heart bonus die
+            [    ] Strong inspiration (narrated & 2+ value): 
+                maximize the highest size non-penalty die and the heart bonus die, and they explode
+                Handle d20 properly: 12 + d20 reroll
 
 Organization Sheet
     Name

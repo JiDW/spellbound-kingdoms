@@ -39,7 +39,7 @@ input.grid-input { width: 81%; }
 
 .spellbound-kingdoms .character .frame {
     border: 6px ridge;
-    border-color: var(--border-color);
+    border-color: var(--light-main-color);
     padding: 6px;
     margin-bottom: 8px;
     min-height: 150px;
@@ -145,7 +145,7 @@ input.grid-input { width: 81%; }
 
 .actor .section {
     margin-top: 8px;
-    border: 4px solid var(--border-color);
+    border: 4px solid var(--main-color);
     padding: 6px;
     width: fit-content;
 }

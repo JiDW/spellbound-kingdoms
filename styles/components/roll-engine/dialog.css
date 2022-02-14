@@ -1,0 +1,35 @@
+.spellbound-kingdoms .roll-dialog .roll-setup {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-column-gap: 10px;
+  grid-row-gap: 6px;
+}
+.spellbound-kingdoms .roll-dialog .roll-setup .row-label-base-die { grid-area: 1 / 1 / 2 / 2; }
+.spellbound-kingdoms .roll-dialog .roll-setup .cell-base-die { grid-area: 1 / 2 / 2 / 3; }
+.spellbound-kingdoms .roll-dialog .roll-setup .cell-base-die-increase { grid-area: 1 / 3 / 2 / 5; }
+.spellbound-kingdoms .roll-dialog .roll-setup .row-label-penalty-die { grid-area: 2 / 1 / 3 / 2; }
+.spellbound-kingdoms .roll-dialog .roll-setup .cell-penalty-die-1 { grid-area: 2 / 2 / 3 / 3; }
+.spellbound-kingdoms .roll-dialog .roll-setup .cell-penalty-die-2 { grid-area: 2 / 3 / 3 / 4; }
+.spellbound-kingdoms .roll-dialog .roll-setup .cell-penalty-die-3 { grid-area: 2 / 4 / 3 / 5; }
+.spellbound-kingdoms .roll-dialog .roll-setup .row-label-bonus-die { grid-area: 3 / 1 / 4 / 2; }
+.spellbound-kingdoms .roll-dialog .roll-setup .cell-bonus-die-1 { grid-area: 3 / 2 / 4 / 3; }
+.spellbound-kingdoms .roll-dialog .roll-setup .cell-bonus-die-2 { grid-area: 3 / 3 / 4 / 4; }
+.spellbound-kingdoms .roll-dialog .roll-setup .cell-bonus-die-3 { grid-area: 3 / 4 / 4 / 5; }
+
+.spellbound-kingdoms .roll-dialog .roll-setup .row-label {
+  line-height: 25px;
+  text-align: right;
+}
+
+.spellbound-kingdoms .roll-dialog .dialog-buttons {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(1, 1fr);
+  grid-column-gap: 10px;
+  grid-row-gap: 0px;
+
+  margin-top: 10px;
+}
+.spellbound-kingdoms .roll-dialog .dialog-buttons .dialog-button-cancel { grid-area: 1 / 1 / 2 / 2; }
+.spellbound-kingdoms .roll-dialog .dialog-buttons .dialog-button-roll { grid-area: 1 / 2 / 2 / 3; }

@@ -15,6 +15,7 @@ function preloadHandlebarsTemplates() {
     "systems/spellbound-kingdoms/templates/character/partial/stat.html",
     
     "systems/spellbound-kingdoms/templates/components/roll-engine/dialog.html",
+    "systems/spellbound-kingdoms/templates/components/roll-engine/partial/die-select.html",
   ];
   return loadTemplates(templatePaths);
 }

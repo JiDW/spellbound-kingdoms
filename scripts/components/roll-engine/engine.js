@@ -6,23 +6,21 @@
  export class SKRollHandler extends FormApplication {
 	constructor(
 		{
-			attribute = { label: "DICE.BASE", value: 0 },
-			skill = { label: "DICE.SKILL", value: 0 },
-			gear = { label: "DICE.GEAR", value: 0, artifactDie: "" },
+			stat = { label: "DICE.BASE", value: 0 }, // die that initiates the roll
+			increase = 0, // how many times the base die is increased
+			penalty = [], // array of penalty dice { label: "", value: 0 }
+			bonus = [], // array of bonus dice { label: "", value: 0 }
 			spell = {},
 		},
 		options = {}, // This object includes information that may be required to create the roll instance but not the dice rolled.
 	) {
 		super({}, options);
 		this.roll = {};
-		this.base = attribute;
-		this.skill = skill;
-		this.gear = gear;
-		this.damage = options.damage || gear.damage;
-		this.artifact = gear?.artifactDie;
-		this.modifier =
-			options.modifiers?.reduce((sum, mod) => (mod.value < 0 ? (sum += Number(mod.value)) : sum), 0) || 0;
-		this.spell = { safecast: 0, ...spell };
+		this.base = stat;
+		this.bonus = bonus;
+		this.penalty = penalty;
+		this.damage = options.damage ?? 0;
+		this.spell = spell;
 	}
 
 	/**
@@ -113,7 +111,7 @@
 	static get defaultOptions() {
 		return mergeObject(super.defaultOptions, {
 			classes: ["spellbound-kingdoms"],
-			width: "450",
+			width: "280",
 			height: "auto",
 			resizable: false,
 		});
@@ -132,15 +130,6 @@
 	 */
 	activateListeners(html) {
 		super.activateListeners(html);
-
-		//These are used only in standard or Year Zero roll instances to add or remove modifiers to either input.
-		const totalModifierInput = html[0].querySelector("input#modifier");
-		const artifactInput = html[0].querySelector("input#artifact");
-
-		//Focuses the Attribute input on load.
-		html.find("#base").focus();
-		//Selects the input text when an input gains focus.
-		html.find("input").focus((ev) => ev.currentTarget.select());
 
 		//Increments or decrements the input values for Attributes, Skills, and Gear
 		html.find(".inc-dec-btns").click((ev) => {

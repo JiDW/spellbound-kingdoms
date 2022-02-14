@@ -19,7 +19,7 @@
 }
 
 .chargen .chargen-section {
-    border-bottom: 4px solid var(--border-color);
+    border-bottom: 4px solid var(--main-color);
     padding: 6px;
     margin-bottom: 10px;
 }

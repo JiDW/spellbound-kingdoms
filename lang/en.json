@@ -41,5 +41,8 @@
   "SK.STAT.MAGIC": "Magic",
   "SK.STAT.HEART": "Heart",
 
+  "SK.DICE.PENALTY": "Penalty",
+  "SK.DICE.BONUS": "Bonus",
+
   "":""
 }

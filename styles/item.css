@@ -69,7 +69,7 @@ button.add-active-effect {
 /* *************** WEAPON ******************* */
 
 /* .sheet.weapon .section {
-    border: 4px solid var(--border-color);
+    border: 4px solid var(--main-color);
 } */
 .sheet.item label {
     margin-right: 2px;
