@@ -1,4 +1,5 @@
 import { SpellboundKingdomsActor, SpellboundKingdomsItem } from "./actor/spellbound-kingdoms.js";
+import { SKDie } from "./components/roll-engine/sk-die.js";
 import { initializeHandlebars } from "./hooks/handlebars.js";
 // import { migrateWorld } from "./hooks/migration.js";
 import { registerSheets } from "./hooks/sheets.js";
@@ -10,6 +11,7 @@ import { SpellboundKingdomsActorSheet } from './sheets/actor.js';
 Hooks.once("init", () => {
   CONFIG.Actor.documentClass = SpellboundKingdomsActor;
   CONFIG.Item.documentClass = SpellboundKingdomsItem;
+  CONFIG.Dice.terms["d"] = SKDie;
 
   registerSheets();
   initializeHandlebars();

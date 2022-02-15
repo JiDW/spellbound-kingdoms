@@ -1,9 +1,9 @@
 /**
- * @extends FormApplication
- * @description A Form Application that mimics Dialog, but provides more functionality in terms of data binds and handling of a roll object. Supports Forbidden Lands standard rolls and spell rolls.
+ * @extends Application
+ * @description An Application that mimics Dialog, but provides more functionality in terms of data binds and handling of a roll object. Supports Forbidden Lands standard rolls and spell rolls.
  * @see Dialog
  */
- export class SKRollHandler extends FormApplication {
+ export class SKRollHandler extends Application {
 	constructor(
 		{
 			stat = { label: "DICE.BASE", value: 0 }, // die that initiates the roll
@@ -14,59 +14,13 @@
 		},
 		options = {}, // This object includes information that may be required to create the roll instance but not the dice rolled.
 	) {
-		super({}, options);
+		super(options);
 		this.roll = {};
 		this.base = stat;
 		this.bonus = bonus;
 		this.penalty = penalty;
 		this.damage = options.damage ?? 0;
 		this.spell = spell;
-	}
-
-	/**
-	 * Base (Attribute) Dice formula
-	 */
-	get b() {
-		return this.roll._b;
-	}
-	set b(val) {
-		this.roll._b = this.generateTermFormula(val, "b", this.base?.name);
-	}
-	/**
-	 * Skill Dice formula
-	 */
-	get s() {
-		return this.roll._s;
-	}
-	set s(val) {
-		this.roll._s = this.generateTermFormula(val, "s", this.skill?.name);
-	}
-	/**
-	 * Gear Dice formula
-	 */
-	get g() {
-		return this.roll._g;
-	}
-	set g(val) {
-		this.roll._g = this.generateTermFormula(val, "g", this.gear?.name);
-	}
-	/**
-	 * Artifact Dice formula
-	 */
-	get a() {
-		return this.roll._a;
-	}
-	set a(val) {
-		this.roll._a = this.parseArtifacts(val, this.gear?.name);
-	}
-	/**
-	 * Negative Dice formula
-	 */
-	get n() {
-		return this.roll._n;
-	}
-	set n(val) {
-		this.roll._n = this.generateTermFormula(val, "n", "DICE.NEGATIVE");
 	}
 
 	/**
@@ -131,79 +85,13 @@
 	activateListeners(html) {
 		super.activateListeners(html);
 
-		//Increments or decrements the input values for Attributes, Skills, and Gear
-		html.find(".inc-dec-btns").click((ev) => {
-			const type = $(ev.currentTarget).data("type");
-			const operator = $(ev.currentTarget).data("operator");
-			const input = html.find("#" + type);
-			let value = parseInt(input.val(), 10) || 0;
-			value += operator === "plus" ? 1 : -1;
-			input.val(value > 0 ? value : 0);
-		});
-
-		//This lets us modify the Total Modifier input or Artifact input when a user checks or unchecks the optional modifiers.
-		html.find("input.option").on("change", function () {
-			const artifactRegex = /(\d*d(?:8|10|12))/gi;
-			const artifact = this.dataset.value.match(artifactRegex);
-			const modifier = this.dataset.value.match(/([+-]?\d+(?<!d\d+?))(?!d\d+?)/gi);
-			//Handle artifact modifiers
-			if (artifact) {
-				const artifacts = artifactInput.value.match(artifactRegex) || [];
-				if (this.checked) artifacts.push(artifact[0]);
-				else artifacts.splice(artifacts.indexOf(artifact[0]), 1);
-				artifactInput.value = artifacts.join("+");
-			}
-			// Handle normal modifiers
-			if (modifier) {
-				let currentValue = Number(totalModifierInput.value);
-				if (this.checked) currentValue += Number(modifier[0]);
-				else currentValue -= Number(modifier[0]);
-				totalModifierInput.value = currentValue;
-			}
-		});
-
-		//**Spell Rolls** Similar to the listener in the actor sheet, it lets us increment the dice rolled based on willpower spent.
-		html.find(".spend-willpower").on("click contextmenu", (ev) => {
-			if (foundry.utils.isObjectEmpty(this.spell)) return;
-
-			const type = this.options.skulls ? "contextmenu" : "click";
-
-			let value = this.base.value;
-			if (ev.type === type && this.spell.willpower.value < this.spell.willpower.max) {
-				value = Math.max(--value, 1);
-				++this.spell.willpower.value;
-			} else if (ev.type !== type && this.spell.willpower.value > 0) {
-				--this.spell.willpower.value;
-				value++;
-			}
-
-			this.base.value = value;
-			this.render(true);
-		});
-
-		//**Spell Rolls** Handles the modifiers for spell rolls.
-		html.find(".spell-option").on("change", (ev) => {
-			const el = ev.currentTarget;
-			switch (el.name) {
-				case "chance":
-					this.spell.safecast = 0;
-				// eslint-disable-next-line no-fallthrough
-				case "psych":
-				case "ingredient":
-					this.spell[el.name] = !!el.checked;
-					break;
-				case "safecast": {
-					this.spell.safecast = Number(el.value);
-					break;
-				}
-			}
-			if (!this.spell.psych && this.spell.safecast === 2) this.spell.safecast = 1;
-			this.render(true);
-		});
-
 		//We need to bind the cancel button to the FormApplication's close method.
-		html.find("#cancel").click(() => {
+		html.find(".dialog-button-cancel").click(() => {
 			this.close();
+		});
+		html.find(".dialog-button-roll").click((e) => {
+			this.collectRollData(e);
+			// this.executeRoll();
 		});
 	}
 
@@ -326,27 +214,18 @@
 		return `${number}d${term}${flavor ? `[${flavor}]` : ""}`;
 	}
 
-	/**
-	 * Generates a roll formula for artifacts.
-	 * @param {string} string Artifact string passed from formData.
-	 * @param {string} artifactName Name of the Artifact, used for flavor.
-	 * @returns valid Roll formula
-	 * @see generateTermFormula
-	 * @see Roll
-	 */
-	parseArtifacts(string = "", artifactName = "") {
-		const artifacts = string.split(/[+, ]/).filter((term) => !!term && term !== "0");
-		const terms = artifacts
-			.reduce((array, artifact) => {
-				let [num, term] = artifact.split(/d/i);
-				num = Number(num) || 1;
-				const existTermIndex = array.findIndex((termVal) => termVal[0] === term);
-				if (existTermIndex > -1) array[existTermIndex][1] += num;
-				else array.push([term, num]);
-				return array;
-			}, [])
-			.map(([term, num]) => this.generateTermFormula(num, term, artifactName));
-		return terms.join("+");
+	collectRollData() {
+		let selects = this.element.find('select.die-select');
+		let roll = {
+			base: [],
+			penalty: [],
+			bonus: [],
+		};
+		let elem;
+		for (const select of selects) {
+			elem = $(select);
+			
+		}
 	}
 
 	/**
