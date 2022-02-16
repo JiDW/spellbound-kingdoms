@@ -33,3 +33,10 @@
 }
 .spellbound-kingdoms .roll-dialog .dialog-buttons .dialog-button-cancel { grid-area: 1 / 1 / 2 / 2; }
 .spellbound-kingdoms .roll-dialog .dialog-buttons .dialog-button-roll { grid-area: 1 / 2 / 2 / 3; }
+
+.spellbound-kingdoms .roll-dialog .row-label {
+  text-align: right;
+  line-height: 25px;
+  font-size: 20px;
+  font-family: Mordred-Bold;
+}
