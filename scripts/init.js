@@ -11,7 +11,15 @@ import { SpellboundKingdomsActorSheet } from './sheets/actor.js';
 Hooks.once("init", () => {
   CONFIG.Actor.documentClass = SpellboundKingdomsActor;
   CONFIG.Item.documentClass = SpellboundKingdomsItem;
-  CONFIG.Dice.terms["d"] = SKDie;
+  CONFIG.Dice.terms["e"] = SKDie;
+  // CONFIG.Dice.terms["d"] = SKDie;
+  CONFIG.Dice.terms["2"] = SKDie;
+  CONFIG.Dice.terms["4"] = SKDie;
+  CONFIG.Dice.terms["6"] = SKDie;
+  CONFIG.Dice.terms["8"] = SKDie;
+  CONFIG.Dice.terms["10"] = SKDie;
+  CONFIG.Dice.terms["12"] = SKDie;
+  CONFIG.Dice.terms["20"] = SKDie;
 
   registerSheets();
   initializeHandlebars();

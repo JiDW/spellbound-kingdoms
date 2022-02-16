@@ -58,16 +58,16 @@ Region Sheet
     
 [    ] Dice Roller
     [    ] Roll Dialog
-        [    ] Name of the roll
+        [done] Name of the roll
         [    ] Die of appropriate size is auto chosen
-        [    ] Increase/decrease die size buttons
-            [    ] Handle d20 increase properly
-        [    ] 3 dropdowns for penalty dice
-        [    ] 3 dropdowns for bonus dice (specific die sizes)
+        [done] Handle d20 increase properly
+        [done] 3 dropdowns for penalty dice
+        [done] 3 dropdowns for bonus dice (specific die sizes)
         [ ?? ] penalty/bonus UI improvement: filterable list of all stats/Histories/reputation/items(categorized)/?organization stats?
-    [    ] Roll Execution
-        [    ] Handle exploding dice
-        [    ] Properly handle penalty and bonus dice order
+    [done] Roll Execution
+        /r {{{3d20xkh, {d8xkh, d10xkh}kl}kl}, {d4xkh, d6xkh}kh}kh
+        [done] Handle exploding dice
+        [done] Properly handle penalty and bonus dice order
     [    ] Post-roll adjustments
         [    ] Use Mood to maximize 1 die (take max non-penalty die size)
             [    ] Properly handle d20: take a reroll value or 12

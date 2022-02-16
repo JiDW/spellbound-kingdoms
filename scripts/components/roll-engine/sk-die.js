@@ -1,5 +1,6 @@
 export class SKDie extends Die {
 	constructor(termData) {
+    termData.faces = termData.faces || 4;
 		super(termData);
 	}
 

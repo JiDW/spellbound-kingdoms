@@ -91,7 +91,8 @@
 		});
 		html.find(".dialog-button-roll").click((e) => {
 			this.collectRollData(e);
-			// this.executeRoll();
+			this.executeRoll();
+			this.close();
 		});
 	}
 
@@ -220,12 +221,26 @@
 			base: [],
 			penalty: [],
 			bonus: [],
+			'base-increase': [],
 		};
-		let elem;
+		let elem, value, inc;
 		for (const select of selects) {
 			elem = $(select);
 			
+      for (let id in roll) {
+				if (elem.data('type') === id) {
+					value = elem.val();
+					if (value) roll[id].push(value);
+					break;
+				}
+			}
 		}
+		inc = parseInt(roll["base-increase"][0]) ?? 0;
+		if (roll.base[0] === 'd20' && inc > 0) {
+				roll.base.push(...(new Array(inc).fill('d20')));
+		}
+console.log(roll);
+		this.roll = roll;
 	}
 
 	/**
@@ -279,21 +294,20 @@
 	 * @see ChatMessage
 	 */
 	async executeRoll() {
-		const formula = Object.values(this.roll)
-			.filter((term) => term)
-			.join("+");
-		const roll = FBLRoll.create(
+		let base = `${this.roll.base.length}${this.roll.base[0]}xkh`;
+		let penalty = `{${this.roll.penalty.map(die => die + 'xkh').join(', ')}}kl`;
+		let bonus = `{${this.roll.bonus.map(die => die + 'xkh').join(', ')}}kh`;
+		// {{{3d20xkh, {d8xkh, d10xkh}kl}kl}, {d4xkh, d6xkh}kh}kh
+		// let formula = `{{{${base}, ${penalty}}kl}, ${bonus}}kh`;
+		let formula = this.roll.penalty.length > 0 ? `{${base}, ${penalty}}kl` : base;
+		if (this.roll.bonus.length > 0) formula = `{${formula}, ${bonus}}kh`;
+console.log(formula);
+
+		const roll = Roll.create(
 			formula,
 			{} /* We pass no "data" for the roll to evaluate */,
-			this.getRollOptions(),
+			{} //this.getRollOptions(),
 		);
-		// If Safe casting we might roll 0 dice.
-		if (!roll.dice.length && roll.type === "spell") {
-			roll._evaluated = true;
-			return roll.toMessage();
-		}
-		// If roll is modified call modify Roll
-		if (this.modifier) await roll.modify(this.modifier);
 		// Roll the dice!
 		await roll.roll({ async: true });
 		return roll.toMessage();
