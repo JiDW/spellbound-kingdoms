@@ -3,7 +3,7 @@
     <div class="roll-setup">
         <div class="row-label row-label-base-die">{{localize base.label}}</div>
         <div class="cell-base-die">
-            {{> systems/spellbound-kingdoms/templates/components/roll-engine/partial/die-select.html type="base" blankline=false dieSteps=baseSelect}}
+            {{> systems/spellbound-kingdoms/templates/components/roll-engine/partial/die-select.hbs type="base" blankline=false dieSteps=baseSelect}}
         </div>
         <div class="cell-base-die-increase">
             <select class="die-select die-select-base-increase" data-type="base-increase">
@@ -18,24 +18,24 @@
 
         <div class="row-label row-label-penalty-die">{{localize "SK.DICE.PENALTY"}}</div>
         <div class="cell-penalty-die-1">
-            {{> systems/spellbound-kingdoms/templates/components/roll-engine/partial/die-select.html type="penalty" blankline=true dieSteps=otherSelect}}
+            {{> systems/spellbound-kingdoms/templates/components/roll-engine/partial/die-select.hbs type="penalty" blankline=true dieSteps=otherSelect}}
         </div>
         <div class="cell-penalty-die-2">
-            {{> systems/spellbound-kingdoms/templates/components/roll-engine/partial/die-select.html type="penalty" blankline=true dieSteps=otherSelect}}
+            {{> systems/spellbound-kingdoms/templates/components/roll-engine/partial/die-select.hbs type="penalty" blankline=true dieSteps=otherSelect}}
         </div>
         <div class="cell-penalty-die-3">
-            {{> systems/spellbound-kingdoms/templates/components/roll-engine/partial/die-select.html type="penalty" blankline=true dieSteps=otherSelect}}
+            {{> systems/spellbound-kingdoms/templates/components/roll-engine/partial/die-select.hbs type="penalty" blankline=true dieSteps=otherSelect}}
         </div>
 
         <div class="row-label row-label-bonus-die">{{localize "SK.DICE.BONUS"}}</div>
         <div class="cell-bonus-die-1">
-            {{> systems/spellbound-kingdoms/templates/components/roll-engine/partial/die-select.html type="bonus" blankline=true dieSteps=otherSelect}}
+            {{> systems/spellbound-kingdoms/templates/components/roll-engine/partial/die-select.hbs type="bonus" blankline=true dieSteps=otherSelect}}
         </div>
         <div class="cell-bonus-die-2">
-            {{> systems/spellbound-kingdoms/templates/components/roll-engine/partial/die-select.html type="bonus" blankline=true dieSteps=otherSelect}}
+            {{> systems/spellbound-kingdoms/templates/components/roll-engine/partial/die-select.hbs type="bonus" blankline=true dieSteps=otherSelect}}
         </div>
         <div class="cell-bonus-die-3">
-            {{> systems/spellbound-kingdoms/templates/components/roll-engine/partial/die-select.html type="bonus" blankline=true dieSteps=otherSelect}}
+            {{> systems/spellbound-kingdoms/templates/components/roll-engine/partial/die-select.hbs type="bonus" blankline=true dieSteps=otherSelect}}
         </div>
     </div>
     <div class="dialog-buttons">

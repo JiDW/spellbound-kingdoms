@@ -4,7 +4,7 @@
         <div class="frame-label">{{localize "SK.LABEL.STATS"}}</div>
         <div class="character-stats">
             {{#each data.stats as |stat key|}}
-                {{> systems/spellbound-kingdoms/templates/character/partial/stat.html stat=stat statIdentifier=key}}
+                {{> systems/spellbound-kingdoms/templates/character/partial/stat.hbs stat=stat statIdentifier=key}}
             {{/each}}
         </div>
     </div>
@@ -12,7 +12,7 @@
         <div class="frame-label">{{localize "SK.LABEL.HISTORY"}}</div>
         <div class="character-histories">
             {{#each data.itemsByType.histories as |history key|}}
-                {{> systems/spellbound-kingdoms/templates/character/partial/narrative-item.html type="history" title=history.name value=history.data.value faded=false key=key}}
+                {{> systems/spellbound-kingdoms/templates/character/partial/narrative-item.hbs type="history" title=history.name value=history.data.value faded=false key=key}}
             {{/each}}
         </div>
     </div>
@@ -22,7 +22,7 @@
         <div class="frame-label">{{localize "SK.LABEL.INSPIRATIONS"}}</div>
         <div class="character-inspirations">
             {{#each data.itemsByType.inspirations as |inspiration key|}}
-                {{> systems/spellbound-kingdoms/templates/character/partial/narrative-item.html type="inspiration" title=inspiration.name value=inspiration.data.value faded=false key=key}}
+                {{> systems/spellbound-kingdoms/templates/character/partial/narrative-item.hbs type="inspiration" title=inspiration.name value=inspiration.data.value faded=false key=key}}
             {{/each}}
         </div>
     </div>
@@ -30,7 +30,7 @@
         <div class="frame-label">{{localize "SK.LABEL.REPUTATIONS"}}</div>
         <div class="character-reputations">
             {{#each data.itemsByType.reputations as |reputation key|}}
-                {{> systems/spellbound-kingdoms/templates/character/partial/narrative-item.html type="reputation" title=reputation.name value=reputation.data.value faded=false key=key}}
+                {{> systems/spellbound-kingdoms/templates/character/partial/narrative-item.hbs type="reputation" title=reputation.name value=reputation.data.value faded=false key=key}}
             {{/each}}
         </div>
     </div>
@@ -38,7 +38,7 @@
         <div class="frame-label">{{localize "SK.LABEL.SCARS"}}</div>
         <div class="character-scars">
             {{#each data.itemsByType.scars as |scars key|}}
-                {{> systems/spellbound-kingdoms/templates/character/partial/scar.html scar=scar key=key}}
+                {{> systems/spellbound-kingdoms/templates/character/partial/scar.hbs scar=scar key=key}}
             {{/each}}
         </div>
     </div>
@@ -48,7 +48,7 @@
         <div class="frame-label">{{localize "SK.LABEL.TALENTS"}}</div>
         <div class="character-talents">
             {{#each data.itemsByType.talents as |talent key|}}
-                {{> systems/spellbound-kingdoms/templates/character/partial/talent.html talent=talent key=key}}
+                {{> systems/spellbound-kingdoms/templates/character/partial/talent.hbs talent=talent key=key}}
             {{/each}}
         </div>
     </div>
@@ -56,7 +56,7 @@
         <div class="frame-label">{{localize "SK.LABEL.ABILITIES"}}</div>
         <div class="character-abilities">
             {{#each data.itemsByType.abilities as |ability key|}}
-                {{> systems/spellbound-kingdoms/templates/character/partial/ability.html ability=ability key=key}}
+                {{> systems/spellbound-kingdoms/templates/character/partial/ability.hbs ability=ability key=key}}
             {{/each}}
         </div>
     </div>

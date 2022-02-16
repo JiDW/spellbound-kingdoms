@@ -2,20 +2,20 @@
 
 function preloadHandlebarsTemplates() {
   const templatePaths = [
-    // "systems/spellbound-kingdoms/templates/chat/item.html",
-    "systems/spellbound-kingdoms/templates/character/character.html",
-    "systems/spellbound-kingdoms/templates/character/tab-main.html",
-    "systems/spellbound-kingdoms/templates/character/tab-combat.html",
-    "systems/spellbound-kingdoms/templates/character/tab-inventory.html",
-    "systems/spellbound-kingdoms/templates/character/tab-wealth.html",
-    "systems/spellbound-kingdoms/templates/character/tab-magic.html",
-    "systems/spellbound-kingdoms/templates/character/partial/narrative-item.html",
-    "systems/spellbound-kingdoms/templates/character/partial/scar.html",
-    "systems/spellbound-kingdoms/templates/character/partial/ability.html",
-    "systems/spellbound-kingdoms/templates/character/partial/stat.html",
+    // "systems/spellbound-kingdoms/templates/chat/item.hbs",
+    "systems/spellbound-kingdoms/templates/character/character.hbs",
+    "systems/spellbound-kingdoms/templates/character/tab-main.hbs",
+    "systems/spellbound-kingdoms/templates/character/tab-combat.hbs",
+    "systems/spellbound-kingdoms/templates/character/tab-inventory.hbs",
+    "systems/spellbound-kingdoms/templates/character/tab-wealth.hbs",
+    "systems/spellbound-kingdoms/templates/character/tab-magic.hbs",
+    "systems/spellbound-kingdoms/templates/character/partial/narrative-item.hbs",
+    "systems/spellbound-kingdoms/templates/character/partial/scar.hbs",
+    "systems/spellbound-kingdoms/templates/character/partial/ability.hbs",
+    "systems/spellbound-kingdoms/templates/character/partial/stat.hbs",
     
-    "systems/spellbound-kingdoms/templates/components/roll-engine/dialog.html",
-    "systems/spellbound-kingdoms/templates/components/roll-engine/partial/die-select.html",
+    "systems/spellbound-kingdoms/templates/components/roll-engine/dialog.hbs",
+    "systems/spellbound-kingdoms/templates/components/roll-engine/partial/die-select.hbs",
   ];
   return loadTemplates(templatePaths);
 }

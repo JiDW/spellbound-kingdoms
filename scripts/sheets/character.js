@@ -31,7 +31,7 @@ export class SpellboundKingdomsCharacterSheet extends SpellboundKingdomsActorShe
   }
 
 	get template() {
-		return "systems/spellbound-kingdoms/templates/character/character.html";
+		return "systems/spellbound-kingdoms/templates/character/character.hbs";
 	}
   
   // ********** OVERRIDES *************
@@ -289,7 +289,7 @@ export class SpellboundKingdomsCharacterSheet extends SpellboundKingdomsActorShe
 
   async _postSkillUse(skillName, apSpent) {
     let chatCard = await renderTemplate(
-      'systems/spellbound-kingdoms/templates/chat/skill-use.html', 
+      'systems/spellbound-kingdoms/templates/chat/skill-use.hbs', 
       {skillName: skillName, apSpent: apSpent}
     );
     let chatData = {
@@ -306,7 +306,7 @@ export class SpellboundKingdomsCharacterSheet extends SpellboundKingdomsActorShe
       gear: 'BH.CHAT.GEAR_USE',
     }
     let chatCard = await renderTemplate(
-      'systems/spellbound-kingdoms/templates/chat/item-use.html', 
+      'systems/spellbound-kingdoms/templates/chat/item-use.hbs', 
       {title: game.i18n.localize(titleMap[item.type]), itemName: item.name, description: item.data.data['use-description']}
     );
     let chatData = {
@@ -319,7 +319,7 @@ export class SpellboundKingdomsCharacterSheet extends SpellboundKingdomsActorShe
 
   async _postWeaponUse(weapon, success, apSpent) {
     let chatCard = await renderTemplate(
-      'systems/spellbound-kingdoms/templates/chat/weapon-use.html', 
+      'systems/spellbound-kingdoms/templates/chat/weapon-use.hbs', 
       {
         itemName: weapon.name, 
         description: weapon.data.data['use-description'], 

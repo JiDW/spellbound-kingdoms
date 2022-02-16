@@ -4,11 +4,11 @@ export class SpellboundKingdomsActor extends Actor {
 export class SpellboundKingdomsItem extends Item {
     async sendToChat() {
       // let templateMap = {
-      //   gear: 'systems/spellbound-kingdoms/templates/chat/item.html',
-      //   weapon: 'systems/spellbound-kingdoms/templates/chat/weapon.html',
-      //   skill: 'systems/spellbound-kingdoms/templates/chat/skill.html',
-      //   ability: 'systems/spellbound-kingdoms/templates/chat/ability.html',
-      //   cargo: 'systems/spellbound-kingdoms/templates/chat/cargo.html',
+      //   gear: 'systems/spellbound-kingdoms/templates/chat/item.hbs',
+      //   weapon: 'systems/spellbound-kingdoms/templates/chat/weapon.hbs',
+      //   skill: 'systems/spellbound-kingdoms/templates/chat/skill.hbs',
+      //   ability: 'systems/spellbound-kingdoms/templates/chat/ability.hbs',
+      //   cargo: 'systems/spellbound-kingdoms/templates/chat/cargo.hbs',
       // };
       // if (templateMap[this.type] === undefined) return;
 

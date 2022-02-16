@@ -47,7 +47,7 @@ import { SKDie } from "./sk-die.js";
 	 * Foundry override allowing custom Roll Dialog template (used for spell rolls only atm. but intended to be extensible).
 	 */
 	get template() {
-		return this.options.template || "systems/spellbound-kingdoms/templates/components/roll-engine/dialog.html";
+		return this.options.template || "systems/spellbound-kingdoms/templates/components/roll-engine/dialog.hbs";
 	}
 
 	/**
