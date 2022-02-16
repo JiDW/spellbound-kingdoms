@@ -1,3 +1,5 @@
+import { SKDie } from "./sk-die.js";
+
 /**
  * @extends Application
  * @description An Application that mimics Dialog, but provides more functionality in terms of data binds and handling of a roll object. Supports Forbidden Lands standard rolls and spell rolls.
@@ -102,19 +104,16 @@
 	 * @returns {Object<any>} data object used in rendering handlebars template.
 	 */
 	getData(options = {}) {
+		let baseSelect = JSON.parse(JSON.stringify(SKDie.DIE_STEPS));
+		delete baseSelect['0'];
+		let otherSelect = JSON.parse(JSON.stringify(baseSelect));
+		baseSelect[SKRollHandler.statToDieSize(this.base.value)].selected = true;
+
 		return {
 			title: this.title,
-			dice: {
-				base: this.base,
-				skill: this.skill,
-				gear: this.gear,
-			},
-			artifact: this.artifact,
-			modifier: this.modifier,
-			safecastMax: this.safecastMax,
-			spellDice: this.spellDice,
-			powerLevel: this.powerLevel,
-			spell: this.spell,
+			base: this.base,
+			baseSelect: baseSelect,
+			otherSelect: otherSelect,
 			options,
 		};
 	}
@@ -449,5 +448,22 @@ console.log(formula);
 		const currentValue = speaker?.consumables[consumable]?.value;
 		const newValue = Math.max(currentValue - 1, 0);
 		return await speaker.update({ [`data.consumable.${consumable}.value`]: newValue });
+	}
+
+	/**
+	 * 
+	 * @param {Number} statValue 
+	 * @returns {Number}
+	 */
+	static statToDieSize(statValue) {
+		if (SKDie.DIE_STEPS[statValue] !== undefined) return statValue;
+
+		while (SKDie.DIE_STEPS[statValue] === undefined && statValue > 0) {
+			statValue--;
+		}
+
+		if (SKDie.DIE_STEPS[statValue] === undefined) return 2;
+
+		return statValue;
 	}
 }
