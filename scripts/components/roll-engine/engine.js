@@ -1,4 +1,5 @@
 import { SKDie } from "./sk-die.js";
+import { SKRoll } from "./sk-roll.js";
 
 /**
  * @extends Application
@@ -98,20 +99,6 @@ import { SKDie } from "./sk-die.js";
 		else return game.actors.get(actor);
 	}
 
-	/**
-	 * Generates a roll formula based on number of dice.
-	 * @param {number} number number of dice rolled.
-	 * @param {string} term YZUR internal naming convention for DieTerms. E.g. "base".
-	 * @param {string} flavor usually the name of the die term. E.g. "Strength".
-	 * @returns {string} valid Roll formula.
-	 * @see Roll
-	 */
-	generateTermFormula(number, term, flavor = "") {
-		if (!number) return;
-		flavor = game.i18n.localize(flavor);
-		return `${number}d${term}${flavor ? `[${flavor}]` : ""}`;
-	}
-
 	collectRollData() {
 		let selects = this.element.find('select.die-select');
 		let roll = {
@@ -147,22 +134,26 @@ import { SKDie } from "./sk-die.js";
 	 * @see ChatMessage
 	 */
 	async executeRoll() {
-		let base = `${this.roll.base.length}${this.roll.base[0]}xkh`;
-		let penalty = `{${this.roll.penalty.map(die => die + 'xkh').join(', ')}}kl`;
-		let bonus = `{${this.roll.bonus.map(die => die + 'xkh').join(', ')}}kh`;
+		let base = `${this.roll.base.length}${this.roll.base[0]}xkh[base]`;
+		let penalty = `{${this.roll.penalty.map(die => die + 'xkh').join(', ')}}kl[penalty]`;
+		let bonus = `{${this.roll.bonus.map(die => die + 'xkh').join(', ')}}kh[bonus]`;
 		// {{{3d20xkh, {d8xkh, d10xkh}kl}kl}, {d4xkh, d6xkh}kh}kh
 		// let formula = `{{{${base}, ${penalty}}kl}, ${bonus}}kh`;
 		let formula = this.roll.penalty.length > 0 ? `{${base}, ${penalty}}kl` : base;
 		if (this.roll.bonus.length > 0) formula = `{${formula}, ${bonus}}kh`;
 
-		const roll = Roll.create(
+		const roll = SKRoll.create(
 			formula,
-			{} /* We pass no "data" for the roll to evaluate */,
-			{} //this.getRollOptions(),
+			{name: this.title} /* We pass no "data" for the roll to evaluate */,
+			this.getRollOptions(),
 		);
 		// Roll the dice!
 		await roll.roll({ async: true });
 		return roll.toMessage();
+	}
+
+	getRollOptions() {
+		return {name: this.title};
 	}
 
 	/* -------------------------------------- */

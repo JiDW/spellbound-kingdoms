@@ -1,5 +1,6 @@
 import { SpellboundKingdomsActor, SpellboundKingdomsItem } from "./actor/spellbound-kingdoms.js";
 import { SKDie } from "./components/roll-engine/sk-die.js";
+import { SKRoll } from "./components/roll-engine/sk-roll.js";
 import { initializeHandlebars } from "./hooks/handlebars.js";
 // import { migrateWorld } from "./hooks/migration.js";
 import { registerSheets } from "./hooks/sheets.js";
@@ -11,15 +12,18 @@ import { SpellboundKingdomsActorSheet } from './sheets/actor.js';
 Hooks.once("init", () => {
   CONFIG.Actor.documentClass = SpellboundKingdomsActor;
   CONFIG.Item.documentClass = SpellboundKingdomsItem;
-  CONFIG.Dice.terms["e"] = SKDie;
-  // CONFIG.Dice.terms["d"] = SKDie;
-  CONFIG.Dice.terms["2"] = SKDie;
-  CONFIG.Dice.terms["4"] = SKDie;
-  CONFIG.Dice.terms["6"] = SKDie;
-  CONFIG.Dice.terms["8"] = SKDie;
-  CONFIG.Dice.terms["10"] = SKDie;
-  CONFIG.Dice.terms["12"] = SKDie;
-  CONFIG.Dice.terms["20"] = SKDie;
+  CONFIG.Dice.terms["d"] = SKDie;
+  
+  CONFIG.Dice.rolls[0] = SKRoll;
+  CONFIG.Dice.rolls[0].CHAT_TEMPLATE = 'systems/spellbound-kingdoms/templates/components/roll-engine/chat-card.hbs';
+  CONFIG.Dice.rolls[0].TOOLTIP_TEMPLATE = 'systems/spellbound-kingdoms/templates/components/roll-engine/chat-card-tooltip.hbs';
+  // CONFIG.Dice.terms["2"] = SKDie;
+  // CONFIG.Dice.terms["4"] = SKDie;
+  // CONFIG.Dice.terms["6"] = SKDie;
+  // CONFIG.Dice.terms["8"] = SKDie;
+  // CONFIG.Dice.terms["10"] = SKDie;
+  // CONFIG.Dice.terms["12"] = SKDie;
+  // CONFIG.Dice.terms["20"] = SKDie;
 
   registerSheets();
   initializeHandlebars();

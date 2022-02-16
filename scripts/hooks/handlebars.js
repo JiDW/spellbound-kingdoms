@@ -16,6 +16,8 @@ function preloadHandlebarsTemplates() {
     
     "systems/spellbound-kingdoms/templates/components/roll-engine/dialog.hbs",
     "systems/spellbound-kingdoms/templates/components/roll-engine/partial/die-select.hbs",
+    "systems/spellbound-kingdoms/templates/components/roll-engine/chat-card.hbs",
+    "systems/spellbound-kingdoms/templates/components/roll-engine/chat-card-tooltip.hbs",
   ];
   return loadTemplates(templatePaths);
 }

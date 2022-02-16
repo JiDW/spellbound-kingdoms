@@ -1,3 +1,10 @@
 .dice-tooltip .dice-rolls .roll.d2 {
     background-image: url(../assets/images/icons/plain-circle-grey.svg);
 }
+
+.dice-roll .dice-formula {
+    text-decoration: underline;
+    cursor: pointer;
+    font-family: Mordred-Bold;
+    font-size: 22px;
+}
