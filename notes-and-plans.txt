@@ -23,6 +23,7 @@ Character Sheet
     [    ] Wealth Level & associated gear
         [    ] "Purchace" interface
     [    ] Gear
+    [ ?? ] Display class title
 
 Gear Sheet
 Fighting Style Sheet
@@ -65,10 +66,12 @@ Region Sheet
         [done] 3 dropdowns for bonus dice (specific die sizes)
         [ ?? ] penalty/bonus UI improvement: filterable list of all stats/Histories/reputation/items(categorized)/?organization stats?
     [done] Roll Execution
-        /r {{{3d20xkh, {d8xkh, d10xkh}kl}kl}, {d4xkh, d6xkh}kh}kh
+        /r {{3d20xkh, {d8xkh, d10xkh}kl}kl, {d4xkh, d6xkh}kh}kh
         [done] Handle exploding dice
         [done] Properly handle penalty and bonus dice order
     [    ] Chat card
+        [    ] 3 rows (base, penalty, bonus)
+        [    ] dice explosion style
     [    ] Post-roll adjustments
         [    ] Use Mood to maximize 1 die (take max non-penalty die size)
             [    ] Properly handle d20: take a reroll value or 12

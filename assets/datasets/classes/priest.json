@@ -1,0 +1,189 @@
+{
+  "name": "Priest",
+  "identifier": "priest",
+  "type": "social",
+  "journal": "Noble, Priest, Courtesan",
+  "progression": [
+    {"level": 0},
+    {"level": 1,
+      "title": "Novice",
+      "increases": {
+        "charisma": 0
+      },
+      "fighting-styles": [2],
+      "abilities": ["friends-at-court", "reputation"],
+      "talents": []
+    },
+    {"level": 2,
+      "title": "",
+      "increases": {
+        "charisma": 1
+      },
+      "fighting-styles": [2],
+      "abilities": ["friends-at-court", "reputation"],
+      "talents": []
+    },
+    {"level": 3,
+      "title": "",
+      "increases": {
+        "charisma": 1
+      },
+      "fighting-styles": [2, 1],
+      "abilities": ["friends-at-court", "reputation"],
+      "talents": []
+    },
+    {"level": 4,
+      "title": "",
+      "increases": {
+        "charisma": 1
+      },
+      "fighting-styles": [2, 1],
+      "abilities": ["friends-at-court", "reputation"],
+      "talents": [1]
+    },
+    {"level": 5,
+      "title": "Priest",
+      "increases": {
+        "charisma": 1
+      },
+      "fighting-styles": [3, 1],
+      "abilities": ["friends-at-court", "reputation", "impose"],
+      "talents": [1]
+    },
+    {"level": 6,
+      "title": "",
+      "increases": {
+        "charisma": 1
+      },
+      "fighting-styles": [3, 2],
+      "abilities": ["friends-at-court", "reputation", "impose", "leader"],
+      "talents": [1, 1]
+    },
+    {"level": 7,
+      "title": "",
+      "increases": {
+        "charisma": 2
+      },
+      "fighting-styles": [3, 2, 1],
+      "abilities": ["friends-at-court", "reputation", "impose", "leader"],
+      "talents": [1, 1]
+    },
+    {"level": 8,
+      "title": "",
+      "increases": {
+        "charisma": 2
+      },
+      "fighting-styles": [3, 2, 1],
+      "abilities": ["friends-at-court", "reputation", "impose", "leader"],
+      "talents": [1, 1, 1]
+    },
+    {"level": 9,
+      "title": "",
+      "increases": {
+        "charisma": 2
+      },
+      "fighting-styles": [3, 2, 2],
+      "abilities": ["friends-at-court", "reputation", "impose", "leader"],
+      "talents": [1, 1, 1]
+    },
+    {"level": 10,
+      "title": "Bishop",
+      "increases": {
+        "charisma": 2
+      },
+      "fighting-styles": [3, 3, 2],
+      "abilities": ["friends-at-court", "reputation", "impose", "leader", "secrets"],
+      "talents": [2, 1, 1]
+    },
+    {"level": 11,
+      "title": "",
+      "increases": {
+        "charisma": 3
+      },
+      "fighting-styles": [3, 3, 2],
+      "abilities": ["friends-at-court", "reputation", "impose", "leader", "secrets"],
+      "talents": [2, 1, 1]
+    },
+    {"level": 12,
+      "title": "",
+      "increases": {
+        "charisma": 3
+      },
+      "fighting-styles": [3, 3, 2],
+      "abilities": ["friends-at-court", "reputation", "impose", "leader", "secrets"],
+      "talents": [2, 2, 1]
+    },
+    {"level": 13,
+      "title": "",
+      "increases": {
+        "charisma": 3
+      },
+      "fighting-styles": [3, 3, 2, 1],
+      "abilities": ["friends-at-court", "reputation", "impose", "leader", "secrets"],
+      "talents": [2, 2, 1]
+    },
+    {"level": 14,
+      "title": "",
+      "increases": {
+        "charisma": 3
+      },
+      "fighting-styles": [3, 3, 2, 1],
+      "abilities": ["friends-at-court", "reputation", "impose", "leader", "secrets"],
+      "talents": [2, 2, 2]
+    },
+    {"level": 15,
+      "title": "Archbishop",
+      "increases": {
+        "charisma": 3
+      },
+      "fighting-styles": [3, 3, 2, 1],
+      "abilities": ["friends-at-court", "reputation", "impose", "leader", "twist-the-knife", "secrets"],
+      "talents": [2, 2, 2]
+    },
+    {"level": 16,
+      "title": "",
+      "increases": {
+        "charisma": 3
+      },
+      "fighting-styles": [3, 3, 2, 1],
+      "abilities": ["friends-at-court", "reputation", "impose", "leader", "twist-the-knife", "secrets"],
+      "talents": [3, 2, 2]
+    },
+    {"level": 17,
+      "title": "",
+      "increases": {
+        "charisma": 4
+      },
+      "fighting-styles": [3, 3, 2, 2],
+      "abilities": ["friends-at-court", "reputation", "impose", "leader", "twist-the-knife", "secrets"],
+      "talents": [3, 2, 2]
+    },
+    {"level": 18,
+      "title": "",
+      "increases": {
+        "charisma": 4
+      },
+      "fighting-styles": [3, 3, 2, 2],
+      "abilities": ["friends-at-court", "reputation", "impose", "leader", "twist-the-knife", "secrets"],
+      "talents": [3, 3, 2]
+    },
+    {"level": 19,
+      "title": "",
+      "increases": {
+        "charisma": 4
+      },
+      "fighting-styles": [3, 3, 3, 2],
+      "abilities": ["friends-at-court", "reputation", "impose", "leader", "twist-the-knife", "secrets"],
+      "talents": [3, 3, 2]
+    },
+    {"level": 20,
+      "title": "Cardinal",
+      "increases": {
+        "charisma": 4
+      },
+      "fighting-styles": [3, 3, 3, 2],
+      "abilities": ["friends-at-court", "reputation", "impose", "leader", "ruin", "secrets", "twist-the-knife", "toys-and-games"],
+      "talents": [3, 3, 3]
+    }
+  ]
+}
