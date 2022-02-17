@@ -1,6 +1,7 @@
 import { SpellboundKingdomsCharacterSheet } from "../sheets/character-sheet.js";
 import { SpellboundKingdomsInspirationSheet } from "../sheets/inspiration-sheet.js";
 import { SpellboundKingdomsHistorySheet } from "../sheets/history-sheet.js";
+import { SpellboundKingdomsScarSheet } from "../sheets/scar-sheet.js";
 // import { SpellboundKingdomsWeaponSheet } from "../sheets/weapon.js";
 // import { SpellboundKingdomsGearSheet } from "../sheets/gear.js";
 // import { SpellboundKingdomsSkillSheet } from "../sheets/skill.js";
@@ -16,6 +17,7 @@ export function registerSheets() {
   Items.unregisterSheet("core", ItemSheet);
   Items.registerSheet("spellbound-kingdoms", SpellboundKingdomsInspirationSheet, { types: ["inspiration"], makeDefault: true });
   Items.registerSheet("spellbound-kingdoms", SpellboundKingdomsHistorySheet, { types: ["history"], makeDefault: true });
+  Items.registerSheet("spellbound-kingdoms", SpellboundKingdomsScarSheet, { types: ["scar"], makeDefault: true });
   // Items.registerSheet("spellbound-kingdoms", SpellboundKingdomsWeaponSheet, { types: ["weapon"], makeDefault: true });
   // Items.registerSheet("spellbound-kingdoms", SpellboundKingdomsGearSheet, { types: ["gear"], makeDefault: true });
   // Items.registerSheet("spellbound-kingdoms", SpellboundKingdomsSkillSheet, { types: ["skill"], makeDefault: true });

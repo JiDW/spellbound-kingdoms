@@ -1,0 +1,15 @@
+<form class="{{cssClass}}" autocomplete="off">
+    <div class="grid-scar">
+        <div class="avatar">
+            <img class="profile-img" src="{{data.img}}" data-edit="img" title="{{data.name}}" />
+        </div>
+        <div class="scar-name">
+            <label class="form-gear-label">{{localize "SK.LABEL.NAME"}}:</label>
+            <input name="name" type="text" value="{{data.name}}" />
+        </div>
+        <div class="scar-description">
+            <label class="form-gear-label">{{localize "SK.LABEL.DESCRIPTION"}}:</label>
+            <textarea class="gear-description" name="data.description">{{data.data.description}}</textarea>
+        </div>
+    </div>
+</form>

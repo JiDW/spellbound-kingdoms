@@ -102,13 +102,13 @@ input.grid-input { width: 81%; }
     overflow-y: scroll;
 }
 .spellbound-kingdoms .character .tab-main .character-histories {
-    height: 187px;
-    max-height: 187px;
+    height: 186px;
+    max-height: 186px;
     overflow-y: scroll;
 }
 .spellbound-kingdoms .character .tab-main .character-reputations {
-    height: 341px;
-    max-height: 341px;
+    height: 340px;
+    max-height: 340px;
     overflow-y: scroll;
 }
 .spellbound-kingdoms .character .tab-main .character-scars {

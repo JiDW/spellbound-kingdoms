@@ -20,9 +20,12 @@
         </div>
     </div>
     <div class="frame">
-        <div class="frame-label">{{localize "SK.LABEL.SCARS"}}</div>
+        <div class="frame-label">
+            {{localize "SK.LABEL.SCARS"}}
+            <button class="item-create" data-type="scar">+</button>
+        </div>
         <div class="character-scars">
-            {{#each data.itemsByType.scar as |scars key|}}
+            {{#each data.itemsByType.scar as |scar key|}}
                 {{> systems/spellbound-kingdoms/templates/character/partial/scar.hbs scar=scar key=key}}
             {{/each}}
         </div>
