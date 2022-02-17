@@ -175,13 +175,37 @@ import { SKRoll } from "./sk-roll.js";
 	}
 
 	/**
-	 * Handles pushing of a roll. Mainly by utilizing YZUR push method. Then updating the character pushing the roll with attribute, gear damage and willpower.
-	 * @param {ChatMessage} msg the chat message that was clicked when pushing the roll.
-	 * @returns pushes then updates actor or simply pushes the roll if no actor is presented.
+	 * Handles usage of mood on a roll.
+	 * @param {ChatMessage} msg the chat message that was clicked when mooding the roll.
+	 * @returns Updates the roll then updates an actor if present.
 	 */
-	static async pushRoll(msg) {
+	static async moodRoll(msg) {
 		const roll = msg.roll;
-		await roll.push({ async: true });
+		await roll.mood({ async: true });
+
+		return roll.toMessage();
+	}
+
+	/**
+	 * Handles usage of weak inspiration on a roll.
+	 * @param {ChatMessage} msg the chat message that was clicked when inspiring the roll.
+	 * @returns Updates the roll then updates an actor if present.
+	 */
+	static async weakInspireRoll(msg) {
+		const roll = msg.roll;
+		await roll.weakInspire({ async: true });
+
+		return roll.toMessage();
+	}
+
+	/**
+	 * Handles usage of strong inspiration on a roll.
+	 * @param {ChatMessage} msg the chat message that was clicked when inspiring the roll.
+	 * @returns Updates the roll then updates an actor if present.
+	 */
+	static async strongInspireRoll(msg) {
+		const roll = msg.roll;
+		await roll.strongInspire({ async: true });
 
 		return roll.toMessage();
 	}

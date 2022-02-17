@@ -136,4 +136,53 @@ export class SKRoll extends Roll {
 		// Renders the roll display template.
 		return renderTemplate(chatOptions.template, chatData);
 	}
+	
+	/* -------------------------------------------- */
+	/*  Roll modification (mood, inspiration)       */
+	/* -------------------------------------------- */
+
+	/**
+	 * Uses the mood to improve the roll.
+	 * @param {object} [options={}] Options which inform how the Roll is evaluated
+	 * @param {boolean} [options.async=false] Evaluate the roll asynchronously, receiving a Promise as the returned value
+	 * @returns {SKRoll} The roll instance, modified
+	 */
+	 async mood({ async } = {}) {
+		if (!this._evaluated) await this.evaluate({ async });
+		if (!this.moodable) return this;
+
+		console.log('DO MOOD');
+
+		return this;
+	}
+
+	/**
+	 * Uses weak inspiraiton to improve the roll.
+	 * @param {object} [options={}] Options which inform how the Roll is evaluated
+	 * @param {boolean} [options.async=false] Evaluate the roll asynchronously, receiving a Promise as the returned value
+	 * @returns {SKRoll} The roll instance, modified
+	 */
+	 async weakInspire({ async } = {}) {
+		if (!this._evaluated) await this.evaluate({ async });
+		if (!this.inspirable) return this;
+
+		console.log('DO WEAK INSPIRATION');
+
+		return this;
+	}
+
+	/**
+	 * Uses strong inspiraiton to improve the roll.
+	 * @param {object} [options={}] Options which inform how the Roll is evaluated
+	 * @param {boolean} [options.async=false] Evaluate the roll asynchronously, receiving a Promise as the returned value
+	 * @returns {SKRoll} The roll instance, modified
+	 */
+	 async strongInspire({ async } = {}) {
+		if (!this._evaluated) await this.evaluate({ async });
+		if (!this.inspirable) return this;
+
+		console.log('DO STRONG INSPIRATION');
+
+		return this;
+	}
 }

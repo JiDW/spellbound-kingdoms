@@ -1,4 +1,5 @@
 import { SpellboundKingdomsActor, SpellboundKingdomsItem } from "./actor/spellbound-kingdoms.js";
+import { SKRollHandler } from "./components/roll-engine/engine.js";
 import { SKDie } from "./components/roll-engine/sk-die.js";
 import { SKRoll } from "./components/roll-engine/sk-roll.js";
 import { initializeHandlebars } from "./hooks/handlebars.js";
@@ -61,22 +62,42 @@ Hooks.on("renderChatMessage", async (app, html) => {
 		});
 	}
 
-	const skButton = html.find(".sk-button");
-	if (skButton) {
-		skButton.addEventListener("click", async (e) => {
-      if ($(e.eventTarget).data('action')) {
+	const skButtons = html.find(".sk-button");
+	if (skButtons.length > 0) {
+    for (const skButton of skButtons) {
+      skButton.addEventListener("click", async (e) => {
+        let removeButton = false;
+        let action = $(e.target).data('action');
+        switch (action) {
+          case 'mood':
+            if (app.roll.moodable) {
+              await SKRollHandler.moodRoll(app);
+              removeButton = true;
+            }
+            break;
+          case 'weak-inspiration':
+            if (app.roll.inspirable) {
+              await SKRollHandler.weakInspireRoll(app);
+              removeButton = true;
+            }
+            break;
+          case 'strong-inspiration':
+            if (app.roll.moodable) {
+              await SKRollHandler.strongInspireRoll(app);
+              removeButton = true;
+            }
+            break;
+        }
 
-      }
-			if (app.roll.moodable) {
-				await FBLRollHandler.moodRoll(app);
-
-				// If the roll is mooded, we want to remove the button.
-				if (game.modules.get("dice-so-nice").active)
-					Hooks.once("diceSoNiceRollComplete", () => {
-						app.delete();
-					});
-				else app.delete();
-			}
-		});
+        if (removeButton) {
+          // If the roll is modified, we want to remove the button.
+          if (game.modules.get("dice-so-nice").active)
+            Hooks.once("diceSoNiceRollComplete", () => {
+              app.delete();
+            });
+          else app.delete();
+        }
+      });
+    };
 	}
 });
