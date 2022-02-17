@@ -7,7 +7,12 @@
     --main-color: #995200;
     --light-main-color: #b57e3e;
     --label-color: #6B233D;
-    --alternate-background-color: #DFECF8;
+    --alternate-background-color: rgba(244,246,238,0.5);;
+}
+
+.spellbound-kingdoms a:hover {
+    text-shadow: none;
+    color: var(--main-color);
 }
 
 .spellbound-kingdoms .flex {

@@ -177,14 +177,6 @@
         "cash-cost": {"value": 0},
         "description": ""
       },
-      "usable": {
-        "use-description": "",
-        "uses": {
-          "value": 0,
-          "max": 0
-        },
-        "refresh": "scene/day"
-      },
       "identifier": {
         "identifier": {
           "value": ""
@@ -285,7 +277,10 @@
       "description": ""
     },
     "inspiration": {
-      "templates": ["usable"],
+      "uses": {
+        "value": 1,
+        "max": 1
+      },
       "value": 1,
       "description": ""
     },

@@ -5,14 +5,14 @@ Character Sheet
         [done] Name
         [done] Classes & levels
         [done] Race
-    [    ] Stats
-        [    ] Core stats (Str, Qck, Rsn, Cha, Magic, Heart)
+    [done] Stats
+        [done] Core stats (Str, Qck, Rsn, Cha, Magic, Heart)
         [done] Mood (val/max ???)
         [done] Body (cur/max)
-    [    ] Narrative Stats
-        [    ] Inspirations
-        [    ] History & Skills
-        [    ] Reputations
+    [done] Narrative Stats
+        [done] Inspirations
+        [done] History & Skills
+        [done] Reputations
     [    ] Scars 
     [    ] Fighting/Magic Styles Tab
     [    ] Spells
@@ -23,10 +23,11 @@ Character Sheet
     [    ] Wealth Level & associated gear
         [    ] "Purchace" interface
     [    ] Gear
+    [    ] Implement "Post to Chat"
     [ ?? ] Display class title
 
-Gear Sheet
-Fighting Style Sheet
+[    ] Gear Sheet
+[    ] Fighting Style Sheet
     type: "fighting", "magic"
     level: 1 - neophyte, 2 - apprentice, 3 - master
     Maneuvers
@@ -47,15 +48,15 @@ Fighting Style Sheet
                 it means that there are arrows from the current maneuver to the listed maneuvers
 
 
-Talent Sheet
-Scar Sheet
-Spell Sheet
-Inspiration Sheet
-History Sheet
-Ability Sheet
-Region Sheet
-    hide/reveal region info to PCs
-    Sidebar with info (like calendar/weather)
+[    ] Talent Sheet
+[    ] Scar Sheet
+[    ] Spell Sheet
+[done] Inspiration Sheet
+[done] History Sheet
+[    ] Ability Sheet
+[    ] Region Sheet
+    [    ] hide/reveal region info to PCs
+    [    ] Sidebar with info (like calendar/weather)
     
 [    ] Dice Roller
     [done] Roll Dialog

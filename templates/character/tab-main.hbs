@@ -9,36 +9,45 @@
         </div>
     </div>
     <div class="frame">
-        <div class="frame-label">{{localize "SK.LABEL.HISTORY"}}</div>
+        <div class="frame-label">
+            {{localize "SK.LABEL.HISTORY"}}
+            <button class="item-create" data-type="history" data-subtype="history">+</button>
+        </div>
         <div class="character-histories">
-            {{#each data.itemsByType.histories as |history key|}}
-                {{> systems/spellbound-kingdoms/templates/character/partial/narrative-item.hbs type="history" title=history.name value=history.data.value faded=false key=key}}
-            {{/each}}
-        </div>
-    </div>
-</div>
-<div class="main-column">
-    <div class="frame">
-        <div class="frame-label">{{localize "SK.LABEL.INSPIRATIONS"}}</div>
-        <div class="character-inspirations">
-            {{#each data.itemsByType.inspirations as |inspiration key|}}
-                {{> systems/spellbound-kingdoms/templates/character/partial/narrative-item.hbs type="inspiration" title=inspiration.name value=inspiration.data.value faded=false key=key}}
-            {{/each}}
-        </div>
-    </div>
-    <div class="frame">
-        <div class="frame-label">{{localize "SK.LABEL.REPUTATIONS"}}</div>
-        <div class="character-reputations">
-            {{#each data.itemsByType.reputations as |reputation key|}}
-                {{> systems/spellbound-kingdoms/templates/character/partial/narrative-item.hbs type="reputation" title=reputation.name value=reputation.data.value faded=false key=key}}
+            {{#each data.itemsByType.history as |history key|}}
+                {{> systems/spellbound-kingdoms/templates/character/partial/narrative-item.hbs type="history" item=history faded=false key=key}}
             {{/each}}
         </div>
     </div>
     <div class="frame">
         <div class="frame-label">{{localize "SK.LABEL.SCARS"}}</div>
         <div class="character-scars">
-            {{#each data.itemsByType.scars as |scars key|}}
+            {{#each data.itemsByType.scar as |scars key|}}
                 {{> systems/spellbound-kingdoms/templates/character/partial/scar.hbs scar=scar key=key}}
+            {{/each}}
+        </div>
+    </div>
+</div>
+<div class="main-column">
+    <div class="frame frame-inspirations">
+        <div class="frame-label">
+            {{localize "SK.LABEL.INSPIRATIONS"}}
+            <button class="item-create" data-type="inspiration">+</button>
+        </div>
+        <div class="character-inspirations">
+            {{#each data.itemsByType.inspiration as |inspiration key|}}
+                {{> systems/spellbound-kingdoms/templates/character/partial/narrative-item.hbs type="inspiration" item=inspiration faded=false key=key}}
+            {{/each}}
+        </div>
+    </div>
+    <div class="frame">
+        <div class="frame-label">
+            {{localize "SK.LABEL.REPUTATIONS"}}
+            <button class="item-create" data-type="history" data-subtype="reputation">+</button>
+        </div>
+        <div class="character-reputations">
+            {{#each data.itemsByType.reputation as |reputation key|}}
+                {{> systems/spellbound-kingdoms/templates/character/partial/narrative-item.hbs type="reputation" item=reputation value=reputation faded=false key=key}}
             {{/each}}
         </div>
     </div>
@@ -47,7 +56,7 @@
     <div class="frame">
         <div class="frame-label">{{localize "SK.LABEL.TALENTS"}}</div>
         <div class="character-talents">
-            {{#each data.itemsByType.talents as |talent key|}}
+            {{#each data.itemsByType.talent as |talent key|}}
                 {{> systems/spellbound-kingdoms/templates/character/partial/talent.hbs talent=talent key=key}}
             {{/each}}
         </div>
@@ -55,7 +64,7 @@
     <div class="frame frame-character-abilities">
         <div class="frame-label">{{localize "SK.LABEL.ABILITIES"}}</div>
         <div class="character-abilities">
-            {{#each data.itemsByType.abilities as |ability key|}}
+            {{#each data.itemsByType.ability as |ability key|}}
                 {{> systems/spellbound-kingdoms/templates/character/partial/ability.hbs ability=ability key=key}}
             {{/each}}
         </div>

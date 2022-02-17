@@ -26,6 +26,16 @@
   "SK.LABEL.TALENTS": "Talents",
   "SK.LABEL.ABILITIES": "Abilities",
 
+  "SK.LABEL.VALUE": "Value",
+  "SK.LABEL.USES": "Uses",
+  "SK.LABEL.DESCRIPTION": "Description",
+  "SK.LABEL.TYPE": "Type",
+
+  "SK.TYPE.HISTORY": "History",
+  "SK.TYPE.REPUTATION": "Reputation",
+
+  "SK.BUTTON.DELETE": "Delete",
+
   "SK.TAB.MAIN": "MAIN",
   "SK.TAB.COMBAT": "COMBAT",
   "SK.TAB.INVENTORY": "INVENTORY",
@@ -50,6 +60,8 @@
   "SK.TOOLTIP.USE_MOOD": "Spend 1 Mood to maximize one die (no explosion)",
   "SK.TOOLTIP.USE_WEAK_INSPIRATION": "Use weak inspiration (of value 1 or not narrated) to roll Heart as a bonus die",
   "SK.TOOLTIP.USE_STRONG_INSPIRATION": "Use strong inspiration (2+ value and narrated) to gain max value on your current die and your Heart die (they explode)",
+
+  "SHEET.HEADER.POST_ITEM": "Post Item",
 
   "":""
 }

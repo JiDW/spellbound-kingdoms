@@ -1,4 +1,4 @@
-import { SpellboundKingdomsActorSheet } from "./actor.js";
+import { SpellboundKingdomsActorSheet } from "./actor-sheet.js";
 // import { AddItemDialog } from "../dialog/add-item-dialog.js";
 // import { ReputationStats } from '../component/reputation-stats.js';
 // import { ApPerSkillDialog } from "../dialog/ap-per-skill-dialog.js";
@@ -258,7 +258,7 @@ export class SpellboundKingdomsCharacterSheet extends SpellboundKingdomsActorShe
   }
 
   computeTalentData(data) {
-    data.data.talentCount = Object.keys(data.data.itemsByType.talents).length;
+    data.data.talentCount = Object.keys(data.data.itemsByType.talent).length;
     // data.data.allowedTalentCount = CONFIG.SpellboundKingdoms;
   }
 

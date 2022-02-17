@@ -81,7 +81,7 @@ button.add-active-effect {
 .sheet.item .skill-description, 
 .sheet.item .ability-description,
 .sheet.item .component-description {
-    height: 70px;
+    height: 85px;
 }
 
 .sheet.item .grid {
@@ -149,17 +149,39 @@ button.add-active-effect {
     grid-column: span 3;
 }
 
-/* ---- cargo ---- */
-.grid .cargo-name {
-    grid-column: span 6;
+/* ---- inspiration ---- */
+.grid-inspiration {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    grid-column-gap: 6px;
+    grid-row-gap: 0px;
 }
-.grid .cargo-weight {
-    grid-column: span 4;
+    
+.grid-inspiration .avatar                  { grid-area: 1 / 1 / 3 / 2; }
+.grid-inspiration .inspiration-name        { grid-area: 1 / 2 / 2 / 6; }
+.grid-inspiration .inspiration-value       { grid-area: 2 / 2 / 3 / 4; }
+.grid-inspiration .item-uses               { grid-area: 2 / 4 / 4 / 6; }
+.grid-inspiration .inspiration-description { grid-area: 3 / 1 / 6 / 6; }
+
+.grid-inspiration .inspiration-name input { width: 80%; }
+
+/* ---- history ---- */
+.grid-history {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    grid-column-gap: 6px;
+    grid-row-gap: 0px;
 }
-.grid .cargo-description {
-    grid-column: span 8;
-    grid-row: span 3;
-}
+    
+.grid-history .avatar              { grid-area: 1 / 1 / 3 / 2; }
+.grid-history .history-name        { grid-area: 1 / 2 / 2 / 6; }
+.grid-history .history-value       { grid-area: 2 / 2 / 3 / 4; }
+.grid-history .history-type        { grid-area: 2 / 4 / 3 / 6; }
+.grid-history .history-description { grid-area: 3 / 1 / 6 / 6; }
+
+.grid-history .history-name input { width: 80%; }
 
 /* ---- ability ---- */
 .grid .form-ability-name {

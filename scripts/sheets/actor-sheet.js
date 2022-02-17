@@ -45,55 +45,55 @@ export class SpellboundKingdomsActorSheet extends ActorSheet {
 
   categorizeItems() {
     let itemsByType = {
-      weapons: {}, 
-      armors: {}, 
+      weapon: {}, 
+      armor: {}, 
       fashion: {}, 
-      vehicles: {},
-      'fighting-styles': {},
-      maneuvers: {},
-      talents: {},
-      scars: {},
-      spells: {},
-      inspirations: {},
-      histories: {},
-      reputations: {},
-      abilities: {},
+      vehicle: {},
+      'fighting-style': {},
+      maneuver: {},
+      talent: {},
+      scar: {},
+      spell: {},
+      inspiration: {},
+      history: {},
+      reputation: {},
+      ability: {},
     };
     let type, subtype;
 
-    this.actor.items.forEach((item) => {
+    this.actor.data.items.forEach((item) => {
       type = item.data.type;
       subtype = item.data.data.type;
-      if (itemsByType[type] !== undefined) {
-        itemsByType[type][item.id] = item;
-      } else if (itemsByType[subtype] !== undefined) {
+      if (itemsByType[subtype] !== undefined) {
         itemsByType[subtype][item.id] = item;
+      } else if (itemsByType[type] !== undefined) {
+        itemsByType[type][item.id] = item;
       }
     });
 
-    itemsByType.weapons = this._sortItems(
-      itemsByType.weapons, 
-      (itemId1, itemId2) => itemsByType.weapons[itemId1].name.localeCompare(itemsByType.weapons[itemId2].name)
+    itemsByType.weapon = this._sortItems(
+      itemsByType.weapon, 
+      (itemId1, itemId2) => itemsByType.weapon[itemId1].name.localeCompare(itemsByType.weapon[itemId2].name)
     );
-    itemsByType.armors = this._sortItems(
-      itemsByType.armors, 
-      (itemId1, itemId2) => itemsByType.armors[itemId1].name.localeCompare(itemsByType.armors[itemId2].name)
+    itemsByType.armor = this._sortItems(
+      itemsByType.armor, 
+      (itemId1, itemId2) => itemsByType.armor[itemId1].name.localeCompare(itemsByType.armor[itemId2].name)
     );
     itemsByType.fashion = this._sortItems(
       itemsByType.fashion, 
       (itemId1, itemId2) => itemsByType.fashion[itemId1].name.localeCompare(itemsByType.fashion[itemId2].name)
     );
-    itemsByType.talents = this._sortItems(
-      itemsByType.talents,
-      (itemId1, itemId2) => itemsByType.talents[itemId1].name.localeCompare(itemsByType.talents[itemId2].name)
+    itemsByType.talent = this._sortItems(
+      itemsByType.talent,
+      (itemId1, itemId2) => itemsByType.talent[itemId1].name.localeCompare(itemsByType.talent[itemId2].name)
     );
-    itemsByType.spells = this._sortItems(
-      itemsByType.spells,
-      (itemId1, itemId2) => itemsByType.spells[itemId1].name.localeCompare(itemsByType.spells[itemId2].name)
+    itemsByType.spell = this._sortItems(
+      itemsByType.spell,
+      (itemId1, itemId2) => itemsByType.spell[itemId1].name.localeCompare(itemsByType.spell[itemId2].name)
     );
-    itemsByType.abilities = this._sortItems(
-      itemsByType.abilities,
-      (itemId1, itemId2) => itemsByType.abilities[itemId1].name.localeCompare(itemsByType.abilities[itemId2].name)
+    itemsByType.ability = this._sortItems(
+      itemsByType.ability,
+      (itemId1, itemId2) => itemsByType.ability[itemId1].name.localeCompare(itemsByType.ability[itemId2].name)
     );
 
     return itemsByType;
@@ -122,7 +122,12 @@ export class SpellboundKingdomsActorSheet extends ActorSheet {
     event.preventDefault();
     let header = event.currentTarget;
     let data = duplicate(header.dataset);
-    data["name"] = `New ${data.type.capitalize()}`;
+    let type = (data.subtype ? data.subtype.capitalize() : data.type.capitalize());
+    data["name"] = `New ${type}`;
+    if (data.subtype) {
+      data['data.type'] = data.subtype;
+      delete data.subtype;
+    }
     this.actor.createEmbeddedDocuments("Item", [data], { renderSheet: true });
   }
 

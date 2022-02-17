@@ -1,0 +1,26 @@
+<form class="{{cssClass}}" autocomplete="off">
+    <div class="grid-inspiration">
+        <div class="avatar">
+            <img class="profile-img" src="{{data.img}}" data-edit="img" title="{{data.name}}" />
+        </div>
+        <div class="inspiration-name">
+            <label class="form-gear-label">{{localize "SK.LABEL.NAME"}}</label>
+            <input name="name" type="text" value="{{data.name}}" />
+        </div>
+        <div class="inspiration-value">
+            <label class="form-gear-label">{{localize "SK.LABEL.VALUE"}}</label>
+            <input class="shortest-num" name="data.value" type="number" value="{{data.data.value}}" min="0" data-dtype="Number" />
+        </div>
+        <div class="item-uses">
+            <label class="form-gear-label">{{localize "SK.LABEL.USES"}}</label>
+            <input class="shortest-num" name="data.uses.value" type="number" value="{{data.data.uses.value}}" 
+                min="0" data-dtype="Number" /> /
+            <input class="shortest-num" name="data.uses.max" type="number" value="{{data.data.uses.max}}" 
+                min="0" data-dtype="Number" />
+        </div>
+        <div class="inspiration-description">
+            <label class="form-gear-label">{{localize "SK.LABEL.DESCRIPTION"}}</label>
+            <textarea class="gear-description" name="data.description">{{data.data.description}}</textarea>
+        </div>
+    </div>
+</form>

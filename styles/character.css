@@ -40,9 +40,10 @@ input.grid-input { width: 81%; }
 .spellbound-kingdoms .character .frame {
     border: 6px ridge;
     border-color: var(--light-main-color);
-    padding: 6px;
-    margin-bottom: 8px;
+    padding: 6px 0px 6px 2px;
+    margin-bottom: 4px;
     min-height: 150px;
+    border-radius: 10px;
 }
 .spellbound-kingdoms .character .frame .frame-label {
     text-transform: uppercase;
@@ -60,7 +61,7 @@ input.grid-input { width: 81%; }
 .spellbound-kingdoms .character .tab-main .main-column {
     float: left;
     width: 33.33%;
-    padding: 4px;
+    padding: 2px;
 }
 
 .spellbound-kingdoms .character .tab-main .character-stats {
@@ -95,8 +96,32 @@ input.grid-input { width: 81%; }
     cursor: pointer;
 }
 
-.spellbound-kingdoms .character .tab-main .frame-character-abilities {
-    /* height: 100%; */
+.spellbound-kingdoms .character .tab-main .character-inspirations {
+    height: 156px;
+    max-height: 156px;
+    overflow-y: scroll;
+}
+.spellbound-kingdoms .character .tab-main .character-histories {
+    height: 187px;
+    max-height: 187px;
+    overflow-y: scroll;
+}
+.spellbound-kingdoms .character .tab-main .character-reputations {
+    height: 341px;
+    max-height: 341px;
+    overflow-y: scroll;
+}
+.spellbound-kingdoms .character .tab-main .character-scars {
+    height: 128;
+    max-height: 128;
+    overflow-y: scroll;
+}
+
+.spellbound-kingdoms .character .tab-main .item {
+    display: grid;
+    grid-template-columns: min-content auto min-content;
+    grid-column-gap: 2px;
+    grid-row-gap: 0px;
 }
 
 
@@ -232,14 +257,12 @@ button.use-item { /* use ability */
     line-height: 18px;
 }
 
-button.add-skill, button.add-ability, button.item-create {
-    width: fit-content;
-    margin: 0px;
-    font-size: 12px;
-    height: 18px;
-    vertical-align: middle;
+button.item-create, button.add-history {
+    width: 24px;
+    height: 24px;
     line-height: 18px;
-    border: 0px;
+    position: absolute;
+    font-size: 20px;
 }
 
 .ability-uses {

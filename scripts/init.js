@@ -6,7 +6,7 @@ import { initializeHandlebars } from "./hooks/handlebars.js";
 // import { migrateWorld } from "./hooks/migration.js";
 import { registerSheets } from "./hooks/sheets.js";
 import { loadSystemSettings, registerSettings } from "./hooks/system-settings.js";
-import { SpellboundKingdomsActorSheet } from './sheets/actor.js';
+import { SpellboundKingdomsActorSheet } from './sheets/actor-sheet.js';
 
 // CONFIG.debug.hooks = true;
 
