@@ -2,6 +2,7 @@ export class SKRoll extends Roll {
   
   constructor(formula, data={}, options={}) {
 		if (options.name == undefined) options.name = data.name;
+		if (options.type == undefined) options.type = data.type;
 
     super(formula, data, options);
     
@@ -19,6 +20,36 @@ export class SKRoll extends Roll {
 	}
 	set name(str) {
 		this.options.name = str;
+	}
+
+	/**
+	 * The name of the roll.
+	 * @type {string}
+	 * @readonly
+	 */
+	get type() {
+		return this.options.type;
+	}
+	set type(str) {
+		this.options.type = str;
+	}
+
+  /**
+	 * Tells if the roll is pushable.
+	 * @type {boolean}
+	 * @readonly
+	 */
+	get moodable() {
+		return !this.mooded;
+	}
+
+  /**
+	 * Tells if the roll is pushable.
+	 * @type {boolean}
+	 * @readonly
+	 */
+	get inspirable() {
+		return !this.inspired;
 	}
 
 	// Override the create method to use SKRoll class
@@ -78,8 +109,8 @@ export class SKRoll extends Roll {
 			{
 				user: game.user.id,
 				flavor: this.name,
+				isSkRoll: this.type === 'sk',
 				template: this.constructor.CHAT_TEMPLATE,
-				blind: false,
 			},
 			chatOptions,
 		);
@@ -92,6 +123,7 @@ export class SKRoll extends Roll {
 		const chatData = {
 			formula: isPrivate ? "???" : this._formula,
 			flavor: isPrivate ? null : chatOptions.flavor,
+			isSkRoll: isPrivate ? null : chatOptions.isSkRoll,
 			user: chatOptions.user,
 			tooltip: isPrivate ? "" : await this.getTooltip(),
 			total: isPrivate ? "?" : Math.round(this.total * 100) / 100,

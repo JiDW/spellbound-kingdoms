@@ -144,7 +144,7 @@ import { SKRoll } from "./sk-roll.js";
 
 		const roll = SKRoll.create(
 			formula,
-			{name: this.title} /* We pass no "data" for the roll to evaluate */,
+			{name: this.title, type: 'sk'} /* We pass no "data" for the roll to evaluate */,
 			this.getRollOptions(),
 		);
 		// Roll the dice!
@@ -153,7 +153,7 @@ import { SKRoll } from "./sk-roll.js";
 	}
 
 	getRollOptions() {
-		return {name: this.title};
+		return {name: this.title, type: 'sk'};
 	}
 
 	/* -------------------------------------- */

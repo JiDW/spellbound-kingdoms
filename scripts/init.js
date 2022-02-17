@@ -44,3 +44,39 @@ Hooks.once("ready", async () => {
     $(e.currentTarget).toggle();
   });
 });
+
+Hooks.on("renderChatMessage", async (app, html) => {
+	const postedItem = html.find(".chat-item")[0];
+	if (postedItem) {
+		postedItem.classList.add("draggable");
+		postedItem.setAttribute("draggable", true);
+		postedItem.addEventListener("dragstart", (ev) => {
+			ev.dataTransfer.setData(
+				"text/plain",
+				JSON.stringify({
+					item: app.getFlag("spellbound-kingdoms", "itemData"),
+					type: "itemDrop",
+				}),
+			);
+		});
+	}
+
+	const skButton = html.find(".sk-button");
+	if (skButton) {
+		skButton.addEventListener("click", async (e) => {
+      if ($(e.eventTarget).data('action')) {
+
+      }
+			if (app.roll.moodable) {
+				await FBLRollHandler.moodRoll(app);
+
+				// If the roll is mooded, we want to remove the button.
+				if (game.modules.get("dice-so-nice").active)
+					Hooks.once("diceSoNiceRollComplete", () => {
+						app.delete();
+					});
+				else app.delete();
+			}
+		});
+	}
+});

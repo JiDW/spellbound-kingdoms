@@ -20,15 +20,20 @@
 	</div>
 </div>
 
+{{#if isSkRoll}}
 <div class="dice-buttons">
   {{#if moodable}}
-    <button class="sk-button mood" data-action="mood">
-      {{localize "MOOD"}}
+    <button class="sk-button mood" data-action="mood" title="{{localize 'SK.TOOLTIP.USE_MOOD'}}">
+      <i class="fas fa-laugh"></i></i>
     </button>
   {{/if}}
   {{#if inspirable}}
-    <button class="sk-button inspiration" data-action="inspiration">
-      {{localize "INSPIRATION"}}
+    <button class="sk-button weak-inspiration" data-action="weak-inspiration" title="{{localize 'SK.TOOLTIP.USE_WEAK_INSPIRATION'}}">
+      <i class="far fa-lightbulb"></i>
+    </button>
+    <button class="sk-button strong-inspiration" data-action="strong-inspiration" title="{{localize 'SK.TOOLTIP.USE_STRONG_INSPIRATION'}}">
+      <i class="fas fa-lightbulb"></i>
     </button>
   {{/if}}
 </div>
+  {{/if}}

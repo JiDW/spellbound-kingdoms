@@ -69,9 +69,9 @@ Region Sheet
         /r {{3d20xkh, {d8xkh, d10xkh}kl}kl, {d4xkh, d6xkh}kh}kh
         [done] Handle exploding dice
         [done] Properly handle penalty and bonus dice order
-    [    ] Chat card
-        [    ] 3 rows (base, penalty, bonus)
-        [    ] dice explosion style
+    [done] Chat card
+        [done] 3 rows (base, penalty, bonus)
+        [----] dice explosion style
     [    ] Post-roll adjustments
         [    ] Use Mood to maximize 1 die (take max non-penalty die size)
             [    ] Properly handle d20: take a reroll value or 12

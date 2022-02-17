@@ -30,3 +30,8 @@
 .dice-tooltip .tooltip-part.bonus {
     background-color: #d3e0d4;
 }
+
+.chat-message .dice-buttons .sk-button {
+    width: 31%;
+    margin-top: 4px;
+}
