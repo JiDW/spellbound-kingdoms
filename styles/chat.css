@@ -1,3 +1,7 @@
+.dice-tooltip .dice-rolls {
+    margin-left: 10px;
+}
+
 .dice-tooltip .dice-rolls .roll.d2 {
     background-image: url(../assets/images/icons/plain-circle-grey.svg);
 }
@@ -7,4 +11,22 @@
     cursor: pointer;
     font-family: Mordred-Bold;
     font-size: 22px;
+}
+
+.dice-tooltip .part-header .part-flavor {
+    width: 60px;
+    text-align: right;
+    font-family: 'Mordred-Bold';
+    font-size: 18px;
+    line-height: 34px;
+}
+
+.dice-tooltip .part-header .part-total {
+    line-height: 34px;
+}
+.dice-tooltip .tooltip-part.penalty {
+    background-color: #d6c3c1;
+}
+.dice-tooltip .tooltip-part.bonus {
+    background-color: #d3e0d4;
 }

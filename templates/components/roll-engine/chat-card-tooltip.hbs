@@ -1,17 +1,15 @@
 <div class="dice-tooltip">
     {{#each categories as |categoryData categoryIdentifier|}}
-    <section class="tooltip-part">
-        <div class="dice">
-            <header class="part-header flexrow">
-                <span class="part-flavor">{{localize categoryData.label}}</span>
-                <span class="part-total">{{categoryData.total}}</span>
-            </header>
+    <div class="tooltip-part {{categoryIdentifier}}">
+        <div class="dice part-header flexrow">
+            <span class="part-flavor">{{localize categoryData.label}}</span>
+            <span class="part-total">{{categoryData.total}}</span>
             <ol class="dice-rolls">
             {{#each this.rolls}}
                 <li class="roll {{this.classes}}">{{{this.result}}}</li>
             {{/each}}
             </ol>
         </div>
-    </section>
+    </div>
     {{/each}}
 </div>
