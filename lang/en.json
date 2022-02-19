@@ -44,6 +44,11 @@
   "SK.TYPE.SHADOW": "Shadow",
   "SK.TYPE.SOCIAL": "Social",
 
+  "magic": "Magic",
+  "martial": "Martial",
+  "shadow": "Shadow",
+  "social": "Social",
+
   "SK.BUTTON.DELETE": "Delete",
 
   "SK.TAB.MAIN": "MAIN",

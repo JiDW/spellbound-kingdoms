@@ -325,6 +325,25 @@ button.item-create, button.add-history, button.add-talent {
     text-align: center;
 }
 
+.item-picker-dialog .tabs {
+    margin-bottom: 6px;
+}
+.item-picker-dialog .tab-header {
+    font-family: Mordred-Bold;
+    text-transform: uppercase;
+    text-align: center;
+    border: 2px solid;
+    font-size: 18px;
+    width: 100%;
+    cursor: pointer;
+
+    background-color: rgba(128, 128, 128, 0.5);
+}
+.item-picker-dialog .tab-header.active {
+    border-bottom: none;
+    background-color: rgba(0, 0, 0, 0);
+}
+
 .grid-container {
     display: grid;
 }
@@ -333,7 +352,7 @@ button.item-create, button.add-history, button.add-talent {
     display: grid;
     grid-template-columns: 5% 20% auto;
     overflow-y: scroll;
-    height: 500px;
+    height: 478px;
     margin-bottom: 10px;
 }
 

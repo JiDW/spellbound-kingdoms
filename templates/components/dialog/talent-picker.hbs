@@ -1,0 +1,29 @@
+<div class="dialog-content">
+    
+    <div class="tabs flex row" data-group="talents">
+    {{#each itemsByCategory as |items category|}}
+        <div class="tab-header" data-tab="{{category}}">{{localize category}}</div>
+    {{/each}}
+    </div>
+    
+    <div class="tab-body">
+        {{#each itemsByCategory as |items category|}}
+        <div class="tab tab-{{category}}" data-group="talents" data-tab="{{category}}">
+            <div class="grid-container">
+                {{#each items as |item id|}}
+                    {{> systems/spellbound-kingdoms/templates/components/dialog/partial/item-picker-item.hbs item=item}}
+                {{/each}}
+            </div>
+        </div>
+        {{/each}}
+    </div>
+</div>
+
+<div class="dialog-buttons">
+    {{#each buttons as |button id|}}
+    <button class="dialog-button {{cssClass}}" data-button="{{id}}">
+        {{{button.icon}}}
+        {{{button.label}}}
+    </button>
+    {{/each}}
+</div>

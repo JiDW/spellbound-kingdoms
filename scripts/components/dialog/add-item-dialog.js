@@ -4,7 +4,7 @@ export class AddItemDialog extends Dialog {
         super(data, options);
 
         const me = this;
-        let onAddItemsCallback = this.data.buttons[this.data.default].callback;
+        let onAddItemsCallback = this.data.buttons[this.data.default].callback.bind({});
         this.data.buttons[this.data.default].callback = async function (dialogHtml) {
             let items = await me.getSelectedItems(dialogHtml);
             onAddItemsCallback(items);
@@ -44,7 +44,6 @@ export class AddItemDialog extends Dialog {
 
     /**
      * Show dialog that allows to add items to a character
-     * 
      */
     static async show(title, existingItems = {}, type, onAdd) {
         onAdd = onAdd || function () { };

@@ -18,9 +18,9 @@ Character Sheet
         [    ] Abilities
             [    ] Ability form
             [    ] Categorized display (Racial, Class)
-        [    ] Talents
+        [done] Talents
             [done] Talent Form
-            [    ] Talent selection UI
+            [done] Talent selection UI
     [    ] Combat Tab
         [    ] Fighting/Magic Styles
     [    ] Magic Tab

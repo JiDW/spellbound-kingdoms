@@ -3,6 +3,7 @@ import { SpellboundKingdomsActorSheet } from "./actor-sheet.js";
 // import { ApPerSkillDialog } from "../dialog/ap-per-skill-dialog.js";
 import { SpellboundKingdomsActor } from "../actor/spellbound-kingdoms.js";
 import { AddItemDialog } from "../components/dialog/add-item-dialog.js";
+import { AddTalentDialog } from "../components/dialog/add-talent-dialog.js";
 // import { CharacterCreation } from "../component/character-creation.js";
 
 export class SpellboundKingdomsCharacterSheet extends SpellboundKingdomsActorSheet {
@@ -208,7 +209,7 @@ export class SpellboundKingdomsCharacterSheet extends SpellboundKingdomsActorShe
 
   handleAddTalent() {
     let that = this;
-    let d = AddItemDialog.show(
+    let d = AddTalentDialog.show(
       "Talent Picker",
       this.categorizeItems().talent,
       'talent',
