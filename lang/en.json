@@ -29,10 +29,20 @@
   "SK.LABEL.VALUE": "Value",
   "SK.LABEL.USES": "Uses",
   "SK.LABEL.DESCRIPTION": "Description",
+  "SK.LABEL.SHORT_DESCRIPTION": "Short Description",
   "SK.LABEL.TYPE": "Type",
+  "SK.LABEL.LEVEL": "Level",
+
+  "SK.LABEL.MINOR": "Minor",
+  "SK.LABEL.MAJOR": "Major",
+  "SK.LABEL.GRAND": "Grand",
 
   "SK.TYPE.HISTORY": "History",
   "SK.TYPE.REPUTATION": "Reputation",
+  "SK.TYPE.MAGIC": "Magic",
+  "SK.TYPE.MARTIAL": "Martial",
+  "SK.TYPE.SHADOW": "Shadow",
+  "SK.TYPE.SOCIAL": "Social",
 
   "SK.BUTTON.DELETE": "Delete",
 

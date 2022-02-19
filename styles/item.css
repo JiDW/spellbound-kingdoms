@@ -96,59 +96,6 @@ button.add-active-effect {
     padding: 4px 6px;
 }
 
-/* ---- common ---- */
-.grid .avatar {
-    grid-column: span 2;
-    grid-row: span 2;
-}
-.grid .item-name {
-    grid-column: span 8;
-}
-.grid .item-cost {
-    grid-column: span 4;
-}
-.grid .item-encumbrance {
-    grid-column: span 4;
-}
-.grid .item-uses {
-    grid-column: span 5;
-}
-.grid .item-refresh {
-    grid-column: span 5;
-}
-.grid .item-description {
-    grid-column: span 10;
-    grid-row: span 3;
-}
-
-/* ---- weapon ---- */
-.grid .weapon-damage {
-    grid-column: span 3;
-}
-.grid .weapon-ammo {
-    grid-column: span 7;
-}
-.grid .weapon-skill {
-    grid-column: span 5;
-}
-.grid .weapon-range {
-    grid-column: span 5;
-}
-
-/* ---- gear ---- */
-.grid .gear-category {
-    grid-column: span 10;
-}
-.grid .gear-charge-level {
-    grid-column: span 4;
-}
-.grid .gear-charge-usage {
-    grid-column: span 3;
-}
-.grid .gear-charge-recharge {
-    grid-column: span 3;
-}
-
 /* ---- inspiration ---- */
 .grid-inspiration {
     display: grid;
@@ -198,26 +145,23 @@ button.add-active-effect {
 
 .grid-scar .scar-name input { width: 80%; }
 
-/* ---- ability ---- */
-.grid .form-ability-name {
-    grid-column: span 10;
+/* ---- talent ---- */
+.grid-talent {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(6, auto);
+    grid-column-gap: 6px;
+    grid-row-gap: 0px;
 }
+    
+.grid-talent .avatar                   { grid-area: 1 / 1 / 3 / 2; }
+.grid-talent .talent-name              { grid-area: 1 / 2 / 2 / 6; }
+.grid-talent .talent-level             { grid-area: 2 / 2 / 3 / 4; }
+.grid-talent .talent-type              { grid-area: 2 / 4 / 3 / 6; }
+.grid-talent .talent-short-description { grid-area: 3 / 1 / 4 / 6; }
+.grid-talent .talent-description       { grid-area: 4 / 1 / 7 / 6; }
 
-/* ---- skill ---- */
-.grid .form-skill-name {
-    grid-column: span 6;
-}
-.grid .form-skill-type {
-    grid-column: span 4;
-}
-
-/* ---- component ---- */
-.grid .component-pp {
-    grid-column: span 8;
-}
-.grid .form-component-damage {
-    grid-column: span 4;
-}
-.grid .form-component-range {
-    grid-column: span 6;
+.grid-talent .talent-name input { width: 80%; }
+.grid-talent .talent-description .gear-description {
+    height: 250px;
 }

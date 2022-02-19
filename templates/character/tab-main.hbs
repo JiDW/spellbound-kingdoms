@@ -43,6 +43,27 @@
             {{/each}}
         </div>
     </div>
+    <div class="frame frame-character-abilities">
+        <div class="frame-label">{{localize "SK.LABEL.ABILITIES"}}</div>
+        <div class="character-abilities">
+            {{#each data.itemsByType.ability as |ability key|}}
+                {{> systems/spellbound-kingdoms/templates/character/partial/ability.hbs ability=ability key=key}}
+            {{/each}}
+        </div>
+    </div>
+</div>
+<div class="main-column">
+    <div class="frame">
+        <div class="frame-label">
+            {{localize "SK.LABEL.TALENTS"}}
+            <button class="add-talent" data-type="talent">+</button>
+        </div>
+        <div class="character-talents">
+            {{#each data.itemsByType.talent as |talent key|}}
+                {{> systems/spellbound-kingdoms/templates/character/partial/talent.hbs talent=talent key=key}}
+            {{/each}}
+        </div>
+    </div>
     <div class="frame">
         <div class="frame-label">
             {{localize "SK.LABEL.REPUTATIONS"}}
@@ -51,24 +72,6 @@
         <div class="character-reputations">
             {{#each data.itemsByType.reputation as |reputation key|}}
                 {{> systems/spellbound-kingdoms/templates/character/partial/narrative-item.hbs type="reputation" item=reputation value=reputation faded=false key=key}}
-            {{/each}}
-        </div>
-    </div>
-</div>
-<div class="main-column">
-    <div class="frame">
-        <div class="frame-label">{{localize "SK.LABEL.TALENTS"}}</div>
-        <div class="character-talents">
-            {{#each data.itemsByType.talent as |talent key|}}
-                {{> systems/spellbound-kingdoms/templates/character/partial/talent.hbs talent=talent key=key}}
-            {{/each}}
-        </div>
-    </div>
-    <div class="frame frame-character-abilities">
-        <div class="frame-label">{{localize "SK.LABEL.ABILITIES"}}</div>
-        <div class="character-abilities">
-            {{#each data.itemsByType.ability as |ability key|}}
-                {{> systems/spellbound-kingdoms/templates/character/partial/ability.hbs ability=ability key=key}}
             {{/each}}
         </div>
     </div>

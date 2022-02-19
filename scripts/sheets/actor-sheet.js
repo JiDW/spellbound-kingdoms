@@ -59,7 +59,7 @@ export class SpellboundKingdomsActorSheet extends ActorSheet {
       reputation: {},
       ability: {},
     };
-    let type, subtype;
+    let type, subtype, talentLevels = ['', 'SK.LABEL.MINOR', 'SK.LABEL.MAJOR', 'SK.LABEL.GRAND'];
 
     this.actor.data.items.forEach((item) => {
       type = item.data.type;
@@ -68,6 +68,10 @@ export class SpellboundKingdomsActorSheet extends ActorSheet {
         itemsByType[subtype][item.id] = item;
       } else if (itemsByType[type] !== undefined) {
         itemsByType[type][item.id] = item;
+      }
+
+      if (type === 'talent') {
+        item.data.data.levelString = talentLevels[parseInt(item.data.data.level)];
       }
     });
 

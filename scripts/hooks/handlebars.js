@@ -12,6 +12,7 @@ function preloadHandlebarsTemplates() {
     "systems/spellbound-kingdoms/templates/character/partial/narrative-item.hbs",
     "systems/spellbound-kingdoms/templates/character/partial/scar.hbs",
     "systems/spellbound-kingdoms/templates/character/partial/ability.hbs",
+    "systems/spellbound-kingdoms/templates/character/partial/talent.hbs",
     "systems/spellbound-kingdoms/templates/character/partial/stat.hbs",
 
     "systems/spellbound-kingdoms/templates/items/inspiration.hbs",

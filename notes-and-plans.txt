@@ -5,25 +5,38 @@ Character Sheet
         [done] Name
         [done] Classes & levels
         [done] Race
-    [done] Stats
-        [done] Core stats (Str, Qck, Rsn, Cha, Magic, Heart)
-        [done] Mood (val/max ???)
-        [done] Body (cur/max)
-    [done] Narrative Stats
-        [done] Inspirations
-        [done] History & Skills
-        [done] Reputations
-    [    ] Scars 
-    [    ] Fighting/Magic Styles Tab
-    [    ] Spells
-    [    ] Abilities
-        [    ] Racial
-        [    ] Class
-    [    ] Talents
-    [    ] Wealth Level & associated gear
+    [    ] Main Tab
+        [done] Stats
+            [done] Core stats (Str, Qck, Rsn, Cha, Magic, Heart)
+            [done] Mood (val/max ???)
+            [done] Body (cur/max)
+        [done] Narrative Stats
+            [done] Inspirations
+            [done] History & Skills
+            [done] Reputations
+        [done] Scars 
+        [    ] Abilities
+            [    ] Ability form
+            [    ] Ability Pack
+            [    ] Categorized display (Racial, Class)
+        [    ] Talents
+            [done] Talent Form
+            [    ] Talent Pack
+            [    ] Talent selection UI
+    [    ] Combat Tab
+        [    ] Fighting/Magic Styles
+    [    ] Magic Tab
+        [    ] Spells
+    [    ] Wealth Tab
         [    ] "Purchace" interface
-    [    ] Gear
+    [    ] Inventory Tab
+        [    ] Weapons
+        [    ] Armor
+        [    ] Engineering
+        [    ] Fashion
+        [    ] Vehicles
     [    ] Implement "Post to Chat"
+    [    ] Add generic Roll button to char cheet header
     [ ?? ] Display class title
 
 [    ] Gear Sheet
