@@ -330,7 +330,8 @@ button.item-create, button.add-history, button.add-talent {
 }
 
 .item-picker-dialog .grid-container {
-    grid-template-columns: auto auto;
+    display: grid;
+    grid-template-columns: 5% 20% auto;
     overflow-y: scroll;
     height: 500px;
     margin-bottom: 10px;
@@ -342,24 +343,23 @@ input.item-picker-checkbox {
 }
 
 .item-picker-item label {
-    font-family: TheSans-Bold-Caps;
-    font-size: 12px;
+    font-family: Mordred-Bold;
+    font-size: 20px;
     color: black
 }
 
 .item-picker-item-description label {
-    font-family: Arial;
-    font-size: 12px;
-    color: black
+    font-size: 16px;
+    line-height: 14px;
+    color: black;
+    font-family: AgencyFB-Bold;
 }
 
 .grid-item {
     padding: 0px;
     margin-top: auto;
-    font-size: 12px;
-    line-height: 12px;
     border-bottom: 1px solid gray;
-    height: 30px;
+    margin-bottom: 6px;
 }
 
 .item-picker-item-description label {

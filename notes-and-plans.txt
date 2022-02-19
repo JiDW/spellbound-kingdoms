@@ -17,11 +17,9 @@ Character Sheet
         [done] Scars 
         [    ] Abilities
             [    ] Ability form
-            [    ] Ability Pack
             [    ] Categorized display (Racial, Class)
         [    ] Talents
             [done] Talent Form
-            [    ] Talent Pack
             [    ] Talent selection UI
     [    ] Combat Tab
         [    ] Fighting/Magic Styles
@@ -38,6 +36,11 @@ Character Sheet
     [    ] Implement "Post to Chat"
     [    ] Add generic Roll button to char cheet header
     [ ?? ] Display class title
+
+[    ] Packs
+    [    ] Talents
+    [    ] Abilities
+    [    ] Items
 
 [    ] Gear Sheet
 [    ] Fighting Style Sheet

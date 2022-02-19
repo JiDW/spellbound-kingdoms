@@ -1,86 +1,106 @@
 export class AddItemDialog extends Dialog {
 
-  /** @override */
-  static get defaultOptions() {
-    return mergeObject(super.defaultOptions, {
-      template: "templates/hud/dialog.html",
-      classes: ["dialog", "spellbound-kingdoms"],
-      width: 600,
-      height: 600,
-      jQuery: true
-    });
-  }
+    constructor(data, options) {
+        super(data, options);
 
-  /**
-   * Show dialog that allows to add items to a character
-   * 
-   */
-  static async show(title, existingItems = {}, type, onAdd, onCancel) {
-    onAdd = onAdd || function () { };
-    onCancel = onCancel || function () { };
+        const me = this;
+        let onAddItemsCallback = this.data.buttons[this.data.default].callback;
+        this.data.buttons[this.data.default].callback = async function (dialogHtml) {
+            let items = await me.getSelectedItems(dialogHtml);
+            onAddItemsCallback(items);
+        }
 
-    const itemList = await this.buildItemList(existingItems, type);
-
-    let d = new AddItemDialog({
-      title: title,
-      content: this.buildDivHtmlDialog(itemList),
-      width: 600,
-      buttons: {
-        add: {
-          icon: '<i class="fas fa-check"></i>',
-          label: "Add",
-          callback: async function (dialogHtml) {
-            let items = await AddItemDialog.getSelectedItems(dialogHtml);
-            onAdd(items);
-          }
-        },
-        cancel: {
-          icon: '<i class="fas fa-times"></i>',
-          label: "Cancel",
-          callback: onCancel
-        },
-      },
-      default: "add",
-    });
-    d.render(true);
-  }
-
-  /**
-   * @param  {string} html Dialog content
-   */
-  activateListeners(html) {
-    super.activateListeners(html);
-  }
-
-  static async getSelectedItems(dialogHtml) {
-    let items = [];
-    let item;
-    let elems = dialogHtml.find('input[type="checkbox"]:checked');
-    for (let elem of elems) {
-      item = await game.items.get(elem.getAttribute('id'));
-      items.push(item.data);
+        this.data.items = this.buildItemList();
     }
 
-    return items;
-  }
-
-  /**
-   * @param  {Array} existingItems Array with items that character already has
-   */
-  static async buildItemList(existingItems, type) {
-    let items = game.items.filter(i => i.type === type);
-    let html = '';
-    for (let item of items) {
-      if (existingItems[item.name] !== undefined) continue;
-      html += await renderTemplate('systems/spellbound-kingdoms/templates/components/dialog/partial/item-picker.hbs', { item: item });
+    /** @override */
+    static get defaultOptions() {
+        return mergeObject(super.defaultOptions, {
+            template: "systems/spellbound-kingdoms/templates/components/dialog/item-picker.hbs",
+            classes: ["dialog", "spellbound-kingdoms", 'item-picker-dialog'],
+            width: 600,
+            height: 600,
+            buttons: {
+                add: {
+                    icon: '<i class="fas fa-check"></i>',
+                    label: "Add",
+                },
+                cancel: {
+                    icon: '<i class="fas fa-times"></i>',
+                    label: "Cancel",
+                },
+            },
+            default: "add",
+            jQuery: true,
+        });
     }
-    return `<div class="grid-container">${html}</div>`;
-  }
 
-  /**
-   * @param  {string} divContent
-   */
-  static buildDivHtmlDialog(divContent) {
-    return "<div class='item-picker-dialog'>" + divContent + "</div>";
-  }
+    /** @inheritdoc */
+    getData(options) {
+        let data = super.getData(options);
+        data.items = this.data.items
+        return data;
+    }
+
+    /**
+     * Show dialog that allows to add items to a character
+     * 
+     */
+    static async show(title, existingItems = {}, type, onAdd) {
+        onAdd = onAdd || function () { };
+
+        let d = new AddItemDialog({
+            title: title,
+            //   content: this.buildDivHtmlDialog(itemList),
+            existingItems: existingItems,
+            itemType: type,
+            width: 600,
+            buttons: {
+                add: {
+                    icon: '<i class="fas fa-check"></i>',
+                    label: "Add",
+                    callback: onAdd,
+                },
+                cancel: {
+                    icon: '<i class="fas fa-times"></i>',
+                    label: "Cancel",
+                },
+            },
+            default: "add",
+        });
+        d.render(true);
+    }
+
+    /**
+     * @param  {string} html Dialog content
+     */
+    activateListeners(html) {
+        super.activateListeners(html);
+    }
+
+    async getSelectedItems(dialogHtml) {
+        let items = [];
+        let item;
+        let elems = dialogHtml.find('input[type="checkbox"]:checked');
+        for (let elem of elems) {
+            item = await game.items.get(elem.getAttribute('id'));
+            items.push(item.data);
+        }
+
+        return items;
+    }
+
+    /**
+     * @param  {Array} existingItems Array with items that character already has
+     */
+    buildItemList() {
+        let items = game.items.filter(i => i.type === this.data.itemType);
+        for (let item of items) {
+            if (this.data.existingItems[item.name] !== undefined) continue;
+
+            item.data.data.descriptionHtml = item.data.data.description.replaceAll("\n", '<br/>')
+        }
+
+        return items;
+    }
 }

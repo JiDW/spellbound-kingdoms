@@ -24,7 +24,8 @@ function preloadHandlebarsTemplates() {
     "systems/spellbound-kingdoms/templates/components/roll-engine/chat-card.hbs",
     "systems/spellbound-kingdoms/templates/components/roll-engine/chat-card-tooltip.hbs",
 
-    "systems/spellbound-kingdoms/templates/components/dialog/partial/item-picker.hbs",
+    "systems/spellbound-kingdoms/templates/components/dialog/item-picker.hbs",
+    "systems/spellbound-kingdoms/templates/components/dialog/partial/item-picker-item.hbs",
   ];
   return loadTemplates(templatePaths);
 }

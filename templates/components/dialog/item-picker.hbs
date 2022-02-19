@@ -1,0 +1,15 @@
+<div class="dialog-content">
+    <div class="grid-container">
+        {{#each items as |item id|}}
+            {{> systems/spellbound-kingdoms/templates/components/dialog/partial/item-picker-item.hbs item=item}}
+        {{/each}}
+    </div>
+</div>
+<div class="dialog-buttons">
+    {{#each buttons as |button id|}}
+    <button class="dialog-button {{cssClass}}" data-button="{{id}}">
+        {{{button.icon}}}
+        {{{button.label}}}
+    </button>
+    {{/each}}
+</div>
