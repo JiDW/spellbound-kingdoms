@@ -3,6 +3,7 @@
   "identifier": "noble",
   "type": "social",
   "journal": "Noble, Priest, Courtesan",
+  "talents": ["social", "martial", "magic"],
   "progression": [
     {"level": 0},
     {"level": 1,

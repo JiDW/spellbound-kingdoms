@@ -3,6 +3,7 @@
   "identifier": "trader",
   "type": "social",
   "journal": "Trader",
+  "talents": ["social", "martial", "shadow", "magic"],
   "progression": [
     {"level": 0},
     {"level": 1,
@@ -38,7 +39,7 @@
         "charisma": 1
       },
       "fighting-styles": [2],
-      "abilities": ["to-the-heart", "exotica", "polyglot", "leader"],
+      "abilities": ["to-the-heart", "exotica", "polyglot", "leader-trader"],
       "talents": [1]
     },
     {"level": 5,
@@ -47,7 +48,7 @@
         "charisma": 1
       },
       "fighting-styles": [2, 1],
-      "abilities": ["to-the-heart", "exotica", "polyglot", "leader"],
+      "abilities": ["to-the-heart", "exotica", "polyglot", "leader-trader"],
       "talents": [1, 1]
     },
     {"level": 6,
@@ -56,7 +57,7 @@
         "charisma": 2
       },
       "fighting-styles": [2, 1],
-      "abilities": ["to-the-heart", "exotica", "polyglot", "leader"],
+      "abilities": ["to-the-heart", "exotica", "polyglot", "leader-trader"],
       "talents": [1, 1]
     },
     {"level": 7,
@@ -65,7 +66,7 @@
         "charisma": 2
       },
       "fighting-styles": [2, 2],
-      "abilities": ["to-the-heart", "exotica", "polyglot", "leader", "sell"],
+      "abilities": ["to-the-heart", "exotica", "polyglot", "leader-trader", "sell"],
       "talents": [1, 1, 1]
     },
     {"level": 8,
@@ -74,7 +75,7 @@
         "charisma": 2
       },
       "fighting-styles": [2, 2],
-      "abilities": ["to-the-heart", "exotica", "polyglot", "leader", "sell"],
+      "abilities": ["to-the-heart", "exotica", "polyglot", "leader-trader", "sell"],
       "talents": [1, 1, 1]
     },
     {"level": 9,
@@ -83,7 +84,7 @@
         "charisma": 2
       },
       "fighting-styles": [2, 2],
-      "abilities": ["to-the-heart", "exotica", "polyglot", "leader", "sell"],
+      "abilities": ["to-the-heart", "exotica", "polyglot", "leader-trader", "sell"],
       "talents": [2, 1, 1]
     },
     {"level": 10,
@@ -92,7 +93,7 @@
         "charisma": 2
       },
       "fighting-styles": [3, 2],
-      "abilities": ["to-the-heart", "exotica", "polyglot", "leader", "sell"],
+      "abilities": ["to-the-heart", "exotica", "polyglot", "leader-trader", "sell"],
       "talents": [2, 1, 1]
     },
     {"level": 11,
@@ -101,7 +102,7 @@
         "charisma": 2
       },
       "fighting-styles": [3, 2],
-      "abilities": ["to-the-heart", "exotica", "polyglot", "leader", "sell"],
+      "abilities": ["to-the-heart", "exotica", "polyglot", "leader-trader", "sell"],
       "talents": [2, 2, 1]
     },
     {"level": 12,
@@ -110,7 +111,7 @@
         "charisma": 3
       },
       "fighting-styles": [3, 2],
-      "abilities": ["to-the-heart", "exotica", "polyglot", "leader", "sell"],
+      "abilities": ["to-the-heart", "exotica", "polyglot", "leader-trader", "sell"],
       "talents": [2, 2, 1]
     },
     {"level": 13,
@@ -119,7 +120,7 @@
         "charisma": 3
       },
       "fighting-styles": [3, 2],
-      "abilities": ["to-the-heart", "exotica", "polyglot", "leader", "sell", "friend-in-every-port"],
+      "abilities": ["to-the-heart", "exotica", "polyglot", "leader-trader", "sell", "friend-in-every-port"],
       "talents": [2, 2, 2]
     },
     {"level": 14,
@@ -128,7 +129,7 @@
         "charisma": 3
       },
       "fighting-styles": [3, 2, 1],
-      "abilities": ["to-the-heart", "exotica", "polyglot", "leader", "sell", "friend-in-every-port"],
+      "abilities": ["to-the-heart", "exotica", "polyglot", "leader-trader", "sell", "friend-in-every-port"],
       "talents": [2, 2, 2]
     },
     {"level": 15,
@@ -137,7 +138,7 @@
         "charisma": 3
       },
       "fighting-styles": [3, 2, 1],
-      "abilities": ["to-the-heart", "exotica", "polyglot", "leader", "sell", "friend-in-every-port", "new-society"],
+      "abilities": ["to-the-heart", "exotica", "polyglot", "leader-trader", "sell", "friend-in-every-port", "new-society"],
       "talents": [3, 2, 2]
     },
     {"level": 16,
@@ -146,7 +147,7 @@
         "charisma": 3
       },
       "fighting-styles": [3, 2, 1],
-      "abilities": ["to-the-heart", "exotica", "polyglot", "leader", "sell", "friend-in-every-port", "new-society"],
+      "abilities": ["to-the-heart", "exotica", "polyglot", "leader-trader", "sell", "friend-in-every-port", "new-society"],
       "talents": [3, 2, 2]
     },
     {"level": 17,
@@ -155,7 +156,7 @@
         "charisma": 3
       },
       "fighting-styles": [3, 2, 1],
-      "abilities": ["to-the-heart", "exotica", "polyglot", "leader", "sell", "friend-in-every-port", "new-society"],
+      "abilities": ["to-the-heart", "exotica", "polyglot", "leader-trader", "sell", "friend-in-every-port", "new-society"],
       "talents": [3, 3, 2]
     },
     {"level": 18,
@@ -164,7 +165,7 @@
         "charisma": 4
       },
       "fighting-styles": [3, 2, 2],
-      "abilities": ["to-the-heart", "exotica", "polyglot", "leader", "sell", "friend-in-every-port", "new-society"],
+      "abilities": ["to-the-heart", "exotica", "polyglot", "leader-trader", "sell", "friend-in-every-port", "new-society"],
       "talents": [3, 3, 2]
     },
     {"level": 19,
@@ -173,7 +174,7 @@
         "charisma": 4
       },
       "fighting-styles": [3, 2, 2],
-      "abilities": ["to-the-heart", "exotica", "polyglot", "leader", "sell", "friend-in-every-port", "new-society"],
+      "abilities": ["to-the-heart", "exotica", "polyglot", "leader-trader", "sell", "friend-in-every-port", "new-society"],
       "talents": [3, 3, 3]
     },
     {"level": 20,
@@ -182,7 +183,7 @@
         "charisma": 4
       },
       "fighting-styles": [3, 2, 2],
-      "abilities": ["to-the-heart", "exotica", "polyglot", "leader", "sell", "friend-in-every-port", "new-society"],
+      "abilities": ["to-the-heart", "exotica", "polyglot", "leader-trader", "sell", "friend-in-every-port", "new-society"],
       "talents": [3, 3, 3]
     }
   ]

@@ -36,7 +36,7 @@
     "identifier": "rain-troll",
     "race": "Troll",
     "subrace": "Rain Troll",
-    "abilities": ["regenerate", ["enlightened", {"body": 1}]],
+    "abilities": ["regeneration", ["enlightened", {"body": 1}]],
     "journal": "Rain Troll"
   },
   "seradynn": {
@@ -44,7 +44,7 @@
     "identifier": "seradynn",
     "race": "Troll",
     "subrace": "Seradynn",
-    "abilities": ["regenerate", [{"magic": 1}, {"body": 1}]],
+    "abilities": ["regeneration", [{"magic": 1}, {"body": 1}]],
     "journal": "Troll: Seradynn"
   }
 }

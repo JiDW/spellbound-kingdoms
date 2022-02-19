@@ -3,6 +3,7 @@
   "identifier": "assassin",
   "type": "shadow",
   "journal": "Assassin",
+  "talents": ["martial", "shadow"],
   "progression": [
     {"level": 0},
     {"level": 1,
@@ -152,7 +153,7 @@
         "charisma": 2
       },
       "fighting-styles": [3, 3, 2, 1],
-      "abilities": ["hunted", "ambush", "assassinate", "headhunter"],
+      "abilities": ["hunted", "ambush", "assassinate", "headhunter", "false-identity"],
       "talents": [3, 2, 2]
     },
     {"level": 16,
@@ -162,7 +163,7 @@
         "charisma": 2
       },
       "fighting-styles": [3, 3, 2, 2],
-      "abilities": ["hunted", "ambush", "assassinate", "headhunter"],
+      "abilities": ["hunted", "ambush", "assassinate", "headhunter", "false-identity"],
       "talents": [3, 2, 2]
     },
     {"level": 17,
@@ -172,7 +173,7 @@
         "charisma": 2
       },
       "fighting-styles": [3, 3, 2, 2],
-      "abilities": ["hunted", "ambush", "assassinate", "headhunter"],
+      "abilities": ["hunted", "ambush", "assassinate", "headhunter", "false-identity"],
       "talents": [3, 3, 2]
     },
     {"level": 18,
@@ -182,7 +183,7 @@
         "charisma": 2
       },
       "fighting-styles": [3, 3, 3, 2],
-      "abilities": ["hunted", "ambush", "assassinate", "headhunter"],
+      "abilities": ["hunted", "ambush", "assassinate", "headhunter", "false-identity"],
       "talents": [3, 3, 2]
     },
     {"level": 19,
@@ -192,7 +193,7 @@
         "charisma": 2
       },
       "fighting-styles": [3, 3, 3, 2],
-      "abilities": ["hunted", "ambush", "assassinate", "headhunter"],
+      "abilities": ["hunted", "ambush", "assassinate", "headhunter", "false-identity"],
       "talents": [3, 3, 3]
     },
     {"level": 20,
@@ -202,7 +203,7 @@
         "charisma": 3
       },
       "fighting-styles": [3, 3, 3, 2],
-      "abilities": ["hunted", "ambush", "assassinate", "headhunter", "haunt-the-memory-halls"],
+      "abilities": ["hunted", "ambush", "assassinate", "headhunter", "false-identity", "haunt-the-memorys-halls"],
       "talents": [3, 3, 3]
     }
   ]

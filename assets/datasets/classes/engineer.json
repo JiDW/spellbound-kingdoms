@@ -3,6 +3,7 @@
   "identifier": "engineer",
   "type": "social",
   "journal": "Engineer",
+  "talents": ["martial", "shadow"],
   "progression": [
     {"level": 0},
     {"level": 1,

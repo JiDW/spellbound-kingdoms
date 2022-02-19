@@ -3,6 +3,7 @@
   "identifier": "fixer",
   "type": "shadow",
   "journal": "Fixer",
+  "talents": ["social", "shadow"],
   "progression": [
     {"level": 0},
     {"level": 1,
@@ -172,7 +173,7 @@
         "stats": ["reason", "charisma"]
       },
       "fighting-styles": [2, 2, 1],
-      "abilities": ["fix", "fraternity", "alchemy", "quick-fix", "transfuse", "transmute", "mortal-dram", "scholar"],
+      "abilities": ["fix", "fraternity", "alchemy", "quick-fix", "transfuse", "transmute", "mortal-dram", "scholar-fixer"],
       "talents": [3, 2, 2]
     },
     {"level": 18,
@@ -182,7 +183,7 @@
         "stats": ["reason", "charisma"]
       },
       "fighting-styles": [2, 2, 2],
-      "abilities": ["fix", "fraternity", "alchemy", "quick-fix", "transfuse", "transmute", "mortal-dram", "scholar"],
+      "abilities": ["fix", "fraternity", "alchemy", "quick-fix", "transfuse", "transmute", "mortal-dram", "scholar-fixer"],
       "talents": [3, 3, 2]
     },
     {"level": 19,
@@ -192,7 +193,7 @@
         "stats": ["reason", "charisma"]
       },
       "fighting-styles": [2, 2, 2],
-      "abilities": ["fix", "fraternity", "alchemy", "quick-fix", "transfuse", "transmute", "mortal-dram", "scholar"],
+      "abilities": ["fix", "fraternity", "alchemy", "quick-fix", "transfuse", "transmute", "mortal-dram", "scholar-fixer"],
       "talents": [3, 3, 2]
     },
     {"level": 20,
@@ -202,7 +203,7 @@
         "stats": ["reason", "charisma"]
       },
       "fighting-styles": [2, 2, 2],
-      "abilities": ["fix", "fraternity", "alchemy", "quick-fix", "transfuse", "transmute", "mortal-dram", "scholar", "the-great-work"],
+      "abilities": ["fix", "fraternity", "alchemy", "quick-fix", "transfuse", "transmute", "mortal-dram", "scholar-fixer", "the-great-work"],
       "talents": [3, 3, 3]
     }
   ]

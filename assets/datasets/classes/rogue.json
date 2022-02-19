@@ -3,6 +3,7 @@
   "identifier": "rogue",
   "type": "shadow",
   "journal": "Rogue",
+  "talents": ["social", "martial", "shadow"],
   "progression": [
     {"level": 0},
     {"level": 1,
@@ -202,7 +203,7 @@
         "charisma": 3
       },
       "fighting-styles": [3, 3, 3, 2],
-      "abilities": ["hunted", "trickster", "ambush", "false-identity", "headhunter", "rogues-life", "impostor", "haunt-the-memory-halls"],
+      "abilities": ["hunted", "trickster", "ambush", "false-identity", "headhunter", "rogues-life", "impostor", "haunt-the-memorys-halls"],
       "talents": [3, 3, 3]
     }
   ]

@@ -3,6 +3,7 @@
   "identifier": "savage",
   "type": "martial",
   "journal": "Savage",
+  "talents": ["martial"],
   "progression": [
     {"level": 0},
     {"level": 1,

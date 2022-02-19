@@ -3,6 +3,7 @@
   "identifier": "chosen-one-magic",
   "type": "martial",
   "journal": "Chosen One",
+  "talents": ["martial"],
   "progression": [
     {"level": 0},
     {"level": 1,

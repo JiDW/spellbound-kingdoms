@@ -3,6 +3,7 @@
   "identifier": "chosen-one-magic",
   "type": "magic",
   "journal": "Chosen One",
+  "talents": ["magic"],
   "progression": [
     {"level": 0},
     {"level": 1,

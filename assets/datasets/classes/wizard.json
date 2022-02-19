@@ -3,6 +3,7 @@
   "identifier": "wizard",
   "type": "magic",
   "journal": "Wizard",
+  "talents": ["magic"],
   "progression": [
     {"level": 0},
     {"level": 1,
