@@ -23,6 +23,8 @@ function preloadHandlebarsTemplates() {
     "systems/spellbound-kingdoms/templates/components/roll-engine/partial/die-select.hbs",
     "systems/spellbound-kingdoms/templates/components/roll-engine/chat-card.hbs",
     "systems/spellbound-kingdoms/templates/components/roll-engine/chat-card-tooltip.hbs",
+
+    "systems/spellbound-kingdoms/templates/components/dialog/partial/item-picker.hbs",
   ];
   return loadTemplates(templatePaths);
 }

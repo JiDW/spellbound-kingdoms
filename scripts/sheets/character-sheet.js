@@ -1,8 +1,8 @@
 import { SpellboundKingdomsActorSheet } from "./actor-sheet.js";
-// import { AddItemDialog } from "../dialog/add-item-dialog.js";
 // import { ReputationStats } from '../component/reputation-stats.js';
 // import { ApPerSkillDialog } from "../dialog/ap-per-skill-dialog.js";
 import { SpellboundKingdomsActor } from "../actor/spellbound-kingdoms.js";
+import { AddItemDialog } from "../components/dialog/add-item-dialog.js";
 // import { CharacterCreation } from "../component/character-creation.js";
 
 export class SpellboundKingdomsCharacterSheet extends SpellboundKingdomsActorSheet {
@@ -51,13 +51,15 @@ export class SpellboundKingdomsCharacterSheet extends SpellboundKingdomsActorShe
   activateListeners(html) {
     super.activateListeners(html);
 
+    html.find('.add-talent').click(this.handleAddTalent.bind(this));
+
+
     html.find('.ability-delete').click(this.handleRemoveItem.bind(this));
     html.find('.add-ability').click(this.handleAddAbility.bind(this));
     html.find('.use-item').click(this.handleUseItem.bind(this));
     html.find('.use-weapon').click(this.handleUseWeapon.bind(this));
 
     html.find('.skill-delete').click(this.handleRemoveItem.bind(this));
-    html.find('.add-skill').click(this.handleAddSkill.bind(this));
     html.find('.use-skill').click(this.handleUseSkill.bind(this));
     html.find('.use-skill-hard').click(this.handleUseSkillHard.bind(this));
 
@@ -204,14 +206,14 @@ export class SpellboundKingdomsCharacterSheet extends SpellboundKingdomsActorShe
     await doUseWeapon(1);
   }
 
-  handleAddSkill() {
+  handleAddTalent() {
     let that = this;
     let d = AddItemDialog.show(
-      "Skill Picker",
-      this.categorizeItems().skill,
-      'skill',
-      function (skills) {
-        that.actor.createEmbeddedDocuments("Item", skills);
+      "Talent Picker",
+      this.categorizeItems().talent,
+      'talent',
+      function (talents) {
+        that.actor.createEmbeddedDocuments("Item", talents);
       }
     );
   }
