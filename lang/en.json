@@ -32,6 +32,7 @@
   "SK.LABEL.SHORT_DESCRIPTION": "Short Description",
   "SK.LABEL.TYPE": "Type",
   "SK.LABEL.LEVEL": "Level",
+  "SK.LABEL.IDENTIFIER": "Identifier",
 
   "SK.LABEL.MINOR": "Minor",
   "SK.LABEL.MAJOR": "Major",
@@ -43,6 +44,8 @@
   "SK.TYPE.MARTIAL": "Martial",
   "SK.TYPE.SHADOW": "Shadow",
   "SK.TYPE.SOCIAL": "Social",
+  "SK.TYPE.RACIAL": "Racial",
+  "SK.TYPE.CLASS": "Class",
 
   "magic": "Magic",
   "martial": "Martial",
@@ -75,6 +78,8 @@
   "SK.TOOLTIP.USE_MOOD": "Spend 1 Mood to maximize one die (no explosion)",
   "SK.TOOLTIP.USE_WEAK_INSPIRATION": "Use weak inspiration (of value 1 or not narrated) to roll Heart as a bonus die",
   "SK.TOOLTIP.USE_STRONG_INSPIRATION": "Use strong inspiration (2+ value and narrated) to gain max value on your current die and your Heart die (they explode)",
+
+  "SK.HINT.IDENTIFIER": "Identifier is used for referencing in datasets. Do not translate it.",
 
   "SHEET.HEADER.POST_ITEM": "Post Item",
 

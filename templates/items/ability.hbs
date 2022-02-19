@@ -1,0 +1,26 @@
+<form class="{{cssClass}}" autocomplete="off">
+    <div class="grid-ability">
+        <div class="avatar">
+            <img class="profile-img" src="{{data.img}}" data-edit="img" title="{{data.name}}" />
+        </div>
+
+        <div class="ability-name">
+            <label class="form-gear-label">{{localize "SK.LABEL.NAME"}}:</label>
+            <input name="name" type="text" value="{{data.name}}" />
+        </div>
+        <div class="ability-identifier">
+            <label class="form-gear-label">{{localize "SK.LABEL.IDENTIFIER"}}:</label>
+            <input name="data.identifier" type="text" value="{{data.data.identifier}}" />
+            <span class="identifier-hint">{{localize "SK.HINT.IDENTIFIER"}}</span>
+        </div>
+
+        <div class="ability-short-description">
+            <label class="form-gear-label">{{localize "SK.LABEL.SHORT_DESCRIPTION"}}:</label>
+            <input name="data.short-description" type="text" value="{{data.data.short-description}}" />
+        </div>
+        <div class="ability-description">
+            <label class="form-gear-label">{{localize "SK.LABEL.DESCRIPTION"}}:</label>
+            <textarea class="gear-description" name="data.description">{{data.data.description}}</textarea>
+        </div>
+    </div>
+</form>

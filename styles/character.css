@@ -106,11 +106,6 @@ input.grid-input { width: 81%; }
     max-height: 186px;
     overflow-y: scroll;
 }
-.spellbound-kingdoms .character .tab-main .character-abilities {
-    height: 340px;
-    max-height: 340px;
-    overflow-y: scroll;
-}
 .spellbound-kingdoms .character .tab-main .character-reputations {
     height: 262px;
     max-height: 262px;
@@ -128,6 +123,8 @@ input.grid-input { width: 81%; }
     grid-column-gap: 2px;
     grid-row-gap: 0px;
 }
+
+/* *** talent list *** */
 
 .spellbound-kingdoms .character .tab-main .character-talents {
     height: 234px;
@@ -174,6 +171,56 @@ input.grid-input { width: 81%; }
 .spellbound-kingdoms .character .item.talent-item .item-controls-right,
 .spellbound-kingdoms .character .item.talent-item .item-controls-left,
 .spellbound-kingdoms .character .item.talent-item .talent-item-level {
+    text-align: center;
+}
+
+/* *** ability list *** */
+
+.spellbound-kingdoms .character .tab-main .character-abilities {
+    height: 340px;
+    max-height: 340px;
+    overflow-y: scroll;
+}
+.spellbound-kingdoms .character .tab-main .item.ability-item {
+    display: grid;
+    grid-template-columns: repeat(5, auto);
+    grid-template-rows: repeat(4, auto);
+    grid-column-gap: 2px;
+    grid-row-gap: 0px;
+
+    border-bottom: 2px solid;
+    margin-bottom: 4px;
+}
+    
+.spellbound-kingdoms .character .item.ability-item .ability-item-name        { grid-area: 1 / 1 / 2 / 6; }
+.spellbound-kingdoms .character .item.ability-item .ability-image            { grid-area: 2 / 1 / 5 / 2; }
+.spellbound-kingdoms .character .item.ability-item .ability-item-description { grid-area: 2 / 2 / 4 / 6; }
+.spellbound-kingdoms .character .item.ability-item .item-controls-left      { grid-area: 4 / 2 / 5 / 3; }
+.spellbound-kingdoms .character .item.ability-item .ability-item-level       { grid-area: 4 / 3 / 5 / 5; }
+.spellbound-kingdoms .character .item.ability-item .item-controls-right     { grid-area: 4 / 5 / 5 / 6; }
+
+.spellbound-kingdoms .character .item.ability-item .ability-image {
+    width: 49px;
+    height: 49px;
+}
+.spellbound-kingdoms .character .item.ability-item .ability-image img {
+    border: none;
+}
+.spellbound-kingdoms .character .item.ability-item .ability-item-name {
+    font: 18px Mordred-Bold;
+    border-bottom: 1px solid;
+    text-align: center;
+    background-color: tan;
+}
+.spellbound-kingdoms .character .item.ability-item .ability-item-description {
+    border-bottom: 1px dashed;
+}
+.spellbound-kingdoms .character .item.ability-item .ability-item-level {
+    font-weight: bold;
+}
+.spellbound-kingdoms .character .item.ability-item .item-controls-right,
+.spellbound-kingdoms .character .item.ability-item .item-controls-left,
+.spellbound-kingdoms .character .item.ability-item .ability-item-level {
     text-align: center;
 }
 
@@ -240,27 +287,11 @@ input.grid-input { width: 81%; }
     width: 100%;
 }
 
-.abilities .ability {
-    font-size: 12px;
-    margin-left: 4px;
-    font-weight: bold;
-    width: 100%;
-}
-
 .items .item {
     font-size: 14px;
     margin-left: 4px;
     font-weight: bold;
     width: 100%;
-}
-.ability.item {
-    margin-left: 0;
-}
-.ability .ability-delete {
-    margin-right: 4px;
-}
-.ability .ability-name {
-    font-family: TheSans-Bold-Caps;
 }
 
 .skills .use-skill {
@@ -310,7 +341,7 @@ button.use-item { /* use ability */
     line-height: 18px;
 }
 
-button.item-create, button.add-history, button.add-talent {
+button.item-create, button.add-history, button.add-talent, button.add-ability {
     width: 24px;
     height: 24px;
     line-height: 18px;

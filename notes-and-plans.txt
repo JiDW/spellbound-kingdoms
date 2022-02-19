@@ -16,8 +16,9 @@ Character Sheet
             [done] Reputations
         [done] Scars 
         [    ] Abilities
-            [    ] Ability form
+            [done] Ability form
             [    ] Categorized display (Racial, Class)
+            [    ] Autoload abilities based on race, class and level
         [done] Talents
             [done] Talent Form
             [done] Talent selection UI
@@ -34,6 +35,12 @@ Character Sheet
         [    ] Fashion
         [    ] Vehicles
     [    ] Implement "Post to Chat"
+        [    ] inspiration
+        [    ] history/reputation
+        [    ] scars
+        [    ] talent
+        [    ] ability
+        [    ] items
     [    ] Add generic Roll button to char cheet header
     [ ?? ] Display class title
 
