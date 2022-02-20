@@ -44,7 +44,10 @@
         </div>
     </div>
     <div class="frame frame-character-abilities">
-        <div class="frame-label">{{localize "SK.LABEL.ABILITIES"}}</div>
+        <div class="frame-label">
+            {{localize "SK.LABEL.ABILITIES"}}
+            <button class="character-abilities-fill" data-type="ability">{{localize "SK.BUTTON.FILL"}}</button>
+        </div>
         <div class="character-abilities">
             {{#each data.itemsByType.ability as |abilities categoryName|}}
             <div class="ability-category">

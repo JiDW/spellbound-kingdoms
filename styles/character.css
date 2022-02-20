@@ -360,12 +360,21 @@ button.use-item { /* use ability */
     line-height: 18px;
 }
 
-button.item-create, button.add-history, button.add-talent, button.add-ability {
+button.item-create, button.add-history, button.add-talent {
     width: 24px;
     height: 24px;
     line-height: 18px;
-    position: absolute;
     font-size: 20px;
+
+    float: right;
+}
+button.character-abilities-fill {
+    width: 50px;
+    height: 24px;
+    line-height: 18px;
+    font-size: 16px;
+
+    float: right;
 }
 
 .ability-uses {

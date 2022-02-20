@@ -238,7 +238,7 @@ export class SpellboundKingdomsActorSheet extends ActorSheet {
                             type: 'SK.LABEL.RACE',
                             subtype: raceData.name,
                             sortOrder: 1,
-                            identifier: raceData.identifier,
+                            categoryIdentifier: raceData.identifier,
                         });
                         found = true;
                         break;
@@ -258,7 +258,7 @@ export class SpellboundKingdomsActorSheet extends ActorSheet {
                                 type: 'SK.LABEL.CLASS',
                                 subtype: classData.name,
                                 sortOrder: classLevel.level,
-                                identifier: classData.identifier,
+                                categoryIdentifier: classData.identifier,
                             });
                             break;
                         }
@@ -271,7 +271,7 @@ export class SpellboundKingdomsActorSheet extends ActorSheet {
                     type: 'SK.LABEL.CUSTOM',
                     subtype: 'custom',
                     sortOrder: 0,
-                    identifier: 'custom',
+                    categoryIdentifier: 'custom',
                 });
             }
         }
@@ -279,7 +279,7 @@ export class SpellboundKingdomsActorSheet extends ActorSheet {
         let relevantData = abilityDataCache[ability.data.data.identifier][0];
         if (abilityDataCache[ability.data.data.identifier].length > 1) {
             for (const [, data] of Object.entries(abilityDataCache[ability.data.data.identifier])) {
-                if (this.isRaceOrClass(data.identifier)) {
+                if (this.isRaceOrClass(data.categoryIdentifier)) {
                     relevantData = data;
                     break;
                 }

@@ -15,10 +15,10 @@ Character Sheet
             [done] History & Skills
             [done] Reputations
         [done] Scars 
-        [    ] Abilities
+        [done] Abilities
             [done] Ability form
-            [    ] Categorized display (Racial, Class)
-            [    ] Autoload abilities based on race, class and level
+            [done] Categorized display (Racial, Class)
+            [done] Autoload abilities based on race, class and level
         [done] Talents
             [done] Talent Form
             [done] Talent selection UI
@@ -34,6 +34,7 @@ Character Sheet
         [    ] Engineering
         [    ] Fashion
         [    ] Vehicles
+    [    ] Implement inspiration usage tracking
     [    ] Implement "Post to Chat"
         [    ] inspiration
         [    ] history/reputation
