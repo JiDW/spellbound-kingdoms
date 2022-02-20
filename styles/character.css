@@ -180,40 +180,56 @@ input.grid-input { width: 81%; }
     height: 340px;
     max-height: 340px;
     overflow-y: scroll;
+    overflow-x: clip;
 }
+.spellbound-kingdoms .character .character-abilities .ability-category {
+    border-left: 2px solid;
+    border-color: var(--main-color);
+    background: linear-gradient(to top, rgba(128, 128, 128, 0.5), transparent);
+}
+.spellbound-kingdoms .character .character-abilities .ability-category-name {
+    font-size: 16px;
+    font-weight: bold;
+    font-style: italic;
+    color: var(--main-color);
+
+    border-bottom: 2px solid;
+    border-color: var(--main-color);
+
+    padding-left: 6px;
+    
+    margin-top: 6px;
+    margin-bottom: 2px;
+}
+
 .spellbound-kingdoms .character .tab-main .item.ability-item {
     display: grid;
-    grid-template-columns: repeat(5, auto);
-    grid-template-rows: repeat(4, auto);
+    grid-template-columns: 14px auto 14px;
+    grid-template-rows: repeat(3, auto);
     grid-column-gap: 2px;
     grid-row-gap: 0px;
 
     border-bottom: 2px solid;
+    border-color: var(--main-color);
+
     margin-bottom: 4px;
 }
     
-.spellbound-kingdoms .character .item.ability-item .ability-item-name        { grid-area: 1 / 1 / 2 / 6; }
-.spellbound-kingdoms .character .item.ability-item .ability-image            { grid-area: 2 / 1 / 5 / 2; }
-.spellbound-kingdoms .character .item.ability-item .ability-item-description { grid-area: 2 / 2 / 4 / 6; }
-.spellbound-kingdoms .character .item.ability-item .item-controls-left      { grid-area: 4 / 2 / 5 / 3; }
-.spellbound-kingdoms .character .item.ability-item .ability-item-level       { grid-area: 4 / 3 / 5 / 5; }
-.spellbound-kingdoms .character .item.ability-item .item-controls-right     { grid-area: 4 / 5 / 5 / 6; }
+.spellbound-kingdoms .character .item.ability-item .item-controls-left       { grid-area: 1 / 1 / 2 / 2; }
+.spellbound-kingdoms .character .item.ability-item .ability-item-name        { grid-area: 1 / 2 / 2 / 3; }
+.spellbound-kingdoms .character .item.ability-item .item-controls-right      { grid-area: 1 / 3 / 4 / 4; }
+.spellbound-kingdoms .character .item.ability-item .ability-item-description { grid-area: 2 / 1 / 4 / 3; }
 
-.spellbound-kingdoms .character .item.ability-item .ability-image {
-    width: 49px;
-    height: 49px;
-}
 .spellbound-kingdoms .character .item.ability-item .ability-image img {
     border: none;
 }
 .spellbound-kingdoms .character .item.ability-item .ability-item-name {
-    font: 18px Mordred-Bold;
-    border-bottom: 1px solid;
+    font: 16px Mordred-Bold;
+    border-bottom: 1px dashed;
     text-align: center;
-    background-color: tan;
 }
 .spellbound-kingdoms .character .item.ability-item .ability-item-description {
-    border-bottom: 1px dashed;
+    text-align: center;
 }
 .spellbound-kingdoms .character .item.ability-item .ability-item-level {
     font-weight: bold;
@@ -260,8 +276,11 @@ input.grid-input { width: 81%; }
 .skills, .abilities {
     width: 150px;
 }
-.skill:nth-child(odd), .ability:nth-child(odd), .spellbound-kingdoms .item:nth-child(odd) {
+.skill:nth-child(odd), .spellbound-kingdoms .item:nth-child(odd) {
     background-color: var(--alternate-background-color);
+}
+.spellbound-kingdoms .character-abilities .item.ability-item:nth-child(odd) {
+    background-color: transparent;
 }
 
 .character .section .items {

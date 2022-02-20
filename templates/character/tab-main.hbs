@@ -46,8 +46,15 @@
     <div class="frame frame-character-abilities">
         <div class="frame-label">{{localize "SK.LABEL.ABILITIES"}}</div>
         <div class="character-abilities">
-            {{#each data.itemsByType.ability as |ability key|}}
-                {{> systems/spellbound-kingdoms/templates/character/partial/ability.hbs ability=ability key=key}}
+            {{#each data.itemsByType.ability as |abilities categoryName|}}
+            <div class="ability-category">
+                <div class="ability-category-name">
+                    <i class="fas fa-caret-right"></i> {{categoryName}}
+                </div>
+                {{#each abilities as |ability key|}}
+                    {{> systems/spellbound-kingdoms/templates/character/partial/ability.hbs ability=ability key=key}}
+                {{/each}}
+            </div>
             {{/each}}
         </div>
     </div>
