@@ -1,0 +1,78 @@
+<form class="{{cssClass}}" autocomplete="off">
+    <div class="grid-gear">
+        <div class="avatar">
+            <img class="profile-img" src="{{data.img}}" data-edit="img" title="{{data.name}}" />
+        </div>
+
+        <div class="gear-name">
+            <label class="form-gear-label">{{localize "SK.LABEL.NAME"}}:</label>
+            <input name="name" type="text" value="{{data.name}}" />
+        </div>
+
+        <div class="gear-type">
+            <label class="form-gear-label">{{localize "SK.LABEL.TYPE"}}:</label>
+            <select class="" name="data.type">
+                {{#select data.data.type}}
+                <option value="weapon">{{localize "SK.TYPE.WEAPON"}}</option>
+                <option value="armor">{{localize "SK.TYPE.ARMOR"}}</option>
+                <option value="alchemy">{{localize "SK.TYPE.ALCHEMY"}}</option>
+                <option value="engineering">{{localize "SK.TYPE.ENGINEERING"}}</option>
+                <option value="fashion">{{localize "SK.TYPE.FASHION"}}</option>
+                <option value="other">{{localize "SK.TYPE.OTHER"}}</option>
+                {{/select}}
+            </select>
+        </div>
+        <div class="gear-subtype">
+            <label class="form-gear-label">{{localize "SK.LABEL.SUBTYPE"}}:</label>
+            <input name="data.subtype" type="text" value="{{data.data.subtype}}" />
+        </div>
+
+        <div class="gear-quality">
+            <label class="form-gear-label">{{localize "SK.LABEL.QUALITY"}}:</label>
+            <input class="shortest-num" name="data.quality.value" type="number" value="{{data.data.quality.value}}" min="0" data-dtype="Number" /> /
+            <input class="shortest-num" name="data.quality.max" type="number" value="{{data.data.quality.max}}" min="0" data-dtype="Number" />
+        </div>
+        <div class="gear-wealth-level">
+            <label class="form-gear-label">{{localize "SK.LABEL.WEALTH_LEVEL"}}:</label>
+            <input class="shortest-num" name="data.wealth-level.value" type="number" value="{{data.data.wealth-level.value}}" min="0" data-dtype="Number" />
+        </div>
+        <div class="gear-cash-cost">
+            <label class="form-gear-label">{{localize "SK.LABEL.GOLD_COST"}}:</label>
+            <input class="shortest-num" name="data.cash-cost.value" type="number" value="{{data.data.cash-cost.value}}" min="0" data-dtype="Number" />
+        </div>
+
+        <div class="stat-requirement-label">
+            <label class="form-gear-label">{{localize "SK.LABEL.STAT_REQUIREMENTS"}}</label>
+        </div>
+
+        <div class="stat-requirement stat-requirement-strength">
+            <label class="form-gear-label">{{localize "SK.STAT.SHORT.STRENGTH"}}</label>
+            <input class="shortest-num" name="data.stat-requirement.strength" type="number" value="{{data.data.stat-requirement.strength}}" min="0" data-dtype="Number" />
+        </div>
+        <div class="stat-requirement stat-requirement-quickness">
+            <label class="form-gear-label">{{localize "SK.STAT.SHORT.QUICKNESS"}}</label>
+            <input class="shortest-num" name="data.stat-requirement.quickness" type="number" value="{{data.data.stat-requirement.quickness}}" min="0" data-dtype="Number" />
+        </div>
+        <div class="stat-requirement stat-requirement-reason">
+            <label class="form-gear-label">{{localize "SK.STAT.SHORT.REASON"}}</label>
+            <input class="shortest-num" name="data.stat-requirement.reason" type="number" value="{{data.data.stat-requirement.reason}}" min="0" data-dtype="Number" />
+        </div>
+        <div class="stat-requirement stat-requirement-charisma">
+            <label class="form-gear-label">{{localize "SK.STAT.SHORT.CHARISMA"}}</label>
+            <input class="shortest-num" name="data.stat-requirement.charisma" type="number" value="{{data.data.stat-requirement.charisma}}" min="0" data-dtype="Number" />
+        </div>
+        <div class="stat-requirement stat-requirement-magic">
+            <label class="form-gear-label">{{localize "SK.STAT.SHORT.MAGIC"}}</label>
+            <input class="shortest-num" name="data.stat-requirement.magic" type="number" value="{{data.data.stat-requirement.magic}}" min="0" data-dtype="Number" />
+        </div>
+        <div class="stat-requirement stat-requirement-heart">
+            <label class="form-gear-label">{{localize "SK.STAT.SHORT.HEART"}}</label>
+            <input class="shortest-num" name="data.stat-requirement.heart" type="number" value="{{data.data.stat-requirement.heart}}" min="0" data-dtype="Number" />
+        </div>
+        
+        <div class="gear-gear-description">
+            <label class="form-gear-label">{{localize "SK.LABEL.DESCRIPTION"}}:</label>
+            <textarea class="gear-description" name="data.description">{{data.data.description}}</textarea>
+        </div>
+    </div>
+</form>

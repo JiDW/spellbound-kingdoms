@@ -29,8 +29,10 @@ Character Sheet
     [    ] Wealth Tab
         [    ] "Purchace" interface
     [    ] Inventory Tab
+        [done] Gear Form
         [    ] Weapons
         [    ] Armor
+        [    ] Alchemy
         [    ] Engineering
         [    ] Fashion
         [    ] Vehicles

@@ -14,10 +14,12 @@ function preloadHandlebarsTemplates() {
     "systems/spellbound-kingdoms/templates/character/partial/ability.hbs",
     "systems/spellbound-kingdoms/templates/character/partial/talent.hbs",
     "systems/spellbound-kingdoms/templates/character/partial/stat.hbs",
+    "systems/spellbound-kingdoms/templates/character/partial/gear.hbs",
 
     "systems/spellbound-kingdoms/templates/items/inspiration.hbs",
     "systems/spellbound-kingdoms/templates/items/history.hbs",
     "systems/spellbound-kingdoms/templates/items/scar.hbs",
+    "systems/spellbound-kingdoms/templates/items/gear.hbs",
     
     "systems/spellbound-kingdoms/templates/components/roll-engine/dialog.hbs",
     "systems/spellbound-kingdoms/templates/components/roll-engine/partial/die-select.hbs",

@@ -174,7 +174,7 @@
       "item": {
         "quality": {"value": 1, "max": 1},
         "wealth-level": {"value": 2},
-        "cash-cost": {"value": 0},
+        "cash-cost": {"value": 100, "default": 100},
         "description": ""
       },
       "identifier": {
@@ -188,8 +188,9 @@
       }
     },
     "gear": {
-      "templates": ["item", "identifier"],
-      "category": "weapon",
+      "templates": ["item"],
+      "type": "weapon",
+      "subtype": "",
       "stat-requirement": {
         "strength": 0,
         "quickness": 0,
@@ -256,6 +257,7 @@
     },
     "building": {
       "templates": ["item", "defense"],
+      "subtype": "",
       "effect": {
         "value": ""
       },

@@ -55,8 +55,11 @@ export class SpellboundKingdomsActorSheet extends ActorSheet {
         let itemsByType = {
             weapon: {},
             armor: {},
+            alchemy: {},
+            engineering: {},
             fashion: {},
             vehicle: {},
+            other: {}, // any other items that are probably not carried but are on your payroll (buildings, units, etc.)
             'fighting-style': {},
             maneuver: {},
             talent: {},

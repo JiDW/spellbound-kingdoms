@@ -16,6 +16,7 @@
   "SK.LABEL.ARMOR": "Armor",
   "SK.LABEL.WEALTH_LEVEL": "Wealth Level",
   "SK.LABEL.GOLD": "Gold",
+  "SK.LABEL.GOLD_COST": "Gold Cost",
   "SK.LABEL.CLASS": "Class",
   
   "SK.LABEL.STATS": "Characteristics",
@@ -31,8 +32,11 @@
   "SK.LABEL.DESCRIPTION": "Description",
   "SK.LABEL.SHORT_DESCRIPTION": "Short Description",
   "SK.LABEL.TYPE": "Type",
+  "SK.LABEL.SUBTYPE": "Subtype",
   "SK.LABEL.LEVEL": "Level",
   "SK.LABEL.IDENTIFIER": "Identifier",
+  "SK.LABEL.QUALITY": "Quality",
+  "SK.LABEL.STAT_REQUIREMENTS": "Characteristics Requriements:",
 
   "SK.LABEL.MINOR": "Minor",
   "SK.LABEL.MAJOR": "Major",
@@ -44,8 +48,16 @@
   "SK.TYPE.MARTIAL": "Martial",
   "SK.TYPE.SHADOW": "Shadow",
   "SK.TYPE.SOCIAL": "Social",
+
   "SK.TYPE.RACIAL": "Racial",
   "SK.TYPE.CLASS": "Class",
+
+  "SK.TYPE.WEAPON": "Weapon",
+  "SK.TYPE.ARMOR": "Armor",
+  "SK.TYPE.ALCHEMY": "Alchemy",
+  "SK.TYPE.ENGINEERING": "Engineering",
+  "SK.TYPE.FASHION": "Fashion",
+  "SK.TYPE.OTHER": "Other",
 
   "magic": "Magic",
   "martial": "Martial",
@@ -69,6 +81,13 @@
   "SK.STAT.CHARISMA": "Charisma",
   "SK.STAT.MAGIC": "Magic",
   "SK.STAT.HEART": "Heart",
+
+  "SK.STAT.SHORT.STRENGTH": "Str",
+  "SK.STAT.SHORT.QUICKNESS": "Qck",
+  "SK.STAT.SHORT.REASON": "Rsn",
+  "SK.STAT.SHORT.CHARISMA": "Cha",
+  "SK.STAT.SHORT.MAGIC": "Mgc",
+  "SK.STAT.SHORT.HEART": "Hrt",
 
   "SK.DICE.BASE": "Base",
   "SK.DICE.PENALTY": "Penalty",
