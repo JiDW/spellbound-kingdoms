@@ -4,7 +4,7 @@ export class SpellboundKingdomsGearSheet extends SpellboundKingdomsItemSheet {
   static get defaultOptions() {
     return mergeObject(super.defaultOptions, {
       classes: ["spellbound-kingdoms", "sheet", "item", "gear"],
-      width: 490,
+      width: 500,
       tabs: [],
     });
   }
