@@ -38,6 +38,9 @@
   "SK.LABEL.QUALITY": "Quality",
   "SK.LABEL.STAT_REQUIREMENTS": "Characteristics Requriements:",
 
+  "SK.LABEL.PURCHASED_WITH": "Purchased with",
+  "SK.LABEL.WEAPONS": "Weapons",
+
   "SK.LABEL.MINOR": "Minor",
   "SK.LABEL.MAJOR": "Major",
   "SK.LABEL.GRAND": "Grand",
@@ -88,6 +91,7 @@
   "SK.STAT.SHORT.CHARISMA": "Cha",
   "SK.STAT.SHORT.MAGIC": "Mgc",
   "SK.STAT.SHORT.HEART": "Hrt",
+  "SK.STAT.SHORT.WEALTH_LEVEL": "WL",
 
   "SK.DICE.BASE": "Base",
   "SK.DICE.PENALTY": "Penalty",

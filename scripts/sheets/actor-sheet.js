@@ -82,6 +82,15 @@ export class SpellboundKingdomsActorSheet extends ActorSheet {
             }
 
             switch (type) {
+                case 'gear':
+                case 'vehicle':
+                    item.data.data.wealthLevels = {'0': game.i18n.localize('SK.LABEL.GOLD')};
+                    if (item.data.data['wealth-level'].value <= this.actor.data.data.wealth.level.value) {
+                        for (let i = item.data.data['wealth-level'].value; i <= this.actor.data.data.wealth.level.value; i++) {
+                            item.data.data.wealthLevels[i] = i;
+                        }
+                    }
+                    break;
                 case 'talent':
                     item.data.data.levelString = talentLevels[parseInt(item.data.data.level)];
                     break;

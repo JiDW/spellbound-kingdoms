@@ -2,6 +2,10 @@
     font-family: Mordred-Bold;
     src: url(../assets/fonts/Mordred-Bold.ttf);
 }
+@font-face {
+    font-family: KingsCross;
+    src: url(../assets/fonts/KingsCross.ttf);
+}
 
 :root {
     --main-color: #995200;

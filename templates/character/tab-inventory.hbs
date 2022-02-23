@@ -1,0 +1,20 @@
+
+<div class="main-column">
+    <div class="frame">
+        <div class="frame-label">
+            {{localize "SK.LABEL.WEAPONS"}}
+            <button class="item-create" data-type="gear" data-subtype="weapon">+</button>
+        </div>
+        <div class="character-weapons">
+            {{#each data.itemsByType.weapon as |weapon key|}}
+                {{> systems/spellbound-kingdoms/templates/character/partial/gear.hbs gear=weapon key=key}}
+            {{/each}}
+        </div>
+    </div>
+</div>
+<div class="main-column">
+
+</div>
+<div class="main-column">
+    
+</div>
