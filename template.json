@@ -161,6 +161,7 @@
       "maneuver",
       "talent",
       "scar",
+      "wealth-slot-cooldown",
       "spell",
       "building",
       "vehicle",
@@ -200,6 +201,10 @@
         "heart": 0,
         "body": 0
       }
+    },
+    "wealth-slot-cooldown": {
+        "wealth-level":  1,
+        "cooldown": 7
     },
     "fighting-style": {
       "templates": ["identifier"],

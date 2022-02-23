@@ -112,7 +112,7 @@ export class SpellboundKingdomsActorSheet extends ActorSheet {
     sortCategorizedItems(itemsByType) {
         itemsByType.weapon = this._sortItems(
             itemsByType.weapon,
-            (itemId1, itemId2) => itemsByType.weapon[itemId1].name.localeCompare(itemsByType.weapon[itemId2].name)
+            (itemId1, itemId2) => itemsByType.weapon[itemId2].data.data.quality.value - itemsByType.weapon[itemId1].data.data.quality.value
         );
         itemsByType.armor = this._sortItems(
             itemsByType.armor,

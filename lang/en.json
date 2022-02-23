@@ -36,7 +36,8 @@
   "SK.LABEL.LEVEL": "Level",
   "SK.LABEL.IDENTIFIER": "Identifier",
   "SK.LABEL.QUALITY": "Quality",
-  "SK.LABEL.STAT_REQUIREMENTS": "Characteristics Requriements:",
+  "SK.LABEL.STAT_REQUIREMENTS": "Characteristics Requriements",
+  "SK.LABEL.COOLDOWN": "Cooldown",
 
   "SK.LABEL.PURCHASED_WITH": "Purchased with",
   "SK.LABEL.WEAPONS": "Weapons",

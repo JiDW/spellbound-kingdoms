@@ -1,0 +1,16 @@
+<form class="{{cssClass}}" autocomplete="off">
+    <div class="grid-wealth-slot-cooldown">
+        <div class="wealth-slot-cooldown-name">
+            <label class="form-gear-label">{{localize "SK.LABEL.NAME"}}:</label>
+            <input name="name" type="text" value="{{data.name}}" />
+        </div>
+        <div class="wealth-slot-cooldown-wealth-level">
+            <label class="form-gear-label">{{localize "SK.LABEL.WEALTH_LEVEL"}}:</label>
+            <input class="shortest-num" name="data.wealth-level" type="number" value="{{data.data.wealth-level}}" min="0" data-dtype="Number" />
+        </div>
+        <div class="wealth-slot-cooldown-cooldown">
+            <label class="form-gear-label">{{localize "SK.LABEL.COOLDOWN"}}:</label>
+            <input class="shortest-num" name="data.cooldown" type="number" value="{{data.data.cooldown}}" min="0" data-dtype="Number" />
+        </div>
+    </div>
+</form>
