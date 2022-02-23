@@ -8,10 +8,10 @@
     <div class="item-controls-left">
         <a class="item-control item-delete" title="{{localize 'SK.BUTTON.DELETE'}}"><i class="fas fa-trash"></i></a>
     </div>
-    <div class="gear-requirements">
+    <div class="gear-requirements {{#unless gear.data.data.requirements-met}}red{{/unless}}" title="{{localize 'SK.LABEL.STAT_REQUIREMENTS'}}">
         {{#each gear.data.data.stat-requirement as |value statIdentifier|}}
             {{#if value}}
-            <span>{{value}}</span>
+            <span>{{localize (sk_strconcat "SK.STAT.SHORT." statIdentifier)}} {{value}}</span>
             {{/if}}
         {{/each}}
     </div>

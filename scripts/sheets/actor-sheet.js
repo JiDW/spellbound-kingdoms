@@ -90,6 +90,13 @@ export class SpellboundKingdomsActorSheet extends ActorSheet {
                             item.data.data.wealthLevels[i] = i;
                         }
                     }
+                    item.data.data['requirements-met'] = true;
+                    for (const [stat, value] of Object.entries(item.data.data['stat-requirement'])) {
+                        if (this.actor.data.data.stats[stat].value < value) {
+                            item.data.data['requirements-met'] = false;
+                            break;
+                        }
+                    }
                     break;
                 case 'talent':
                     item.data.data.levelString = talentLevels[parseInt(item.data.data.level)];

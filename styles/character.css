@@ -299,6 +299,12 @@ input.grid-input { width: 81%; }
 .spellbound-kingdoms .character .item.gear-item .item-controls-left {
     text-align: center;
 }
+.spellbound-kingdoms .character .item.gear-item .gear-requirements.green {
+    color: green;
+}
+.spellbound-kingdoms .character .item.gear-item .gear-requirements.red {
+    color: red;
+}
 
 /* ##### END OF INVENTORY TAB ###### */
 

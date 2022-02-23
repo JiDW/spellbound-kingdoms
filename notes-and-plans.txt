@@ -5,7 +5,7 @@ Character Sheet
         [done] Name
         [done] Classes & levels
         [done] Race
-    [    ] Main Tab
+    [done] Main Tab
         [done] Stats
             [done] Core stats (Str, Qck, Rsn, Cha, Magic, Heart)
             [done] Mood (val/max ???)

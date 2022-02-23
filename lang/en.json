@@ -85,11 +85,17 @@
   "SK.STAT.MAGIC": "Magic",
   "SK.STAT.HEART": "Heart",
 
+  "SK.STAT.SHORT.strength": "Str",
   "SK.STAT.SHORT.STRENGTH": "Str",
+  "SK.STAT.SHORT.quickness": "Qck",
   "SK.STAT.SHORT.QUICKNESS": "Qck",
+  "SK.STAT.SHORT.reason": "Rsn",
   "SK.STAT.SHORT.REASON": "Rsn",
+  "SK.STAT.SHORT.charisma": "Cha",
   "SK.STAT.SHORT.CHARISMA": "Cha",
+  "SK.STAT.SHORT.magic": "Mgc",
   "SK.STAT.SHORT.MAGIC": "Mgc",
+  "SK.STAT.SHORT.heart": "Hrt",
   "SK.STAT.SHORT.HEART": "Hrt",
   "SK.STAT.SHORT.WEALTH_LEVEL": "WL",
 
