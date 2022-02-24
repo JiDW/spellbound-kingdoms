@@ -1,20 +1,53 @@
 
-<div class="main-column">
-    <div class="frame">
-        <div class="frame-label">
-            {{localize "SK.LABEL.WEAPONS"}}
-            <button class="item-create" data-type="gear" data-subtype="weapon">+</button>
+<div class="columns">
+    <div class="main-column">
+        <div class="frame">
+            <div class="frame-label">
+                {{localize "SK.LABEL.ARMOR"}}
+                <button class="item-create" data-type="gear" data-subtype="armor">+</button>
+            </div>
+            <div class="character-armor">
+                {{#each data.itemsByType.armor as |armor key|}}
+                    {{> systems/spellbound-kingdoms/templates/character/partial/armor.hbs gear=armor key=key}}
+                {{/each}}
+            </div>
         </div>
-        <div class="character-weapons">
-            {{#each data.itemsByType.weapon as |weapon key|}}
-                {{> systems/spellbound-kingdoms/templates/character/partial/gear.hbs gear=weapon key=key}}
+        <div class="frame">
+            <div class="frame-label">
+                {{localize "SK.LABEL.WEAPONS"}}
+                <button class="item-create" data-type="gear" data-subtype="weapon">+</button>
+            </div>
+            <div class="character-weapons">
+                {{#each data.itemsByType.weapon as |weapon key|}}
+                    {{> systems/spellbound-kingdoms/templates/character/partial/gear.hbs gear=weapon key=key}}
+                {{/each}}
+            </div>
+        </div>
+    </div>
+    <div class="main-column">
+        &nbsp;
+    </div>
+    <div class="main-column">
+        &nbsp;
+    </div>
+</div>
+
+<div class="footer">
+    <div class="frame">
+        <div class="frame-label frame-side-label">
+            {{localize "SK.LABEL.PURCHASES"}}
+        </div>
+        <div class="wealth-levels">
+            {{#each (sequence 1 20) as |wl key|}}
+            <div class="wealth-level">
+                <div class="frame-label">{{localize "SK.STAT.SHORT.WEALTH_LEVEL"}} {{wl}}</div>
+                <div class="wealth-slot-list">
+                    {{#each (sequence 1 6) as |slot key|}}
+                    <div class="item">Slot {{slot}}</div>
+                    {{/each}}
+                </div>
+            </div>
             {{/each}}
         </div>
     </div>
-</div>
-<div class="main-column">
-
-</div>
-<div class="main-column">
-    
 </div>

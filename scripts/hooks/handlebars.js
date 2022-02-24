@@ -15,6 +15,7 @@ function preloadHandlebarsTemplates() {
     "systems/spellbound-kingdoms/templates/character/partial/talent.hbs",
     "systems/spellbound-kingdoms/templates/character/partial/stat.hbs",
     "systems/spellbound-kingdoms/templates/character/partial/gear.hbs",
+    "systems/spellbound-kingdoms/templates/character/partial/armor.hbs",
 
     "systems/spellbound-kingdoms/templates/items/inspiration.hbs",
     "systems/spellbound-kingdoms/templates/items/history.hbs",
@@ -51,6 +52,12 @@ function registerHandlebarsHelpers() {
       return args[0] === expression;
     });
   });
+  Handlebars.registerHelper("intEq", function () {
+    const args = Array.prototype.slice.call(arguments, 0, -1);
+    return args.every(function (expression) {
+      return parseInt(args[0]) === parseInt(expression);
+    });
+  });
   Handlebars.registerHelper("or", function () {
     const args = Array.prototype.slice.call(arguments, 0, -1);
     return args.reduce((x, y) => x || y);
@@ -66,6 +73,11 @@ function registerHandlebarsHelpers() {
       const args = Array.prototype.slice.call(arguments);
       args.pop(); // remove unrelated data
       return args.join("");
+  });
+  Handlebars.registerHelper('sequence', function () {
+      const args = Array.prototype.slice.call(arguments, 0, -1);
+      let arr = [...Array(args[1] + 1).keys()].slice(args[0]);
+      return arr;
   });
 
   Handlebars.registerHelper('sk_enrich', function (content) {

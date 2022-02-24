@@ -19,7 +19,7 @@
         <span>{{localize "SK.STAT.SHORT.WEALTH_LEVEL"}}</span>
         <select>
             {{#each gear.data.data.wealthLevels as |displayValue value|}}
-            <option value="{{value}}" {{#if (intEq value ../gear.data.data.wealth-level.slot)}}selected="selected"{{/if}}>{{displayValue}}</option>
+            <option value="{{value}}">{{displayValue}}</option>
             {{/each}}
         </select>
     </div>

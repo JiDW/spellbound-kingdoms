@@ -1,4 +1,21 @@
 export class SpellboundKingdomsActor extends Actor {
+    _preCreateEmbeddedDocuments(embeddedName, result, options, userId) {
+        const purchasableItems = [
+            'gear',
+            'vehicle',
+            'building',
+        ];
+
+        for (let [,item] of Object.entries(result)) {
+            if (!purchasableItems.includes(item.type)) continue;
+
+            if (item.data['wealth-level'].value <= this.data.data.wealth.level.value) {
+                item.data['wealth-level'].slot = item.data['wealth-level'].value;
+            } else {
+                item.data['wealth-level'].slot = 0; // gold
+            }
+        }
+    }
 }
   
 export class SpellboundKingdomsItem extends Item {

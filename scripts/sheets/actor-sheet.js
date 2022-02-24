@@ -16,6 +16,7 @@ export class SpellboundKingdomsActorSheet extends ActorSheet {
             const statName = $(ev.currentTarget).data("stat");
             return this.rollStat(statName);
         });
+        html.find(".gear-item-wealth-level select").change(this.handleWealthSlotChange.bind(this));
 
         // Items
         html.find(".item-edit").click((ev) => {
@@ -191,6 +192,14 @@ export class SpellboundKingdomsActorSheet extends ActorSheet {
             delete data.subtype;
         }
         this.actor.createEmbeddedDocuments("Item", [data], { renderSheet: true });
+    }
+
+    handleWealthSlotChange(event) {
+        event.preventDefault();
+        const div = $(event.currentTarget).parents(".item");
+        const item = this.actor.items.get(div.data("entity-id"));
+        
+        item.update({'data.wealth-level.slot': parseInt($(event.currentTarget).val())});
     }
 
     handleItemTransfer(event) {
