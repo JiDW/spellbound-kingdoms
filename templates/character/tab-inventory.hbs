@@ -8,7 +8,7 @@
             </div>
             <div class="character-armor">
                 {{#each data.itemsByType.armor as |armor key|}}
-                    {{> systems/spellbound-kingdoms/templates/character/partial/armor.hbs gear=armor key=key}}
+                    {{> systems/spellbound-kingdoms/templates/character/partial/gear.hbs gear=armor currentWealthLevel=../data.data.wealth.level.value key=key}}
                 {{/each}}
             </div>
         </div>
@@ -19,7 +19,7 @@
             </div>
             <div class="character-weapons">
                 {{#each data.itemsByType.weapon as |weapon key|}}
-                    {{> systems/spellbound-kingdoms/templates/character/partial/gear.hbs gear=weapon key=key}}
+                    {{> systems/spellbound-kingdoms/templates/character/partial/gear.hbs gear=weapon currentWealthLevel=../data.data.wealth.level.value key=key}}
                 {{/each}}
             </div>
         </div>
@@ -33,20 +33,26 @@
 </div>
 
 <div class="footer">
-    <div class="frame">
+    <div class="frame frame-wealth">
         <div class="frame-label frame-side-label">
             {{localize "SK.LABEL.PURCHASES"}}
         </div>
         <div class="wealth-levels">
-            {{#each (sequence 1 20) as |wl key|}}
-            <div class="wealth-level">
-                <div class="frame-label">{{localize "SK.STAT.SHORT.WEALTH_LEVEL"}} {{wl}}</div>
+            {{#each data.wealthSlots as |wlSlots key|}}
+            {{#unless (eq key 0)}}
+            <div class="wealth-level{{#if (gt key ../data.data.wealth.level.value)}} locked{{/if}}">
+                <div class="frame-label">{{localize "SK.STAT.SHORT.WEALTH_LEVEL"}} {{key}}</div>
                 <div class="wealth-slot-list">
-                    {{#each (sequence 1 6) as |slot key|}}
-                    <div class="item">Slot {{slot}}</div>
+                    <ol>
+                    {{#each wlSlots as |slot key|}}
+                        <li class="item" data-entity-id="{{slot.id}}" title="{{slot.name}}">
+                            {{slot.name}}
+                        </li>
                     {{/each}}
+                    </ol>
                 </div>
             </div>
+            {{/unless}}
             {{/each}}
         </div>
     </div>

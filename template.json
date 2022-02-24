@@ -63,6 +63,11 @@
           "max": 4
         }
       },
+      "armor": {
+        "label": "SK.LABEL.ARMOR",
+        "value": 0,
+        "max": 0
+      },
       "wealth": {
         "level": {
           "value": 2

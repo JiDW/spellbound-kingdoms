@@ -1,5 +1,6 @@
 
 // import { CharacterPickerDialog } from "../dialog/character-picker-dialog.js";
+import { SpellboundKingdomsItem } from "../actor/spellbound-kingdoms.js";
 import { SKRollHandler } from "../components/roll-engine/engine.js";
 
 export class SpellboundKingdomsActorSheet extends ActorSheet {
@@ -39,10 +40,26 @@ export class SpellboundKingdomsActorSheet extends ActorSheet {
     getData() {
         const data = super.getData();
         data.data.itemsByType = this.getItemsByType();
+        data.data.wealthSlots = this.geWealthSlots();
         return data;
     }
 
     // ********** PREPARE DATA *************
+
+    geWealthSlots() {
+        let wealthSlots = Array.from({length: 21}, u => ([])); // new Array(21).fill([]);
+        let slotNumber;
+
+        const purchasableItems = this.actor.data.items.filter(i => SpellboundKingdomsItem.purchasableItems.includes(i.data.type));
+        for(let item of purchasableItems.values()) {
+            slotNumber = parseInt(item.data.data['wealth-level'].slot);
+            if (slotNumber === 0) continue;
+
+            wealthSlots[slotNumber].push(item);
+        }
+
+        return wealthSlots;
+    }
 
     getItemsByType() {
         let itemsByType = this.categorizeItems();

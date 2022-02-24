@@ -51,7 +51,7 @@ input.grid-input { width: 81%; }
     font-size: 18px;
     text-align: center;
     border-bottom: 1px solid;
-    margin-bottom: 6px;
+    margin-bottom: 1px;
     color: var(--label-color);
 }
 
@@ -251,24 +251,41 @@ input.grid-input { width: 81%; }
 
 /* *** wealth slots *** */
 
+.spellbound-kingdoms .character .frame.frame-wealth {
+    min-height: 164px;
+}
 .spellbound-kingdoms .character .tab-inventory .frame-side-label {
     transform: rotate(180deg);
     writing-mode: vertical-lr;
     float: left;
+    height: 150px;
+    border-bottom: 0;
 }
 .spellbound-kingdoms .character .tab-inventory .wealth-levels {
     display: grid;
     overflow-x: scroll;
-    grid-template-columns: repeat(20, 200px);
-    grid-template-rows: 120px;
+    grid-template-columns: repeat(20, 140px);
+    grid-template-rows: 134px;
 }
 .spellbound-kingdoms .character .tab-inventory .wealth-level {
-    width: 200px;
     border: 1px solid;
+}
+.spellbound-kingdoms .character .tab-inventory .wealth-level.locked {
+    background-color: rgba(0, 0, 0, 0.25);
 }
 .spellbound-kingdoms .character .tab-inventory .wealth-slot-list {
     overflow-y: scroll;
-    height: 90px;
+    height: 109px;
+}
+.spellbound-kingdoms .character .tab-inventory .wealth-slot-list .item {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    list-style-position: inside;
+    margin-left: -16px;
+}
+.spellbound-kingdoms .character .tab-inventory .wealth-slot-list ol {
+    margin-top: 0px;
 }
 
 /* *** gear list *** */
@@ -314,7 +331,7 @@ input.grid-input { width: 81%; }
     font-size: 25px;
 }
 .spellbound-kingdoms .character .item.gear-item .gear-item-wealth-level select {
-    width: 40px;
+    width: 45px;
     font-size: 12px;
     height: 16px;
 }

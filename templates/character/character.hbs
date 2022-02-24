@@ -22,26 +22,26 @@
             </div>
             <div class="character-mood">
                 <label>{{localize "SK.LABEL.MOOD"}}:</label>
-                <input class="shortest-num" name="data.stats.mood.value" type="number" value="{{data.data.stats.mood.value}}" data-dtype="Number" /> / 
+                <input class="shortest-num" name="data.stats.mood.value" type="number" min="0" value="{{data.data.stats.mood.value}}" data-dtype="Number" /> / 
                 <span class="character-max-mood">{{data.data.stats.heart.value}}</span>
             </div>
             <div class="character-body">
                 <label>{{localize "SK.LABEL.BODY"}}:</label>
-                <input class="shortest-num" name="data.stats.body.value" type="number" value="{{data.data.stats.body.value}}" data-dtype="Number" /> / 
-                <input class="shortest-num" name="data.stats.body.max" type="number" value="{{data.data.stats.body.max}}" data-dtype="Number" />
+                <input class="shortest-num" name="data.stats.body.value" type="number" min="0" value="{{data.data.stats.body.value}}" data-dtype="Number" /> / 
+                <input class="shortest-num" name="data.stats.body.max" type="number" min="0" value="{{data.data.stats.body.max}}" data-dtype="Number" />
             </div>
             <div class="character-armor">
                 <label>{{localize "SK.LABEL.ARMOR"}}:</label>
-                <span class="character-max-mood">{{data.armor.value}}</span> / 
-                <span class="character-max-mood">{{data.armor.max}}</span>
+                <input class="shortest-num" name="data.armor.value" type="number" min="0" value="{{data.data.armor.value}}" data-dtype="Number" /> / 
+                <input class="shortest-num" name="data.armor.max" type="number" min="0" value="{{data.data.armor.max}}" data-dtype="Number" />
             </div>
             <div class="character-wealth-level">
                 <label>{{localize "SK.LABEL.WEALTH_LEVEL"}}:</label>
-                <input class="shortest-num" name="data.wealth.level.value" type="number" value="{{data.data.wealth.level.value}}" data-dtype="Number" />
+                <input class="shortest-num" name="data.wealth.level.value" type="number" min="0" value="{{data.data.wealth.level.value}}" data-dtype="Number" />
             </div>
             <div class="character-gold">
                 <label>{{localize "SK.LABEL.GOLD"}}:</label>
-                <input class="short-num" name="data.wealth.gold.value" type="number" value="{{data.data.wealth.gold.value}}" data-dtype="Number" />
+                <input class="short-num" name="data.wealth.gold.value" type="number" min="0" value="{{data.data.wealth.gold.value}}" data-dtype="Number" />
             </div>
             <div class="character-class character-class-0">
                 <label>{{localize "SK.LABEL.CLASS"}}:</label>
@@ -84,11 +84,6 @@
                 </select>
             </div>
         </div>
-        <!-- <div class="character-age">
-            <label>{{localize "SK.LABEL.AGE"}}:</label>
-            <input class="short-num" name="data.bio.age.value" type="number" value="{{data.data.bio.age.value}}"
-                            data-dtype="Number" />
-        </div> -->
 
         <div class="sheet-tabs tabs flex row" data-group="primary">
             <h1 data-tab="main">{{localize "SK.TAB.MAIN"}}</h1>

@@ -1,24 +1,36 @@
 export class SpellboundKingdomsActor extends Actor {
-    _preCreateEmbeddedDocuments(embeddedName, result, options, userId) {
-        const purchasableItems = [
-            'gear',
-            'vehicle',
-            'building',
-        ];
 
-        for (let [,item] of Object.entries(result)) {
-            if (!purchasableItems.includes(item.type)) continue;
+    /** @inheritdoc */
+    _onCreateEmbeddedDocuments(type, documents, result, options, userId) {
+        super._onCreateEmbeddedDocuments(type, documents, result, options, userId);
 
-            if (item.data['wealth-level'].value <= this.data.data.wealth.level.value) {
-                item.data['wealth-level'].slot = item.data['wealth-level'].value;
+        let slot;
+        for (let [, item] of Object.entries(documents)) {
+            if (!SpellboundKingdomsItem.purchasableItems.includes(item.type)) continue;
+
+            if (item.data.data['wealth-level'].value <= this.data.data.wealth.level.value) {
+                slot = item.data.data['wealth-level'].value;
             } else {
-                item.data['wealth-level'].slot = 0; // gold
+                slot = 0; // gold
+            }
+
+            if (slot !== item.data.data['wealth-level'].slot) {
+                item.update({ 'data.wealth-level.slot': slot });
             }
         }
     }
 }
   
 export class SpellboundKingdomsItem extends Item {
+
+    static get purchasableItems() {
+        return [
+            'gear',
+            'vehicle',
+            'building',
+        ];
+    }
+
     async sendToChat() {
       // let templateMap = {
       //   gear: 'systems/spellbound-kingdoms/templates/chat/item.hbs',

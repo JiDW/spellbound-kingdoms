@@ -47,6 +47,9 @@
   "SK.LABEL.MAJOR": "Major",
   "SK.LABEL.GRAND": "Grand",
 
+  "SK.LABEL.AVAILABLE": "Available",
+  "SK.LABEL.LOCKED": "Locked",
+
   "SK.TYPE.HISTORY": "History",
   "SK.TYPE.REPUTATION": "Reputation",
   "SK.TYPE.MAGIC": "Magic",

@@ -52,6 +52,17 @@ function registerHandlebarsHelpers() {
       return args[0] === expression;
     });
   });
+  /** Less or equals */
+  Handlebars.registerHelper("leq", function () {
+    const args = Array.prototype.slice.call(arguments, 0, -1);
+    return args.every(function (expression) {
+      return args[0] <= expression;
+    });
+  });
+  /** Greater than */
+  Handlebars.registerHelper("gt", function (leftOperand, rightOperand) {
+      return leftOperand > rightOperand;
+  });
   Handlebars.registerHelper("intEq", function () {
     const args = Array.prototype.slice.call(arguments, 0, -1);
     return args.every(function (expression) {

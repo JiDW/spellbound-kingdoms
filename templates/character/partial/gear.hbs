@@ -18,9 +18,26 @@
     <div class="gear-item-wealth-level" title="{{localize "SK.LABEL.PURCHASED_WITH"}}">
         <span>{{localize "SK.STAT.SHORT.WEALTH_LEVEL"}}</span>
         <select>
-            {{#each gear.data.data.wealthLevels as |displayValue value|}}
-            <option value="{{value}}" {{#if (intEq value ../gear.data.data.wealth-level.slot)}}selected="selected"{{/if}}>{{displayValue}}</option>
+            <optgroup label="{{localize 'SK.LABEL.AVAILABLE'}}">
+                <option value="0" {{#if (intEq 0 ../gear.data.data.wealth-level.slot)}}selected="selected"{{/if}}>
+                    {{localize "SK.LABEL.GOLD"}}
+                </option>
+            {{#if (gt gear.data.data.wealth-level.value currentWealthLevel)}}
+            </optgroup>
+            <optgroup label="{{localize 'SK.LABEL.LOCKED'}}">
+            {{/if}}
+            {{#each (sequence gear.data.data.wealth-level.value 20) as |value|}}
+                {{#unless (eq value 0)}}
+                <option value="{{value}}" {{#if (intEq value ../gear.data.data.wealth-level.slot)}}selected="selected"{{/if}}>
+                   {{value}}
+                </option>
+                {{/unless}}
+                {{#if (eq value ../currentWealthLevel)}}
+            </optgroup>
+            <optgroup label="{{localize 'SK.LABEL.LOCKED'}}">
+                {{/if}}
             {{/each}}
+            </optgroup>
         </select>
     </div>
     <div class="item-controls-right">
