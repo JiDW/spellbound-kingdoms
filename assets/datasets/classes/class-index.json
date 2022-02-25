@@ -5,7 +5,7 @@
   "fixer": "/fixer.json",
   "noble": "/noble.json",
   "priest": "/priest.json",
-  "coutesan": "/courtesan.json",
+  "courtesan": "/courtesan.json",
   "rogue": "/rogue.json",
   "assassin": "/assassin.json",
   "savage": "/savage.json",
