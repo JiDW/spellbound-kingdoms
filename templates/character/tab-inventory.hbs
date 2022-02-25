@@ -25,10 +25,53 @@
         </div>
     </div>
     <div class="main-column">
-        &nbsp;
+        <div class="frame">
+            <div class="frame-label">
+                {{localize "SK.TYPE.FASHION"}}
+                <button class="item-create" data-type="gear" data-subtype="fashion">+</button>
+            </div>
+            <div class="character-armor">
+                {{#each data.itemsByType.fashion as |fashion key|}}
+                    {{> systems/spellbound-kingdoms/templates/character/partial/gear.hbs gear=fashion currentWealthLevel=../data.data.wealth.level.value key=key}}
+                {{/each}}
+            </div>
+        </div>
+        <div class="frame">
+            <div class="frame-label">
+                {{localize "SK.TYPE.ALCHEMY"}}
+                <button class="item-create" data-type="gear" data-subtype="alchemy">+</button>
+            </div>
+            <div class="character-weapons">
+                {{#each data.itemsByType.alchemy as |alchemy key|}}
+                    {{> systems/spellbound-kingdoms/templates/character/partial/gear.hbs gear=alchemy currentWealthLevel=../data.data.wealth.level.value key=key}}
+                {{/each}}
+            </div>
+        </div>
     </div>
     <div class="main-column">
-        &nbsp;
+        
+        <div class="frame">
+            <div class="frame-label">
+                {{localize "SK.TYPE.VEHICLES"}}
+                <button class="item-create" data-type="gear" data-subtype="vehicle">+</button>
+            </div>
+            <div class="character-armor">
+                {{#each data.itemsByType.vehicle as |vehicle key|}}
+                    {{> systems/spellbound-kingdoms/templates/character/partial/vehicle.hbs gear=vehicle currentWealthLevel=../data.data.wealth.level.value key=key}}
+                {{/each}}
+            </div>
+        </div>
+        <div class="frame">
+            <div class="frame-label">
+                {{localize "SK.TYPE.ENGINEERING"}}
+                <button class="item-create" data-type="gear" data-subtype="engineering">+</button>
+            </div>
+            <div class="character-weapons">
+                {{#each data.itemsByType.engineering as |engineering key|}}
+                    {{> systems/spellbound-kingdoms/templates/character/partial/gear.hbs gear=engineering currentWealthLevel=../data.data.wealth.level.value key=key}}
+                {{/each}}
+            </div>
+        </div>
     </div>
 </div>
 

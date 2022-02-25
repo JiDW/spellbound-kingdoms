@@ -147,7 +147,19 @@ export class SpellboundKingdomsActorSheet extends ActorSheet {
         );
         itemsByType.fashion = this._sortItems(
             itemsByType.fashion,
-            (itemId1, itemId2) => itemsByType.fashion[itemId1].name.localeCompare(itemsByType.fashion[itemId2].name)
+            (itemId1, itemId2) => itemsByType.fashion[itemId2].data.data.quality.value - itemsByType.fashion[itemId1].data.data.quality.value
+        );
+        itemsByType.alchemy = this._sortItems(
+            itemsByType.alchemy,
+            (itemId1, itemId2) => itemsByType.alchemy[itemId1].name.localeCompare(itemsByType.alchemy[itemId2].name)
+        );
+        itemsByType.engineering = this._sortItems(
+            itemsByType.engineering,
+            (itemId1, itemId2) => itemsByType.engineering[itemId1].name.localeCompare(itemsByType.engineering[itemId2].name)
+        );
+        itemsByType.vehicle = this._sortItems(
+            itemsByType.vehicle,
+            (itemId1, itemId2) => itemsByType.vehicle[itemId1].name.localeCompare(itemsByType.vehicle[itemId2].name)
         );
         itemsByType.talent = this._sortItems(
             itemsByType.talent,
