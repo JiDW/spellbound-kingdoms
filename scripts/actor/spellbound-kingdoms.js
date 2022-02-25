@@ -19,6 +19,27 @@ export class SpellboundKingdomsActor extends Actor {
             }
         }
     }
+
+    /** @inheritdoc */
+    _preDeleteEmbeddedDocuments(embeddedName, result, options, userId) {
+        super._preDeleteEmbeddedDocuments(embeddedName, result, options, userId);
+        
+        let item;
+        for (let [, itemId] of Object.entries(result)) {
+            item = this.data.items.get(itemId);
+            if (!SpellboundKingdomsItem.purchasableItems.includes(item.type)) continue;
+            if (item.data.data['wealth-level'].slot === 0) continue;
+
+            let data = {
+                'type': 'wealth-slot-cooldown',
+                'name': 'Cooldown',
+                'data.cooldown': 7,
+                'data.wealth-level.slot': item.data.data['wealth-level'].slot,
+                'data.wealth-level.value': item.data.data['wealth-level'].slot,
+            };
+            this.createEmbeddedDocuments("Item", [data], { renderSheet: false });
+        }
+    }
 }
   
 export class SpellboundKingdomsItem extends Item {

@@ -46,7 +46,16 @@
                     <ol>
                     {{#each wlSlots as |slot key|}}
                         <li class="item" data-entity-id="{{slot.id}}" title="{{slot.name}}">
+                        {{#if (eq slot.type 'wealth-slot-cooldown')}}
+                            <a class="item-control item-delete" title="{{localize 'SK.BUTTON.DELETE'}}"><i class="fas fa-trash"></i></a>
+                            &nbsp;&nbsp;
+                            <i class="fas fa-history"></i>
+                            {{slot.data.data.cooldown}}
+                            &nbsp;&nbsp;
+                            <a class="item-control item-edit" title="{{localize 'Edit'}}"><i class="fas fa-edit"></i></a>
+                        {{else}}
                             {{slot.name}}
+                        {{/if}}
                         </li>
                     {{/each}}
                     </ol>

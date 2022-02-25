@@ -50,7 +50,8 @@ export class SpellboundKingdomsActorSheet extends ActorSheet {
         let wealthSlots = Array.from({length: 21}, u => ([])); // new Array(21).fill([]);
         let slotNumber;
 
-        const purchasableItems = this.actor.data.items.filter(i => SpellboundKingdomsItem.purchasableItems.includes(i.data.type));
+        let itemTypes = SpellboundKingdomsItem.purchasableItems.concat(['wealth-slot-cooldown']);
+        const purchasableItems = this.actor.data.items.filter(i => itemTypes.includes(i.data.type));
         for(let item of purchasableItems.values()) {
             slotNumber = parseInt(item.data.data['wealth-level'].slot);
             if (slotNumber === 0) continue;

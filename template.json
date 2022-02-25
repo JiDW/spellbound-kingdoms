@@ -208,7 +208,7 @@
       }
     },
     "wealth-slot-cooldown": {
-        "wealth-level":  1,
+        "wealth-level": {"value": 2, "slot": 2},
         "cooldown": 7
     },
     "fighting-style": {

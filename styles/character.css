@@ -295,6 +295,11 @@ input.grid-input { width: 81%; }
     max-height: 234px;
     overflow-y: scroll;
 }
+.spellbound-kingdoms .character .tab-inventory .character-armor {
+    height: 109px;
+    max-height: 109px;
+    overflow-y: scroll;
+}
 .spellbound-kingdoms .character .tab-inventory .item.gear-item {
     display: grid;
     grid-template-columns: 33px 14px 1fr 1fr 70px 14px;
@@ -340,9 +345,6 @@ input.grid-input { width: 81%; }
 .spellbound-kingdoms .character .item.gear-item .gear-requirements,
 .spellbound-kingdoms .character .item.gear-item .item-controls-left {
     text-align: center;
-}
-.spellbound-kingdoms .character .item.gear-item .gear-requirements.green {
-    color: green;
 }
 .spellbound-kingdoms .character .item.gear-item .gear-requirements.red {
     color: red;
