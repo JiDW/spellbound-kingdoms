@@ -267,9 +267,7 @@
       "templates": ["item", "defense"],
       "type": "vehicle",
       "subtype": "",
-      "effect": {
-        "value": ""
-      },
+      "effect": "",
       "description": ""
     },
     "inspiration": {

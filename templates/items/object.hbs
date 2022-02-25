@@ -1,0 +1,55 @@
+<form class="{{cssClass}}" autocomplete="off">
+    <div class="grid-object">
+        <div class="avatar">
+            <img class="profile-img" src="{{data.img}}" data-edit="img" title="{{data.name}}" />
+        </div>
+
+        <div class="object-name">
+            <label class="form-gear-label">{{localize "SK.LABEL.NAME"}}:</label>
+            <input name="name" type="text" value="{{data.name}}" />
+        </div>
+
+        <div class="object-type">
+            <label class="form-gear-label">{{localize "SK.LABEL.TYPE"}}:</label>
+            <select class="" name="data.type">
+                {{#select data.data.type}}
+                <option value="vehicle">{{localize "SK.TYPE.VEHICLE"}}</option>
+                <option value="building">{{localize "SK.TYPE.BUILDING"}}</option>
+                <option value="wonder">{{localize "SK.TYPE.WONDER"}}</option>
+                {{/select}}
+            </select>
+        </div>
+        <div class="object-subtype">
+            <label class="form-gear-label">{{localize "SK.LABEL.SUBTYPE"}}:</label>
+            <input name="data.subtype" type="text" value="{{data.data.subtype}}" />
+        </div>
+
+        <div class="object-quality">
+            <label class="form-gear-label">{{localize "SK.LABEL.QUALITY"}}:</label>
+            <input class="shortest-num" name="data.quality.value" type="number" value="{{data.data.quality.value}}" min="0" data-dtype="Number" /> /
+            <input class="shortest-num" name="data.quality.max" type="number" value="{{data.data.quality.max}}" min="0" data-dtype="Number" />
+        </div>
+        <div class="object-defense">
+            <label class="form-gear-label">{{localize "SK.LABEL.DEFENSE"}}:</label>
+            <input class="shortest-num" name="data.defense.value" type="number" value="{{data.data.defense.value}}" min="0" data-dtype="Number" /> /
+            <input class="shortest-num" name="data.defense.max" type="number" value="{{data.data.defense.max}}" min="0" data-dtype="Number" />
+        </div>
+        <div class="object-wealth-level">
+            <label class="form-gear-label">{{localize "SK.LABEL.WEALTH_LEVEL"}}:</label>
+            <input class="shortest-num" name="data.wealth-level.value" type="number" value="{{data.data.wealth-level.value}}" min="0" data-dtype="Number" />
+        </div>
+        <div class="object-cash-cost">
+            <label class="form-gear-label">{{localize "SK.LABEL.GOLD_COST"}}:</label>
+            <input class="short-medium" name="data.cash-cost.value" type="number" value="{{data.data.cash-cost.value}}" min="0" data-dtype="Number" />
+        </div>
+        
+        <div class="object-effect">
+            <label class="form-gear-label">{{localize "SK.LABEL.EFFECT"}}:</label>
+            <input name="data.effect" type="text" value="{{data.data.effect}}" />
+        </div>
+        <div class="object-description">
+            <label class="form-gear-label">{{localize "SK.LABEL.DESCRIPTION"}}:</label>
+            <textarea class="gear-description" name="data.description">{{data.data.description}}</textarea>
+        </div>
+    </div>
+</form>

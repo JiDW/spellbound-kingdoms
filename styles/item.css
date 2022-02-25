@@ -220,3 +220,29 @@ button.add-active-effect {
 .item .grid-gear .gear-gear-description .gear-description {
     height: 250px;
 }
+
+/* ---- object ---- */
+.grid-object {
+    display: grid;
+    grid-template-columns: repeat(6, 76px);
+    grid-template-rows: repeat(7, auto);
+    grid-column-gap: 6px;
+    grid-row-gap: 2px;
+}
+    
+.item .grid-object .avatar                { grid-area: 1 / 1 / 4 / 2; }
+.item .grid-object .object-name           { grid-area: 1 / 2 / 2 / 7; }
+.item .grid-object .object-type           { grid-area: 2 / 2 / 3 / 4; }
+.item .grid-object .object-quality        { grid-area: 2 / 4 / 3 / 7; }
+.item .grid-object .object-subtype        { grid-area: 3 / 2 / 4 / 7; }
+.item .grid-object .object-defense        { grid-area: 4 / 1 / 5 / 3; }
+.item .grid-object .object-wealth-level   { grid-area: 4 / 3 / 5 / 5; }
+.item .grid-object .object-cash-cost      { grid-area: 4 / 5 / 5 / 7; }
+.item .grid-object .object-effect         { grid-area: 5 / 1 / 6 / 7; }
+.item .grid-object .object-description    { grid-area: 6 / 1 / 9 / 7; }
+
+.item .grid-object .object-name input { width: 80%; }
+.item .grid-object .object-subtype input { width: 75%; }
+.item .grid-object .object-description .gear-description {
+    height: 250px;
+}

@@ -31,11 +31,13 @@
     "SK.LABEL.USES": "Uses",
     "SK.LABEL.DESCRIPTION": "Description",
     "SK.LABEL.SHORT_DESCRIPTION": "Short Description",
+    "SK.LABEL.EFFECT": "Effect",
     "SK.LABEL.TYPE": "Type",
     "SK.LABEL.SUBTYPE": "Subtype",
     "SK.LABEL.LEVEL": "Level",
     "SK.LABEL.IDENTIFIER": "Identifier",
     "SK.LABEL.QUALITY": "Quality",
+    "SK.LABEL.DEFENSE": "Defense",
     "SK.LABEL.STAT_REQUIREMENTS": "Characteristics Requriements",
     "SK.LABEL.COOLDOWN": "Cooldown",
   
@@ -71,7 +73,10 @@
     "SK.TYPE.ALCHEMY": "Alchemy",
     "SK.TYPE.ENGINEERING": "Engineering",
     "SK.TYPE.FASHION": "Fashion",
-    "SK.TYPE.OTHER": "Other",
+
+    "SK.TYPE.VEHICLE": "Vehicle",
+    "SK.TYPE.BUILDING": "Building",
+    "SK.TYPE.WONDER": "Wonder",
   
     "magic": "Magic",
     "martial": "Martial",
