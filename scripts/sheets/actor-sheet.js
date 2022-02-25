@@ -12,12 +12,20 @@ export class SpellboundKingdomsActorSheet extends ActorSheet {
     activateListeners(html) {
         super.activateListeners(html);
 
+        let me = this;
+
         // Rolls
         html.find(".roll-stat").click((ev) => {
             const statName = $(ev.currentTarget).data("stat");
             return this.rollStat(statName);
         });
         html.find(".gear-item-wealth-level select").change(this.handleWealthSlotChange.bind(this));
+        html.find(".cooldown-controls .increase-cooldowns").click((ev) => {
+            me.changeCooldowns(1);
+        });
+        html.find(".cooldown-controls .decrease-cooldowns").click((ev) => {
+            me.changeCooldowns(-1);
+        });
 
         // Items
         html.find(".item-edit").click((ev) => {
@@ -377,4 +385,16 @@ export class SpellboundKingdomsActorSheet extends ActorSheet {
         destination.createEmbeddedDocuments("Item", [item.data]);
         source.deleteEmbeddedDocuments("Item", [item.id]);
     };
+
+    changeCooldowns(delta) {
+        let updates = [], update;
+        let cds = this.actor.data.items.filter(i => i.data.type === 'wealth-slot-cooldown');
+        for(let item of cds.values()) {
+            updates.push({
+                '_id': item.id,
+                'data.cooldown': item.data.data.cooldown + delta,
+            });
+        }
+        this.actor.updateEmbeddedDocuments('Item', updates);
+    }
 }

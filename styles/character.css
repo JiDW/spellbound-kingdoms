@@ -254,6 +254,18 @@ input.grid-input { width: 81%; }
 .spellbound-kingdoms .character .frame.frame-wealth {
     min-height: 164px;
 }
+.spellbound-kingdoms .character .tab-inventory .cooldown-controls {
+    width: 18px;
+    float: left;
+}
+.spellbound-kingdoms .character .tab-inventory .cooldown-controls-header {
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+.spellbound-kingdoms .character .tab-inventory .cooldown-controls .item-control {
+    margin-bottom: 4px;
+    font-size: 18px;
+}
 .spellbound-kingdoms .character .tab-inventory .frame-side-label {
     transform: rotate(180deg);
     writing-mode: vertical-lr;

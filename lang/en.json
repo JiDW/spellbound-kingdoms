@@ -113,6 +113,9 @@
   "SK.TOOLTIP.USE_MOOD": "Spend 1 Mood to maximize one die (no explosion)",
   "SK.TOOLTIP.USE_WEAK_INSPIRATION": "Use weak inspiration (of value 1 or not narrated) to roll Heart as a bonus die",
   "SK.TOOLTIP.USE_STRONG_INSPIRATION": "Use strong inspiration (2+ value and narrated) to gain max value on your current die and your Heart die (they explode)",
+  "SK.TOOLTIP.INCREASE_COOLDOWNS": "Increase all wealth slot cooldowns by 1",
+  "SK.TOOLTIP.DECREASE_COOLDOWNS": "Decrease all wealth slot cooldowns by 1",
+  "SK.TOOLTIP.COOLDOWN_CONTROLS": "Cooldown Controls",
 
   "SK.HINT.IDENTIFIER": "Identifier is used for referencing in datasets. Do not translate it.",
 

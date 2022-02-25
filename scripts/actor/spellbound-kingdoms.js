@@ -21,6 +21,24 @@ export class SpellboundKingdomsActor extends Actor {
     }
 
     /** @inheritdoc */
+    _onUpdateEmbeddedDocuments(type, documents, result, options, userId) {
+        super._onUpdateEmbeddedDocuments(type, documents, result, options, userId);
+
+        let idsToDelete = [];
+        documents.forEach(function (item) {
+            if (item.type !== 'wealth-slot-cooldown') return;
+
+            if (item.data.data.cooldown <= 0) {
+                idsToDelete.push(item.id);
+            }
+        });
+        
+        if (idsToDelete.length > 0) {
+            this.deleteEmbeddedDocuments('Item', idsToDelete);
+        }
+    }
+
+    /** @inheritdoc */
     _preDeleteEmbeddedDocuments(embeddedName, result, options, userId) {
         super._preDeleteEmbeddedDocuments(embeddedName, result, options, userId);
         
