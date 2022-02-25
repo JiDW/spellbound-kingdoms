@@ -49,10 +49,46 @@ export class SpellboundKingdomsActorSheet extends ActorSheet {
         const data = super.getData();
         data.data.itemsByType = this.getItemsByType();
         data.data.wealthSlots = this.geWealthSlots();
+        data.data.inventory = this.getInventory(data.data.itemsByType);
         return data;
     }
 
     // ********** PREPARE DATA *************
+
+    getInventory(itemsByType) {
+        let inventory = {
+            column1: {
+                armor: this.subcategorize(itemsByType.armor, 'subtype'),
+                weapon: this.subcategorize(itemsByType.weapon, 'subtype'),
+                fashion: this.subcategorize(itemsByType.fashion, 'subtype'),
+            },
+            column2: {
+                alchemy: this.subcategorize(itemsByType.alchemy, 'subtype'),
+                engineering: this.subcategorize(itemsByType.engineering, 'subtype'),
+            },
+            column3: {
+                vehicle: {'': itemsByType.vehicle},
+                building: this.subcategorize(itemsByType.building, 'subtype'),
+                wonder: {'': itemsByType.wonder},
+            },
+        };
+        
+        return inventory;
+    }
+
+    subcategorize(items, categoryField) {
+        let split = {};
+        let category;
+        for (let [, item] of Object.entries(items)) {
+            category = item.data.data[categoryField];
+            if (split[category] === undefined) {
+                split[category] = {};
+            }
+            split[category][item.id] = item;
+        }
+
+        return split;
+    }
 
     geWealthSlots() {
         let wealthSlots = Array.from({length: 21}, u => ([])); // new Array(21).fill([]);
@@ -86,7 +122,8 @@ export class SpellboundKingdomsActorSheet extends ActorSheet {
             engineering: {},
             fashion: {},
             vehicle: {},
-            other: {}, // any other items that are probably not carried but are on your payroll (buildings, units, etc.)
+            building: {},
+            wonder: {},
             'fighting-style': {},
             maneuver: {},
             talent: {},

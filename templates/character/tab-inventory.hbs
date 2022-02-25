@@ -2,75 +2,50 @@
 <div class="columns">
     <div class="main-column">
         <div class="frame">
+        {{#each data.inventory.column1 as |subtypes type|}}
             <div class="frame-label">
-                {{localize "SK.LABEL.ARMOR"}}
-                <button class="item-create" data-type="gear" data-subtype="armor">+</button>
+                {{localize (sk_strconcat "SK.LABEL." (toUpperCase type))}}
+                <a class="item-create" data-type="object" data-subtype="{{type}}" title="{{localize 'SK.BUTTON.ADD'}}"><i class="far fa-plus-square"></i></a>
             </div>
-            <div class="character-armor">
-                {{#each data.itemsByType.armor as |armor key|}}
-                    {{> systems/spellbound-kingdoms/templates/character/partial/gear.hbs gear=armor currentWealthLevel=../data.data.wealth.level.value key=key}}
+            {{#each subtypes as |items subtype|}}
+                <div class="subtype">{{subtype}}</div>
+                {{#each items as |item key|}}
+                    {{> systems/spellbound-kingdoms/templates/character/partial/gear.hbs gear=item currentWealthLevel=../../data.data.wealth.level.value key=key}}
                 {{/each}}
-            </div>
-        </div>
-        <div class="frame">
-            <div class="frame-label">
-                {{localize "SK.LABEL.WEAPONS"}}
-                <button class="item-create" data-type="gear" data-subtype="weapon">+</button>
-            </div>
-            <div class="character-weapons">
-                {{#each data.itemsByType.weapon as |weapon key|}}
-                    {{> systems/spellbound-kingdoms/templates/character/partial/gear.hbs gear=weapon currentWealthLevel=../data.data.wealth.level.value key=key}}
-                {{/each}}
-            </div>
+            {{/each}}
+        {{/each}}
         </div>
     </div>
     <div class="main-column">
         <div class="frame">
+        {{#each data.inventory.column2 as |subtypes type|}}
             <div class="frame-label">
-                {{localize "SK.TYPE.FASHION"}}
-                <button class="item-create" data-type="gear" data-subtype="fashion">+</button>
+                {{localize (sk_strconcat "SK.LABEL." (toUpperCase type))}}
+                <a class="item-create" data-type="object" data-subtype="{{type}}" title="{{localize 'SK.BUTTON.ADD'}}"><i class="far fa-plus-square"></i></a>
             </div>
-            <div class="character-armor">
-                {{#each data.itemsByType.fashion as |fashion key|}}
-                    {{> systems/spellbound-kingdoms/templates/character/partial/gear.hbs gear=fashion currentWealthLevel=../data.data.wealth.level.value key=key}}
+            {{#each subtypes as |items subtype|}}
+                <div class="subtype">{{subtype}}</div>
+                {{#each items as |item key|}}
+                    {{> systems/spellbound-kingdoms/templates/character/partial/gear.hbs gear=item currentWealthLevel=../../data.data.wealth.level.value key=key}}
                 {{/each}}
-            </div>
-        </div>
-        <div class="frame">
-            <div class="frame-label">
-                {{localize "SK.TYPE.ALCHEMY"}}
-                <button class="item-create" data-type="gear" data-subtype="alchemy">+</button>
-            </div>
-            <div class="character-weapons">
-                {{#each data.itemsByType.alchemy as |alchemy key|}}
-                    {{> systems/spellbound-kingdoms/templates/character/partial/gear.hbs gear=alchemy currentWealthLevel=../data.data.wealth.level.value key=key}}
-                {{/each}}
-            </div>
+            {{/each}}
+        {{/each}}
         </div>
     </div>
     <div class="main-column">
-        
         <div class="frame">
+        {{#each data.inventory.column3 as |subtypes type|}}
             <div class="frame-label">
-                {{localize "SK.TYPE.VEHICLES"}}
-                <button class="item-create" data-type="gear" data-subtype="vehicle">+</button>
+                {{localize (sk_strconcat "SK.LABEL." (toUpperCase type))}}
+                <a class="item-create" data-type="object" data-subtype="{{type}}" title="{{localize 'SK.BUTTON.ADD'}}"><i class="far fa-plus-square"></i></a>
             </div>
-            <div class="character-armor">
-                {{#each data.itemsByType.vehicle as |vehicle key|}}
-                    {{> systems/spellbound-kingdoms/templates/character/partial/vehicle.hbs gear=vehicle currentWealthLevel=../data.data.wealth.level.value key=key}}
+            {{#each subtypes as |items subtype|}}
+                <div class="subtype">{{subtype}}</div>
+                {{#each items as |item key|}}
+                    {{> systems/spellbound-kingdoms/templates/character/partial/gear.hbs gear=item currentWealthLevel=../../data.data.wealth.level.value key=key}}
                 {{/each}}
-            </div>
-        </div>
-        <div class="frame">
-            <div class="frame-label">
-                {{localize "SK.TYPE.ENGINEERING"}}
-                <button class="item-create" data-type="gear" data-subtype="engineering">+</button>
-            </div>
-            <div class="character-weapons">
-                {{#each data.itemsByType.engineering as |engineering key|}}
-                    {{> systems/spellbound-kingdoms/templates/character/partial/gear.hbs gear=engineering currentWealthLevel=../data.data.wealth.level.value key=key}}
-                {{/each}}
-            </div>
+            {{/each}}
+        {{/each}}
         </div>
     </div>
 </div>

@@ -168,9 +168,7 @@
       "scar",
       "wealth-slot-cooldown",
       "spell",
-      "building",
-      "vehicle",
-      "wonder",
+      "object",
       "inspiration",
       "history",
       "ability",
@@ -265,23 +263,10 @@
       "type": "close",
       "description": ""
     },
-    "building": {
+    "object": {
       "templates": ["item", "defense"],
+      "type": "vehicle",
       "subtype": "",
-      "effect": {
-        "value": ""
-      },
-      "description": ""
-    },
-    "vehicle": {
-      "templates": ["item", "defense"],
-      "effect": {
-        "value": ""
-      },
-      "description": ""
-    },
-    "wonder": {
-      "templates": ["item", "defense"],
       "effect": {
         "value": ""
       },
