@@ -7,7 +7,6 @@ function preloadHandlebarsTemplates() {
     "systems/spellbound-kingdoms/templates/character/tab-main.hbs",
     "systems/spellbound-kingdoms/templates/character/tab-combat.hbs",
     "systems/spellbound-kingdoms/templates/character/tab-inventory.hbs",
-    "systems/spellbound-kingdoms/templates/character/tab-wealth.hbs",
     "systems/spellbound-kingdoms/templates/character/tab-magic.hbs",
     "systems/spellbound-kingdoms/templates/character/partial/narrative-item.hbs",
     "systems/spellbound-kingdoms/templates/character/partial/scar.hbs",
