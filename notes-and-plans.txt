@@ -26,16 +26,15 @@ Character Sheet
         [    ] Fighting/Magic Styles
     [    ] Magic Tab
         [    ] Spells
-    [    ] Wealth Tab
-        [    ] "Purchace" interface
-    [    ] Inventory Tab
+    [done] Inventory Tab
         [done] Gear Form
-        [    ] Weapons
-        [    ] Armor
-        [    ] Alchemy
-        [    ] Engineering
-        [    ] Fashion
-        [    ] Vehicles
+        [done] Weapons
+        [done] Armor
+        [done] Alchemy
+        [done] Engineering
+        [done] Fashion
+        [done] Vehicles
+        [done] "Purchace" interface
     [    ] Implement inspiration usage tracking
     [    ] Implement "Post to Chat"
         [    ] inspiration
