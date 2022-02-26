@@ -1,13 +1,7 @@
-from importlib.resources import path
-import json
-import os 
-from string import Template
-from os import path
 
-template = """
 {
-    "name": "$name",
-    "identifier": "$identifier",
+    "name": "Behemoth",
+    "identifier": "behemoth",
     "type": "fighting",
     "description": "",
     "requirements": [""],
@@ -68,26 +62,3 @@ template = """
         ]
     }
 }
-"""
-
-
-dir_path = os.path.dirname(os.path.realpath(__file__))
-file = open(dir_path + '/fighting-style-index.json')
-index = json.load(file)
-
-for item in index:
-    print(index[item])
-    if path.exists(dir_path + index[item]):
-        continue
-
-    replacements = {
-        'name': item.replace('-', ' ').title(),
-        'identifier': item,
-    }
-    src = Template(template=template)
-    text = src.substitute(replacements)
-    with open(dir_path + '/' + item + '.json', 'w') as f:
-        f.write(text)
-
-
-file.close()

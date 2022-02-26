@@ -3,7 +3,7 @@
     "identifier": "arrowheart",
     "type": "fighting",
     "description": "Arrowheart is the most common archery style in the Claw. It relies on range and allies to keep the archer protected while providing numerous stances and grips.",
-    "requirements": ["Requires bow"],
+    "requirements": ["bow"],
     "info": [
         "All attacks are ranged.", 
         "You cannot execute a Called Shot to the Head if you are hit while Aiming & Breathing in the previous round."

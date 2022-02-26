@@ -1,0 +1,233 @@
+
+{
+    "name": "Black Powder And Crimson Blade",
+    "identifier": "black-powder-and-crimson-blade",
+    "type": "fighting",
+    "description": "",
+    "requirements": [
+        "one-handed slashing or piercing weapon",
+        "pistol",
+        "no shield",
+        "no armor with Min. Str. greater than 4",
+        "Quickness 6"
+    ],
+    "info": [
+        "2 load actions required to load",
+        "Shots are ranged; others not.",
+        "Cannot use Called Shot: Head if hit while Bracing & Aiming."
+    ],
+    "grid": {"width": 5, "height": 5},
+    "maneuvers": {
+        "basic": [
+           {
+               "name": "Strike", 
+               "rebalancing": true,
+               "defense": [2],
+               "attack": [{"die": "strength"}]
+            },
+            {
+               "name": "Defend", 
+               "rebalancing": true,
+               "defense": ["quickness"],
+               "attack": []
+            },
+            {
+                "name": "Grab", 
+                "rebalancing": true,
+                "defense": [2],
+                "attack": [{"die": "strength"}]
+            },
+            {
+                "name": "Grab", 
+                "rebalancing": true,
+                "defense": [2],
+                "attack": [{"die": "quickness"}]
+            },
+            {
+               "name": "Trick/Misc.", 
+               "rebalancing": true,
+               "defense": [4],
+               "attack": []
+            }
+        ],
+        "style": [
+            {
+                "name": "Shift and Load",
+                "rebalancing": true,
+                "defense": [4],
+                "attack": [],
+                "grid-position": {"x": 1, "y": 0},
+                "short-description": "Move"
+            },
+            {
+                "name": "Shot from the Dark",
+                "must-rebalance": true,
+                "defense": [8],
+                "attack": [
+                    {
+                        "die": 12,
+                        "damage": {"body": 4},
+                        "short-description": "4"
+                    }
+                ],
+                "grid-position": {"x": 3, "y": 0},
+                "short-description": "4"
+            },
+            {
+                "name": "Hide and Brace",
+                "defense": ["quickness", 8],
+                "attack": [],
+                "grid-position": {"x": 4, "y": 0}
+            },
+            {
+                "name": "Dodge & Load",
+                "rebalancing": true,
+                "defense": ["quickness"],
+                "attack": [],
+                "grid-position": {"x": 1, "y": 1}
+            },
+            {
+                "name": "Backstab and Point-Blank Spine Shot",
+                "must-rebalance": true,
+                "defense": [4],
+                "attack": [
+                    {
+                        "die": 8,
+                        "damage": {"body": 2},
+                        "short-description": "2"
+                    },
+                    {
+                        "die": 8,
+                        "damage": {"body": 3},
+                        "short-description": "3"
+                    }
+                ],
+                "grid-position": {"x": 4, "y": 1},
+                "short-description": "2/3",
+                "description": "The 3 damage shot is ranged, the 2 damage stab is not."
+            },
+            {
+                "name": "Slash",
+                "rebalancing": true,
+                "defense": [4],
+                "attack": [
+                    {
+                        "die": 4
+                    }
+                ],
+                "grid-position": {"x": 0, "y": 2},
+                "short-description": "1"
+            },
+            {
+                "name": "Blade Feint and Pistol Whip",
+                "mastery": true,
+                "defense": [6],
+                "attack": [
+                    {
+                        "die": 6
+                    }
+                ],
+                "grid-position": {"x": 1, "y": 2},
+                "short-description": "1 + rebalance"
+            },
+            {
+                "name": "Quick Shot",
+                "rebalancing": true,
+                "defense": [4],
+                "attack": [
+                    {
+                        "die": 10,
+                        "damage": {"body": 2},
+                        "short-description": "2"
+                    }
+                ],
+                "grid-position": {"x": 2, "y": 2},
+                "short-description": "2"
+            },
+            {
+                "name": "Brace & Aim",
+                "rebalancing": true,
+                "defense": [4],
+                "attack": [],
+                "grid-position": {"x": 3, "y": 2},
+                "short-description": "+1 attack die size next round"
+            },
+            {
+                "name": "Fade into Shadows",
+                "rebalancing": true,
+                "defense": [8],
+                "attack": [],
+                "grid-position": {"x": 4, "y": 2}
+            },
+            {
+                "name": "Artery Jabs",
+                "defense": [8],
+                "attack": [
+                    {
+                        "die": 8
+                    },
+                    {
+                        "die": 4
+                    }
+                ],
+                "grid-position": {"x": 0, "y": 3},
+                "short-description": "1/1"
+            },
+            {
+                "name": "Called Shot: Limb",
+                "defense": [6],
+                "attack": [
+                    {
+                        "die": 4,
+                        "damage": {"body": 3},
+                        "short-description": "3"
+                    }
+                ],
+                "grid-position": {"x": 3, "y": 3},
+                "short-description": "3 + rebalance"
+            },
+            {
+                "name": "Approach Cut",
+                "defense": [4],
+                "attack": [
+                    {
+                        "die": 6,
+                        "damage": {"body": 2},
+                        "short-description": "2"
+                    }
+                ],
+                "grid-position": {"x": 0, "y": 4},
+                "short-description": "2"
+            },
+            {
+                "name": "Muzzle in the Face",
+                "mastery": true,
+                "defense": [8],
+                "attack": [
+                    {
+                        "die": 12,
+                        "damage": {"body": 7},
+                        "short-description": "7"
+                    }
+                ],
+                "grid-position": {"x": 1, "y": 4},
+                "short-description": "7"
+            },
+            {
+                "name": "Called Shot: Head",
+                "must-rebalance": true,
+                "defense": [4],
+                "attack": [
+                    {
+                        "die": 4,
+                        "damage": {"body": 6},
+                        "short-description": "6"
+                    }
+                ],
+                "grid-position": {"x": 3, "y": 4},
+                "short-description": "6",
+                "description": "You cannot use this maneuver if you were hit while Bracing and Aiming in the previous round."
+            }
+        ]
+    }
+}
