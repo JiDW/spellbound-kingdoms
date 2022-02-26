@@ -47,6 +47,7 @@ export class SpellboundKingdomsActorSheet extends ActorSheet {
 
     getData() {
         const data = super.getData();
+        data.data.allFightingStyles = this.getAllFightingStyles();
         data.data.itemsByType = this.getItemsByType();
         data.data.wealthSlots = this.geWealthSlots();
         data.data.inventory = this.getInventory(data.data.itemsByType);
@@ -54,6 +55,10 @@ export class SpellboundKingdomsActorSheet extends ActorSheet {
     }
 
     // ********** PREPARE DATA *************
+
+    getAllFightingStyles() {
+        return CONFIG.SpellboundKingdoms['fighting-styles'];
+    }
 
     getInventory(itemsByType) {
         let inventory = {

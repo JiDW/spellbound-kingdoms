@@ -24,6 +24,11 @@ export class SpellboundKingdomsCharacterSheet extends SpellboundKingdomsActorShe
                     contentSelector: ".sheet-body",
                     initial: "main",
                 },
+                {
+                    navSelector: ".fighting-style-tabs",
+                    contentSelector: ".fighting-style-body",
+                    initial: "basic",
+                },
             ],
         });
     }

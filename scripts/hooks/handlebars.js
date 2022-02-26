@@ -16,6 +16,9 @@ function preloadHandlebarsTemplates() {
     "systems/spellbound-kingdoms/templates/character/partial/gear.hbs",
     "systems/spellbound-kingdoms/templates/character/partial/armor.hbs",
 
+    "systems/spellbound-kingdoms/templates/character/combat/fighting-style.hbs",
+    "systems/spellbound-kingdoms/templates/character/combat/partial/fighting-style-option.hbs",
+
     "systems/spellbound-kingdoms/templates/items/inspiration.hbs",
     "systems/spellbound-kingdoms/templates/items/history.hbs",
     "systems/spellbound-kingdoms/templates/items/scar.hbs",

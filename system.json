@@ -13,6 +13,7 @@
     "styles": [
         "styles/common.css",
         "styles/character.css",
+        "styles/character/tab-combat.css",
         "styles/components/roll-engine/dialog.css",
         "styles/item.css",
         "styles/chat.css",

@@ -1,0 +1,11 @@
+.fighting-style-tabs .tab-label {
+    font-size: 16px;
+    font-family: Mordred-Bold;
+    text-transform: uppercase;
+    border: 1px solid;
+}
+
+.fighting-style-body .tab {
+    height: 500px;
+    overflow-y: scroll;
+}

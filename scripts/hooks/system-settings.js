@@ -26,7 +26,7 @@ async function loadJson(sourceDir, relativePath, depth = 1) {
   let data, dataset = {};
   for (const [datasetName, value] of Object.entries(index)) {
     if (typeof value === 'string' && value.substring(value.length - 5) === '.json') {
-      data = await loadJson(dirname(absolutePath), value, ++depth);
+      data = await loadJson(dirname(absolutePath), value, depth + 1);
     } else {
       data = value;
     }

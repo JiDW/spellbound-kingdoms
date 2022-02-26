@@ -94,6 +94,8 @@
     "SK.TAB.MAGIC": "MAGIC",
     "SK.TAB.BACKSTORY": "BACKSTORY",
     "SK.TAB.NOTE": "NOTE",
+
+    "SK.TAB.ADD_STYLE": "Add Style",
   
     "SK.STAT.STRENGTH": "Strength",
     "SK.STAT.QUICKNESS": "Quickness",
