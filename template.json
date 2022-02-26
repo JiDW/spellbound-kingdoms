@@ -236,11 +236,14 @@
             "magic": 0,
             "heart": 0
           },
-          "short-description": ""
+          "short-description": "1"
         }
       ],
       "defense": [4],
       "learned": false,
+      "must-rebalance": false,
+      "rebalancing": false,
+      "mastery": false,
       "grid-position": {
         "x": 0,
         "y": 0

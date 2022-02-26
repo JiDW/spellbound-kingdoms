@@ -1,0 +1,216 @@
+{
+    "name": "Arrowheart",
+    "identifier": "arrowheart",
+    "type": "fighting",
+    "description": "Arrowheart is the most common archery style in the Claw. It relies on range and allies to keep the archer protected while providing numerous stances and grips.",
+    "requirements": ["Requires bow"],
+    "info": [
+        "All attacks are ranged.", 
+        "You cannot execute a Called Shot to the Head if you are hit while Aiming & Breathing in the previous round."
+    ],
+    "grid": {"width": 5, "height": 5},
+    "maneuvers": {
+        "basic": [
+           {
+               "name": "Strike", 
+               "rebalancing": true,
+               "defense": [2],
+               "attack": [{"die": "strength"}]
+            },
+            {
+               "name": "Defend", 
+               "rebalancing": true,
+               "defense": ["quickness"],
+               "attack": []
+            },
+            {
+                "name": "Grab", 
+                "rebalancing": true,
+                "defense": [2],
+                "attack": [{"die": "strength"}]
+            },
+            {
+                "name": "Grab", 
+                "rebalancing": true,
+                "defense": [2],
+                "attack": [{"die": "quickness"}]
+            },
+            {
+               "name": "Trick/Misc.", 
+               "rebalancing": true,
+               "defense": [4],
+               "attack": []
+            }
+        ],
+        "style": [
+            {
+                "name": "Shoot and Dive",
+                "rebalancing": true,
+                "must-rebalance": true,
+                "defense": [6],
+                "attack": [
+                    {
+                        "die": 4
+                    }
+                ],
+                "grid-position": {"x": 1, "y": 0},
+                "short-description": "1"
+            },
+            {
+                "name": "Archer's Shot",
+                "rebalancing": true,
+                "defense": [2],
+                "attack": [
+                    {
+                        "die": 6
+                    }
+                ],
+                "grid-position": {"x": 2, "y": 0},
+                "short-description": "1"
+            },
+            {
+                "name": "Shot on the Run",
+                "rebalancing": true,
+                "defense": [2],
+                "attack": [
+                    {
+                        "die": 4
+                    }
+                ],
+                "grid-position": {"x": 3, "y": 0},
+                "short-description": "1 + Move"
+            },
+            {
+                "name": "Trick Shot",
+                "defense": [4],
+                "attack": [
+                    {
+                        "die": 4
+                    }
+                ],
+                "grid-position": {"x": 2, "y": 1},
+                "short-description": "1 + environment trick",
+                "description": "The environment trick is caused by either you or the arrow, at any point in its flight. You could shoot the arrow so that it knocked over a torch onto an enemy's head and still continued on its way with a d4 attack roll."
+            },
+            {
+                "name": "Called Shot: Torso",
+                "defense": [4],
+                "attack": [
+                    {
+                        "die": 10,
+                        "damage": {"body": 2},
+                        "short-description": "2"
+                    }
+                ],
+                "grid-position": {"x": 0, "y": 2},
+                "short-description": "2"
+            },
+            {
+                "name": "Called Shot: Held Item",
+                "must-rebalance": true,
+                "defense": [2],
+                "attack": [
+                    {
+                        "die": 6,
+                        "vs": "strength"
+                    }
+                ],
+                "grid-position": {"x": 1, "y": 2},
+                "short-description": "1 + item dropped"
+            },
+            {
+                "name": "Aim and Breathe",
+                "rebalancing": true,
+                "defense": [2],
+                "attack": [],
+                "grid-position": {"x": 2, "y": 2},
+                "short-description": "+1 attack die size next round"
+            },
+            {
+                "name": "Called Shot: Pin",
+                "must-rebalance": true,
+                "mastery": true,
+                "defense": [2],
+                "attack": [
+                    {
+                        "die": 6,
+                        "damage": {"body": 2},
+                        "short-description": "2"
+                    }
+                ],
+                "grid-position": {"x": 3, "y": 2},
+                "short-description": "2 + grabbed (Trick ends)",
+                "description": "The arrow shoots through the target's clothing or flesh and fastens him to an object. There must be something to pin the target too: a hitching post, a tavern wall, a cow, or something similar. Unlike most other Grab maneuvers, the target is considered Grabbed until he uses a Trick (environmental or otherwise) to remove the pinning arrow."
+            },
+            {
+                "name": "Called Shot: Head",
+                "must-rebalance": true,
+                "mastery": true,
+                "defense": [2],
+                "attack": [
+                    {
+                        "die": 4,
+                        "damage": {"body": 5},
+                        "short-description": "5"
+                    }
+                ],
+                "grid-position": {"x": 4, "y": 2},
+                "short-description": "5",
+                "description": "You can't use this maneuver if hit while Aiming and Breathing during the previous round."
+            },
+            {
+                "name": "Double Shot",
+                "must-rebalance": true,
+                "defense": [2],
+                "attack": [
+                    {
+                        "die": 6,
+                        "damage": {"body": 2},
+                        "short-description": "2"
+                    },
+                    {
+                        "die": 4
+                    }
+                ],
+                "grid-position": {"x": 2, "y": 3},
+                "short-description": "2/1"
+            },
+            {
+                "name": "Penetrate",
+                "must-rebalance": true,
+                "defense": [2],
+                "attack": [
+                    {
+                        "die": 8,
+                        "damage": {"body": 3, "strength": 1},
+                        "short-description": "3 + 1 Str"
+                    }
+                ],
+                "grid-position": {"x": 1, "y": 4},
+                "short-description": "3 + 1 Str"
+            },
+            {
+                "name": "Mighty Pull",
+                "defense": [2],
+                "attack": [],
+                "grid-position": {"x": 2, "y": 4},
+                "short-description": "Ignore range penalties for first three areas next round"
+            },
+            {
+                "name": "Anticipate",
+                "must-rebalance": true,
+                "defense": [2],
+                "attack": [
+                    {
+                        "die": 10,
+                        "damage": {"body": 4},
+                        "short-description": "4 + rebalance"
+                    }
+                ],
+                "grid-position": {"x": 3, "y": 4},
+                "short-description": "Name maneuver; if correct do 4 + rebalance",
+                "description": "Predict your target's next maneuver and write it down secretly. When your target reveals his next maneuver choice, your shot goes off. It misses if your opponent chose a maneuver different from your prediction. On the other hand, if he did choose the maneuver that you predicted, your deadly shot goes off and attacks with a d10 for 4 damage + rebalance."
+            }
+        ]
+    }
+}

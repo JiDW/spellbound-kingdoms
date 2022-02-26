@@ -53,10 +53,9 @@ Character Sheet
 
 [    ] Gear Sheet
 [    ] Fighting Style Sheet
-    type: "fighting", "magic"
+    type: "fighting", "magic", "monster"
     level: 1 - neophyte, 2 - apprentice, 3 - master
     Maneuvers
-        type: 0 - rebalancing, 1 - normal, 2 - mastery
         learned: only relevent if neophyte, if false - cannot be used
         Attack
             die: [0-20] - die size, stat name - stat's die
