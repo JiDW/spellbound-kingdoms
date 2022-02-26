@@ -92,6 +92,9 @@ function registerHandlebarsHelpers() {
       let arr = [...Array(args[1] + 1).keys()].slice(args[0]);
       return arr;
   });
+  Handlebars.registerHelper('isNumber', function (variable) {
+      return typeof variable === 'number';
+  });
 
   Handlebars.registerHelper('sk_enrich', function (content) {
       // Enrich the content

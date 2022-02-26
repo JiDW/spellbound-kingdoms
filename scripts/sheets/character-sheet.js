@@ -27,7 +27,7 @@ export class SpellboundKingdomsCharacterSheet extends SpellboundKingdomsActorShe
                 {
                     navSelector: ".fighting-style-tabs",
                     contentSelector: ".fighting-style-body",
-                    initial: "basic",
+                    initial: "add-fighting-style",
                 },
             ],
         });
@@ -44,10 +44,12 @@ export class SpellboundKingdomsCharacterSheet extends SpellboundKingdomsActorShe
         data.data.user = game.user;
         data.data.races = CONFIG.SpellboundKingdoms.races;
         data.data.classes = CONFIG.SpellboundKingdoms.classes;
-        data.data['fighting-styles'] = CONFIG.SpellboundKingdoms['fighting-styles'];
+        // data.data['fighting-styles'] = CONFIG.SpellboundKingdoms['fighting-styles'];
+        data.data.allFightingStyles = this.getAllFightingStyles();
         data.data.stats = this.getStatsForCharateristicsBlock(data.data.data.stats);
         data.data.data.itemsByType = this.categorizeItems();
         this.computeTalentData(data.data);
+        data.data.itemsByType['fighting-style'] = this.appendManeuversToFightingStyles(data.data.itemsByType['fighting-style']);
         return data;
     }
 
@@ -56,6 +58,7 @@ export class SpellboundKingdomsCharacterSheet extends SpellboundKingdomsActorShe
 
         html.find('.add-talent').click(this.handleAddTalent.bind(this));
         html.find('.character-abilities-fill').click(this.handleFillAbilities.bind(this));
+        html.find('.fighting-style-option').click(this.handleToggleFightingStyle.bind(this));
 
 
         html.find('.ability-delete').click(this.handleRemoveItem.bind(this));
@@ -65,12 +68,6 @@ export class SpellboundKingdomsCharacterSheet extends SpellboundKingdomsActorShe
         html.find('.skill-delete').click(this.handleRemoveItem.bind(this));
         html.find('.use-skill').click(this.handleUseSkill.bind(this));
         html.find('.use-skill-hard').click(this.handleUseSkillHard.bind(this));
-
-        html.find('.recover-ap-half').click(this.handleRecoverApHalf.bind(this));
-        html.find('.recover-ap-all').click(this.handleRecoverApAll.bind(this));
-
-        html.find('.recover-uses-scene').click(this.handleRecoverUsesScene.bind(this));
-        html.find('.recover-uses-day').click(this.handleRecoverUsesDay.bind(this));
 
         html.find('.character-creation-wizard').click(this.handleCharacterCreation.bind(this));
     }
@@ -98,39 +95,27 @@ export class SpellboundKingdomsCharacterSheet extends SpellboundKingdomsActorShe
 
     // ********** HANDLERS *************
 
+    handleToggleFightingStyle(e) {
+        const styleIdentifier = $(e.currentTarget).data('identifier');
+        let style = this.actor.data.items.filter(
+            i => i.type === 'fighting-style' && i.data.data.identifier === styleIdentifier
+        );
+
+        if (style.length > 0) {
+            let itemIds = this.actor.data.items.filter(
+                i => i.type === 'maneuver' && i.data.data['fighting-style'] === styleIdentifier
+            ).map(i => i.id);
+            itemIds.push(style[0].id);
+            this.actor.deleteEmbeddedDocuments('Item', itemIds);
+        } else {
+            let styleAndManeuvers = this.getStyleData(styleIdentifier);
+            this.actor.createEmbeddedDocuments('Item', styleAndManeuvers);
+        }
+    }
+
     handleCharacterCreation() {
         const app = new (CONFIG.SpellboundKingdoms.characterCreationClass)(this.actor);
         app.render(true);
-    }
-
-    handleRecoverApHalf(e) {
-        const half = Math.ceil(this.actor.data.data.bio.ap.max / 2);
-        this.actor.restoreAP(half);
-    }
-
-    handleRecoverApAll(e) {
-        const max = this.actor.data.data.bio.ap.max;
-        this.actor.restoreAP(max);
-    }
-
-    handleRecoverUsesScene(e) {
-        this.handleRecoverUses('scene');
-    }
-
-    handleRecoverUsesDay(e) {
-        this.handleRecoverUses('day');
-    }
-
-    handleRecoverUses(refresh) {
-        let updateData;
-        this.actor.items.forEach(function (item) {
-            if (item.data.data.refresh === refresh && item.data.data.uses !== undefined) {
-                updateData = {
-                    'data.uses.value': item.data.data.uses.max,
-                };
-                item.update(updateData);
-            }
-        });
     }
 
     handleUseSkillHard(e) {
@@ -256,6 +241,41 @@ export class SpellboundKingdomsCharacterSheet extends SpellboundKingdomsActorShe
 
     // ********** PREPARE DATA *************
 
+    appendManeuversToFightingStyles(fightingStyles) {
+        
+        let maneuvers = this.actor.data.items.filter(
+            i => i.type === 'maneuver'
+        );
+        let maneuversByStyle = {};
+        for (const [, maneuver] of Object.entries(maneuvers)) {
+            if (maneuversByStyle[maneuver.data.data['fighting-style']] === undefined) {
+                maneuversByStyle[maneuver.data.data['fighting-style']] = [];
+            }
+            maneuversByStyle[maneuver.data.data['fighting-style']].push(maneuver);
+        }
+
+        for (const [, style] of Object.entries(fightingStyles)) {
+            style.data.data.grid.xSize = 680 / style.data.data.grid.width;
+            style.data.data.grid.ySize = 590 / style.data.data.grid.height;
+            style.data.data.maneuvers = {
+                style: maneuversByStyle[style.data.data.identifier],
+            }
+        }
+        return fightingStyles;
+    }
+
+    getAllFightingStyles() {
+        let styles = JSON.parse(JSON.stringify(CONFIG.SpellboundKingdoms['fighting-styles']));
+        let ownedStyles = this.actor.data.items.filter(
+            i => i.type === 'fighting-style'
+        );
+        for (const [, ownedStyle] of Object.entries(ownedStyles)) {
+            styles[ownedStyle.data.data.identifier].selected = true;
+        }
+
+        return styles;
+    }
+
     getStatsForCharateristicsBlock(stats) {
         let filteredStats = JSON.parse(JSON.stringify(stats));
         delete filteredStats.body;
@@ -287,6 +307,73 @@ export class SpellboundKingdomsCharacterSheet extends SpellboundKingdomsActorShe
     }
 
     // ********** HELPERS *************
+
+    getStyleData(styleIdentifier) {
+        let style = JSON.parse(JSON.stringify(CONFIG.SpellboundKingdoms['fighting-styles'][styleIdentifier]));
+        let newItems = [
+            {
+                name: style.name,
+                type: 'fighting-style',
+                'data.identifier': style.identifier,
+                'data.type': style.type,
+                'data.level': style.type,
+                'data.requirements': style.requirements,
+                'data.info': style.info,
+                'data.description': style.description,
+                'data.grid': style.grid,
+            }
+        ];
+
+        let maneuverData, attack;
+        const me = this;
+        for (const maneuver of style.maneuvers.style) {
+            maneuverData = Object.keys(maneuver).reduce(
+                (newObj, key) => {
+                    switch (key) {
+                        case 'name':
+                            newObj[key] = maneuver[key];
+                            break;
+                        case 'attack':
+                            attack = [];
+                            for (const att of maneuver[key]) {
+                                attack.push({...me.getManeuverAttackDefaults(), ...att});
+                            }
+                            newObj[`data.${key}`] = attack;
+                            break;
+                        default:
+                            newObj[`data.${key}`] = maneuver[key];
+                    }
+                    return newObj;
+                },
+                {}
+            );
+            maneuverData.type = 'maneuver';
+            maneuverData['data.fighting-style'] = styleIdentifier;
+
+            newItems.push(maneuverData);
+        }
+
+        return newItems;
+    }
+
+    getManeuverAttackDefaults() {
+        return {
+            "die": 4,
+            "vs": "defense",
+            "type": "physical",
+            "damage": {
+              "body": 1,
+              "mood": 0,
+              "strength": 0,
+              "quickness": 0,
+              "reason": 0,
+              "charisma": 0,
+              "magic": 0,
+              "heart": 0
+            },
+            "short-description": "1"
+        };
+    }
 
     _getWeaponBonusDamage(skillName) {
         let skillCode = skillName.replace(/[\W_]+/g, "");
@@ -385,29 +472,4 @@ export class SpellboundKingdomsCharacterSheet extends SpellboundKingdomsActorShe
         return this._reduceItemUses(ammo);
     }
 }
-
-Hooks.on('preUpdateActor', async (entity, updateData, options, userId) => {
-    if (!(entity instanceof SpellboundKingdomsActor)) return true;
-
-    if (updateData.data?.bio?.reputation?.value) {
-        let stats = ReputationStats.getForReputation(updateData.data.bio.reputation.value);
-        if (stats !== false && entity.data.data.bio.ap.max !== stats.ap) {
-            if (updateData.data.bio.ap === undefined) updateData.data.bio.ap = { max: stats.ap };
-            else updateData.data.bio.ap.max = stats.ap;
-        }
-    }
-
-    return true;
-});
-
-Hooks.on('createActor', async (entity, options, userId) => {
-    if (!(entity instanceof SpellboundKingdomsActor) || entity.data.type !== 'character') return true;
-
-    const punchingAttack = game.items.getName("Punching Attack");
-    if (!punchingAttack) return true;
-
-    entity.createEmbeddedDocuments("Item", [punchingAttack.data]);
-
-    return true;
-});
 

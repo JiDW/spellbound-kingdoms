@@ -1,7 +1,7 @@
 
 <div class="fighting-style-tabs tabs flex row" data-group="fighting-style">
-    {{#each data.itemsByType.fighting-styles as |fighting-style key|}}
-    <div class="tab-label" data-tab="{{key}}">{{fighting-style.name}}</div>
+    {{#each data.itemsByType.fighting-style as |fighting-style key|}}
+    <div class="tab-label" data-tab="{{fighting-style.data.data.identifier}}">{{fighting-style.name}}</div>
     {{/each}}
     <div class="tab-label" data-tab="add-fighting-style">{{localize "SK.TAB.ADD_STYLE"}}</div>
 </div>

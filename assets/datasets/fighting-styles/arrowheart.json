@@ -53,7 +53,7 @@
                         "die": 4
                     }
                 ],
-                "grid-position": {"x": 1, "y": 0},
+                "grid-position": {"x": 1, "y": 4},
                 "short-description": "1"
             },
             {
@@ -65,7 +65,7 @@
                         "die": 6
                     }
                 ],
-                "grid-position": {"x": 2, "y": 0},
+                "grid-position": {"x": 2, "y": 4},
                 "short-description": "1"
             },
             {
@@ -77,7 +77,7 @@
                         "die": 4
                     }
                 ],
-                "grid-position": {"x": 3, "y": 0},
+                "grid-position": {"x": 3, "y": 4},
                 "short-description": "1 + Move"
             },
             {
@@ -88,7 +88,7 @@
                         "die": 4
                     }
                 ],
-                "grid-position": {"x": 2, "y": 1},
+                "grid-position": {"x": 2, "y": 3},
                 "short-description": "1 + environment trick",
                 "description": "The environment trick is caused by either you or the arrow, at any point in its flight. You could shoot the arrow so that it knocked over a torch onto an enemy's head and still continued on its way with a d4 attack roll."
             },
@@ -172,7 +172,7 @@
                         "die": 4
                     }
                 ],
-                "grid-position": {"x": 2, "y": 3},
+                "grid-position": {"x": 2, "y": 1},
                 "short-description": "2/1"
             },
             {
@@ -186,14 +186,14 @@
                         "short-description": "3 + 1 Str"
                     }
                 ],
-                "grid-position": {"x": 1, "y": 4},
+                "grid-position": {"x": 1, "y": 0},
                 "short-description": "3 + 1 Str"
             },
             {
                 "name": "Mighty Pull",
                 "defense": [2],
                 "attack": [],
-                "grid-position": {"x": 2, "y": 4},
+                "grid-position": {"x": 2, "y": 0},
                 "short-description": "Ignore range penalties for first three areas next round"
             },
             {
@@ -207,7 +207,7 @@
                         "short-description": "4 + rebalance"
                     }
                 ],
-                "grid-position": {"x": 3, "y": 4},
+                "grid-position": {"x": 3, "y": 0},
                 "short-description": "Name maneuver; if correct do 4 + rebalance",
                 "description": "Predict your target's next maneuver and write it down secretly. When your target reveals his next maneuver choice, your shot goes off. It misses if your opponent chose a maneuver different from your prediction. On the other hand, if he did choose the maneuver that you predicted, your deadly shot goes off and attacks with a d10 for 4 damage + rebalance."
             }

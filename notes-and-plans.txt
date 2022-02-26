@@ -64,7 +64,7 @@ Character Sheet
             damage: damage values to various stats
         Grid
             Maneuvers are arranged on a virtual grid.
-            Grid's [0,0] cell is in the bottom left
+            Grid's [0,0] cell is in the top left
             grid-position
                 x and y coordinates point to a cell on the grid
                 x and y can be floats, this allows to put certain maneuvers off the established rows and columns

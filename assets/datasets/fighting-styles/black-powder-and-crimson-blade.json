@@ -56,7 +56,7 @@
                 "rebalancing": true,
                 "defense": [4],
                 "attack": [],
-                "grid-position": {"x": 1, "y": 0},
+                "grid-position": {"x": 1, "y": 4},
                 "short-description": "Move"
             },
             {
@@ -70,21 +70,21 @@
                         "short-description": "4"
                     }
                 ],
-                "grid-position": {"x": 3, "y": 0},
+                "grid-position": {"x": 3, "y": 4},
                 "short-description": "4"
             },
             {
                 "name": "Hide and Brace",
                 "defense": ["quickness", 8],
                 "attack": [],
-                "grid-position": {"x": 4, "y": 0}
+                "grid-position": {"x": 4, "y": 4}
             },
             {
                 "name": "Dodge & Load",
                 "rebalancing": true,
                 "defense": ["quickness"],
                 "attack": [],
-                "grid-position": {"x": 1, "y": 1}
+                "grid-position": {"x": 1, "y": 3}
             },
             {
                 "name": "Backstab and Point-Blank Spine Shot",
@@ -102,7 +102,7 @@
                         "short-description": "3"
                     }
                 ],
-                "grid-position": {"x": 4, "y": 1},
+                "grid-position": {"x": 4, "y": 3},
                 "short-description": "2/3",
                 "description": "The 3 damage shot is ranged, the 2 damage stab is not."
             },
@@ -170,7 +170,7 @@
                         "die": 4
                     }
                 ],
-                "grid-position": {"x": 0, "y": 3},
+                "grid-position": {"x": 0, "y": 1},
                 "short-description": "1/1"
             },
             {
@@ -183,7 +183,7 @@
                         "short-description": "3"
                     }
                 ],
-                "grid-position": {"x": 3, "y": 3},
+                "grid-position": {"x": 3, "y": 1},
                 "short-description": "3 + rebalance"
             },
             {
@@ -196,7 +196,7 @@
                         "short-description": "2"
                     }
                 ],
-                "grid-position": {"x": 0, "y": 4},
+                "grid-position": {"x": 0, "y": 0},
                 "short-description": "2"
             },
             {
@@ -210,7 +210,7 @@
                         "short-description": "7"
                     }
                 ],
-                "grid-position": {"x": 1, "y": 4},
+                "grid-position": {"x": 1, "y": 0},
                 "short-description": "7"
             },
             {
@@ -224,7 +224,7 @@
                         "short-description": "6"
                     }
                 ],
-                "grid-position": {"x": 3, "y": 4},
+                "grid-position": {"x": 3, "y": 0},
                 "short-description": "6",
                 "description": "You cannot use this maneuver if you were hit while Bracing and Aiming in the previous round."
             }

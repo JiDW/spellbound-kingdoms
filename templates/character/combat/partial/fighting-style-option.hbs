@@ -1,3 +1,10 @@
-<div>
+<div class="fighting-style-option{{#if fighting-style.selected}} selected{{/if}}" data-identifier="{{fighting-style.identifier}}">
+    {{#if (eq fighting-style.type 'fighting')}}
+        <i class="fas fa-fist-raised"></i>
+    {{else if (eq fighting-style.type 'magic')}}
+        <i class="fas fa-magic"></i>
+    {{else}}
+        <i class="fas fa-spider"></i>
+    {{/if}}
     {{fighting-style.name}}
 </div>

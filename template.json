@@ -213,33 +213,28 @@
       "templates": ["identifier"],
       "type": "fighting",
       "level": 2,
-      "info": "",
-      "requirements": "",
+      "info": [],
+      "requirements": [],
       "description": "",
+      "grid": {"width": 5, "height": 5},
       "journal": ""
     },
     "maneuver": {
       "templates": ["identifier"],
-      "type": 0,
+      "fighting-style": "",
       "attack": [
         {
           "die": 4,
           "vs": "defense",
-          "type": "physical",
           "damage": {
-            "body": 1,
-            "mood": 0,
-            "strength": 0,
-            "quickness": 0,
-            "reason": 0,
-            "charisma": 0,
-            "magic": 0,
-            "heart": 0
+            "body": 1
           },
           "short-description": "1"
         }
       ],
+      "magic-attack": [],
       "defense": [4],
+      "magic-defense": [],
       "learned": false,
       "must-rebalance": false,
       "rebalancing": false,

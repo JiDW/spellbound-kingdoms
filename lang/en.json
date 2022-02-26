@@ -57,6 +57,10 @@
   
     "SK.LABEL.AVAILABLE": "Available",
     "SK.LABEL.LOCKED": "Locked",
+
+    "SK.LABEL.MAGIC_ATTACK": "Magic Attack",
+    "SK.LABEL.MAGIC_DEFENSE": "Magic Defense",
+    "SK.LABEL.ATTACK": "Attack",
   
     "SK.TYPE.HISTORY": "History",
     "SK.TYPE.REPUTATION": "Reputation",
