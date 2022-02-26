@@ -1,6 +1,6 @@
 .spellbound-kingdoms .character .tab-combat {
-    display: flex;
-    flex-direction: column;
+    /* display: flex;
+    flex-direction: column; */
 }
 
 .fighting-style-tabs .tab-label {
@@ -30,8 +30,9 @@
     overflow-y: scroll;
     column-count: 2;
 }
-.fighting-style-body .tab {
+.fighting-style-body .fighting-style-tab {
     height: 590px;
+    display: none;
 }
 
 .fighting-style-body .fighting-style-grid {
