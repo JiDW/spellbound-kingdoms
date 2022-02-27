@@ -66,6 +66,12 @@
     "SK.LABEL.MAGIC_ATTACK": "Magic Attack",
     "SK.LABEL.MAGIC_DEFENSE": "Magic Defense",
     "SK.LABEL.ATTACK": "Attack",
+    "SK.LABEL.DICE": "Dice",
+
+    "SK.LABEL.LEARNED": "Learned",
+    "SK.LABEL.MUST_REBALANCE": "Must Rebalance",
+    "SK.LABEL.REBALANCING": "Rebalancing",
+    "SK.LABEL.MASTERY": "Mastery",
   
     "SK.TYPE.HISTORY": "History",
     "SK.TYPE.REPUTATION": "Reputation",

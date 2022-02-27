@@ -1,0 +1,10 @@
+<div class="maneuver-attack-{{key}}">
+    <div class="maneuver-attack-die">
+        <label class="form-gear-label">{{localize "SK.LABEL.DIE"}}:</label>
+        {{> systems/spellbound-kingdoms/templates/items/maneuver/partial/die-select.hbs name=(sk_strconcat field key ".die") selectValue=attack.die}}
+    </div>
+    <div class="maneuver-attack-vs">
+        <label class="form-gear-label">{{localize "SK.LABEL.VS"}}:</label>
+        {{> systems/spellbound-kingdoms/templates/items/maneuver/partial/vs-select.hbs name=(sk_strconcat field key ".vs") selectValue=attack.vs}}
+    </div>
+</div>

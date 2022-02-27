@@ -1,0 +1,60 @@
+<form class="{{cssClass}}" autocomplete="off">
+    <div class="grid-maneuver">
+        <div class="maneuver-name">
+            <label class="form-gear-label">{{localize "SK.LABEL.NAME"}}:</label>
+            <input name="name" type="text" value="{{data.name}}" />
+        </div>
+
+        <div class="maneuver-learned">
+            <label for="learned" class="form-gear-label">{{localize "SK.LABEL.LEARNED"}}:</label>
+            <input id="learned" type="checkbox" name="data.learned" {{checked data.data.learned}} />
+        </div>
+        <div class="maneuver-must-rebalance">
+            <label for="must-rebalance" class="form-gear-label">{{localize "SK.LABEL.MUST_REBALANCE"}}:</label>
+            <input id="must-rebalance" type="checkbox" name="data.must-rebalance" {{checked data.data.must-rebalance}} />
+        </div>
+        <div class="maneuver-rebalancing">
+            <label for="rebalancing" class="form-gear-label">{{localize "SK.LABEL.REBALANCING"}}:</label>
+            <input id="rebalancing" type="checkbox" name="data.rebalancing" {{checked data.data.rebalancing}} />
+        </div>
+        <div class="maneuver-mastery">
+            <label for="mastery" class="form-gear-label">{{localize "SK.LABEL.MASTERY"}}:</label>
+            <input id="mastery" type="checkbox" name="data.mastery" {{checked data.data.mastery}} />
+        </div>
+
+        <div class="maneuver-magic-attack">
+            <label class="form-gear-label">{{localize "SK.LABEL.MAGIC_ATTACK"}}:</label>
+            {{#each data.data.magic-attack as |attack key|}}
+                {{> systems/spellbound-kingdoms/templates/items/maneuver/partial/attack.hbs attack=attack field="data.magic-attack." key=key}}
+            {{/each}}
+        </div>
+        <div class="maneuver-magic-defense">
+            <label class="form-gear-label">{{localize "SK.LABEL.MAGIC_DEFENSE"}}:</label>
+            {{#each data.data.magic-defense as |defense key|}}
+                {{> systems/spellbound-kingdoms/templates/items/maneuver/partial/defense.hbs defense=defense field="data.magic-defense." key=key}}
+            {{/each}}
+        </div>
+
+        <div class="maneuver-attack">
+            <label class="form-gear-label">{{localize "SK.LABEL.ATTACK"}}:</label>
+            {{#each data.data.attack as |attack key|}}
+                {{> systems/spellbound-kingdoms/templates/items/maneuver/partial/attack.hbs attack=attack field="data.attack." key=key}}
+            {{/each}}
+        </div>
+        <div class="maneuver-defense">
+            <label class="form-gear-label">{{localize "SK.LABEL.DEFENSE"}}:</label>
+            {{#each data.data.defense as |defense key|}}
+                {{> systems/spellbound-kingdoms/templates/items/maneuver/partial/defense.hbs defense=defense field="data.defense." key=key}}
+            {{/each}}
+        </div>
+
+        <div class="talent-short-description">
+            <label class="form-gear-label">{{localize "SK.LABEL.SHORT_DESCRIPTION"}}:</label>
+            <input name="data.short-description" type="text" value="{{data.data.short-description}}" />
+        </div>
+        <div class="maneuver-description">
+            <label class="form-gear-label">{{localize "SK.LABEL.DESCRIPTION"}}:</label>
+            <textarea class="gear-description" name="data.description">{{data.data.description}}</textarea>
+        </div>
+    </div>
+</form>
