@@ -86,7 +86,7 @@
         <div class="fighting-style-toolbar">
             <div>
                 <label>{{localize "SK.LABEL.PROFICIENCY"}}</label>
-                <select class="fighting-style-proficiency">
+                <select class="fighting-style-proficiency" data-entity-id="{{fighting-style.id}}">
                     {{#select fighting-style.data.data.level}}
                     <option value="1">{{localize "SK.LABEL.NEOPHYTE"}}</option>
                     <option value="2">{{localize "SK.LABEL.APPRENTICE"}}</option>
