@@ -217,6 +217,7 @@
       "requirements": [],
       "description": "",
       "grid": {"width": 5, "height": 5},
+      "grid-arrows": [],
       "journal": ""
     },
     "maneuver": {
@@ -243,7 +244,6 @@
         "x": 0,
         "y": 0
       },
-      "grid-arrows": [],
       "short-description": "",
       "description": ""
     },

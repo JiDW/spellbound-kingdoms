@@ -37,7 +37,8 @@
 
 .fighting-style-body .fighting-style-grid {
     width: 680px;
-    height: 590px;
+    /* height: 590px; */
+    height: 470px;
     position: relative;
 
     text-align: center;
@@ -51,6 +52,9 @@
 }
 .fighting-style-body .fighting-style-grid .fighting-style-maneuver.mastery {
     background: linear-gradient(to bottom right, rgba(191, 149, 63, 0.5), rgba(252, 246, 186, 0.5), rgba(179, 135, 40, 0.5), rgba(251, 245, 183, 0.5), rgba(170, 119, 28, 0.5));
+}
+.fighting-style-body .fighting-style-grid .fighting-style-maneuver.rebalancing {
+    background: linear-gradient(to bottom right, rgba(126, 126, 126, 0.5), rgba(227, 227, 227, 0.5), rgba(120, 120, 120, 0.5), rgba(227, 227, 227, 0.5), rgba(126, 126, 126, 0.5));
 }
 
 .fighting-style-option {
@@ -87,3 +91,74 @@
 .fighting-style-maneuver .maneuver-defense       { grid-area: 2 / 2 / 3 / 3; }
 .fighting-style-maneuver .maneuver-name          { grid-area: 3 / 1 / 4 / 3; }
 .fighting-style-maneuver .maneuver-description   { grid-area: 4 / 1 / 5 / 3; }
+
+
+.fighting-style-body .fighting-style-grid .fighting-style-arrow {
+    position: absolute;
+    width: 37px;
+    height: 55px;
+    font-size: 40px;
+    transform-origin: left;
+    z-index: 1;
+}
+
+/* ##### FOOTER ##### */
+
+.fighting-style-body .fighting-style-footer {
+    border-top: 2px solid;
+    height: 128px;
+    overflow-y: scroll;
+    
+    display: grid;
+    grid-template-columns: 40% auto 44%;
+    grid-template-rows: repeat(2, auto);
+    grid-column-gap: 4px;
+    grid-row-gap: 2px;
+}
+.fighting-style-footer .fighting-style-requirements  { grid-area: 1 / 1 / 2 / 2; }
+.fighting-style-footer .fighting-style-info          { grid-area: 2 / 1 / 3 / 2; }
+.fighting-style-footer .fighting-style-toolbar       { grid-area: 1 / 2 / 3 / 3; }
+.fighting-style-footer .fighting-style-basic-actions { grid-area: 1 / 3 / 3 / 4; }
+
+.fighting-style-footer .fighting-style-basic-actions {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    grid-template-rows: repeat(2, auto);
+    grid-column-gap: 2px;
+    grid-row-gap: 2px;
+
+    text-align: center;
+}
+.fighting-style-basic-actions .fighting-style-maneuver-0 { grid-area: 1 / 1 / 2 / 2; }
+.fighting-style-basic-actions .fighting-style-maneuver-1 { grid-area: 1 / 2 / 2 / 3; }
+.fighting-style-basic-actions .fighting-style-maneuver-2 { grid-area: 1 / 3 / 2 / 4; }
+.fighting-style-basic-actions .fighting-style-maneuver-3 { grid-area: 2 / 1 / 3 / 2; }
+.fighting-style-basic-actions .fighting-style-maneuver-4 { grid-area: 2 / 3 / 3 / 4; }
+
+.fighting-style-basic-actions .fighting-style-maneuver {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    grid-template-rows: repeat(2, auto);
+    grid-column-gap: 4px;
+    grid-row-gap: 2px;
+
+    border: 1px solid;
+}
+
+.fighting-style-footer .fighting-style-maneuver .maneuver-name    { grid-area: 1 / 1 / 2 / 3; }
+.fighting-style-footer .fighting-style-maneuver .maneuver-attack  { grid-area: 2 / 1 / 3 / 2; }
+.fighting-style-footer .fighting-style-maneuver .maneuver-defense { grid-area: 2 / 2 / 3 / 3; }
+
+.fighting-style-footer .fighting-style-maneuver .maneuver-name {
+    font-weight: bold;
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+}
+
+.fighting-style-toolbar {
+    text-align: center;
+}
+.fighting-style-toolbar button {
+    width: auto;
+    line-height: 18px;
+}

@@ -57,6 +57,11 @@
   
     "SK.LABEL.AVAILABLE": "Available",
     "SK.LABEL.LOCKED": "Locked",
+    "SK.LABEL.REQUIRES": "Requires",
+    "SK.LABEL.PROFICIENCY": "Proficiency",
+    "SK.LABEL.NEOPHYTE": "Neopthyte",
+    "SK.LABEL.APPRENTICE": "Apprentice",
+    "SK.LABEL.MASTER": "Master",
 
     "SK.LABEL.MAGIC_ATTACK": "Magic Attack",
     "SK.LABEL.MAGIC_DEFENSE": "Magic Defense",
@@ -90,6 +95,7 @@
     "SK.BUTTON.DELETE": "Delete",
     "SK.BUTTON.FILL": "Fill",
     "SK.BUTTON.ADD": "Add",
+    "SK.BUTTON.LOCK_IN": "Lock In",
   
     "SK.TAB.MAIN": "MAIN",
     "SK.TAB.COMBAT": "COMBAT",

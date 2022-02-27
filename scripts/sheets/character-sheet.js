@@ -49,7 +49,7 @@ export class SpellboundKingdomsCharacterSheet extends SpellboundKingdomsActorShe
         data.data.stats = this.getStatsForCharateristicsBlock(data.data.data.stats);
         data.data.data.itemsByType = this.categorizeItems();
         this.computeTalentData(data.data);
-        data.data.itemsByType['fighting-style'] = this.appendManeuversToFightingStyles(data.data.itemsByType['fighting-style']);
+        data.data.itemsByType['fighting-style'] = this.appendDataToFightingStyles(data.data.itemsByType['fighting-style']);
         return data;
     }
 
@@ -241,7 +241,7 @@ export class SpellboundKingdomsCharacterSheet extends SpellboundKingdomsActorShe
 
     // ********** PREPARE DATA *************
 
-    appendManeuversToFightingStyles(fightingStyles) {
+    appendDataToFightingStyles(fightingStyles) {
         
         let maneuvers = this.actor.data.items.filter(
             i => i.type === 'maneuver'
@@ -256,9 +256,20 @@ export class SpellboundKingdomsCharacterSheet extends SpellboundKingdomsActorShe
 
         for (const [, style] of Object.entries(fightingStyles)) {
             style.data.data.grid.xSize = 680 / style.data.data.grid.width;
-            style.data.data.grid.ySize = 590 / style.data.data.grid.height;
+            // style.data.data.grid.ySize = 590 / style.data.data.grid.height;
+            style.data.data.grid.ySize = 470 / style.data.data.grid.height;
             style.data.data.maneuvers = {
+                basic: CONFIG.SpellboundKingdoms['fighting-styles'][style.data.data.identifier].maneuvers.basic,
                 style: maneuversByStyle[style.data.data.identifier],
+            }
+
+            for (const [, arrow] of Object.entries(style.data.data['grid-arrows'])) {
+                arrow.params = {
+                    left: arrow.from.x * style.data.data.grid.xSize,
+                    top: arrow.from.y * style.data.data.grid.ySize - 55 / 2, // where 55 is arrow div height
+                    widthMultiplier: this._getApproxScale(style.data.data.grid),
+                    rotation: this._getRotation(style.data.data.grid, arrow),
+                };
             }
         }
         return fightingStyles;
@@ -308,6 +319,19 @@ export class SpellboundKingdomsCharacterSheet extends SpellboundKingdomsActorShe
 
     // ********** HELPERS *************
 
+    _getRotation(grid, vector) {
+        let rad = Math.atan2(vector.to.y * grid.ySize - vector.from.y * grid.ySize, vector.to.x * grid.xSize - vector.from.x * grid.xSize);
+        let deg = rad * (180 / Math.PI);
+
+        return deg;
+    }
+
+    _getApproxScale(grid) {
+        let length = Math.sqrt(grid.xSize * grid.xSize + grid.ySize * grid.ySize);
+
+        return length / 80; // where 80 is font size * 2, dunno why
+    }
+
     getStyleData(styleIdentifier) {
         let style = JSON.parse(JSON.stringify(CONFIG.SpellboundKingdoms['fighting-styles'][styleIdentifier]));
         let newItems = [
@@ -321,6 +345,7 @@ export class SpellboundKingdomsCharacterSheet extends SpellboundKingdomsActorShe
                 'data.info': style.info,
                 'data.description': style.description,
                 'data.grid': style.grid,
+                'data.grid-arrows': style['grid-arrows'],
             }
         ];
 

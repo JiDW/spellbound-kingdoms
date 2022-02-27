@@ -57,5 +57,74 @@
             </div>
         </div>
     {{/each}}
+    
+    {{#each fighting-style.data.data.grid-arrows as |arrow key|}}
+        <div class="fighting-style-arrow"
+            style="
+                left: {{arrow.params.left}}px; 
+                top: {{arrow.params.top}}px;
+                transform: rotate({{arrow.params.rotation}}deg) scaleX({{arrow.params.widthMultiplier}});"
+        >
+            &#10141;
+        </div>
+    {{/each}}
+    </div>
+
+    <div class="fighting-style-footer">
+        <div class="fighting-style-requirements">
+            {{localize "SK.LABEL.REQUIRES"}}
+            {{#each fighting-style.data.data.requirements as |requirement key|}}
+            {{#unless (eq key 0)}}, {{/unless}}
+                {{requirement}}
+            {{/each}}
+        </div>
+        <div class="fighting-style-info">
+            {{#each fighting-style.data.data.info as |info key|}}
+                <div>{{info}}</div>
+            {{/each}}
+        </div>
+        <div class="fighting-style-toolbar">
+            <div>
+                <label>{{localize "SK.LABEL.PROFICIENCY"}}</label>
+                <select class="fighting-style-proficiency">
+                    {{#select fighting-style.data.data.level}}
+                    <option value="1">{{localize "SK.LABEL.NEOPHYTE"}}</option>
+                    <option value="2">{{localize "SK.LABEL.APPRENTICE"}}</option>
+                    <option value="3">{{localize "SK.LABEL.MASTER"}}</option>
+                    {{/select}}
+                </select>
+            </div>
+            <div>
+                <button class="">{{localize "SK.BUTTON.LOCK_IN"}}</button>
+            </div>
+        </div>
+        <div class="fighting-style-basic-actions">
+            {{#each fighting-style.data.data.maneuvers.basic as |maneuver key|}}
+            <div class="fighting-style-maneuver fighting-style-maneuver-{{key}}">
+                <div class="maneuver-name">{{maneuver.name}}</div>
+                <div class="maneuver-attack" title="{{localize "SK.LABEL.ATTACK"}}">
+                    {{#each maneuver.attack as |attack key|}}
+                        {{#if (gt key 0)}}/{{else}}<i class="fas fa-gavel"></i>{{/if}}
+                        {{#if (isNumber attack.die)}}
+                            d{{attack.die}}
+                        {{else}}
+                            d{{localize (sk_strconcat "SK.STAT.SHORT." attack.die)}}
+                        {{/if}}
+                    {{/each}}
+                </div>
+                <div class="maneuver-defense" title="{{localize "SK.LABEL.DEFENSE"}}">
+                    {{#each maneuver.defense as |defense key|}}
+                        {{#if (gt key 0)}}/{{else}}<i class="fas fa-shield-alt"></i>{{/if}}
+                        {{#if (isNumber defense)}}
+                            d{{defense}}
+                        {{else}}
+                            d{{localize (sk_strconcat "SK.STAT.SHORT." defense)}}
+                        {{/if}}
+                    {{/each}}
+                </div>
+            </div>
+            {{/each}}
+        </div>
+
     </div>
 </div>

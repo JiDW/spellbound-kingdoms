@@ -9,6 +9,12 @@
         "You are spellbound while in this style."
     ],
     "grid": {"width": 6, "height": 5},
+    "grid-arrows": [
+        {"from": {"x": 1, "y": 1.5}, "to": {"x": 0.5, "y": 1}},
+        {"from": {"x": 1.5, "y": 1}, "to": {"x": 1, "y": 0.5}},
+        {"from": {"x": 1, "y": 3.5}, "to": {"x": 0.5, "y": 4}},
+        {"from": {"x": 1.5, "y": 4}, "to": {"x": 1, "y": 4.5}}
+    ],
     "maneuvers": {
         "basic": [
            {
@@ -43,8 +49,7 @@
             }
         ],
         "style": [
-            {
-                "name": "Over the Rampart",
+            {   "name": "Over the Rampart",
                 "must-rebalance": true,
                 "mastery": true,
                 "defense": [8],
@@ -57,8 +62,7 @@
                 "grid-position": {"x": 0, "y": 0},
                 "short-description": "1 + move + move target one area"
             },
-            {
-                "name": "Occult Thirst",
+            {   "name": "Occult Thirst",
                 "defense": [8],
                 "magic-defense": [8],
                 "attack": [
@@ -69,8 +73,7 @@
                 "grid-position": {"x": 4, "y": 0},
                 "short-description": "1, 3 vs. spellbound"
             },
-            {
-                "name": "Devour",
+            {   "name": "Devour",
                 "must-rebalance": true,
                 "mastery": true,
                 "defense": [8],
@@ -86,8 +89,7 @@
                 "short-description": "Drain 2 + recast, only affects spellbound, on a killing blow you gain deader's Mgc die as a bonus die on all rolls next round",
                 "description": "If your blow kills a spellbound creature, you gain that creature's Magic die as a bonus die on all your rolls next round."
             },
-            {
-                "name": "Steadfast Defense",
+            {   "name": "Steadfast Defense",
                 "magic-defense": [6],
                 "defense": [10],
                 "attack": [
@@ -101,8 +103,7 @@
                 "short-description": "2 + d10 bonus defense die against any terrain, move, or rebalance",
                 "description": "Sure-footed stance grants the bonus defense die against any attack or environmental factor, physical or magical, that causes you to move, rebalance, fall, trip, slip, be swept away, etc. To be clear, the bonus die is also to be rolled on any check you make against such effects, whether or not the effect is described as an attack."
             },
-            {
-                "name": "Fredegar's Gorge",
+            {   "name": "Fredegar's Gorge",
                 "magic-defense": [8],
                 "defense": [8],
                 "attack": [
@@ -114,8 +115,7 @@
                 "short-description": "1, drain 1 vs. spellbound",
                 "description": "Against a spellbound creature, you do 1 point of damage and heal 1 point of recent damage (a Body, Mood, or characteristic point that was lost during this combat)."
             },
-            {
-                "name": "Wind Pattern",
+            {   "name": "Wind Pattern",
                 "rebalancing": true,
                 "magic-defense": [6],
                 "defense": [6],
@@ -123,8 +123,7 @@
                 "grid-position": {"x": 1, "y": 2},
                 "short-description": "Move, climb"
             },
-            {
-                "name": "Heart Pattern",
+            {   "name": "Heart Pattern",
                 "magic-defense": [6],
                 "defense": [8],
                 "attack": [
@@ -136,8 +135,7 @@
                 "short-description": "1 + up to 3 allies gain your magic defense die as a bonus die",
                 "description": "You and your allies must be in the same area."
             },
-            {
-                "name": "Night Pattern",
+            {   "name": "Night Pattern",
                 "rebalancing": true,
                 "magic-defense": [6],
                 "defense": [8],
@@ -149,8 +147,7 @@
                 "grid-position": {"x": 3, "y": 2},
                 "short-description": "1"
             },
-            {
-                "name": "Hunger Pattern",
+            {   "name": "Hunger Pattern",
                 "rebalancing": true,
                 "magic-defense": [6],
                 "defense": [6],
@@ -162,8 +159,7 @@
                 "grid-position": {"x": 4, "y": 2},
                 "short-description": "1"
             },
-            {
-                "name": "Shoot",
+            {   "name": "Shoot",
                 "magic-defense": [6],
                 "defense": [2],
                 "attack": [
@@ -176,8 +172,7 @@
                 "grid-position": {"x": 1, "y": 3},
                 "short-description": "2 Ranged"
             },
-            {
-                "name": "Eclipse Strike",
+            {   "name": "Eclipse Strike",
                 "magic-defense": [8],
                 "defense": [8],
                 "attack": [
@@ -188,8 +183,7 @@
                 "grid-position": {"x": 3, "y": 3},
                 "short-description": "1 + Recast"
             },
-            {
-                "name": "Storm of Arrows",
+            {   "name": "Storm of Arrows",
                 "magic-defense": [4],
                 "defense": [2],
                 "attack": [
@@ -204,8 +198,7 @@
                 "grid-position": {"x": 0, "y": 4},
                 "short-description": "2/1/1 Ranged"
             },
-            {
-                "name": "Nightwind Run",
+            {   "name": "Nightwind Run",
                 "magic-defense": [8],
                 "defense": [8],
                 "attack": [
@@ -217,8 +210,7 @@
                 "short-description": "1 + move, 3 targets",
                 "description": "You cannot attack any target more than once. The move between areas is optional."
             },
-            {
-                "name": "Veil",
+            {   "name": "Veil",
                 "mastery": true,
                 "magic-defense": [10],
                 "defense": [10],
