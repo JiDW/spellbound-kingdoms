@@ -11,7 +11,7 @@
     {{/each}}
     <div class="tab tab-add-fighting-style" data-group="fighting-style" data-tab="add-fighting-style">
         {{#each data.allFightingStyles as |fighting-style key|}}
-            {{> systems/spellbound-kingdoms/templates/character/combat/partial/fighting-style-option.hbs fighting-style=fighting-style}}
+            {{> systems/spellbound-kingdoms/templates/character/combat/partial/fighting-style-option.hbs fighting-style=fighting-style actorData=data.data.data}}
         {{/each}}
     </div>
 </div>

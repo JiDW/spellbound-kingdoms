@@ -87,6 +87,10 @@ input:read-only {
     white-space: nowrap;
 }
 
+.hidden {
+    display: none;
+}
+
 /* .window-app.spellbound-kingdoms .window-content, .window-app.journal-sheet .window-content {
     background: white;
 } */

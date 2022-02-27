@@ -72,6 +72,17 @@
             &#10141;
         </div>
     {{/each}}
+        <div class="item maneuver-toolbar{{#unless fighting-style.data.data.toolbar.visible}} hidden{{/unless}}"
+            style="
+                width: {{fighting-style.data.data.grid.xSize}}px;
+                left: {{fighting-style.data.data.toolbar.x}}px; 
+                top: {{fighting-style.data.data.toolbar.y}}px;"
+            data-entity-id="{{fighting-style.data.data.toolbar.entity-id}}"
+        >
+            <button class="maneuver-toolbar-lock-in{{#if actorData.selected-maneuver.locked-in}} locked{{/if}}"><i class="fas fa-check"></i></button>
+            <button class="maneuver-toolbar-target"><i class="fas fa-bullseye"></i></button>
+            <a class="item-control item-edit" title="{{localize 'Edit'}}"><i class="fas fa-edit"></i></a>
+        </div>
     </div>
 
     <div class="fighting-style-footer">

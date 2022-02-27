@@ -266,9 +266,14 @@ export class SpellboundKingdomsCharacterSheet extends SpellboundKingdomsActorShe
         let maneuvers = this.actor.data.items.filter(
             i => i.type === 'maneuver'
         );
-        let maneuversByStyle = {};
+        let maneuversByStyle = {}, toolbar = {x: 0, y: 0}, activeStyle, selectedManeuver;
         for (const [, maneuver] of Object.entries(maneuvers)) {
             maneuver.data.data.selected = maneuver.id === this.actor.data.data['selected-maneuver']?.id;
+            if (maneuver.data.data.selected) {
+                toolbar = JSON.parse(JSON.stringify(maneuver.data.data['grid-position']));
+                activeStyle = maneuver.data.data['fighting-style'];
+                selectedManeuver = maneuver;
+            }
 
             if (maneuversByStyle[maneuver.data.data['fighting-style']] === undefined) {
                 maneuversByStyle[maneuver.data.data['fighting-style']] = [];
@@ -284,6 +289,13 @@ export class SpellboundKingdomsCharacterSheet extends SpellboundKingdomsActorShe
                 basic: JSON.parse(JSON.stringify(CONFIG.SpellboundKingdoms['fighting-styles'][style.data.data.identifier].maneuvers.basic)),
                 style: maneuversByStyle[style.data.data.identifier],
             }
+
+            style.data.data.toolbar = JSON.parse(JSON.stringify(toolbar));
+            style.data.data.toolbar.x = style.data.data.toolbar.x * style.data.data.grid.xSize - style.data.data.toolbar.x;
+            style.data.data.toolbar.y = style.data.data.toolbar.y * style.data.data.grid.ySize - style.data.data.toolbar.y;
+            style.data.data.toolbar.y += (style.data.data.toolbar.y === 0 ? style.data.data.grid.ySize : -26); // where 26 is toolbar height
+            style.data.data.toolbar.visible = style.data.data.identifier === activeStyle;
+            style.data.data.toolbar['entity-id'] = selectedManeuver.id;
 
             for (const [, maneuver] of Object.entries(style.data.data.maneuvers.basic)) {
                 maneuver.selected = (style.id + maneuver.name) === this.actor.data.data['selected-maneuver']?.id;
