@@ -1,12 +1,16 @@
 <div class="tab tab-{{fighting-style.data.data.identifier}}" data-group="fighting-style" data-tab="{{fighting-style.data.data.identifier}}">
     <div class="fighting-style-grid">
     {{#each fighting-style.data.data.maneuvers.style as |maneuver key|}}
-        <div class="fighting-style-maneuver{{#if maneuver.data.data.rebalancing}} rebalancing{{/if}}{{#if maneuver.data.data.mastery}} mastery{{/if}}" 
+        <div class="fighting-style-maneuver
+            {{#if maneuver.data.data.rebalancing}}rebalancing{{/if}}
+            {{#if maneuver.data.data.mastery}}mastery{{/if}}
+            {{#if maneuver.data.data.selected}}selected{{/if}}" 
             style="
                 width: {{../fighting-style.data.data.grid.xSize}}px;
                 height: {{../fighting-style.data.data.grid.ySize}}px;
                 left: calc({{../fighting-style.data.data.grid.xSize}}px*{{maneuver.data.data.grid-position.x}} - {{maneuver.data.data.grid-position.x}}px); 
                 top: calc({{../fighting-style.data.data.grid.ySize}}px*{{maneuver.data.data.grid-position.y}} - {{maneuver.data.data.grid-position.y}}px);"
+            data-entity-id="{{maneuver.id}}"
         >
         
             <div class="maneuver-magic-attack" title="{{localize "SK.LABEL.MAGIC_ATTACK"}}">
@@ -100,7 +104,7 @@
         </div>
         <div class="fighting-style-basic-actions">
             {{#each fighting-style.data.data.maneuvers.basic as |maneuver key|}}
-            <div class="fighting-style-maneuver fighting-style-maneuver-{{key}}">
+            <div class="fighting-style-maneuver fighting-style-maneuver-{{key}} {{#if maneuver.selected}}selected{{/if}}" data-entity-name="{{maneuver.name}}" data-fighting-style-id="{{../fighting-style.id}}">
                 <div class="maneuver-name">{{maneuver.name}}</div>
                 <div class="maneuver-attack" title="{{localize "SK.LABEL.ATTACK"}}">
                     {{#each maneuver.attack as |attack key|}}

@@ -60,6 +60,7 @@ export class SpellboundKingdomsCharacterSheet extends SpellboundKingdomsActorShe
         html.find('.character-abilities-fill').click(this.handleFillAbilities.bind(this));
         html.find('.fighting-style-option').click(this.handleToggleFightingStyle.bind(this));
         html.find('.fighting-style-proficiency').change(this.handleChangeFightingStyleLevel.bind(this));
+        html.find('.fighting-style-maneuver').click(this.handleSelectManeuver.bind(this));
 
 
         html.find('.ability-delete').click(this.handleRemoveItem.bind(this));
@@ -95,6 +96,16 @@ export class SpellboundKingdomsCharacterSheet extends SpellboundKingdomsActorShe
     }
 
     // ********** HANDLERS *************
+
+    handleSelectManeuver(event) {        
+        const el = event.currentTarget;
+        const data = duplicate(el.dataset);
+        if (data.entityId !== undefined) {
+            this.actor.update({ 'data.selected-maneuver.id': data.entityId });
+        } else {
+            this.actor.update({ 'data.selected-maneuver.id': data.fightingStyleId + data.entityName });
+        }
+    }
 
     handleChangeFightingStyleLevel(event) {        
         const el = event.currentTarget;
@@ -257,6 +268,8 @@ export class SpellboundKingdomsCharacterSheet extends SpellboundKingdomsActorShe
         );
         let maneuversByStyle = {};
         for (const [, maneuver] of Object.entries(maneuvers)) {
+            maneuver.data.data.selected = maneuver.id === this.actor.data.data['selected-maneuver']?.id;
+
             if (maneuversByStyle[maneuver.data.data['fighting-style']] === undefined) {
                 maneuversByStyle[maneuver.data.data['fighting-style']] = [];
             }
@@ -268,8 +281,12 @@ export class SpellboundKingdomsCharacterSheet extends SpellboundKingdomsActorShe
             // style.data.data.grid.ySize = 590 / style.data.data.grid.height;
             style.data.data.grid.ySize = 470 / style.data.data.grid.height;
             style.data.data.maneuvers = {
-                basic: CONFIG.SpellboundKingdoms['fighting-styles'][style.data.data.identifier].maneuvers.basic,
+                basic: JSON.parse(JSON.stringify(CONFIG.SpellboundKingdoms['fighting-styles'][style.data.data.identifier].maneuvers.basic)),
                 style: maneuversByStyle[style.data.data.identifier],
+            }
+
+            for (const [, maneuver] of Object.entries(style.data.data.maneuvers.basic)) {
+                maneuver.selected = (style.id + maneuver.name) === this.actor.data.data['selected-maneuver']?.id;
             }
 
             for (const [, arrow] of Object.entries(style.data.data['grid-arrows'])) {
