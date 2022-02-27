@@ -36,7 +36,7 @@ template = """
                 "attack": [{"die": "strength"}]
             },
             {
-                "name": "Grab", 
+                "name": "Throw/Shoot", 
                 "rebalancing": true,
                 "defense": [2],
                 "attack": [{"die": "quickness"}]

@@ -3,12 +3,12 @@
     "name": "Parapet Defense",
     "identifier": "parapet-defense",
     "type": "fighting",
-    "description": "",
-    "requirements": [""],
+    "description": "This is the ancient style of castle defenders, often claimed by scholars to be the reason that castles are still largely proof against sieging armies with magi support. The fighter weaves his weapon in patterns that are themselves magical. This raises the fighter's magic defenses, but it also makes him spellbound until he breaks style.",
+    "requirements": ["weapon", "Strength 5", "Magic 5"],
     "info": [
-        ""
+        "You are spellbound while in this style."
     ],
-    "grid": {"width": 5, "height": 5},
+    "grid": {"width": 6, "height": 5},
     "maneuvers": {
         "basic": [
            {
@@ -30,9 +30,9 @@
                 "attack": [{"die": "strength"}]
             },
             {
-                "name": "Grab", 
+                "name": "Throw/Shoot", 
                 "rebalancing": true,
-                "defense": [2],
+                "defense": [],
                 "attack": [{"die": "quickness"}]
             },
             {
@@ -44,20 +44,194 @@
         ],
         "style": [
             {
-                "name": "",
-                "rebalancing": true,
+                "name": "Over the Rampart",
                 "must-rebalance": true,
                 "mastery": true,
-                "defense": [4],
+                "defense": [8],
+                "magic-defense": [4],
                 "attack": [
                     {
-                        "die": 4,
+                        "die": 10
+                    }
+                ],
+                "grid-position": {"x": 0, "y": 0},
+                "short-description": "1 + move + move target one area"
+            },
+            {
+                "name": "Occult Thirst",
+                "defense": [8],
+                "magic-defense": [8],
+                "attack": [
+                    {
+                        "die": 8
+                    }
+                ],
+                "grid-position": {"x": 4, "y": 0},
+                "short-description": "1, 3 vs. spellbound"
+            },
+            {
+                "name": "Devour",
+                "must-rebalance": true,
+                "mastery": true,
+                "defense": [8],
+                "magic-defense": [8],
+                "attack": [
+                    {
+                        "die": 6,
+                        "damage": {"body": 2},
+                        "short-description": "Drain 2 + recast"
+                    }
+                ],
+                "grid-position": {"x": 5, "y": 0},
+                "short-description": "Drain 2 + recast, only affects spellbound, on a killing blow you gain deader's Mgc die as a bonus die on all rolls next round",
+                "description": "If your blow kills a spellbound creature, you gain that creature's Magic die as a bonus die on all your rolls next round."
+            },
+            {
+                "name": "Steadfast Defense",
+                "magic-defense": [6],
+                "defense": [10],
+                "attack": [
+                    {
+                        "die": 6,
                         "damage": {"body": 2},
                         "short-description": "2"
                     }
                 ],
-                "grid-position": {"x": 0, "y": 0},
+                "grid-position": {"x": 1, "y": 1},
+                "short-description": "2 + d10 bonus defense die against any terrain, move, or rebalance",
+                "description": "Sure-footed stance grants the bonus defense die against any attack or environmental factor, physical or magical, that causes you to move, rebalance, fall, trip, slip, be swept away, etc. To be clear, the bonus die is also to be rolled on any check you make against such effects, whether or not the effect is described as an attack."
+            },
+            {
+                "name": "Fredegar's Gorge",
+                "magic-defense": [8],
+                "defense": [8],
+                "attack": [
+                    {
+                        "die": 6
+                    }
+                ],
+                "grid-position": {"x": 4, "y": 1},
+                "short-description": "1, drain 1 vs. spellbound",
+                "description": "Against a spellbound creature, you do 1 point of damage and heal 1 point of recent damage (a Body, Mood, or characteristic point that was lost during this combat)."
+            },
+            {
+                "name": "Wind Pattern",
+                "rebalancing": true,
+                "magic-defense": [6],
+                "defense": [6],
+                "attack": [],
+                "grid-position": {"x": 1, "y": 2},
+                "short-description": "Move, climb"
+            },
+            {
+                "name": "Heart Pattern",
+                "magic-defense": [6],
+                "defense": [8],
+                "attack": [
+                    {
+                        "die": 6
+                    }
+                ],
+                "grid-position": {"x": 2, "y": 2},
+                "short-description": "1 + up to 3 allies gain your magic defense die as a bonus die",
+                "description": "You and your allies must be in the same area."
+            },
+            {
+                "name": "Night Pattern",
+                "rebalancing": true,
+                "magic-defense": [6],
+                "defense": [8],
+                "attack": [
+                    {
+                        "die": 4
+                    }
+                ],
+                "grid-position": {"x": 3, "y": 2},
                 "short-description": "1"
+            },
+            {
+                "name": "Hunger Pattern",
+                "rebalancing": true,
+                "magic-defense": [6],
+                "defense": [6],
+                "attack": [
+                    {
+                        "die": 4
+                    }
+                ],
+                "grid-position": {"x": 4, "y": 2},
+                "short-description": "1"
+            },
+            {
+                "name": "Shoot",
+                "magic-defense": [6],
+                "defense": [2],
+                "attack": [
+                    {
+                        "die": 8,
+                        "damage": {"body": 2},
+                        "short-description": "2 Ranged"
+                    }
+                ],
+                "grid-position": {"x": 1, "y": 3},
+                "short-description": "2 Ranged"
+            },
+            {
+                "name": "Eclipse Strike",
+                "magic-defense": [8],
+                "defense": [8],
+                "attack": [
+                    {
+                        "die": 6
+                    }
+                ],
+                "grid-position": {"x": 3, "y": 3},
+                "short-description": "1 + Recast"
+            },
+            {
+                "name": "Storm of Arrows",
+                "magic-defense": [4],
+                "defense": [2],
+                "attack": [
+                    {
+                        "die": 8,
+                        "damage": {"body": 2},
+                        "short-description": "2"
+                    },
+                    { "die": 6 },
+                    { "die": 4 }
+                ],
+                "grid-position": {"x": 0, "y": 4},
+                "short-description": "2/1/1 Ranged"
+            },
+            {
+                "name": "Nightwind Run",
+                "magic-defense": [8],
+                "defense": [8],
+                "attack": [
+                    {
+                        "die": 8
+                    }
+                ],
+                "grid-position": {"x": 3, "y": 4},
+                "short-description": "1 + move, 3 targets",
+                "description": "You cannot attack any target more than once. The move between areas is optional."
+            },
+            {
+                "name": "Veil",
+                "mastery": true,
+                "magic-defense": [10],
+                "defense": [10],
+                "attack": [
+                    {
+                        "die": 8,
+                        "damage": {"body": 2},
+                        "short-description": "2"
+                    }
+                ],
+                "grid-position": {"x": 4, "y": 4},
+                "short-description": "2 + target, if spellbound, cannot see you next round",
+                "description": "If a wizard cannot see you, he cannot target you with single-target spells. Area of effect spells may still effect you."
             }
         ]
     }

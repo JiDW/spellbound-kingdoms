@@ -77,6 +77,8 @@
     
     border: 1px solid;
     position: absolute;
+
+    overflow-y: auto;
 }
     
 .fighting-style-maneuver .maneuver-magic-attack  { grid-area: 1 / 1 / 2 / 2; }
