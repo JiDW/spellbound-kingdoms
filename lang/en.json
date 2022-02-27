@@ -38,6 +38,7 @@
     "SK.LABEL.IDENTIFIER": "Identifier",
     "SK.LABEL.QUALITY": "Quality",
     "SK.LABEL.DEFENSE": "Defense",
+    "SK.LABEL.DOOM": "Doom",
     "SK.LABEL.STAT_REQUIREMENTS": "Characteristics Requriements",
     "SK.LABEL.COOLDOWN": "Cooldown",
   
@@ -72,6 +73,7 @@
     "SK.LABEL.MUST_REBALANCE": "Must Rebalance",
     "SK.LABEL.REBALANCING": "Rebalancing",
     "SK.LABEL.MASTERY": "Mastery",
+    "SK.LABEL.VS": "vs.",
   
     "SK.TYPE.HISTORY": "History",
     "SK.TYPE.REPUTATION": "Reputation",
@@ -133,6 +135,7 @@
     "SK.STAT.SHORT.heart": "Hrt",
     "SK.STAT.SHORT.HEART": "Hrt",
     "SK.STAT.SHORT.WEALTH_LEVEL": "WL",
+    "SK.STAT.SHORT.doom": "Doom",
   
     "SK.DICE.BASE": "Base",
     "SK.DICE.PENALTY": "Penalty",

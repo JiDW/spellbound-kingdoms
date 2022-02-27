@@ -3,10 +3,11 @@
     "name": "Black Powder Musketeer",
     "identifier": "black-powder-musketeer",
     "type": "fighting",
-    "description": "",
-    "requirements": [""],
+    "description": "This style combines panache with firearms. To hear a musketeer tell it, the most important footwork is devoted to keeping the powder off your plume, so to speak. Two load actions are required to load. You can, of course, enter combat with one or more loaded wheel locks, ready to fire.",
+    "requirements": ["blackpowder weapon and blade", "no shield", "Quickness 6", "Charisma 5", "Strength 5"],
     "info": [
-        ""
+        "2 load actions required to load.",
+        "You cannot execute a Called Shot: Head if you are hit while Aiming & Breathing in the previous round."
     ],
     "grid": {"width": 5, "height": 5},
     "maneuvers": {
@@ -30,9 +31,9 @@
                 "attack": [{"die": "strength"}]
             },
             {
-                "name": "Grab", 
+                "name": "Throw/Shoot", 
                 "rebalancing": true,
-                "defense": [2],
+                "defense": [],
                 "attack": [{"die": "quickness"}]
             },
             {
@@ -44,20 +45,206 @@
         ],
         "style": [
             {
-                "name": "",
+                "name": "Load and Jeer",
                 "rebalancing": true,
+                "defense": [4],
+                "attack": [
+                    {
+                        "die": "charisma",
+                        "vs": "charisma",
+                        "damage": {"mood": 1}
+                    }
+                ],
+                "grid-position": {"x": 0, "y": 0},
+                "short-description": "1 Mood"
+            },
+            {
+                "name": "Quick Shot",
+                "rebalancing": true,
+                "defense": [4],
+                "attack": [
+                    {
+                        "die": 12,
+                        "damage": {"body": 2}
+                    }
+                ],
+                "grid-position": {"x": 2, "y": 0},
+                "short-description": "2"
+            },
+            {
+                "name": "Flash Smoke Screen",
+                "rebalancing": true,
+                "defense": [4],
+                "attack": [],
+                "grid-position": {"x": 3, "y": 0},
+                "short-description": "-2 attack die size next 2 rounds for all in area (out of powder after this)",
+                "description": "Spot checks are also at -2 die size while the smoke screen persists (two rounds)."
+            },
+            {
+                "name": "Double Shot",
+                "rebalancing": true,
+                "mastery": true,
+                "defense": [4],
+                "attack": [
+                    {
+                        "die": 8,
+                        "damage": {"body": 2}
+                    },
+                    {
+                        "die": 6,
+                        "damage": {"body": 2}
+                    }
+                ],
+                "grid-position": {"x": 4, "y": 0},
+                "short-description": "Requires two wheellocks"
+            },
+            {
+                "name": "Load and Jape",
+                "rebalancing": true,
+                "defense": [4],
+                "attack": [
+                    {
+                        "die": "charisma",
+                        "vs": "doom",
+                        "damage": {"body": 0}
+                    }
+                ],
+                "grid-position": {"x": 0, "y": 1},
+                "short-description": "+1 to one ally's mood"
+            },
+            {
+                "name": "Shoot, Stab & Dash",
+                "defense": [4],
+                "attack": [
+                    {
+                        "die": 8,
+                        "damage": {"body": 3}
+                    },
+                    {
+                        "die": 8
+                    }
+                ],
+                "grid-position": {"x": 3, "y": 1},
+                "short-description": "3/1 + move; Second attack is not ranged"
+            },
+            {
+                "name": "Ricochet Shot",
                 "must-rebalance": true,
                 "mastery": true,
                 "defense": [4],
                 "attack": [
                     {
                         "die": 4,
-                        "damage": {"body": 2},
-                        "short-description": "2"
+                        "damage": {"body": 3}
                     }
                 ],
-                "grid-position": {"x": 0, "y": 0},
+                "grid-position": {"x": 1, "y": 2},
+                "short-description": "3 + can go around corner + shot triggers environment trick"
+            },
+            {
+                "name": "Called Shot: Limb",
+                "defense": [4],
+                "attack": [
+                    {
+                        "die": 6,
+                        "damage": {"body": 4}
+                    }
+                ],
+                "grid-position": {"x": 2, "y": 2},
+                "short-description": "4 + rebalance"
+            },
+            {
+                "name": "Aim & Breathe",
+                "rebalancing": true,
+                "defense": [2],
+                "attack": [],
+                "grid-position": {"x": 3, "y": 2},
+                "short-description": "+1 attack die size next round"
+            },
+            {
+                "name": "Called Shot: Head",
+                "must-rebalance": true,
+                "mastery": true,
+                "defense": [4],
+                "attack": [
+                    {
+                        "die": 4,
+                        "damage": {"body": 7}
+                    }
+                ],
+                "grid-position": {"x": 4, "y": 2},
+                "short-description": "7; Double range penalties",
+                "description": "You can't use this maneuver if hit while Aiming and Breathing in the previous round."
+            },
+            {
+                "name": "Dodge & Load",
+                "rebalancing": true,
+                "defense": ["quickness"],
+                "attack": [],
+                "grid-position": {"x": 0, "y": 3}
+            },
+            {
+                "name": "Plume & Blade",
+                "defense": [6],
+                "attack": [
+                    {
+                        "die": 8
+                    },
+                    {
+                        "die": "charisma",
+                        "vs": "charisma",
+                        "damage": {"mood": 1}
+                    }
+                ],
+                "grid-position": {"x": 3, "y": 3},
+                "short-description": "1 + 1 Mood",
+                "description": "The d8 attack is for 1 damage; the opposed Charisma roll is for 1 Mood damage."
+            },
+            {
+                "name": "Run & Load",
+                "rebalancing": true,
+                "defense": [4],
+                "attack": [],
+                "grid-position": {"x": 0, "y": 4},
+                "short-description": "Move"
+            },
+            {
+                "name": "Thrust and Feint",
+                "defense": [6],
+                "attack": [
+                    {
+                        "die": 8
+                    }
+                ],
+                "grid-position": {"x": 2, "y": 4},
+                "short-description": "1 and + 1 melee damage until you are forced to rebalance"
+            },
+            {
+                "name": "Slash",
+                "rebalancing": true,
+                "defense": [4],
+                "attack": [
+                    {
+                        "die": 6
+                    }
+                ],
+                "grid-position": {"x": 3, "y": 4},
                 "short-description": "1"
+            },
+            {
+                "name": "Powder Burn",
+                "rebalancing": true,
+                "mastery": true,
+                "defense": [4],
+                "attack": [
+                    {
+                        "die": 6,
+                        "damage": {"body": 0}
+                    }
+                ],
+                "grid-position": {"x": 4, "y": 4},
+                "short-description": "Blind 1 round (not ranged)",
+                "description": "This cannot be used consecutively on the same target, as blind creatures are immune to the attack. Powder Burn uses a considerable amount of powder; GMs are within their rights to rule that the powder is expended after three to five Powder Burns."
             }
         ]
     }

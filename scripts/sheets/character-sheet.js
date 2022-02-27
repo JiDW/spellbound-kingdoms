@@ -295,7 +295,7 @@ export class SpellboundKingdomsCharacterSheet extends SpellboundKingdomsActorShe
             style.data.data.toolbar.y = style.data.data.toolbar.y * style.data.data.grid.ySize - style.data.data.toolbar.y;
             style.data.data.toolbar.y += (style.data.data.toolbar.y === 0 ? style.data.data.grid.ySize : -26); // where 26 is toolbar height
             style.data.data.toolbar.visible = style.data.data.identifier === activeStyle;
-            style.data.data.toolbar['entity-id'] = selectedManeuver.id;
+            style.data.data.toolbar['entity-id'] = selectedManeuver?.id;
 
             for (const [, maneuver] of Object.entries(style.data.data.maneuvers.basic)) {
                 maneuver.selected = (style.id + maneuver.name) === this.actor.data.data['selected-maneuver']?.id;

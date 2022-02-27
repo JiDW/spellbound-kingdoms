@@ -41,6 +41,7 @@
                     {{else}}
                         d{{localize (sk_strconcat "SK.STAT.SHORT." attack.die)}}
                     {{/if}}
+                    {{#unless (eq attack.vs 'defense')}}{{localize "SK.LABEL.VS"}} {{localize (sk_strconcat "SK.STAT.SHORT." attack.vs)}}{{/unless}}
                 {{/each}}
             </div>
             <div class="maneuver-defense" title="{{localize "SK.LABEL.DEFENSE"}}">
@@ -108,9 +109,6 @@
                     <option value="3">{{localize "SK.LABEL.MASTER"}}</option>
                     {{/select}}
                 </select>
-            </div>
-            <div>
-                <button class="">{{localize "SK.BUTTON.LOCK_IN"}}</button>
             </div>
         </div>
         <div class="fighting-style-basic-actions">
