@@ -3,12 +3,12 @@
     "name": "Great Weapon",
     "identifier": "great-weapon",
     "type": "fighting",
-    "description": "",
-    "requirements": [""],
+    "description": "Great weapon leverages the power of a twohanded weapon. Not mobile, the style seeks to make up for it in raw force.",
+    "requirements": ["two-handed weapon", "Strength 7"],
     "info": [
         ""
     ],
-    "grid": {"width": 5, "height": 5},
+    "grid": {"width": 5, "height": 4},
     "maneuvers": {
         "basic": [
            {
@@ -30,9 +30,9 @@
                 "attack": [{"die": "strength"}]
             },
             {
-                "name": "Grab", 
+                "name": "Throw/Shoot", 
                 "rebalancing": true,
-                "defense": [2],
+                "defense": [],
                 "attack": [{"die": "quickness"}]
             },
             {
@@ -44,20 +44,139 @@
         ],
         "style": [
             {
-                "name": "",
-                "rebalancing": true,
-                "must-rebalance": true,
+                "name": "Maim",
                 "mastery": true,
-                "defense": [4],
+                "defense": [8],
                 "attack": [
-                    {
-                        "die": 4,
-                        "damage": {"body": 2},
-                        "short-description": "2"
-                    }
+                    { "die": 4, "damage": {"body": 2} }
                 ],
                 "grid-position": {"x": 0, "y": 0},
-                "short-description": "1"
+                "short-description": "2 + this damage can only be cured by time or taking a scar",
+                "description": "Normally a character rolls Strength vs. the Doom after a fight to have a chance at recovering some of the damage. Maim prevents that and any other form of accelerated healing, whether magical or from a fixer. Only time (1 body/week) or a scar (p. 30) heal this wound."
+            },
+            {
+                "name": "Rising Strike",
+                "defense": [6],
+                "attack": [
+                    { "die": "strength", "damage": {"body": 2} }
+                ],
+                "grid-position": {"x": 1, "y": 0},
+                "short-description": "2"
+            },
+            {
+                "name": "Trip",
+                "defense": [4],
+                "attack": [
+                    { "die": 8, "damage": {"body": 0} }
+                ],
+                "grid-position": {"x": 3, "y": 0},
+                "short-description": "Rebalance"
+            },
+            {
+                "name": "Pin",
+                "mastery": true,
+                "defense": [6],
+                "attack": [
+                    { "die": 10 }
+                ],
+                "grid-position": {"x": 4, "y": 0},
+                "short-description": "1 + tripped target is grabbed by your weapon",
+                "description": "The target is grabbed next round, but unlike the basic Grab maneuver, you are not grabbed. The grab lasts only for a round, and it cannot, in general, be repeated because it can only target someone who is tripped."
+            },
+            {
+                "name": "Mighty Swing",
+                "rebalancing": true,
+                "defense": [6],
+                "attack": [],
+                "grid-position": {"x": 1, "y": 1},
+                "short-description": "+1 damage next round"
+            },
+            {
+                "name": "Argenwald's Stance",
+                "rebalancing": true,
+                "defense": [6],
+                "attack": [],
+                "grid-position": {"x": 2, "y": 1},
+                "short-description": "1 Str bonus die/round until forced to rebalance",
+                "description": "You decide each round whether to use your Strength bonus die for your attack or defense roll. It does not grant an additional attack; it is simply a bonus die. Roll it along with your normal attack or defense dice and take the single highest result. You can use it for attack in one round and defense in the next, deciding on the spot as usual with bonus dice, even after seeing the results of the unmodified roll. You cannot use the bonus die for anything other than a physical defense or attack."
+            },
+            {
+                "name": "Great Weapon Strike",
+                "rebalancing": true,
+                "defense": [4],
+                "attack": [
+                    { "die": 4, "damage": {"body": 2} }
+                ],
+                "grid-position": {"x": 3, "y": 1},
+                "short-description": "2"
+            },
+            {
+                "name": "Keep at Bay",
+                "defense": [6],
+                "attack": [
+                    { "die": "strength" }
+                ],
+                "grid-position": {"x": 0, "y": 2},
+                "short-description": "1 + target can't melee attack you next round",
+                "description": "The target is not shoved out of the area, but your great weapon holds him further than arm's length away. If you hit, he cannot get into a position to make a melee attack against you next round."
+            },
+            {
+                "name": "Overhead Strike",
+                "defense": [4],
+                "attack": [
+                    { "die": 8, "damage": {"body": 3} }
+                ],
+                "grid-position": {"x": 1, "y": 2},
+                "short-description": "3"
+            },
+            {
+                "name": "Cleaving Crescent Swing",
+                "defense": [4],
+                "attack": [
+                    { "die": "strength", "damage": {"body": 2} }
+                ],
+                "grid-position": {"x": 3, "y": 2},
+                "short-description": "2; 2 targets",
+                "description": "You can only attack each target once"
+            },
+            {
+                "name": "Sweep",
+                "defense": [6],
+                "attack": [
+                    { "die": 6, "damage": {"body": 2} }
+                ],
+                "grid-position": {"x": 4, "y": 2},
+                "short-description": "2; 5 targets",
+                "description": "You can only attack each target once"
+            },
+            {
+                "name": "Devastation",
+                "mastery": true,
+                "defense": [6],
+                "attack": [
+                    { "die": 12, "damage": {"body": 5} }
+                ],
+                "grid-position": {"x": 0, "y": 3},
+                "short-description": "5 + move target 1 area"
+            },
+            {
+                "name": "Interpose Weapon",
+                "rebalancing": true,
+                "defense": [4],
+                "attack": [],
+                "grid-position": {"x": 2, "y": 3},
+                "short-description": "Ally rolls your defense die as bonus defense die",
+                "description": "You and your ally must be in the same area. You can use your Strength bonus die from Argenwald's Stance with your defense roll here, further benefiting your friend."
+            },
+            {
+                "name": "Sweeping Trip Assault",
+                "must-rebalance": true,
+                "defense": [6],
+                "attack": [
+                    { "die": 8, "damage": {"body": 3} }
+                ],
+                "grid-position": {"x": 4, "y": 3},
+                "short-description": "5 targets; 3 + rebalance"
             }
         ]
     }
