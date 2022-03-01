@@ -227,16 +227,7 @@
     "maneuver": {
       "templates": ["identifier"],
       "fighting-style": "",
-      "attack": {
-        "0": {
-          "die": 4,
-          "vs": "defense",
-          "damage": {
-            "body": 1
-          },
-          "short-description": "1"
-        }
-      },
+      "attack": {},
       "magic-attack": {},
       "defense": {"0": 4},
       "magic-defense": {},

@@ -3,12 +3,12 @@
     "name": "Five Seasons",
     "identifier": "five-seasons",
     "type": "fighting",
-    "description": "",
-    "requirements": [""],
+    "description": "No fighting style emphasizes the mind and the soul as much as Five Seasons does. Learning Free Sword or Great Weapon or Arrowheart, the young warrior practices move after combat move, learns footwork, strengthens his body, hones his quickness. The Five Seasons novice does those things, too, but he is equally likely to train by drinking ixsinthe with his grandfather, listening to the music in the cold snow outside an abandoned concert hall for a day and a night, or attempting to walk across rice paper without tearing it. As such, any fighter using the Five Seasons style gains a bonus Reason defense die whenever anyone attacks his Mood.",
+    "requirements": ["Reason 6", "Quickness 5", "Strength 5", "no armor", "no shield", "no weapon or exotic weapon (at GM's judgment)"],
     "info": [
-        ""
+        "All maneuvers gain a bonus Reason defense die when resisting Mood attacks."
     ],
-    "grid": {"width": 5, "height": 5},
+    "grid": {"width": 4, "height": 5},
     "maneuvers": {
         "basic": [
            {
@@ -30,9 +30,9 @@
                 "attack": [{"die": "strength"}]
             },
             {
-                "name": "Grab", 
+                "name": "Throw/Shoot", 
                 "rebalancing": true,
-                "defense": [2],
+                "defense": [],
                 "attack": [{"die": "quickness"}]
             },
             {
@@ -44,20 +44,143 @@
         ],
         "style": [
             {
-                "name": "",
+                "name": "Melting Ice Stance",
+                "defense": [8],
+                "attack": [],
+                "grid-position": {"x": 0, "y": 0},
+                "short-description": "Ignore next 2 points of damage"
+            },
+            {
+                "name": "Fist of Ice",
+                "defense": [10],
+                "attack": [
+                    { "die": 8, "damage": {"body": 2, "quickness": 1}}
+                ],
+                "grid-position": {"x": 1, "y": 0},
+                "short-description": "2 + 1 Qck"
+            },
+            {
+                "name": "Winter Wind Throw",
+                "defense": [6],
+                "attack": [
+                    { "die": 8 }
+                ],
+                "grid-position": {"x": 2, "y": 0},
+                "short-description": "1 + move target 1 area"
+            },
+            {
+                "name": "Blizzard Mind",
+                "defense": [8],
+                "attack": [],
+                "grid-position": {"x": 3, "y": 0},
+                "short-description": "Add d8 attack next round",
+                "description": "The extra d8 attack next round does damage equal to the maneuver's normal d8 attack, or 1 damage if the maneuver does not have a d8 attack."
+            },
+            {
+                "name": "Fevered Spring Kick",
                 "rebalancing": true,
-                "must-rebalance": true,
-                "mastery": true,
                 "defense": [4],
                 "attack": [
-                    {
-                        "die": 4,
-                        "damage": {"body": 2},
-                        "short-description": "2"
-                    }
+                    { "die": 6 }
                 ],
-                "grid-position": {"x": 0, "y": 0},
+                "grid-position": {"x": 0, "y": 1},
                 "short-description": "1"
+            },
+            {
+                "name": "Cyclone Kick",
+                "mastery": true,
+                "defense": [8],
+                "attack": [
+                    { "die": 12, "damage": {"body": 3}},
+                    { "die": 8, "damage": {"body": 2}},
+                    { "die": 4}
+                ],
+                "grid-position": {"x": 3, "y": 1},
+                "short-description": "3/2/1"
+            },
+            {
+                "name": "Budding Leaf Movement",
+                "rebalancing": true,
+                "defense": [6],
+                "attack": [],
+                "grid-position": {"x": 0, "y": 2},
+                "short-description": "Move"
+            },
+            {
+                "name": "Inner Life Flashback",
+                "mastery": true,
+                "defense": [6],
+                "attack": [],
+                "grid-position": {"x": 1.5, "y": 2},
+                "short-description": "Recharge one inspiration and recover half your total mood. Once per scene.",
+                "description": "Your life flashes before you, and you focus on one particular scene that gives you insight into your current travail. You can only do this effectively once per scene."
+            },
+            {
+                "name": "Sere Pressure Point",
+                "must-rebalance": true,
+                "defense": [8],
+                "attack": [
+                    { "die": 12, "damage": {"body": 0}}
+                ],
+                "grid-position": {"x": 3, "y": 2},
+                "short-description": "Remove 1 column or row from target's style; Trick (Str vs. Str) ends.",
+                "description": "You choose which column or row to remove. The lockout lasts until your opponent uses a Trick to roll his Strength against yours and wins the roll."
+            },
+            {
+                "name": "Stunning Fist",
+                "rebalancing": true,
+                "defense": [4],
+                "attack": [
+                    { "die": 4 }
+                ],
+                "grid-position": {"x": 0, "y": 3},
+                "short-description": "1 + can't move next round",
+                "description": "The hit target can still fight next round, but he is barely holding on to his style. He can't leave the area; his mind and legs are too wobbly."
+            },
+            {
+                "name": "Fists Like Sobs of Autumn",
+                "mastery": true,
+                "defense": [10],
+                "attack": [
+                    { "die": 8, "damage": {"body": 2, "strength": 1}},
+                    { "die": 8, "damage": {"body": 2, "strength": 1}}
+                ],
+                "grid-position": {"x": 3, "y": 3},
+                "short-description": "2 + 1 Str",
+                "description": "As always, the damage listed is per strike, so if you hit with both fists, the damage will be 4 + 2 Str."
+            },
+            {
+                "name": "Fires of Spring Stance",
+                "defense": [8],
+                "attack": [],
+                "grid-position": {"x": 0, "y": 4},
+                "short-description": "+2 damage next round"
+            },
+            {
+                "name": "Earthfall Trip",
+                "defense": [4],
+                "attack": [
+                    { "die": 10}
+                ],
+                "grid-position": {"x": 1, "y": 4},
+                "short-description": "1 + rebalance"
+            },
+            {
+                "name": "Summer Sun Kick",
+                "defense": [6],
+                "attack": [
+                    { "die": 10, "damage": {"body": 2}}
+                ],
+                "grid-position": {"x": 2, "y": 4},
+                "short-description": "2 + move"
+            },
+            {
+                "name": "Meditation on Fleeting Summer",
+                "defense": [8],
+                "attack": [],
+                "grid-position": {"x": 3, "y": 4},
+                "short-description": "Add move next round",
+                "description": "The bonus move does not stack with other moves. That is, if you execute a maneuver next round that includes a move, you do not receive two moves."
             }
         ]
     }
