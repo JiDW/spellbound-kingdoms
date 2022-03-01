@@ -1,5 +1,5 @@
 
-<select name="{{name}}">
+<select class="die-select" name="{{name}}">
     {{#select selectValue}}
     <optgroup label="{{localize "SK.LABEL.DICE"}}">
         <option value="2">d2</option>
@@ -11,12 +11,12 @@
         <option value="20">d20</option>
     </optgroup>
     <optgroup label="{{localize "SK.LABEL.STATS"}}">
-        <option value="strength">{{localize "SK.STAT.SHORT.STRENGTH"}}</option>
-        <option value="quickness">{{localize "SK.STAT.SHORT.QUICKNESS"}}</option>
-        <option value="reason">{{localize "SK.STAT.SHORT.REASON"}}</option>
-        <option value="charisma">{{localize "SK.STAT.SHORT.CHARISMA"}}</option>
-        <option value="magic">{{localize "SK.STAT.SHORT.MAGIC"}}</option>
-        <option value="heart">{{localize "SK.STAT.SHORT.HEART"}}</option>
+        <option value="strength">{{localize "SK.STAT.STRENGTH"}}</option>
+        <option value="quickness">{{localize "SK.STAT.QUICKNESS"}}</option>
+        <option value="reason">{{localize "SK.STAT.REASON"}}</option>
+        <option value="charisma">{{localize "SK.STAT.CHARISMA"}}</option>
+        <option value="magic">{{localize "SK.STAT.MAGIC"}}</option>
+        <option value="heart">{{localize "SK.STAT.HEART"}}</option>
     </optgroup>
     {{/select}}
 </select>

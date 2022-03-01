@@ -227,8 +227,8 @@
     "maneuver": {
       "templates": ["identifier"],
       "fighting-style": "",
-      "attack": [
-        {
+      "attack": {
+        "0": {
           "die": 4,
           "vs": "defense",
           "damage": {
@@ -236,7 +236,7 @@
           },
           "short-description": "1"
         }
-      ],
+      },
       "magic-attack": [],
       "defense": [4],
       "magic-defense": [],

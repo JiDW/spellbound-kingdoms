@@ -1,10 +1,48 @@
-<div class="maneuver-attack-{{key}}">
-    <div class="maneuver-attack-die">
-        <label class="form-gear-label">{{localize "SK.LABEL.DIE"}}:</label>
-        {{> systems/spellbound-kingdoms/templates/items/maneuver/partial/die-select.hbs name=(sk_strconcat field key ".die") selectValue=attack.die}}
+<div class="grid-maneuver-attack maneuver-attack-{{key}}">
+    <div class="maneuver-attack-key">
+        <label class="form-gear-label"></label>
+        <a class="remove-attack" data-field="{{field}}" data-key="{{key}}" title="{{localize 'SK.BUTTON.DELETE'}}"><i class="far fa-minus-square"></i></a>  
     </div>
-    <div class="maneuver-attack-vs">
-        <label class="form-gear-label">{{localize "SK.LABEL.VS"}}:</label>
-        {{> systems/spellbound-kingdoms/templates/items/maneuver/partial/vs-select.hbs name=(sk_strconcat field key ".vs") selectValue=attack.vs}}
+    <div class="maneuver-attack-die-vs">
+        {{> systems/spellbound-kingdoms/templates/items/maneuver/partial/die-select.hbs name=(sk_strconcat "data." field "." key ".die") selectValue=attack.die}}
+        <span class="form-gear-label">{{localize "SK.LABEL.VS"}}</label>
+        {{> systems/spellbound-kingdoms/templates/items/maneuver/partial/vs-select.hbs name=(sk_strconcat "data." field "." key ".vs") selectValue=attack.vs}}
+    </div>
+
+    <div class="attack-damage-label">
+        <label class="form-gear-label">{{localize "SK.LABEL.DAMAGE"}}</label>
+    </div>
+
+    <div class="attack-damage attack-damage-body">
+        <span class="form-gear-label">{{localize "SK.LABEL.BODY"}}</span>
+        <input class="shortest-num" name="{{sk_strconcat "data." field "." key ".damage.body"}}" type="number" value="{{attack.damage.body}}" min="0" data-dtype="Number" />
+    </div>
+    <div class="attack-damage attack-damage-mood">
+        <span class="form-gear-label">{{localize "SK.LABEL.MOOD"}}</span>
+        <input class="shortest-num" name="{{sk_strconcat "data." field "." key ".damage.mood"}}" type="number" value="{{attack.damage.mood}}" min="0" data-dtype="Number" />
+    </div>
+    <div class="attack-damage attack-damage-strength">
+        <span class="form-gear-label">{{localize "SK.STAT.SHORT.STRENGTH"}}</span>
+        <input class="shortest-num" name="{{sk_strconcat "data." field "." key ".damage.strength"}}" type="number" value="{{attack.damage.strength}}" min="0" data-dtype="Number" />
+    </div>
+    <div class="attack-damage attack-damage-quickness">
+        <span class="form-gear-label">{{localize "SK.STAT.SHORT.QUICKNESS"}}</span>
+        <input class="shortest-num" name="{{sk_strconcat "data." field "." key ".damage.quickness"}}" type="number" value="{{attack.damage.quickness}}" min="0" data-dtype="Number" />
+    </div>
+    <div class="attack-damage attack-damage-reason">
+        <span class="form-gear-label">{{localize "SK.STAT.SHORT.REASON"}}</span>
+        <input class="shortest-num" name="{{sk_strconcat "data." field "." key ".damage.reason"}}" type="number" value="{{attack.damage.reason}}" min="0" data-dtype="Number" />
+    </div>
+    <div class="attack-damage attack-damage-charisma">
+        <span class="form-gear-label">{{localize "SK.STAT.SHORT.CHARISMA"}}</span>
+        <input class="shortest-num" name="{{sk_strconcat "data." field "." key ".damage.charisma"}}" type="number" value="{{attack.damage.charisma}}" min="0" data-dtype="Number" />
+    </div>
+    <div class="attack-damage attack-damage-magic">
+        <span class="form-gear-label">{{localize "SK.STAT.SHORT.MAGIC"}}</span>
+        <input class="shortest-num" name="{{sk_strconcat "data." field "." key ".damage.magic"}}" type="number" value="{{attack.damage.magic}}" min="0" data-dtype="Number" />
+    </div>
+    <div class="attack-damage attack-damage-heart">
+        <span class="form-gear-label">{{localize "SK.STAT.SHORT.HEART"}}</span>
+        <input class="shortest-num" name="{{sk_strconcat "data." field "." key ".damage.heart"}}" type="number" value="{{attack.damage.heart}}" min="0" data-dtype="Number" />
     </div>
 </div>

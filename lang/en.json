@@ -68,6 +68,8 @@
     "SK.LABEL.MAGIC_DEFENSE": "Magic Defense",
     "SK.LABEL.ATTACK": "Attack",
     "SK.LABEL.DICE": "Dice",
+    "SK.LABEL.DIE": "Die",
+    "SK.LABEL.DAMAGE": "Damage",
 
     "SK.LABEL.LEARNED": "Learned",
     "SK.LABEL.MUST_REBALANCE": "Must Rebalance",

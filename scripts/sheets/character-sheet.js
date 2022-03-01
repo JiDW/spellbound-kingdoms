@@ -401,7 +401,7 @@ export class SpellboundKingdomsCharacterSheet extends SpellboundKingdomsActorShe
                             for (const att of maneuver[key]) {
                                 attack.push({...me.getManeuverAttackDefaults(), ...att});
                             }
-                            newObj[`data.${key}`] = attack;
+                            newObj[`data.${key}`] = Object.assign({}, attack);
                             break;
                         default:
                             newObj[`data.${key}`] = maneuver[key];
