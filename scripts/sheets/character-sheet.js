@@ -262,7 +262,13 @@ export class SpellboundKingdomsCharacterSheet extends SpellboundKingdomsActorShe
     // ********** PREPARE DATA *************
 
     appendDataToFightingStyles(fightingStyles) {
-        
+        let stylesByIdentifier = Object.values(fightingStyles).reduce(
+            (newObj, style) => { 
+                newObj[style.data.data.identifier] = style;
+                return newObj;
+            }, 
+            {}
+        );
         let maneuvers = this.actor.data.items.filter(
             i => i.type === 'maneuver'
         );
@@ -274,6 +280,9 @@ export class SpellboundKingdomsCharacterSheet extends SpellboundKingdomsActorShe
                 activeStyle = maneuver.data.data['fighting-style'];
                 selectedManeuver = maneuver;
             }
+
+            maneuver.data.data.locked = !maneuver.data.data.learned && stylesByIdentifier[maneuver.data.data['fighting-style']].data.data.level == 1 && !maneuver.data.data.rebalancing
+                || stylesByIdentifier[maneuver.data.data['fighting-style']].data.data.level < 3 && maneuver.data.data.mastery;
 
             if (maneuversByStyle[maneuver.data.data['fighting-style']] === undefined) {
                 maneuversByStyle[maneuver.data.data['fighting-style']] = [];
@@ -378,7 +387,7 @@ export class SpellboundKingdomsCharacterSheet extends SpellboundKingdomsActorShe
                 type: 'fighting-style',
                 'data.identifier': style.identifier,
                 'data.type': style.type,
-                'data.level': style.type,
+                'data.level': style.level,
                 'data.requirements': style.requirements,
                 'data.info': style.info,
                 'data.description': style.description,
