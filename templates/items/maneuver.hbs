@@ -33,9 +33,12 @@
         </div>
         <div class="maneuver-magic-defense">
             <label class="form-gear-label">{{localize "SK.LABEL.MAGIC_DEFENSE"}}</label>
+            <a class="add-defense" data-field="magic-defense" title="{{localize 'SK.BUTTON.ADD'}}"><i class="far fa-plus-square"></i></a>
+            <div class="scroll-container">
             {{#each data.data.magic-defense as |defense key|}}
                 {{> systems/spellbound-kingdoms/templates/items/maneuver/partial/defense.hbs defense=defense field="magic-defense" key=key}}
             {{/each}}
+            </div>
         </div>
 
         <div class="maneuver-attack">
@@ -49,9 +52,12 @@
         </div>
         <div class="maneuver-defense">
             <label class="form-gear-label">{{localize "SK.LABEL.DEFENSE"}}</label>
+            <a class="add-defense" data-field="defense" title="{{localize 'SK.BUTTON.ADD'}}"><i class="far fa-plus-square"></i></a>
+            <div class="scroll-container">
             {{#each data.data.defense as |defense key|}}
                 {{> systems/spellbound-kingdoms/templates/items/maneuver/partial/defense.hbs defense=defense field="defense" key=key}}
             {{/each}}
+            </div>
         </div>
 
         <div class="maneuver-short-description">

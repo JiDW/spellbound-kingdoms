@@ -237,9 +237,9 @@
           "short-description": "1"
         }
       },
-      "magic-attack": [],
-      "defense": [4],
-      "magic-defense": [],
+      "magic-attack": {},
+      "defense": {"0": 4},
+      "magic-defense": {},
       "learned": false,
       "must-rebalance": false,
       "rebalancing": false,

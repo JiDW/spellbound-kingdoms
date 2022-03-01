@@ -1,0 +1,7 @@
+<div class="grid-maneuver-defense maneuver-defense-{{key}}">
+    <div class="maneuver-defense-key">
+        <a class="remove-defense" data-field="{{field}}" data-key="{{key}}" title="{{localize 'SK.BUTTON.DELETE'}}"><i class="far fa-minus-square"></i></a> 
+        <label class="form-gear-label"></label> 
+        {{> systems/spellbound-kingdoms/templates/items/maneuver/partial/die-select.hbs name=(sk_strconcat "data." field "." key) selectValue=defense}}
+    </div>
+</div>

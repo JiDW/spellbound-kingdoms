@@ -314,10 +314,14 @@ button.add-active-effect {
     overflow-y: scroll;
 }
 
-.maneuver-attack .scroll-container {
+.maneuver-attack .scroll-container,
+.maneuver-defense .scroll-container,
+.maneuver-magic-attack .scroll-container,
+.maneuver-magic-defense .scroll-container {
     counter-reset: attack-counter 0;
 }
-.grid-maneuver-attack .maneuver-attack-key label:before {
+.grid-maneuver-attack .maneuver-attack-key label:before,
+.grid-maneuver-defense .maneuver-defense-key label:before {
     counter-increment: attack-counter;
     content: counters(attack-counter, ".");
 }

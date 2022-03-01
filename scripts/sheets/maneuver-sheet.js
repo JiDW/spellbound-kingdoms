@@ -24,7 +24,14 @@ export class SpellboundKingdomsManeuverSheet extends SpellboundKingdomsItemSheet
 
             me.object.update({[name]: {die: 4, vs: 'defense', damage: {body: 1}}});
         });
-        html.find(".remove-attack").click((ev) => {
+        html.find(".add-defense").click((ev) => {
+            const field = $(ev.currentTarget).data("field");
+            const newKey = (+new Date).toString(36);
+            const name = `data.${field}.${newKey}`;
+
+            me.object.update({[name]: 4});
+        });
+        html.find(".remove-attack, .remove-defense").click((ev) => {
             const field = $(ev.currentTarget).data("field");
             const key = $(ev.currentTarget).data("key");
             const name = `data.${field}.-=${key}`;

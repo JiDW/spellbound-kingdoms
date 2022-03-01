@@ -15,7 +15,7 @@
         
             <div class="maneuver-magic-attack" title="{{localize "SK.LABEL.MAGIC_ATTACK"}}">
                 {{#each maneuver.data.data.magic-attack as |attack key|}}
-                    {{#if (gt key 0)}}/{{else}}<i class="fas fa-magic"></i>{{/if}}
+                    {{#if @first}}<i class="fas fa-magic"></i>{{else}}/{{/if}}
                     {{#if (isNumber attack.die)}}
                         d{{attack.die}}
                     {{else}}
@@ -25,7 +25,7 @@
             </div>
             <div class="maneuver-magic-defense" title="{{localize "SK.LABEL.MAGIC_DEFENSE"}}">
                 {{#each maneuver.data.data.magic-defense as |defense key|}}
-                    {{#if (gt key 0)}}/{{else}}<i class="fas fa-shield-virus"></i>{{/if}}
+                    {{#if @first}}<i class="fas fa-shield-virus"></i>{{else}}/{{/if}}
                     {{#if (isNumber defense)}}
                         d{{defense}}
                     {{else}}
@@ -35,7 +35,7 @@
             </div>
             <div class="maneuver-attack" title="{{localize "SK.LABEL.ATTACK"}}">
                 {{#each maneuver.data.data.attack as |attack key|}}
-                    {{#if (gt key 0)}}/{{else}}<i class="fas fa-gavel"></i>{{/if}}
+                    {{#if @first}}<i class="fas fa-gavel"></i>{{else}}/{{/if}}
                     {{#if (isNumber attack.die)}}
                         d{{attack.die}}
                     {{else}}
@@ -46,7 +46,7 @@
             </div>
             <div class="maneuver-defense" title="{{localize "SK.LABEL.DEFENSE"}}">
                 {{#each maneuver.data.data.defense as |defense key|}}
-                    {{#if (gt key 0)}}/{{else}}<i class="fas fa-shield-alt"></i>{{/if}}
+                    {{#if @first}}<i class="fas fa-shield-alt"></i>{{else}}/{{/if}}
                     {{#if (isNumber defense)}}
                         d{{defense}}
                     {{else}}
