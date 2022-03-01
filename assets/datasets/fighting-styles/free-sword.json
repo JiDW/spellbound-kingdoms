@@ -3,8 +3,8 @@
     "name": "Free Sword",
     "identifier": "free-sword",
     "type": "fighting",
-    "description": "",
-    "requirements": [""],
+    "description": "Free Sword is the most common fighting style in the Claw, versatile and effective.",
+    "requirements": ["one-handed sword or similar edged weapon", "armor", "Strength 6", "Quickness 6"],
     "info": [
         ""
     ],
@@ -30,9 +30,9 @@
                 "attack": [{"die": "strength"}]
             },
             {
-                "name": "Grab", 
+                "name": "Throw/Shoot", 
                 "rebalancing": true,
-                "defense": [2],
+                "defense": [],
                 "attack": [{"die": "quickness"}]
             },
             {
@@ -44,19 +44,143 @@
         ],
         "style": [
             {
-                "name": "",
-                "rebalancing": true,
+                "name": "Eviscerate",
                 "must-rebalance": true,
                 "mastery": true,
+                "defense": [8],
+                "attack": [
+                    { "die": 12, "damage": {"body": 3, "strength": 1, "quickness": 1} },
+                    { "die": 12, "damage": {"body": 3, "strength": 1, "quickness": 1} }
+                ],
+                "grid-position": {"x": 2, "y": 0},
+                "short-description": "3 + 1 Str + 1 Qck (each attack)",
+                "description": "As always, the damage listed is for each attack, so that if both attacks hit the total damage is 6 + 2 Str + 2 Qck."
+            },
+            {
+                "name": "Unbalancing Feint",
+                "defense": [6],
+                "attack": [
+                    { "die": 6, "damage": {"body": 0} }
+                ],
+                "grid-position": {"x": 1, "y": 1},
+                "short-description": "Rebalance"
+            },
+            {
+                "name": "Free Sword Strike",
+                "defense": [10],
+                "attack": [
+                    { "die": 10, "damage": {"body": 2} }
+                ],
+                "grid-position": {"x": 2, "y": 1},
+                "short-description": "2"
+            },
+            {
+                "name": "Onslaught",
+                "defense": [6],
+                "attack": [
+                    { "die": 6, "damage": {"body": 2} },
+                    { "die": 4, "damage": {"body": 2} }
+                ],
+                "grid-position": {"x": 3, "y": 1},
+                "short-description": "2/2"
+            },
+            {
+                "name": "Counterstrike",
                 "defense": [4],
                 "attack": [
-                    {
-                        "die": 4,
-                        "damage": {"body": 2},
-                        "short-description": "2"
-                    }
+                    { "die": 4, "damage": {"body": 2} }
                 ],
-                "grid-position": {"x": 0, "y": 0},
+                "grid-position": {"x": 1, "y": 2},
+                "short-description": "d8 attack for 1 damage against up to 5 foes who miss you",
+                "description": "Again, there is only one attack per foe. If fewer than 5 people attack you, then the extra attacks are wasted."
+            },
+            {
+                "name": "Ranieri's Attack",
+                "defense": [8],
+                "attack": [
+                    { "die": 8 }
+                ],
+                "grid-position": {"x": 3, "y": 2},
+                "short-description": "1 + d12 defense against any terrain eect, move, or rebalance",
+                "description": "This attack's sure-footed stance grants the bonus defense die against any attack or environmental factor, physical or magical, that causes you to move, rebalance, fall, trip, slip, be swept away, etc. To be clear, the bonus die is also to be rolled on any check you make against such effects, whether or not the effect is described as an attack."
+            },
+            {
+                "name": "Driving Cut",
+                "must-rebalance": true,
+                "mastery": true,
+                "defense": [8],
+                "attack": [
+                    { "die": 8, "damage": {"body": 2} }
+                ],
+                "grid-position": {"x": 0, "y": 3},
+                "short-description": "2 + move target 1 area"
+            },
+            {
+                "name": "Spin",
+                "defense": [8],
+                "attack": [],
+                "grid-position": {"x": 1, "y": 3},
+                "short-description": "+2 damage next round",
+                "description": "As always, the bonus damage applies to each attack next round. Whirlwind, then, does 3 points of damage to each foe following a Spin, Counterstrike the same."
+            },
+            {
+                "name": "Body Chop",
+                "must-rebalance": true,
+                "defense": [6],
+                "attack": [
+                    { "die": 10, "damage": {"body": 2} }
+                ],
+                "grid-position": {"x": 2, "y": 3},
+                "short-description": "2"
+            },
+            {
+                "name": "Passing Slash",
+                "defense": [4],
+                "attack": [
+                    { "die": 6 }
+                ],
+                "grid-position": {"x": 3, "y": 3},
+                "short-description": "1 + move"
+            },
+            {
+                "name": "Whirlwind",
+                "mastery": true,
+                "defense": [6],
+                "attack": [
+                    { "die": 8 }
+                ],
+                "grid-position": {"x": 4, "y": 3},
+                "short-description": "1; Attack 3 targets",
+                "description": "You may not attack the same target more than once."
+            },
+            {
+                "name": "Dodge and Feint",
+                "rebalancing": true,
+                "defense": [8],
+                "attack": [],
+                "grid-position": {"x": 1, "y": 4},
+                "short-description": "+1 attack or defense die size until forced to rebalance",
+                "description": "At the time you dodge and feint, you choose whether or not your bonus applies to attack or defense in the coming rounds. A second dodge and feint does not stack with the first, but it does allow you to switch your bonus from attack to defense or vice versa. The bonus begins to apply the round after you dodge and feint. As always, the bonus cannot grant an attack where none existed before; 0 attack does not increase to d2 attack."
+            },
+            {
+                "name": "Lunge",
+                "rebalancing": true,
+                "must-rebalance": true,
+                "defense": [2],
+                "attack": [
+                    { "die": 8 }
+                ],
+                "grid-position": {"x": 2, "y": 4},
+                "short-description": "1"
+            },
+            {
+                "name": "Warrior's Strike",
+                "rebalancing": true,
+                "defense": [4],
+                "attack": [
+                    { "die": 6 }
+                ],
+                "grid-position": {"x": 3, "y": 4},
                 "short-description": "1"
             }
         ]

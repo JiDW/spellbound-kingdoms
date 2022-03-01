@@ -38,7 +38,7 @@ template = """
             {
                 "name": "Throw/Shoot", 
                 "rebalancing": true,
-                "defense": [2],
+                "defense": [],
                 "attack": [{"die": "quickness"}]
             },
             {
@@ -56,11 +56,7 @@ template = """
                 "mastery": true,
                 "defense": [4],
                 "attack": [
-                    {
-                        "die": 4,
-                        "damage": {"body": 2},
-                        "short-description": "2"
-                    }
+                    { "die": 4, "damage": {"body": 2} }
                 ],
                 "grid-position": {"x": 0, "y": 0},
                 "short-description": "1"

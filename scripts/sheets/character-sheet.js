@@ -432,7 +432,6 @@ export class SpellboundKingdomsCharacterSheet extends SpellboundKingdomsActorShe
         return {
             "die": 4,
             "vs": "defense",
-            "type": "physical",
             "damage": {
               "body": 1,
               "mood": 0,
@@ -443,7 +442,6 @@ export class SpellboundKingdomsCharacterSheet extends SpellboundKingdomsActorShe
               "magic": 0,
               "heart": 0
             },
-            "short-description": "1"
         };
     }
 
