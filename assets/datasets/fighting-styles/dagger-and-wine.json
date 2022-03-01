@@ -3,10 +3,10 @@
     "name": "Dagger And Wine",
     "identifier": "dagger-and-wine",
     "type": "fighting",
-    "description": "",
-    "requirements": [""],
+    "description": "This style is designed for a quick transition from drinking wine with your target to stabbing him in the eye, or from rolling in the sheets with him to rolling him into his grave. To put it another way, once you have the information, you fade into the shadows, there's a flash of blade, and your work is done. Nonetheless, complications do arise, and so this has become a full-fledged fighting style for spies, courtesans, and anyone else who expects to be fighting in bedchambers and porticos with a glass of wine in one hand and a dagger in the other. Its roots being what they are, however, this style suffers against armor of superior quality. Its popularity despite this shortcoming is a testament to its overall effectiveness and the enduring appeal of the Duck and Slip maneuver.",
+    "requirements": ["Charisma 6", "Quickness 6", "dagger or similar", "no shield"],
     "info": [
-        ""
+        "-1 damage vs. any armor with Quality greater than your weapon's Quality."
     ],
     "grid": {"width": 5, "height": 5},
     "maneuvers": {
@@ -30,9 +30,9 @@
                 "attack": [{"die": "strength"}]
             },
             {
-                "name": "Grab", 
+                "name": "Throw/Shoot", 
                 "rebalancing": true,
-                "defense": [2],
+                "defense": [],
                 "attack": [{"die": "quickness"}]
             },
             {
@@ -44,20 +44,142 @@
         ],
         "style": [
             {
-                "name": "",
-                "rebalancing": true,
+                "name": "Between the Ribs",
                 "must-rebalance": true,
                 "mastery": true,
-                "defense": [4],
+                "defense": [6],
                 "attack": [
                     {
-                        "die": 4,
-                        "damage": {"body": 2},
-                        "short-description": "2"
+                        "die": 10,
+                        "damage": {"body": 3, "strength": 1}
                     }
                 ],
                 "grid-position": {"x": 0, "y": 0},
+                "short-description": "3 + 1 Str"
+            },
+            {
+                "name": "Backstab",
+                "must-rebalance": true,
+                "defense": [4],
+                "attack": [
+                    {
+                        "die": 10,
+                        "damage": {"body": 4}
+                    }
+                ],
+                "grid-position": {"x": 4, "y": 0},
+                "short-description": "4"
+            },
+            {
+                "name": "Disarming Embrace",
+                "defense": ["quickness"],
+                "attack": [
+                    {
+                        "die": 6,
+                        "damage": {"mood": 1}
+                    }
+                ],
+                "grid-position": {"x": 0, "y": 1},
+                "short-description": "1 Mood + Disarm a grabbed target",
+                "description": "Only a grabbed target can be targeted by this maneuver."
+            },
+            {
+                "name": "Tangled Cloak",
+                "rebalancing": true,
+                "defense": [4],
+                "attack": [{ "die": 6 }],
+                "grid-position": {"x": 1, "y": 1},
+                "short-description": "Grabbed (Requires cloak, bedsheets, etc.)",
+                "description": "The entangling attack requires something resembling bedsheets: a tapestry to pull down, a carpet to pull up, a bridal train to wrap and trap, a cerecloth to wind. You are not grabbed next round. The opponent is only grabbed for one round."
+            },
+            {
+                "name": "Dodge into Shadows",
+                "rebalancing": true,
+                "defense": [8],
+                "attack": [],
+                "grid-position": {"x": 3, "y": 1},
+                "short-description": "+2 damage next round"
+            },
+            {
+                "name": "Skulk in Shadows",
+                "defense": ["quickness", 8],
+                "attack": [],
+                "grid-position": {"x": 4, "y": 1},
+                "short-description": "Move"
+            },
+            {
+                "name": "Whirling Trick",
+                "defense": [8],
+                "attack": [],
+                "grid-position": {"x": 1, "y": 2},
+                "short-description": "Move + env. trick"
+            },
+            {
+                "name": "Sneak Attack",
+                "defense": [2],
+                "attack": [{ "die": 8, "damage": {"body": 2}}],
+                "grid-position": {"x": 3, "y": 2},
+                "short-description": "2"
+            },
+            {
+                "name": "Dagger Flurry",
+                "defense": [2],
+                "attack": [
+                    { "die": 6, "damage": {"body": 2}},
+                    { "die": 4}
+                ],
+                "grid-position": {"x": 1, "y": 3},
+                "short-description": "2/1"
+            },
+            {
+                "name": "Duck and Slip",
+                "defense": [8],
+                "attack": [],
+                "grid-position": {"x": 3, "y": 3},
+                "short-description": "If you are missed, attack goes vs. creature of your choice (in area)",
+                "description": "If an attack misses you, you can choose another creature in your area to be targeted by the attack. The attacker rolls the same attack die against the new target, dealing the usual damage if he hits. You may also choose for the attack to target an object instead of another creature. The attacker cannot be the new target of the attack. Only attacks with a physical attack die can be ducked and slipped."
+            },
+            {
+                "name": "Low Blow",
+                "must-rebalance": true,
+                "defense": [6],
+                "attack": [{ "die": 6, "damage": {"quickness": 2, "strength": 2}}],
+                "grid-position": {"x": 0, "y": 4},
+                "short-description": "2 Qck + 2 Str (recovered after 1 round)"
+            },
+            {
+                "name": "Cut",
+                "rebalancing": true,
+                "defense": [6],
+                "attack": [{ "die": 4 }],
+                "grid-position": {"x": 1, "y": 4},
                 "short-description": "1"
+            },
+            {
+                "name": "Intimations",
+                "rebalancing": true,
+                "mastery": true,
+                "defense": [4],
+                "attack": [{ "die": "charisma", "vs": "reason" }],
+                "grid-position": {"x": 2, "y": 4},
+                "short-description": "For the rest of the fight, target cannot use the Inspiration attacked by the secret you reveal. Requires secret",
+                "description": "This also requires a secret, and the secret must pertain to the Inspiration you seek to block."
+            },
+            {
+                "name": "Stunning Secret",
+                "rebalancing": true,
+                "defense": [4],
+                "attack": [{ "die": "charisma", "vs": "reason", "damage": {"mood": 2} }],
+                "grid-position": {"x": 3, "y": 4},
+                "short-description": "2 Mood + rebalance; Requires secret",
+                "description": "You must know and communicate a secret to the target; the GM judges if it is stunning. Any given secret may only be used this way once."
+            },
+            {
+                "name": "Bitter Whispers",
+                "defense": [4],
+                "attack": [{ "die": "charisma", "vs": "reason", "damage": {"mood": 1} }],
+                "grid-position": {"x": 4, "y": 4},
+                "short-description": "1 Mood"
             }
         ]
     }
