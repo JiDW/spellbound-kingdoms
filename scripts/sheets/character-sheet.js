@@ -305,7 +305,7 @@ export class SpellboundKingdomsCharacterSheet extends SpellboundKingdomsActorShe
                 arrow.params = {
                     left: arrow.from.x * style.data.data.grid.xSize,
                     top: arrow.from.y * style.data.data.grid.ySize - 55 / 2, // where 55 is arrow div height
-                    widthMultiplier: this._getApproxScale(style.data.data.grid),
+                    widthMultiplier: this._getApproxScale(style.data.data.grid, arrow),
                     rotation: this._getRotation(style.data.data.grid, arrow),
                 };
             }
@@ -364,10 +364,10 @@ export class SpellboundKingdomsCharacterSheet extends SpellboundKingdomsActorShe
         return deg;
     }
 
-    _getApproxScale(grid) {
-        let length = Math.sqrt(grid.xSize * grid.xSize + grid.ySize * grid.ySize);
+    _getApproxScale(grid, arrow) {
+        let length = Math.hypot((arrow.to.x - arrow.from.x) * grid.xSize, (arrow.to.y - arrow.from.y) * grid.ySize);
 
-        return length / 80; // where 80 is font size * 2, dunno why
+        return length / 40; // where 80 is font size * 2, dunno why
     }
 
     getStyleData(styleIdentifier) {

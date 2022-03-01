@@ -22,8 +22,8 @@ Character Sheet
         [done] Talents
             [done] Talent Form
             [done] Talent selection UI
-    [    ] Combat Tab
-        [    ] Fighting/Magic Styles
+    [done] Combat Tab
+        [done] Fighting/Magic Styles
     [    ] Magic Tab
         [    ] Spells
     [done] Inventory Tab
@@ -52,7 +52,7 @@ Character Sheet
     [    ] Items
 
 [    ] Gear Sheet
-[    ] Fighting Style Sheet
+[done] Fighting Style Sheet
     type: "fighting", "magic", "monster"
     level: 1 - neophyte, 2 - apprentice, 3 - master
     Maneuvers
@@ -72,12 +72,12 @@ Character Sheet
                 it means that there are arrows from the current maneuver to the listed maneuvers
 
 
-[    ] Talent Sheet
-[    ] Scar Sheet
+[done] Talent Sheet
+[done] Scar Sheet
 [    ] Spell Sheet
 [done] Inspiration Sheet
 [done] History Sheet
-[    ] Ability Sheet
+[done] Ability Sheet
 [    ] Region Sheet
     [    ] hide/reveal region info to PCs
     [    ] Sidebar with info (like calendar/weather)

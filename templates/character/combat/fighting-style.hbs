@@ -90,8 +90,8 @@
         <div class="fighting-style-requirements">
             {{localize "SK.LABEL.REQUIRES"}}
             {{#each fighting-style.data.data.requirements as |requirement key|}}
-            {{#unless (eq key 0)}}, {{/unless}}
-                {{requirement}}
+            {{#unless @first}}, {{/unless}}
+                {{requirement}}{{#if @last}}.{{/if}}
             {{/each}}
         </div>
         <div class="fighting-style-info">

@@ -3,12 +3,16 @@
     "name": "Court Sword",
     "identifier": "court-sword",
     "type": "fighting",
-    "description": "",
-    "requirements": [""],
-    "info": [
-        ""
+    "description": "The Old Claw nobility consider this their style, and it is the only accepted style at most tournaments. You can only use a Reputation in this style if your opponent is one of those to whom your Reputation applies. For example, if you have Reputation 7 Feared and hated by the peasants of Marnh, that does you no good when fighting a peasant of Azenahal or a savage from the Dragon Isles.",
+    "requirements": ["weapon", "no shield"],
+    "info": [],
+    "grid": {"width": 5, "height": 5.2},
+    "grid-arrows": [
+        {"from": {"x": 2.5, "y": 1.2}, "to": {"x": 2.3, "y": 1}},
+        {"from": {"x": 2.5, "y": 1.2}, "to": {"x": 2.7, "y": 1}},
+        {"from": {"x": 1.9, "y": 1}, "to": {"x": 2.1, "y": 1.2}},
+        {"from": {"x": 3.1, "y": 1}, "to": {"x": 2.9, "y": 1.2}}
     ],
-    "grid": {"width": 5, "height": 5},
     "maneuvers": {
         "basic": [
            {
@@ -30,9 +34,9 @@
                 "attack": [{"die": "strength"}]
             },
             {
-                "name": "Grab", 
+                "name": "Throw/Shoot", 
                 "rebalancing": true,
-                "defense": [2],
+                "defense": [],
                 "attack": [{"die": "quickness"}]
             },
             {
@@ -44,20 +48,163 @@
         ],
         "style": [
             {
-                "name": "",
-                "rebalancing": true,
-                "must-rebalance": true,
+                "name": "Lord's Punishment",
                 "mastery": true,
+                "defense": [6],
+                "attack": [
+                    {
+                        "die": 8,
+                        "damage": {"body": 2}
+                    },
+                    {
+                        "die": "reputation",
+                        "damage": {"body": 0},
+                        "short-description":"2 Reputation"
+                    }
+                ],
+                "grid-position": {"x": 1.4, "y": 0},
+                "short-description": "2 / 2 Reputation",
+                "description": "The d8 threatens the 2 damage; the dReputation causes the Reputation damage. As always, a member of the group with whom the Reputation is to apply must be present."
+            },
+            {
+                "name": "Lord's Stance",
+                "mastery": true,
+                "defense": ["reputation", 8],
+                "attack": [
+                    {
+                        "die": 6,
+                        "damage": {"body": 2}
+                    }
+                ],
+                "grid-position": {"x": 2.6, "y": 0},
+                "short-description": "2"
+            },
+            {
+                "name": "Demand",
+                "mastery": true,
+                "defense": [4],
+                "attack": [],
+                "grid-position": {"x": 1, "y": 1.2},
+                "short-description": "Allies gain your Reputation as bonus die on one attack or defense roll next round",
+                "description": "The ally chooses which roll the bonus applies to."
+            },
+            {
+                "name": "Signature Strike",
                 "defense": [4],
                 "attack": [
                     {
-                        "die": 4,
-                        "damage": {"body": 2},
-                        "short-description": "2"
+                        "die": 4
                     }
                 ],
-                "grid-position": {"x": 0, "y": 0},
+                "grid-position": {"x": 2, "y": 1.2},
+                "short-description": "1 and +1 Mood to self",
+                "description": "The arrows are actually \"two way,\" so that you can return to this maneuver from either of the two mastery maneuvers."
+            },
+            {
+                "name": "Disarm",
+                "defense": [4],
+                "attack": [
+                    {
+                        "die": 8,
+                        "damage": {"body": 0}
+                    }
+                ],
+                "grid-position": {"x": 3, "y": 1.2},
+                "short-description": "Disarm"
+            },
+            {
+                "name": "Lord's Feint",
+                "defense": [8],
+                "attack": [
+                    {
+                        "die": 6,
+                        "damage": {"body": 0}
+                    }
+                ],
+                "grid-position": {"x": 2, "y": 2.2},
+                "short-description": "Rebalance"
+            },
+            {
+                "name": "Satirical Portrayal",
+                "must-rebalance": true,
+                "defense": [6],
+                "attack": [
+                    {
+                        "die": "reputation",
+                        "damage": {"body": 0}
+                    }
+                ],
+                "grid-position": {"x": 0, "y": 3.2},
+                "short-description": "2 Reputation and 2 Mood to one audience member",
+                "description": "You mock the combat style, demeanor, and comportment of one audience member. You must know the audience member well enough to make your caricature tell. The \"audience\" need not be staid; it can be anyone able to see you, including other combatants. The \"audience\" does not include the person you are attacking, as his view is too close to understand fully what you are doing. The Reputation damage occurs only if someone from a relevant group is there to witness the satire."
+            },
+            {
+                "name": "Riposte",
+                "defense": [10],
+                "attack": [],
+                "grid-position": {"x": 2, "y": 3.2},
+                "short-description": "d10 attack for 3 damage against one enemy that misses you",
+                "description": "If more than one enemy misses you, you can target your choice with the riposte."
+            },
+            {
+                "name": "Beat",
+                "defense": [4],
+                "attack": [
+                    {
+                        "die": "reputation",
+                        "damage": {"body": 2, "mood": 1}
+                    }
+                ],
+                "grid-position": {"x": 4, "y": 3.2},
+                "short-description": "2 + 1 Mood"
+            },
+            {
+                "name": "Spin",
+                "defense": [4],
+                "attack": [],
+                "grid-position": {"x": 0, "y": 4.2},
+                "short-description": "+1 damage next round"
+            },
+            {
+                "name": "Lunge",
+                "must-rebalance": true,
+                "rebalancing": true,
+                "defense": [2],
+                "attack": [
+                    {
+                        "die": 8
+                    }
+                ],
+                "grid-position": {"x": 1, "y": 4.2},
                 "short-description": "1"
+            },
+            {
+                "name": "Pose",
+                "defense": [4],
+                "attack": [],
+                "grid-position": {"x": 2, "y": 4.2},
+                "short-description": "Bonus Reputation die on attack or defense until forced to rebalance",
+                "description": "At the time you strike the pose, you choose whether or not your bonus Reputation die applies to attack or defense in the coming rounds. A second Pose does not stack with the first, but it does allow you to switch your bonus from attack to defense or vice versa."
+            },
+            {
+                "name": "Feint",
+                "rebalancing": true,
+                "defense": [6],
+                "attack": [],
+                "grid-position": {"x": 3, "y": 4.2},
+                "short-description": "+1 attack die size next round"
+            },
+            {
+                "name": "Demeaning Swat",
+                "defense": [6],
+                "attack": [
+                    {
+                        "die": 6,
+                        "damage": {"mood": 2}
+                    }
+                ],
+                "grid-position": {"x": 4, "y": 4.2},
+                "short-description": "2 Mood"
             }
         ]
     }
