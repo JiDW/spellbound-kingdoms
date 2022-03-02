@@ -4,9 +4,9 @@
     "identifier": "battlecraft",
     "type": "fighting",
     "description": "",
-    "requirements": [""],
+    "requirements": ["no weapon", "no shield"],
     "info": [""],
-    "grid": {"width": 5, "height": 5},
+    "grid": {"width": 5, "height": 4},
     "maneuvers": {
         "basic": [
            {
@@ -41,17 +41,109 @@
             }
         ],
         "style": [
-            {   "name": "",
-                "rebalancing": true,
-                "must-rebalance": true,
+            {   "name": "Stone Pincer Hurl",
                 "mastery": true,
-                "defense": [4],
+                "defense": [6],
                 "attack": [
-                    { "die": 4, "damage": {"body": 2} }
+                    { "die": 20, "damage": {"body": 2} }
                 ],
                 "grid-position": {"x": 0, "y": 0},
-                "short-description": "1",
-                "description": ""
+                "short-description": "2 + hurl grabbed tgt 1 area",
+                "description": "The target must be grabbed, so you can't repeat this maneuver in consecutive rounds. Re-grab your victim, and then toss him again."
+            },
+            {   "name": "Stone Pincer Grab",
+                "defense": [6],
+                "attack": [
+                    { "die": 8, "damage": {"body": 0} }
+                ],
+                "grid-position": {"x": 1, "y": 0},
+                "short-description": "Grabbed"
+            },
+            {   "name": "Lightning Orb",
+                "magic-defense": [6],
+                "defense": [4],
+                "magic-attack": [
+                    { "die": 10 },
+                    { "die": 10 },
+                    { "die": 10 }
+                ],
+                "grid-position": {"x": 3, "y": 0},
+                "short-description": "1/1/1 (ranged)"
+            },
+            {   "name": "Enter Orb",
+                "mastery": true,
+                "defense": [4],
+                "grid-position": {"x": 4, "y": 0},
+                "short-description": "Add move, climb, +1 physical and magic defense die size, and +1 damage until you are forced to re-cast",
+                "description": "Spreading both arms in a grand gesture of opening, you expand your sculpted orb until it is large enough to step into. You step in, and it bestows many bonuses until you are forced to rebalance. Every battlecrafter has a unique orb; spend some time designing yours!"
+            },
+            {   "name": "Stone Pincer Slash",
+                "defense": [6],
+                "attack": [
+                    { "die": 10, "damage": {"body": 2} }
+                ],
+                "grid-position": {"x": 1, "y": 1},
+                "short-description": "2"
+            },
+            {   "name": "Explode Orb",
+                "must-rebalance": true,
+                "magic-defense": [6],
+                "defense": [4],
+                "attack": [
+                    { "die": 10, "damage": {"body": 2} }
+                ],
+                "grid-position": {"x": 3, "y": 1},
+                "short-description": "2; 5 targets in one area (ranged)",
+                "description": "Each target is attacked only once. The orb discriminates and will not harm allies."
+            },
+            {   "name": "Crimson Bands of Hessek",
+                "defense": [4],
+                "attack": [
+                    { "die": 8 }
+                ],
+                "grid-position": {"x": 0, "y": 2},
+                "short-description": "Banded. Each band does until you re-cast 1 damage per round until you are forced to re-cast",
+                "description": "Each time this spell hits, a crimson band snaps into being on the target's body. Traditionally, the band is acidic dragon sinew, but some battlecrafters have different manifestations, for example, the sparkling velvet ribbons of Asenkut Ragul's twenty-six daughters, each ribbon a different color constrictor stronger than any python. Each band does 1 point of damage per round until the caster is forced to re-cast."
+            },
+            {   "name": "Gather Stone",
+                "rebalancing": true,
+                "magic-defense": [6],
+                "defense": [6],
+                "grid-position": {"x": 1, "y": 2},
+                "short-description": ""
+            },
+            {   "name": "Wards",
+                "rebalancing": true,
+                "magic-defense": [6],
+                "defense": [6],
+                "grid-position": {"x": 2, "y": 2},
+                "short-description": "+2 physical defense die size and +1 magic defense die size until you are forced to re-cast"
+            },
+            {   "name": "Sculpt Orb",
+                "rebalancing": true,
+                "magic-defense": [4],
+                "defense": [4],
+                "grid-position": {"x": 3, "y": 2},
+                "short-description": ""
+            },
+            {   "name": "Improved Arcane Wards",
+                "mastery": true,
+                "magic-defense": [8],
+                "defense": [6],
+                "grid-position": {"x": 4, "y": 2},
+                "short-description": "+1 magic defense die size until you re-cast"
+            },
+            {   "name": "Pause the Crimson Bands",
+                "defense": [4],
+                "grid-position": {"x": 0, "y": 3},
+                "short-description": "Suspends (not dismisses) the bands' continuing damage while, for example, you interrogate the victim."
+            },
+            {   "name": "Wall of Force",
+                "mastery": true,
+                "defense": [6],
+                "grid-position": {"x": 4, "y": 3},
+                "short-description": "A Quality 6 invisible wall (10' high, as long or wide as the area) stands until smashed or you are forced to rebalance",
+                "description": "The wall can curve, but it cannot lie flat or form a circle that closes on itself so as to trap those inside. It is transparent but shot through with the colors of the battlemaster's orb. Spells that attack without a physical manifestation can be cast through the wall; spells with a physical manifestation cannot pass through or target someone beyond the very real wall."
             }
         ]
     }

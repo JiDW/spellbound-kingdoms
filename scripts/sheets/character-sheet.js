@@ -405,6 +405,7 @@ export class SpellboundKingdomsCharacterSheet extends SpellboundKingdomsActorShe
                         case 'name':
                             newObj[key] = maneuver[key];
                             break;
+                        case 'magic-attack':
                         case 'attack':
                             attack = [];
                             for (const att of maneuver[key]) {
