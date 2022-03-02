@@ -3,9 +3,9 @@
     "name": "Savage",
     "identifier": "savage",
     "type": "fighting",
-    "description": "",
-    "requirements": [""],
-    "info": [""],
+    "description": "The savages of the Fyrajj forest and the Kvalt range are the main practitioners of this style. Many of its maneuvers resemble the lunges and claw-swipes of beasts native to the savages' homeland. Weapons are optional for many of the savage's combat maneuvers, but Fury Strike requires one. Savage requires freedom of movement such that you cannot wear any armor with a Minimum Strength requirement higher than 5.",
+    "requirements": ["Strength or Quickness 7", "no shield", "no armor that requires a Strength greater than 5"],
+    "info": ["Weapon required for Fury Strike.", "Weapon is otherwise optional."],
     "grid": {"width": 5, "height": 5},
     "maneuvers": {
         "basic": [
@@ -41,17 +41,101 @@
             }
         ],
         "style": [
-            {   "name": "",
+            {   "name": "Climb",
                 "rebalancing": true,
+                "defense": [4],
+                "attack": [],
+                "grid-position": {"x": 0, "y": 0},
+                "short-description": "Gain altitude"
+            },
+            {   "name": "Dive",
+                "rebalancing": true,
+                "defense": [2],
+                "attack": [
+                    { "die": 8, "damage": {"body": 2} }
+                ],
+                "grid-position": {"x": 4, "y": 0},
+                "short-description": "2 + rebalance; Requires altitude"
+            },
+            {   "name": "Bear Hug",
+                "defense": [2],
+                "attack": [
+                    { "die": "strength", "damage": {"body": 1, "strength": 1} }
+                ],
+                "grid-position": {"x": 1, "y": 1},
+                "short-description": "1 + 1 Str + grabbed",
+                "description": "You may execute another Bear Hug or a Throw next round, despite the fact that you are considered grabbed (p. 29)."
+            },
+            {   "name": "Grab",
+                "defense": [2],
+                "attack": [
+                    { "die": "strength", "damage": {"body": 0} }
+                ],
+                "grid-position": {"x": 2, "y": 1},
+                "short-description": "Grabbed"
+            },
+            {   "name": "Throw",
                 "must-rebalance": true,
                 "mastery": true,
+                "defense": [6],
+                "attack": [
+                    { "die": 8, "damage": {"body": 2} }
+                ],
+                "grid-position": {"x": 3, "y": 1},
+                "short-description": "2 + move target 1 area"
+            },
+            {   "name": "Rage",
+                "rebalancing": true,
+                "defense": [6],
+                "attack": [],
+                "grid-position": {"x": 2, "y": 2},
+                "short-description": "+1 damage until forced to rebalance"
+            },
+            {   "name": "Fury Strike",
+                "defense": [6],
+                "attack": [
+                    { "die": 10, "damage": {"body": 2} }
+                ],
+                "grid-position": {"x": 1, "y": 3},
+                "short-description": "2"
+            },
+            {   "name": "Mighty Rage",
+                "rebalancing": true,
+                "mastery": true,
+                "defense": [4],
+                "attack": [],
+                "grid-position": {"x": 2, "y": 3},
+                "short-description": "Ignore 1 point of damage per round until forced to rebalance"
+            },
+            {   "name": "Rampage",
                 "defense": [4],
                 "attack": [
-                    { "die": 4, "damage": {"body": 2} }
+                    { "die": 6 },
+                    { "die": 6 }
                 ],
-                "grid-position": {"x": 0, "y": 0},
-                "short-description": "1",
-                "description": ""
+                "grid-position": {"x": 3, "y": 3},
+                "short-description": "1/1 + move, climb",
+                "description": "You do not move twice (it is 1/1 and a move, not (1+move)/(1+move)). The move that you do get, however, is optional - and it may be a climb rather than a sprint or charge."
+            },
+            {   "name": "Slam",
+                "rebalancing": true,
+                "defense": [4],
+                "attack": [
+                    { "die": 6 }
+                ],
+                "grid-position": {"x": 1, "y": 4},
+                "short-description": "1"
+            },
+            {   "name": "Savage Charge",
+                "rebalancing": true,
+                "defense": [2],
+                "attack": [
+                    { "die": 4 },
+                    { "die": 6, "damage": {"body": 0} }
+                ],
+                "grid-position": {"x": 3, "y": 4},
+                "short-description": "1 + move/move target 1 area",
+                "description": "The move is not optional; you must build momentum for the charge. The d4 is for the 1 damage; the d6 is for the \"move target 1 area.\""
             }
         ]
     }

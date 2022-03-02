@@ -3,8 +3,8 @@
     "name": "Twin Weapon",
     "identifier": "twin-weapon",
     "type": "fighting",
-    "description": "",
-    "requirements": [""],
+    "description": "Twin Weapon is most often seen in the World Below, as guild thieves and assassins are the most likely souls to have the Quickness for the style and the gold for the multiple weapons.",
+    "requirements": ["Quickness 7", "twin blade or piercing weapons"],
     "info": [""],
     "grid": {"width": 5, "height": 5},
     "maneuvers": {
@@ -41,17 +41,141 @@
             }
         ],
         "style": [
-            {   "name": "",
-                "rebalancing": true,
+            {   "name": "Rend",
                 "must-rebalance": true,
                 "mastery": true,
                 "defense": [4],
                 "attack": [
-                    { "die": 4, "damage": {"body": 2} }
+                    { "die": 8, "damage": {"body": 2} },
+                    { "die": 8, "damage": {"body": 2} }
                 ],
-                "grid-position": {"x": 0, "y": 0},
-                "short-description": "1",
-                "description": ""
+                "grid-position": {"x": 1, "y": 0},
+                "short-description": "2/2 + if both attacks hit unarmed foe, foe must rebalance and takes a Heart penalty die on all rolls next round",
+                "description": "This excruciating maneuver does 2 points of damage on each hit, but if both strikes hit an unarmed foe, then you rend him. The blows force him to rebalance and the pain causes him to take a Heart penalty die on all rolls next round (use d4 for Heart if you do not have the NPC stats hand)."
+            },
+            {   "name": "Master's Blade Storm",
+                "mastery": true,
+                "defense": [6],
+                "attack": [
+                    { "die": 8, "damage": {"body": 3} }
+                ],
+                "grid-position": {"x": 3, "y": 0},
+                "short-description": "3; Attack 5 targets",
+                "description": "You may not attack any target more than once."
+            },
+            {   "name": "Whirling Cross Backslash",
+                "defense": [4],
+                "attack": [
+                    { "die": 8, "damage": {"body": 2, "strength": 1} },
+                    { "die": 6, "damage": {"body": 2, "strength": 1} }
+                ],
+                "grid-position": {"x": 1, "y": 1},
+                "short-description": "2 + 1 Str vs. disarmed opponent",
+                "description": "This targets only a disarmed opponent; opponents fighting in an unarmed style such as Five Seasons are not eligible targets. Each attack does 2 + 1 Strength damage."
+            },
+            {   "name": "Lightning Blades",
+                "defense": [6, 4],
+                "attack": [
+                    { "die": 8, "damage": {"body": 2} },
+                    { "die": 8, "damage": {"body": 2} },
+                    { "die": 6, "damage": {"body": 2} }
+                ],
+                "grid-position": {"x": 3, "y": 1},
+                "short-description": "2/2/2"
+            },
+            {   "name": "Flip",
+                "defense": ["quickness"],
+                "attack": [],
+                "grid-position": {"x": 0, "y": 2},
+                "short-description": "Qck bonus die on defense next round"
+            },
+            {   "name": "Disarm",
+                "defense": [6],
+                "attack": [
+                    { "die": 6, "damage": {"body": 0} },
+                    { "die": 4, "damage": {"body": 0} }
+                ],
+                "grid-position": {"x": 1, "y": 2},
+                "short-description": "Disarmed",
+                "description": "The two attacks, as usual for a dX/ dX maneuver, can target two separate enemies. You can disarm two foes this round if both of your disarm attacks hit. You can also attack your original target a second time if your first disarm attempt fails."
+            },
+            {   "name": "Double Feint",
+                "defense": [4],
+                "attack": [],
+                "grid-position": {"x": 2, "y": 2},
+                "short-description": "Add d10 attack next round for 2 damage"
+            },
+            {   "name": "Flashing Blades",
+                "defense": [4],
+                "attack": [
+                    { "die": 6, "damage": {"body": 2} },
+                    { "die": 4 },
+                    { "die": 4 }
+                ],
+                "grid-position": {"x": 3, "y": 2},
+                "short-description": "2/1/1"
+            },
+            {   "name": "Dervish Spin",
+                "defense": [4],
+                "attack": [],
+                "grid-position": {"x": 4, "y": 2},
+                "short-description": "Move + 1 damage next round",
+                "description": "The move is optional."
+            },
+            {   "name": "Warding Flurry",
+                "defense": [6, 6],
+                "attack": [
+                    { "die": 4 }
+                ],
+                "grid-position": {"x": 0, "y": 3},
+                "short-description": "1"
+            },
+            {   "name": "Blade Storm",
+                "defense": [4],
+                "attack": [
+                    { "die": 6 }
+                ],
+                "grid-position": {"x": 2, "y": 3},
+                "short-description": "1; Attack 5 targets",
+                "description": "You may not attack any target more than once."
+            },
+            {   "name": "Double Lunge",
+                "must-rebalance": true,
+                "defense": [2],
+                "attack": [
+                    { "die": 8 },
+                    { "die": 8 }
+                ],
+                "grid-position": {"x": 4, "y": 3},
+                "short-description": "1/1"
+            },
+            {   "name": "Off-hand Strike",
+                "rebalancing": true,
+                "defense": [6],
+                "attack": [
+                    { "die": 4 }
+                ],
+                "grid-position": {"x": 0, "y": 4},
+                "short-description": "1"
+            },
+            {   "name": "Twin Strike",
+                "rebalancing": true,
+                "defense": [4],
+                "attack": [
+                    { "die": 4 },
+                    { "die": 4 }
+                ],
+                "grid-position": {"x": 2, "y": 4},
+                "short-description": "1/1"
+            },
+            {   "name": "Main-hand Strike",
+                "rebalancing": true,
+                "defense": [2],
+                "attack": [
+                    { "die": 6 }
+                ],
+                "grid-position": {"x": 4, "y": 4},
+                "short-description": "1"
             }
         ]
     }

@@ -3,10 +3,16 @@
     "name": "Swashbuckler",
     "identifier": "swashbuckler",
     "type": "fighting",
-    "description": "",
-    "requirements": [""],
+    "description": "Disparaged by nobles as a poor man's Court Sword, Swashbuckler is a flamboyant, daring style that is an inspiration to many and an effrontery to a few.",
+    "requirements": ["Charisma 7", "no shield", "no armor", "swashbuckling weapon (as judged appropriate for your campaign’s approach to swashbuckling)"],
     "info": [""],
     "grid": {"width": 5, "height": 5},
+    "grid-arrows": [
+        {"from": {"x": 0.5, "y": 1}, "to": {"x": 1, "y": 0.5}},
+        {"from": {"x": 1, "y": 1.5}, "to": {"x": 1.5, "y": 1}},
+        {"from": {"x": 4.5, "y": 1}, "to": {"x": 4, "y": 0.5}},
+        {"from": {"x": 4, "y": 1.5}, "to": {"x": 3.5, "y": 1}}
+    ],
     "maneuvers": {
         "basic": [
            {
@@ -41,17 +47,130 @@
             }
         ],
         "style": [
-            {   "name": "",
-                "rebalancing": true,
+            {   "name": "Swath of Destruction",
                 "must-rebalance": true,
                 "mastery": true,
+                "defense": [6],
+                "attack": [
+                    { "die": 8, "damage": {"body": 3} }
+                ],
+                "grid-position": {"x": 1, "y": 0},
+                "short-description": "3; 3 targets",
+                "description": "You cannot attack any target more than once. Each attack deals 3 damage. You can attempt to cut a swath even if yourDeath from Above strike missed."
+            },
+            {   "name": "Disrobe",
+                "must-rebalance": true,
+                "mastery": true,
+                "defense": [6],
+                "attack": [
+                    { "die": 6, "damage": {"mood": 2} }
+                ],
+                "grid-position": {"x": 3, "y": 0},
+                "short-description": "Lose clothing or 2 to armor Quality (recovered after battle) plus 3 reputation and 2 Mood damage"
+            },
+            {   "name": "Death from Above",
                 "defense": [4],
                 "attack": [
-                    { "die": 4, "damage": {"body": 2} }
+                    { "die": 10, "damage": {"body": 2} }
                 ],
-                "grid-position": {"x": 0, "y": 0},
-                "short-description": "1",
-                "description": ""
+                "grid-position": {"x": 0, "y": 1},
+                "short-description": "2; Requires altitude",
+                "description": "You must have some altitude over your opponent to execute this maneuver."
+            },
+            {   "name": "Disarm",
+                "defense": [4],
+                "attack": [
+                    { "die": 6, "damage": {"body": 0} }
+                ],
+                "grid-position": {"x": 4, "y": 1},
+                "short-description": "Disarmed"
+            },
+            {   "name": "Acrobatic Charge",
+                "defense": [6],
+                "attack": [
+                    { "die": 4 }
+                ],
+                "grid-position": {"x": 0, "y": 2},
+                "short-description": "1 + Move + environmental trick",
+                "description": "The move is required."
+            },
+            {   "name": "Spectacular Strike",
+                "defense": [8],
+                "attack": [
+                    { "die": 8 }
+                ],
+                "grid-position": {"x": 1, "y": 2},
+                "short-description": "1 + 1 Mood to all allies + environmental trick",
+                "description": "You gain the Mood bonus to allies if both the environmental trick and the d8 strike are successful. Usually, but not always, the strike and the trick are related."
+            },
+            {   "name": "Humiliating Blow",
+                "must-rebalance": true,
+                "defense": [6],
+                "attack": [
+                    { "die": 4 }
+                ],
+                "grid-position": {"x": 2, "y": 2},
+                "short-description": "1 + 2 Reputation",
+                "description": "The reputation damage must be to a reputation with a group having witnesses present. If there are no witnesses, there is no reputation damage."
+            },
+            {   "name": "Spin and Pose",
+                "defense": [8],
+                "attack": [],
+                "grid-position": {"x": 3, "y": 2},
+                "short-description": "+2 damage next round, +1 Mood to self now"
+            },
+            {   "name": "Stab and Mock",
+                "defense": [8],
+                "attack": [
+                    { "die": 8, "damage": {"body": 1, "mood": 1} }
+                ],
+                "grid-position": {"x": 4, "y": 2},
+                "short-description": "1 + 1 Mood",
+                "description": "You do 1 damage and 1 Mood damage."
+            },
+            {   "name": "Trip",
+                "defense": [6],
+                "attack": [
+                    { "die": 6, "damage": {"body": 0} }
+                ],
+                "grid-position": {"x": 0, "y": 3},
+                "short-description": "Rebalance"
+            },
+            {   "name": "Thrust",
+                "rebalancing": true,
+                "defense": [4],
+                "attack": [
+                    { "die": 4 }
+                ],
+                "grid-position": {"x": 2, "y": 3},
+                "short-description": "1"
+            },
+            {   "name": "Jest",
+                "rebalancing": true,
+                "defense": [4],
+                "attack": [
+                    { "die": "charisma", "vs": "doom", "damage": {"body": 0} }
+                ],
+                "grid-position": {"x": 4, "y": 3},
+                "short-description": "+1 Mood to ally",
+                "description": "As with Flourish, you vie against the Doom, not an opponent, to cheer your ally."
+            },
+            {   "name": "Daredevil Move",
+                "rebalancing": true,
+                "defense": [6],
+                "attack": [],
+                "grid-position": {"x": 0, "y": 4},
+                "short-description": "Move, climb or environmental trick"
+            },
+            {   "name": "Flourish",
+                "rebalancing": true,
+                "defense": [4],
+                "attack": [
+                    { "die": "charisma", "vs": "doom", "damage": {"body": 0} }
+                ],
+                "grid-position": {"x": 4, "y": 4},
+                "short-description": "+1 Mood to self",
+                "description": "Your flourish is rolled against the Doom, not any opposing roll from a foe."
             }
         ]
     }
