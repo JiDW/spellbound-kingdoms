@@ -3,12 +3,16 @@
     "name": "Long Arm",
     "identifier": "long-arm",
     "type": "fighting",
-    "description": "",
-    "requirements": [""],
-    "info": [
-        ""
+    "description": "Long Arm style capitalizes on the reach of the spear. It is popular among witch-hunters who want to keep their distance from spellbound creatures.",
+    "requirements": ["Strength 6", "Quickness 5", "spear or similar polearm", "no shield"],
+    "info": ["Once you have mastered the style, “Vault” becomes “Vault Foe (M),” d2/d6, 1 + Move, Climb."],
+    "grid": {"width": 5, "height": 6},
+    "grid-arrows": [
+        {"from": {"x": 1, "y": 1.5}, "to": {"x": 0.5, "y": 2}},
+        {"from": {"x": 1.5, "y": 2}, "to": {"x": 1, "y": 2.5}},
+        {"from": {"x": 4, "y": 1.5}, "to": {"x": 4.5, "y": 2}},
+        {"from": {"x": 3.5, "y": 2}, "to": {"x": 4, "y": 2.5}}
     ],
-    "grid": {"width": 5, "height": 5},
     "maneuvers": {
         "basic": [
            {
@@ -30,7 +34,7 @@
                 "attack": [{"die": "strength"}]
             },
             {
-                "name": "Grab", 
+                "name": "Throw/Shoot", 
                 "rebalancing": true,
                 "defense": [2],
                 "attack": [{"die": "quickness"}]
@@ -43,21 +47,110 @@
             }
         ],
         "style": [
-            {
-                "name": "",
-                "rebalancing": true,
-                "must-rebalance": true,
-                "mastery": true,
+            {   "name": "Double Stab",
+                "defense": [6],
+                "attack": [
+                    { "die": 8, "damage": {"body": 2} },
+                    { "die": 6 }
+                ],
+                "grid-position": {"x": 2, "y": 0},
+                "short-description": "2/1"
+            },
+            {   "name": "Long Pierce",
+                "defense": [6],
+                "attack": [
+                    { "die": 10, "damage": {"body": 2} }
+                ],
+                "grid-position": {"x": 1, "y": 1},
+                "short-description": "2; Up to 1 area away"
+            },
+            {   "name": "Overextend",
+                "defense": [2],
+                "attack": [
+                    { "die": 8 }
+                ],
+                "grid-position": {"x": 2, "y": 1},
+                "short-description": "1; Up to 1 area away"
+            },
+            {   "name": "Pin",
                 "defense": [4],
                 "attack": [
-                    {
-                        "die": 4,
-                        "damage": {"body": 2},
-                        "short-description": "2"
-                    }
+                    { "die": 8 }
                 ],
-                "grid-position": {"x": 0, "y": 0},
+                "grid-position": {"x": 3, "y": 1},
+                "short-description": "1 and target cannot move; up to 1 area away",
+                "description": "If hit, the target cannot move next round. The target is under no other restrictions (he need not rebalance, etc.)."
+            },
+            {   "name": "Meteor Tip",
+                "mastery": true,
+                "defense": [6],
+                "attack": [
+                    { "die": 10, "damage": {"body": 2} },
+                    { "die": 10, "damage": {"body": 2} }
+                ],
+                "grid-position": {"x": 0, "y": 2},
+                "short-description": "2/2 + move; Up to 1 area away",
+                "description": "The move occurs regardless of whether or not either strike hits. The move is optional."
+            },
+            {   "name": "Vault",
+                "rebalancing": true,
+                "defense": [6],
+                "attack": [],
+                "grid-position": {"x": 2, "y": 2},
+                "short-description": "Move, Climb"
+            },
+            {   "name": "Impale",
+                "mastery": true,
+                "defense": [6],
+                "attack": [
+                    { "die": 8, "damage": {"body": 3} }
+                ],
+                "grid-position": {"x": 4, "y": 2},
+                "short-description": "3 + grabbed; Up to 1 area away"
+            },
+            {   "name": "Trust",
+                "rebalancing": true,
+                "defense": [4],
+                "attack": [
+                    { "die": 6 }
+                ],
+                "grid-position": {"x": 2, "y": 3},
                 "short-description": "1"
+            },
+            {   "name": "Javelin Throw",
+                "defense": [4],
+                "attack": [
+                    { "die": 8, "damage": {"body": 2} }
+                ],
+                "grid-position": {"x": 1, "y": 4},
+                "short-description": "2; ranged",
+                "description": "You throw a javelin, not your spear."
+            },
+            {   "name": "Whirlwind",
+                "rebalancing": true,
+                "defense": [4],
+                "attack": [
+                    { "die": 4 }
+                ],
+                "grid-position": {"x": 2, "y": 4},
+                "short-description": "1; two targets"
+            },
+            {   "name": "Repelling Wind",
+                "defense": [8],
+                "attack": [
+                    { "die": 6 }
+                ],
+                "grid-position": {"x": 3, "y": 4},
+                "short-description": "1 + cannot enter your area. Targets all who attempt to enter area.",
+                "description": "This targets any creature (six maximum) who attempts to enter your area this round."
+            },
+            {   "name": "Scorpion Stance",
+                "rebalancing": true,
+                "defense": [4],
+                "attack": [],
+                "grid-position": {"x": 2, "y": 5},
+                "short-description": "1",
+                "description": "+1 attack die size and +1 damage to attacks outside your area until forced to rebalance"
             }
         ]
     }

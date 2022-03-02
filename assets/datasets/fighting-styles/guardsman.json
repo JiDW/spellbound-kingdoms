@@ -3,12 +3,10 @@
     "name": "Guardsman",
     "identifier": "guardsman",
     "type": "fighting",
-    "description": "",
-    "requirements": [""],
-    "info": [
-        ""
-    ],
-    "grid": {"width": 5, "height": 5},
+    "description": "Guardsman is one of the nobles' most valued styles. Not that they deign to learn it (everything is inferior to the elegance of Court Sword), but they value it for the protection it affords. It is rare to encounter a high-ranking noble's champion who does not know the Guardsman style.",
+    "requirements": ["Strength 6", "weapon", "armor", "shield"],
+    "info": [""],
+    "grid": {"width": 5, "height": 4},
     "maneuvers": {
         "basic": [
            {
@@ -30,7 +28,7 @@
                 "attack": [{"die": "strength"}]
             },
             {
-                "name": "Grab", 
+                "name": "Throw/Shoot", 
                 "rebalancing": true,
                 "defense": [2],
                 "attack": [{"die": "quickness"}]
@@ -43,21 +41,125 @@
             }
         ],
         "style": [
-            {
-                "name": "",
-                "rebalancing": true,
+            {   "name": "Repel",
+                "mastery": true,
+                "defense": [12],
+                "attack": [
+                    { "die": 10 }
+                ],
+                "grid-position": {"x": 1, "y": 0},
+                "short-description": "Attack only those entering your area. 1 + Target can't enter your area. Up to 3 targets",
+                "description": "You keep the rabble from entering your area. You can only make attacks against people trying to enter your area during this round; if there are none such, you make no attacks. Those who are hit are denied entry and return to the area they left this round."
+            },
+            {   "name": "Bull Rush Assault",
                 "must-rebalance": true,
                 "mastery": true,
+                "defense": [12],
+                "attack": [
+                    { "die": 8, "damage": {"body": 3} }
+                ],
+                "grid-position": {"x": 3, "y": 0},
+                "short-description": "3 + move target one area + optionally move with target",
+                "description": "If you move with your target after hitting the first time, you can use a bull rush assault on the same target again in the next round. After that, you must rebalance."
+            },
+            {   "name": "Distracting Blow",
                 "defense": [4],
                 "attack": [
-                    {
-                        "die": 4,
-                        "damage": {"body": 2},
-                        "short-description": "2"
-                    }
+                    { "die": 4, "damage": {"body": 2} }
                 ],
-                "grid-position": {"x": 0, "y": 0},
+                "grid-position": {"x": 0, "y": 1},
+                "short-description": "2 + Ally rolls your attack die as a bonus defense die"
+            },
+            {   "name": "Bodyguard",
+                "defense": [8],
+                "attack": [
+                    { "die": 4, "damage": {"body": 2} }
+                ],
+                "grid-position": {"x": 1, "y": 1},
+                "short-description": "2 + move + as Shield Other",
+                "description": "As Escort, this does not grant a move to your ally. He must be executing a manuever of his own that allows him to move with you."
+            },
+            {   "name": "Shield Tactics",
+                "defense": [8],
+                "attack": [],
+                "grid-position": {"x": 2, "y": 1},
+                "short-description": "+1 defense die size until you are forced to rebalance"
+            },
+            {   "name": "Body Blow",
+                "defense": [8],
+                "attack": [
+                    { "die": 6, "damage": {"body": 3} }
+                ],
+                "grid-position": {"x": 3, "y": 1},
+                "short-description": "3"
+            },
+            {   "name": "Knock Down",
+                "defense": [4],
+                "attack": [
+                    { "die": "strength", "damage": {"body": 0} }
+                ],
+                "grid-position": {"x": 4, "y": 1},
+                "short-description": "Rebalance"
+            },
+            {   "name": "Escort",
+                "defense": [8],
+                "attack": [],
+                "grid-position": {"x": 0, "y": 2},
+                "short-description": "Move + as Shield Other",
+                "description": "You can move while granting one ally the use of your defense die (d8) as a bonus defense die. This maneuver does not grant a move to your ally; he must be executing a manuever of his own that allows him to move with you."
+            },
+            {   "name": "Guard's Strike",
+                "rebalancing": true,
+                "defense": [6],
+                "attack": [
+                    { "die": 4 }
+                ],
+                "grid-position": {"x": 2, "y": 2},
                 "short-description": "1"
+            },
+            {   "name": "Rampart Defense",
+                "defense": [12],
+                "attack": [
+                    { "die": 4 }
+                ],
+                "grid-position": {"x": 4, "y": 2},
+                "short-description": "1 + d12 bonus defense die against any terrain, move, or rebalance",
+                "description": "This maneuver's sure-footed stance grants the bonus defense die against any attack or environmental factor, physical or magical, that causes you to move, rebalance, fall, trip, slip, be swept away, etc. To be clear, the bonus die is also to be rolled on any check you make against such effects, whether or not the effect is described as an attack."
+            },
+            {   "name": "Shield Other",
+                "rebalancing": true,
+                "defense": [6],
+                "attack": [],
+                "grid-position": {"x": 0, "y": 3},
+                "short-description": "Ally rolls your defense die as a bonus defense die"
+            },
+            {   "name": "Shield Bash",
+                "defense": [8],
+                "attack": [
+                    { "die": 6, "damage": {"body": 0} }
+                ],
+                "grid-position": {"x": 1, "y": 3},
+                "short-description": "Rebalance"
+            },
+            {   "name": "Shield Run",
+                "rebalancing": true,
+                "defense": [8],
+                "attack": [],
+                "grid-position": {"x": 2, "y": 3},
+                "short-description": "Move"
+            },
+            {   "name": "Screened Riposte",
+                "defense": [8],
+                "attack": [],
+                "grid-position": {"x": 3, "y": 3},
+                "short-description": "d6 attack for 1 damage against up to three who miss you"
+            },
+            {   "name": "Block",
+                "rebalancing": true,
+                "defense": [10],
+                "attack": [],
+                "grid-position": {"x": 4, "y": 3},
+                "short-description": ""
             }
         ]
     }

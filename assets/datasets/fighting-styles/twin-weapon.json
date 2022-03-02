@@ -5,9 +5,7 @@
     "type": "fighting",
     "description": "",
     "requirements": [""],
-    "info": [
-        ""
-    ],
+    "info": [""],
     "grid": {"width": 5, "height": 5},
     "maneuvers": {
         "basic": [
@@ -30,9 +28,9 @@
                 "attack": [{"die": "strength"}]
             },
             {
-                "name": "Grab", 
+                "name": "Throw/Shoot", 
                 "rebalancing": true,
-                "defense": [2],
+                "defense": [],
                 "attack": [{"die": "quickness"}]
             },
             {
@@ -43,21 +41,17 @@
             }
         ],
         "style": [
-            {
-                "name": "",
+            {   "name": "",
                 "rebalancing": true,
                 "must-rebalance": true,
                 "mastery": true,
                 "defense": [4],
                 "attack": [
-                    {
-                        "die": 4,
-                        "damage": {"body": 2},
-                        "short-description": "2"
-                    }
+                    { "die": 4, "damage": {"body": 2} }
                 ],
                 "grid-position": {"x": 0, "y": 0},
-                "short-description": "1"
+                "short-description": "1",
+                "description": ""
             }
         ]
     }

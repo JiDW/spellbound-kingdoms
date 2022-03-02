@@ -11,9 +11,7 @@ template = """
     "type": "fighting",
     "description": "",
     "requirements": [""],
-    "info": [
-        ""
-    ],
+    "info": [""],
     "grid": {"width": 5, "height": 5},
     "maneuvers": {
         "basic": [
@@ -49,8 +47,7 @@ template = """
             }
         ],
         "style": [
-            {
-                "name": "",
+            {   "name": "",
                 "rebalancing": true,
                 "must-rebalance": true,
                 "mastery": true,
@@ -59,7 +56,8 @@ template = """
                     { "die": 4, "damage": {"body": 2} }
                 ],
                 "grid-position": {"x": 0, "y": 0},
-                "short-description": "1"
+                "short-description": "1",
+                "description": ""
             }
         ]
     }
@@ -70,11 +68,18 @@ template = """
 dir_path = os.path.dirname(os.path.realpath(__file__))
 file = open(dir_path + '/fighting-style-index.json')
 index = json.load(file)
+file.close()
 
 for item in index:
-    print(index[item])
     if path.exists(dir_path + index[item]):
-        continue
+        styleFile = open(dir_path + index[item])
+        style = json.load(styleFile)
+        styleFile.close()
+        if len(style['maneuvers']['style']) > 1:
+            continue
+    print(index[item])
+
+    os.remove(dir_path + index[item])
 
     replacements = {
         'name': item.replace('-', ' ').title(),
@@ -85,5 +90,3 @@ for item in index:
     with open(dir_path + '/' + item + '.json', 'w') as f:
         f.write(text)
 
-
-file.close()
