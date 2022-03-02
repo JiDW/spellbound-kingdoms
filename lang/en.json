@@ -77,6 +77,7 @@
     "SK.LABEL.MASTERY": "Mastery",
     "SK.LABEL.VS": "vs.",
     "SK.LABEL.OTHER": "Other",
+    "SK.LABEL.MOUNT_QUALITY": "Mount Quality",
   
     "SK.TYPE.HISTORY": "History",
     "SK.TYPE.REPUTATION": "Reputation",
@@ -141,6 +142,7 @@
     "SK.STAT.SHORT.doom": "Doom",
     "SK.STAT.SHORT.reputation": "Rep",
     "SK.STAT.SHORT.REPUTATION": "Rep",
+    "SK.STAT.SHORT.mount-quality": "Mount Quality",
   
     "SK.DICE.BASE": "Base",
     "SK.DICE.PENALTY": "Penalty",

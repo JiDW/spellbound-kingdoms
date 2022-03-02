@@ -3,10 +3,14 @@
     "name": "Mounted",
     "identifier": "mounted",
     "type": "fighting",
-    "description": "",
-    "requirements": [""],
-    "info": [""],
-    "grid": {"width": 5, "height": 5},
+    "description": "The basic maneuvers in the lower right are different for Mounted style. Use them for a skilled rider fighting out of style from horseback. When you're mounted, any attack that forces you to rebalance may also unhorse you. Make a ride check against the Doom to stay on your mount. A ride check is like any other skill check: roll your relevant characteristic die (in this case, either Strength or Quickness) and the die of one associated history, if you have one (in this case, a history of riding, mounted combat, dressage, or something similar). If either die equals or beats the Doom, you stay on your mount.",
+    "requirements": ["mount", "weapon", "Strength 5", "Quickness 5"],
+    "info": ["Any time you are forced to rebalance, you must make a Ride check against the Doom. If you fail, you are unhorsed."],
+    "grid": {"width": 5, "height": 4},
+    "grid-arrows": [
+        {"from": {"x": 3.5, "y": 1}, "to": {"x": 4, "y": 0.5}},
+        {"from": {"x": 4, "y": 1.5}, "to": {"x": 4.5, "y": 1}}
+    ],
     "maneuvers": {
         "basic": [
            {
@@ -18,20 +22,19 @@
             {
                "name": "Defend", 
                "rebalancing": true,
-               "defense": ["quickness"],
+               "defense": ["mount-quality"],
                "attack": []
             },
             {
-                "name": "Grab", 
-                "rebalancing": true,
-                "defense": [2],
-                "attack": [{"die": "strength"}]
+                "name": "Grab",
+                "defense": [],
+                "attack": []
             },
             {
                 "name": "Throw/Shoot", 
                 "rebalancing": true,
-                "defense": [],
-                "attack": [{"die": "quickness"}]
+                "defense": [2],
+                "attack": [{"die": 4}]
             },
             {
                "name": "Trick/Misc.", 
@@ -41,17 +44,101 @@
             }
         ],
         "style": [
-            {   "name": "",
-                "rebalancing": true,
-                "must-rebalance": true,
+            {   "name": "Stand in Stirrups: Windmill Swing",
                 "mastery": true,
+                "defense": [8],
+                "attack": [
+                    { "die": "strength", "damage": {"body": 3} }
+                ],
+                "grid-position": {"x": 1, "y": 0},
+                "short-description": "3 + disarm"
+            },
+            {   "name": "Stomp and Smash",
+                "mastery": true,
+                "defense": [8],
+                "attack": [
+                    { "die": 12, "damage": {"body": 2} },
+                    { "die": 8, "damage": {"body": 2} }
+                ],
+                "grid-position": {"x": 4, "y": 0},
+                "short-description": "2 + rebalance / 2",
+                "description": "Only the d12 Stomp attack forces the target to rebalance. The d8 weapon attack does 2 damage without forcing a rebalance."
+            },
+            {   "name": "Overrun",
                 "defense": [4],
                 "attack": [
-                    { "die": 4, "damage": {"body": 2} }
+                    { "die": 8 }
                 ],
-                "grid-position": {"x": 0, "y": 0},
-                "short-description": "1",
-                "description": ""
+                "grid-position": {"x": 0, "y": 1},
+                "short-description": "1 + rebalance + move",
+                "description": "The move is not optional."
+            },
+            {   "name": "Stand in Stirrups: Overhead Chop",
+                "defense": [4],
+                "attack": [
+                    { "die": 12, "damage": {"body": 3} }
+                ],
+                "grid-position": {"x": 1, "y": 1},
+                "short-description": "3"
+            },
+            {   "name": "Darkin's Skirmish",
+                "defense": [6, 6],
+                "attack": [
+                    { "die": 8, "damage": {"body": 2} },
+                    { "die": 8, "damage": {"body": 2} }
+                ],
+                "grid-position": {"x": 2, "y": 1},
+                "short-description": "2/2"
+            },
+            {   "name": "Trample",
+                "defense": [6],
+                "attack": [
+                    { "die": 6 }
+                ],
+                "grid-position": {"x": 3, "y": 1},
+                "short-description": "1; Attack five targets",
+                "description": "You cannot attack any target more than once."
+            },
+            {   "name": "Gallop",
+                "rebalancing": true,
+                "defense": [6],
+                "attack": [],
+                "grid-position": {"x": 0, "y": 2},
+                "short-description": "Move 2 areas"
+            },
+            {   "name": "Evade",
+                "defense": [10],
+                "attack": [],
+                "grid-position": {"x": 2, "y": 2},
+                "short-description": ""
+            },
+            {   "name": "Horseman's Strike",
+                "rebalancing": true,
+                "defense": [4],
+                "attack": [
+                    { "die": 8 }
+                ],
+                "grid-position": {"x": 3, "y": 2},
+                "short-description": "1"
+            },
+            {   "name": "Charge",
+                "rebalancing": true,
+                "defense": [4],
+                "attack": [
+                    { "die": 6 }
+                ],
+                "grid-position": {"x": 0, "y": 3},
+                "short-description": "1 + move 2 areas"
+            },
+            {   "name": "Scoop or Drop",
+                "rebalancing": true,
+                "defense": [4],
+                "attack": [
+                    { "die": 4 }
+                ],
+                "grid-position": {"x": 3, "y": 3},
+                "short-description": "Scoop up a willing target with a Str vs. Doom check; Drop a willing passenger",
+                "description": "To drop an unwilling passenger, win opposed Strength check. To become a passenger against your will, the assailant needs to make a suitable environment trick (p. 26)."
             }
         ]
     }
