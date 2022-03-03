@@ -253,7 +253,9 @@
     },
     "spell": {
       "templates": ["identifier"],
-      "type": "close",
+      "high": false,
+      "mastery": false,
+      "school": "",
       "description": ""
     },
     "object": {

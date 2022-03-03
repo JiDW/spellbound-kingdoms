@@ -3,6 +3,7 @@ import { mergeDeep, dirname } from "../util.js";
 
 export async function loadSystemSettings() {
   CONFIG.SpellboundKingdoms = await loadDatasets();
+  CONFIG.SpellboundKingdoms.loadSpells = loadSpells;
   console.log(CONFIG.SpellboundKingdoms);
 }
 
@@ -70,4 +71,31 @@ export function registerSettings() {
     default: [],
     type: Number,
   });
+}
+
+
+async function loadSpells() {    
+    const path = 'systems/spellbound-kingdoms/assets/datasets/load/load_spells.json';
+    const resp = await fetch(path).catch(err => { return {} });
+    let spellsBySchool = await resp.json();
+
+    const spellFolder = await Folder.create({
+        name: "Spells",
+        type: 'Item',
+        parent: null,
+    });
+
+    for (let [school, spells] of Object.entries(spellsBySchool)) {
+        const schoolFolder = await Folder.create({
+            name: school,
+            type: 'Item',
+            parent: spellFolder.id,
+        });
+        spells = spells.map(spell => {
+            spell.folder = schoolFolder.id;
+            spell.type = 'spell';
+            return spell;
+        });
+        Item.createDocuments(spells);
+    }
 }

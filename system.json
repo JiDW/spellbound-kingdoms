@@ -4,11 +4,9 @@
     "description": "Spellbound Kingdoms Tabletop RPG system by Frank Brunner",
     "version": "0.1.0",
     "minimumCoreVersion": "9.249",
-    "compatibleCoreVersion": "9.249",
+    "compatibleCoreVersion": "9.251",
     "author": "Maxter",
-    "scripts": [
-        "scripts/settings-extender.js"
-    ],
+    "scripts": [],
     "esmodules": ["scripts/init.js"],
     "styles": [
         "styles/common.css",
