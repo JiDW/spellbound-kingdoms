@@ -2,7 +2,7 @@
 {
     "name": "Battlecraft",
     "identifier": "battlecraft",
-    "type": "fighting",
+    "type": "magic",
     "description": "",
     "requirements": ["no weapon", "no shield", "Reason 8", "Magic 8"],
     "info": ["All are ranged."],

@@ -74,7 +74,7 @@ Character Sheet
 
 [done] Talent Sheet
 [done] Scar Sheet
-[    ] Spell Sheet
+[done] Spell Sheet
 [done] Inspiration Sheet
 [done] History Sheet
 [done] Ability Sheet

@@ -2,11 +2,15 @@
 {
     "name": "Death Lore",
     "identifier": "death-lore",
-    "type": "fighting",
+    "type": "magic",
     "description": "",
-    "requirements": [""],
-    "info": [""],
+    "requirements": ["no weapon", "no shield", "Reason 6", "Magic 7"],
+    "info": ["All are ranged."],
     "grid": {"width": 5, "height": 5},
+    "grid-arrows": [
+        {"from": {"x": 1, "y": 3}, "to": {"x": 0.5, "y": 2}},
+        {"from": {"x": 4, "y": 3}, "to": {"x": 4.5, "y": 2}}
+    ],
     "maneuvers": {
         "basic": [
            {
@@ -41,17 +45,107 @@
             }
         ],
         "style": [
-            {   "name": "",
-                "rebalancing": true,
+            {   "name": "Death Spell",
                 "must-rebalance": true,
                 "mastery": true,
+                "defense": [2],
+                "magic-attack": [
+                    { "die": 10, "damage": {"body": 0} }
+                ],
+                "grid-position": {"x": 2, "y": 0},
+                "short-description": "Death; 5 targets with (Mood + Body) < 10",
+                "description": "You choose the victims; they must all be within the same area. That area must either be your area or one adjacent to it. If a target's current Mood + Body is less than 10 and he is hit by this spell, he dies."
+            },
+            {   "name": "Limbs of Dust",
+                "defense": [6],
+                "magic-attack": [
+                    { "die": 6, "damage": {"strength": 1, "quickness": 1} }
+                ],
+                "grid-position": {"x": 0, "y": 1},
+                "short-description": "1 Str + 1 Qck",
+                "description": "Your opponent's arms turn to dust for a round, and when they come back, they are not the same."
+            },
+            {   "name": "Dustform",
+                "mastery": true,
+                "defense": [12],
+                "grid-position": {"x": 1, "y": 1},
+                "short-description": "Move through cracks, pour through holes (1 minute/scene or day)",
+                "description": "You still occupy the same volume that you always do, so you can't store yourself in a dashberry cup. You could probably fit in a large chest, however. If you are in a tight space when the duration expires, you are ejected to the nearest unoccupied suitable space."
+            },
+            {   "name": "Open the Gate of Ash and Dust",
+                "defense": [4],
+                "grid-position": {"x": 2, "y": 1},
+                "short-description": "",
+                "description": ""
+            },
+            {   "name": "Void",
+                "must-rebalance": true,
+                "defense": [4],
+                "magic-attack": [
+                    { "die": 20, "damage": {"body": 4} }
+                ],
+                "grid-position": {"x": 3, "y": 1},
+                "short-description": "4 + re-cast"
+            },
+            {   "name": "Mind of the Void",
+                "defense": [4],
+                "magic-attack": [
+                    { "die": 6, "damage": {"reason": 1, "magic": 1} }
+                ],
+                "grid-position": {"x": 4, "y": 1},
+                "short-description": "1 Rsn + 1 Mgc"
+            },
+            {   "name": "Masque of Ash",
+                "defense": [4],
+                "magic-attack": [
+                    { "die": 6, "damage": {"strength": 1, "charisma": 1} }
+                ],
+                "grid-position": {"x": 1, "y": 3},
+                "short-description": "Target takes 1 point of Strength and Charisma per round until you are forced to re-cast",
+                "description": "The masque continues to attack each round until you are forced to re-cast. If it hits it does 1 point of Strength and Charisma damage. A masque counts as one of your trapped spells."
+            },
+            {   "name": "Masque of Dust",
+                "defense": [4],
+                "magic-attack": [
+                    { "die": 6, "damage": {"magic": 1, "mood": 1} }
+                ],
+                "grid-position": {"x": 3, "y": 3},
+                "short-description": "Target takes 1 point of Magic and Mood per round until you are forced to re-cast",
+                "description": "The masque continues to attack each round until you are forced to re-cast. If it hits it does 1 point of Magic and Mood damage. A masque counts as one of your trapped spells."
+            },
+            {   "name": "Sign of Ash",
+                "rebalancing": true,
+                "defense": [6],
+                "magic-attack": [
+                    { "die": 4 }
+                ],
+                "grid-position": {"x": 0, "y": 4},
+                "short-description": "1"
+            },
+            {   "name": "Rapture of Ash",
+                "defense": [4],
+                "grid-position": {"x": 1, "y": 4},
+                "short-description": "+2 die size next attack"
+            },
+            {   "name": "Pillar of Ash",
                 "defense": [4],
                 "attack": [
-                    { "die": 4, "damage": {"body": 2} }
+                    { "die": 12, "damage": {"body": 2} }
                 ],
-                "grid-position": {"x": 0, "y": 0},
-                "short-description": "1",
-                "description": ""
+                "grid-position": {"x": 2, "y": 4},
+                "short-description": "2"
+            },
+            {   "name": "Rapture of Silence",
+                "defense": [6],
+                "grid-position": {"x": 3, "y": 4},
+                "short-description": "+1 to all your defense die sizes until you are forced to rebalance",
+                "description": "The bonus applies to both physical and magical defense dice."
+            },
+            {   "name": "Sign of Silence",
+                "rebalancing": true,
+                "defense": [6],
+                "grid-position": {"x": 4, "y": 4},
+                "short-description": "Add re-cast to next atk"
             }
         ]
     }
