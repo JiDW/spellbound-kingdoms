@@ -325,3 +325,20 @@ button.add-active-effect {
     counter-increment: attack-counter;
     content: counters(attack-counter, ".");
 }
+
+.item .grid-spell {
+    display: grid;
+    grid-template-columns: 56px auto auto;
+    grid-template-rows: repeat(3, auto);
+    grid-column-gap: 6px;
+    grid-row-gap: 4px;
+}
+
+.item .grid-spell .avatar            { grid-area: 1 / 1 / 3 / 2; }
+.item .grid-spell .spell-name        { grid-area: 1 / 2 / 2 / 4; }
+.item .grid-spell .spell-mastery     { grid-area: 2 / 2 / 3 / 3; }
+.item .grid-spell .spell-high        { grid-area: 2 / 3 / 3 / 4; }
+.item .grid-spell .spell-description { grid-area: 3 / 1 / 4 / 4; }
+
+.item .grid-spell .spell-name input { width: 80%; }
+.item .grid-spell .spell-description textarea { height: 300px; }

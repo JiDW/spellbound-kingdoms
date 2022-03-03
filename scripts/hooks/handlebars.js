@@ -23,6 +23,7 @@ function preloadHandlebarsTemplates() {
         "systems/spellbound-kingdoms/templates/items/history.hbs",
         "systems/spellbound-kingdoms/templates/items/scar.hbs",
         "systems/spellbound-kingdoms/templates/items/gear.hbs",
+        "systems/spellbound-kingdoms/templates/items/spell.hbs",
         "systems/spellbound-kingdoms/templates/items/wealth-slot-cooldown.hbs",
         "systems/spellbound-kingdoms/templates/items/maneuver.hbs",
         "systems/spellbound-kingdoms/templates/items/maneuver/partial/attack.hbs",

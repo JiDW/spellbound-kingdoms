@@ -8,6 +8,7 @@ import { SpellboundKingdomsGearSheet } from "../sheets/gear-sheet.js";
 import { SpellboundKingdomsWealthSlotCooldownSheet } from "../sheets/wealth-slot-cooldown-sheet.js";
 import { SpellboundKingdomsObjectSheet } from "../sheets/object-sheet.js";
 import { SpellboundKingdomsManeuverSheet } from "../sheets/maneuver-sheet.js";
+import { SpellboundKingdomsSpellSheet } from "../sheets/spell-sheet.js";
 
 export function registerSheets() {
     Actors.unregisterSheet("core", ActorSheet);
@@ -23,4 +24,5 @@ export function registerSheets() {
     Items.registerSheet("spellbound-kingdoms", SpellboundKingdomsWealthSlotCooldownSheet, { types: ["wealth-slot-cooldown"], makeDefault: true });
     Items.registerSheet("spellbound-kingdoms", SpellboundKingdomsObjectSheet, { types: ["object"], makeDefault: true });
     Items.registerSheet("spellbound-kingdoms", SpellboundKingdomsManeuverSheet, { types: ["maneuver"], makeDefault: true });
+    Items.registerSheet("spellbound-kingdoms", SpellboundKingdomsSpellSheet, { types: ["spell"], makeDefault: true });
 }

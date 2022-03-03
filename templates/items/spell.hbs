@@ -1,0 +1,25 @@
+<form class="{{cssClass}}" autocomplete="off">
+    <div class="grid-spell">
+        <div class="avatar">
+            <img class="profile-img" src="{{data.img}}" data-edit="img" title="{{data.name}}" />
+        </div>
+        <div class="spell-name">
+            <label class="form-gear-label">{{localize "SK.LABEL.NAME"}}:</label>
+            <input name="name" type="text" value="{{data.name}}" />
+        </div>
+
+        <div class="spell-mastery">
+            <label for="mastery" class="form-gear-label">{{localize "SK.LABEL.MASTERY"}}:</label>
+            <input id="mastery" type="checkbox" name="data.mastery" {{checked data.data.mastery}} />
+        </div>
+        <div class="spell-high">
+            <label for="high" class="form-gear-label">{{localize "SK.LABEL.IS_HIGH_SPELL"}}:</label>
+            <input id="high" type="checkbox" name="data.high" {{checked data.data.high}} />
+        </div>
+
+        <div class="spell-description">
+            <label class="form-gear-label">{{localize "SK.LABEL.DESCRIPTION"}}:</label>
+            <textarea class="gear-description" name="data.description">{{data.data.description}}</textarea>
+        </div>
+    </div>
+</form>
