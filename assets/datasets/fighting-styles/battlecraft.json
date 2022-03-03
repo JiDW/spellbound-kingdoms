@@ -4,8 +4,8 @@
     "identifier": "battlecraft",
     "type": "fighting",
     "description": "",
-    "requirements": ["no weapon", "no shield"],
-    "info": [""],
+    "requirements": ["no weapon", "no shield", "Reason 8", "Magic 8"],
+    "info": ["All are ranged."],
     "grid": {"width": 5, "height": 4},
     "maneuvers": {
         "basic": [
