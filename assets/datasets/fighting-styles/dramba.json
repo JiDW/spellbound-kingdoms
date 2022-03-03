@@ -2,10 +2,10 @@
 {
     "name": "Dramba",
     "identifier": "dramba",
-    "type": "fighting",
+    "type": "magic",
     "description": "",
-    "requirements": [""],
-    "info": [""],
+    "requirements": ["no weapon", "no shield", "Charisma 6", "Reason 5", "Magic 6"],
+    "info": ["All but dust spells are ranged."],
     "grid": {"width": 5, "height": 5},
     "maneuvers": {
         "basic": [
@@ -41,17 +41,131 @@
             }
         ],
         "style": [
-            {   "name": "",
+            {   "name": "Corn Dust Shower",
+                "defense": [4],
+                "grid-position": {"x": 1, "y": 0},
+                "short-description": "Target ignores 1 point of damage from next 3 attacks",
+                "description": "The protection expires after one scene (or day) if unused."
+            },
+            {   "name": "Charm Trance",
                 "rebalancing": true,
+                "defense": [4],
+                "grid-position": {"x": 2, "y": 0},
+                "short-description": ""
+            },
+            {   "name": "Brick Dust Circle",
+                "defense": [4],
+                "magic-defense": [8],
+                "grid-position": {"x": 3, "y": 0},
+                "short-description": "+2 to your magic defense die size until you are forced to re-cast",
+                "description": "If you move outside of the circle, you lose the bonus (and you must have broken style, since none of the Dramba spells grant movement)."
+            },
+            {   "name": "Burn Doll",
+                "defense": [4],
+                "magic-attack": [
+                    { "die": 6, "damage": {"body": 1, "charisma": 1, "strength": 1} }
+                ],
+                "grid-position": {"x": 0, "y": 1},
+                "short-description": "1 + 1 Cha + 1 Str"
+            },
+            {   "name": "Hex Eye",
+                "defense": [6],
+                "magic-attack": [
+                    { "die": 10, "damage": {"body": 2} }
+                ],
+                "grid-position": {"x": 2, "y": 1},
+                "short-description": "Target takes Magic penalty die on all defenses next round",
+                "description": "The target rolls his own Magic die (not yours) as a penalty die on all defense rolls (physcial, magical, or social) next round."
+            },
+            {   "name": "Burn Doll",
                 "must-rebalance": true,
                 "mastery": true,
                 "defense": [4],
-                "attack": [
-                    { "die": 4, "damage": {"body": 2} }
+                "magic-attack": [
+                    { "die": "magic", "vs": "magic", "damage": {"body": 0} }
                 ],
-                "grid-position": {"x": 0, "y": 0},
-                "short-description": "1",
-                "description": ""
+                "grid-position": {"x": 4, "y": 1},
+                "short-description": "Remove one magic, disease, poison or similar eect applied within last 3 rounds",
+                "description": "The cleansing fire removes almost any negative magic, poison, or alchemical effect from a person, as long as that effect originated within the last 4 rounds. Against a magic effect, you must win a Magic vs. Magic roll. For poisons and alchemy, roll your Magic die against the static Quality of the poison or alchemical substance."
+            },
+            {   "name": "Pin to Head",
+                "defense": [4],
+                "magic-attack": [
+                    { "die": 8 }
+                ],
+                "grid-position": {"x": 0, "y": 2},
+                "short-description": "1 + recast"
+            },
+            {   "name": "Cloud Eye",
+                "defense": [4],
+                "magic-attack": [
+                    { "die": 8, "damage": {"body": 0} }
+                ],
+                "grid-position": {"x": 2, "y": 2},
+                "short-description": "Target cannot see you next round",
+                "description": "If an opponent who cannot see you attempts to attack you, he does so as if blinded (p. 29; 4 die size penalty to attack rolls, minimum d2)."
+            },
+            {   "name": "Salve Doll",
+                "must-rebalance": true,
+                "mastery": true,
+                "defense": [6],
+                "grid-position": {"x": 4, "y": 2},
+                "short-description": "+2 to any characteristic harmed within last 3 rounds",
+                "description": "This heals up to 2 points of characteristic damage, but they must have been inflicted within the last four rounds. Thus, if you begin the Dedicate Doll > Bless Doll > Salve Doll sequence immediately after an ally is injured, your Salve Doll is effective, but with a delay of even one round the sequence culminates too late."
+            },
+            {   "name": "Pin to Heart",
+                "defense": [4],
+                "magic-attack": [
+                    { "die": 6, "damage": {"body": 3} }
+                ],
+                "grid-position": {"x": 0, "y": 3},
+                "short-description": "3"
+            },
+            {   "name": "Body Switch",
+                "must-rebalance": true,
+                "mastery": true,
+                "defense": [2],
+                "magic-attack": [
+                    { "die": 4, "damage": {"body": 0} }
+                ],
+                "grid-position": {"x": 2, "y": 3},
+                "short-description": "Switch bodies with target (next round only) Rebalance actions only",
+                "description": "Each creature retains its own mind but gains the physical characteristics of the other's body (Strength, Quickness, Body). Attempting to directly damage the host body is psychologically difficult and requires a Reason roll against the Doom.\nIn any case, only re-balancing maneuvers and generic maneuvers are possible. Both of you are spellbound for the round in which your bodies are switched."
+            },
+            {   "name": "Anoint Doll",
+                "defense": [2],
+                "grid-position": {"x": 4, "y": 3},
+                "short-description": "Target uses caster's magic die as bonus die for 2 rolls next round"
+            },
+            {   "name": "Curse Doll",
+                "defense": [4],
+                "magic-attack": [
+                    { "die": 8, "damage": {"mood": 1} }
+                ],
+                "grid-position": {"x": 0, "y": 4},
+                "short-description": "1 Mood"
+            },
+            {   "name": "Dedicate Doll",
+                "rebalancing": true,
+                "defense": [2],
+                "grid-position": {"x": 1, "y": 4},
+                "short-description": "",
+                "description": "You dedicate a doll to a particular target. If you want to switch targets, you must re-dedicate the doll."
+            },
+            {   "name": "Dedicate Doll",
+                "rebalancing": true,
+                "defense": [2],
+                "grid-position": {"x": 3, "y": 4},
+                "short-description": "",
+                "description": "You dedicate a doll to a particular target. If you want to switch targets, you must re-dedicate the doll."
+            },
+            {   "name": "Bless Doll",
+                "defense": [4],
+                "attack": [
+                    { "die": "charisma", "vs": "doom", "damage": {"body": 0} }
+                ],
+                "grid-position": {"x": 4, "y": 4},
+                "short-description": "+1 Mood to target"
             }
         ]
     }
