@@ -2,11 +2,30 @@
 {
     "name": "Language Of Stars",
     "identifier": "language-of-stars",
-    "type": "fighting",
+    "type": "magic",
     "description": "",
-    "requirements": [""],
-    "info": [""],
+    "requirements": ["no weapon", "no shield", "Magic 7"],
+    "info": ["All attacks are ranged."],
     "grid": {"width": 5, "height": 5},
+    "grid-arrows": [
+        {"from": {"x": 1.5, "y": 1}, "to": {"x": 2, "y": 0.5}},
+        {"from": {"x": 2, "y": 1.5}, "to": {"x": 2.5, "y": 1}},
+
+        {"from": {"x": 2.5, "y": 2}, "to": {"x": 2, "y": 1.5}},
+        {"from": {"x": 2, "y": 2.5}, "to": {"x": 1.5, "y": 2}},
+
+        {"from": {"x": 2, "y": 2.5}, "to": {"x": 1.5, "y": 3}},
+        {"from": {"x": 2.5, "y": 3}, "to": {"x": 2, "y": 3.5}},
+
+        {"from": {"x": 2.5, "y": 2}, "to": {"x": 3, "y": 1.5}},
+        {"from": {"x": 3, "y": 2.5}, "to": {"x": 3.5, "y": 2}},
+
+        {"from": {"x": 3, "y": 2.5}, "to": {"x": 3.5, "y": 3}},
+        {"from": {"x": 2.5, "y": 3}, "to": {"x": 3, "y": 3.5}},
+
+        {"from": {"x": 2, "y": 3.5}, "to": {"x": 2.5, "y": 4}},
+        {"from": {"x": 1.5, "y": 4}, "to": {"x": 2, "y": 4.5}}
+    ],
     "maneuvers": {
         "basic": [
            {
@@ -41,17 +60,86 @@
             }
         ],
         "style": [
-            {   "name": "",
-                "rebalancing": true,
+            {   "name": "Star in the Skull",
                 "must-rebalance": true,
                 "mastery": true,
                 "defense": [4],
-                "attack": [
-                    { "die": 4, "damage": {"body": 2} }
+                "magic-attack": [
+                    { "die": 8, "damage": {"reason": 1} }
                 ],
-                "grid-position": {"x": 0, "y": 0},
-                "short-description": "1",
+                "grid-position": {"x": 2, "y": 0},
+                "short-description": "Target's head is effulgent. 1 Reason. New attack each round until you are forced to re-cast. At Reason 0, head explodes.",
+                "description": "Unlike normal, the rebalance forced by this spell does not stop the seed from expanding in the skull and making more attacks. Any subsequent forced rebalancing, including that from casting another Star in the Skull spell, will cause the star seed's attacks to stop."
+            },
+            {   "name": "Star Seed",
+                "defense": [4],
+                "magic-attack": [
+                    { "die": 8 }
+                ],
+                "grid-position": {"x": 1, "y": 1},
+                "short-description": "1; Ranged",
                 "description": ""
+            },
+            {   "name": "Astral Homonculus",
+                "must-rebalance": true,
+                "defense": [2],
+                "grid-position": {"x": 3, "y": 1},
+                "short-description": "Descent cat homunculus appears; Cha vs. Doom to force it to obey.",
+                "description": "As those who have studied DuGray's account of the Descent observe, magic in the Descent is strange, strong, and wrong. Of course, sages say the same of the Language of Stars style, so the two are perhaps a perfect match. This spell summons the astral homunculus of a descent cat; the homculus's stats are those of a wolf (p. 200). If you fail the Charisma roll to control the homunculus, the cat is disoriented, enraged, and attacks you. If you succeed, the cat works for you and fights for you for twelve minutes. The same cat's homunculus returns each time (fading away, painfully, instead of truly dying, if severely injured), so it can be trained though never domesticated."
+            },
+            {   "name": "Glow",
+                "rebalancing": true,
+                "defense": [6],
+                "magic-attack": [
+                    { "die": 10, "damage": {"body": 0} }
+                ],
+                "grid-position": {"x": 0, "y": 2},
+                "short-description": "All spellbound glow one color of your choice. Wild surges happen on a 1 or a 2.",
+                "description": "You must hit each individual spellbound creature with your d10 magic attack. The GM may choose not to tell you whom you are attacking, so that she can keep the identity of spellbound creatures in the area anonymous (in the event your attack fails). You choose the glow color and pattern for each individual spellbound creature you light up. The glow is equivalent to half a dozen candles. While even one spellbound creature is glowing, all magic in the area that rolls a 1 or a 2 - not just a 1 - causes a magic surge."
+            },
+            {   "name": "Invoke the Stars",
+                "rebalancing": true,
+                "defense": [4],
+                "magic-defense": [8],
+                "grid-position": {"x": 2, "y": 2},
+                "short-description": "",
+                "description": ""
+            },
+            {   "name": "Whispers in Starlight",
+                "rebalancing": true,
+                "defense": [6],
+                "magic-defense": [6],
+                "grid-position": {"x": 4, "y": 2},
+                "short-description": "Can whisper to communicate with one ally until either of you are forced to rebalance",
+                "description": "You can only communicate with one ally at a time, and you can only have one ally designated by this spell at a time. NB this spell works perfectly well out of combat. You and the ally must be within sight or within the same area. This spell does not count as one of your trapped spells; such are the mysteries of the stars."
+            },
+            {   "name": "Celestial Tongue",
+                "rebalancing": true,
+                "must-rebalance": true,
+                "mastery": true,
+                "defense": [2],
+                "magic-defense": [6],
+                "magic-attack": [
+                    { "die": 8, "damage": {"body": 0} }
+                ],
+                "grid-position": {"x": 1, "y": 3},
+                "short-description": "Target cannot speak or comprehend any language until you are forced to re-cast"
+            },
+            {   "name": "Prophecy",
+                "must-rebalance": true,
+                "defense": [2],
+                "grid-position": {"x": 3, "y": 3},
+                "short-description": "Predict enemy's action next round. If true, +2 Mood to all allies",
+                "description": "The prophecy must match the final actions closely. Foresaying attempts suffices; results need not be specified. Predicting, \"The Son of Loss will attack,\" is not specific enough. \"The Son of Loss will constrain his rage in Argenwald's Stance\" works.\nOnly one prophecy per person per scene grants the Mood bonus. The GM is free, naturally, to award larger bonuses for more detailed prophecies. Dueling players, or players in groups haunted by mistrust, may elect to write prophecies on scrap paper, revealing them after the round in question. Any player not made aware of the prophecy does not receive the Mood bonus should it come true. Whispers in Starlight can communicate prophecies while maintaining their secrecy. A character cannot benefit from more than one Prophecy per scene (or day); even the miraculous becomes mundane with repetition."
+            },
+            {   "name": "Music of the Stars",
+                "defense": [6],
+                "magic-defense": [6],
+                "magic-attack": [
+                    { "die": 8, "damage": {"body": 0} }
+                ],
+                "grid-position": {"x": 2, "y": 4},
+                "short-description": "Reason penalty die on all attacks next round"
             }
         ]
     }
