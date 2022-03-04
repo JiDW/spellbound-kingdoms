@@ -2,11 +2,17 @@
 {
     "name": "Hearts",
     "identifier": "hearts",
-    "type": "fighting",
+    "type": "magic",
     "description": "",
-    "requirements": [""],
-    "info": [""],
-    "grid": {"width": 5, "height": 5},
+    "requirements": ["no weapon", "no shield", "Charisma 7", "Magic 7"],
+    "info": ["All are ranged."],
+    "grid": {"width": 5, "height": 4},
+    "grid-arrows": [
+        {"from": {"x": 2, "y": 0.5}, "to": {"x": 2.5, "y": 0.8}},
+        {"from": {"x": 1.5, "y": 1}, "to": {"x": 2, "y": 1.3}},
+        {"from": {"x": 3, "y": 0.5}, "to": {"x": 2.5, "y": 0.8}},
+        {"from": {"x": 3.5, "y": 1}, "to": {"x": 3, "y": 1.3}}
+    ],
     "maneuvers": {
         "basic": [
            {
@@ -41,17 +47,87 @@
             }
         ],
         "style": [
-            {   "name": "",
-                "rebalancing": true,
-                "must-rebalance": true,
-                "mastery": true,
-                "defense": [4],
-                "attack": [
-                    { "die": 4, "damage": {"body": 2} }
+            {   "name": "Fear",
+                "defense": [2],
+                "magic-attack": [
+                    { "die": 8, "damage": {"body": 0} }
                 ],
                 "grid-position": {"x": 0, "y": 0},
-                "short-description": "1",
-                "description": ""
+                "short-description": "Tgt rolls Heart penalty die on one roll of caster's choice next round"
+            },
+            {   "name": "Hate",
+                "defense": [4],
+                "magic-attack": [
+                    { "die": 10, "damage": {"body": 0} }
+                ],
+                "grid-position": {"x": 1, "y": 0},
+                "short-description": "Target must attack next round"
+            },
+            {   "name": "Doubt",
+                "defense": [4],
+                "magic-attack": [
+                    { "die": 6, "damage": {"body": 0} }
+                ],
+                "grid-position": {"x": 3, "y": 0},
+                "short-description": "Rebalance"
+            },
+            {   "name": "Pain",
+                "defense": [2],
+                "magic-attack": [
+                    { "die": 6, "damage": {"body": 0} }
+                ],
+                "grid-position": {"x": 4, "y": 0},
+                "short-description": "-3 Strength (next round only)"
+            },
+            {   "name": "Awaken Fear",
+                "rebalancing": true,
+                "defense": [2],
+                "grid-position": {"x": 0, "y": 1},
+                "short-description": ""
+            },
+            {   "name": "Suffering and Despair",
+                "mastery": true,
+                "defense": [2],
+                "magic-attack": [
+                    { "die": 12, "damage": {"body": 3} }
+                ],
+                "grid-position": {"x": 2, "y": 0.8},
+                "short-description": "3 + cannot use mood next round"
+            },
+            {   "name": "Awaken Grief",
+                "rebalancing": true,
+                "defense": [2],
+                "grid-position": {"x": 4, "y": 1},
+                "short-description": ""
+            },
+            {   "name": "Two Hearts Beat as One",
+                "defense": [4],
+                "grid-position": {"x": 1, "y": 2},
+                "short-description": "Target two allies; when one is hit, the other can take the wound instead (lasts until you re-cast)",
+                "description": "Both allies must be willing."
+            },
+            {   "name": "Hearten",
+                "defense": [4],
+                "grid-position": {"x": 2, "y": 2},
+                "short-description": "Ally who hits next round gains 1 Mood",
+                "description": "You hearten only one ally at a time. Name him; if he hits next round, he gains 1 Mood."
+            },
+            {   "name": "Sympathy",
+                "mastery": true,
+                "defense": [2],
+                "magic-attack": [
+                    { "die": 6 }
+                ],
+                "grid-position": {"x": 3, "y": 2},
+                "short-description": "Target two creatures: when one is hit, the other takes an identical wound (lasts until you re-cast)",
+                "description": "You must hit both creatures to be targeted; roll the d6 Magic attack separately for each.\nDespicable, desperate, or clever mages can cast this on a willing ally or slave who waives the to-hit roll, leaving only the true enemy needing to be hit by the d6 Magic attack roll."
+            },
+            {   "name": "Awaken Heart",
+                "rebalancing": true,
+                "defense": [6],
+                "grid-position": {"x": 2, "y": 3},
+                "short-description": "+2 to your Heart next round",
+                "description": "This targets the caster or another creature."
             }
         ]
     }

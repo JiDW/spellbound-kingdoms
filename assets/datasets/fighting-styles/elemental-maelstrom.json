@@ -2,7 +2,7 @@
 {
     "name": "Elemental Maelstrom",
     "identifier": "elemental-maelstrom",
-    "type": "fighting",
+    "type": "magic",
     "description": "",
     "requirements": ["no weapon", "no shield", "Reason 8", "Magic 8"],
     "info": ["All attacks are ranged."],

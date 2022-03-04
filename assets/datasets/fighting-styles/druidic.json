@@ -2,7 +2,7 @@
 {
     "name": "Druidic",
     "identifier": "druidic",
-    "type": "fighting",
+    "type": "magic",
     "description": "",
     "requirements": ["sickle", "no shield", "Reason 6", "Magic 7"],
     "info": [
