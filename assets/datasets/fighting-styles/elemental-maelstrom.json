@@ -4,8 +4,8 @@
     "identifier": "elemental-maelstrom",
     "type": "fighting",
     "description": "",
-    "requirements": [""],
-    "info": [""],
+    "requirements": ["no weapon", "no shield", "Reason 8", "Magic 8"],
+    "info": ["All attacks are ranged."],
     "grid": {"width": 5, "height": 5},
     "maneuvers": {
         "basic": [
@@ -41,17 +41,115 @@
             }
         ],
         "style": [
-            {   "name": "",
+            {   "name": "Intensify",
+                "defense": [4],
+                "grid-position": {"x": 0, "y": 0},
+                "short-description": ""
+            },
+            {   "name": "Petrify",
+                "mastery": true,
+                "defense": [4],
+                "magic-attack": [
+                    { "die": 8, "damage": {"quickness": 1} }
+                ],
+                "grid-position": {"x": 1, "y": 0},
+                "short-description": "1 Qck/round until you are forced to re-cast",
+                "description": "This spell does 1 point of Quickness damage when it hits. In each subsequent round, you are able to maintain the magic that is slowly petrifying the target. Roll a d8 Magic attack against the petrifying creature; if you hit again, he takes another point of Quickness damage. You are free to cast another spell or take any other action. The ongoing petrification attacks end when you are forced to re-cast, when the target is petrified, or when you and the target are no longer in the same scene (usually this means that one or the other has escaped combat or fled)."
+            },
+            {   "name": "Thunderbolt",
+                "defense": [4],
+                "magic-attack": [
+                    { "die": 8, "damage": {"body": 0} }
+                ],
+                "grid-position": {"x": 3, "y": 0},
+                "short-description": "Rebalance"
+            },
+            {   "name": "Rain of Rocks",
                 "rebalancing": true,
+                "defense": [2],
+                "attack": [
+                    { "die": 8 }
+                ],
+                "grid-position": {"x": 0, "y": 1},
+                "short-description": "1; up to 3 targets"
+            },
+            {   "name": "Lightning Bolt",
+                "defense": [4],
+                "magic-attack": [
+                    { "die": 12, "damage": {"body": 4} }
+                ],
+                "grid-position": {"x": 2, "y": 1},
+                "short-description": "4"
+            },
+            {   "name": "Intensify",
+                "defense": [4],
+                "magic-defense": [6],
+                "grid-position": {"x": 3, "y": 1},
+                "short-description": ""
+            },
+            {   "name": "Tempest",
+                "mastery": true,
+                "defense": [4],
+                "magic-defense": [6],
+                "magic-attack": [
+                    { "die": 10 }
+                ],
+                "grid-position": {"x": 4, "y": 1},
+                "short-description": "1 and -2 attack die size to all in area"
+            },
+            {   "name": "Flame Shroud",
+                "rebalancing": true,
+                "defense": [4],
+                "magic-defense": [4],
+                "grid-position": {"x": 1, "y": 2},
+                "short-description": "d6 magic attack for 1 vs every attack targeting you, until you are forced to re-cast",
+                "description": "This works against all attacks with a physical attack die, including those with a magical source. A flare erupts from your flaming body as necessary to respond to ranged attacks."
+            },
+            {   "name": "Mistwalk",
+                "defense": [12, "magic"],
+                "magic-defense": [6],
+                "grid-position": {"x": 3, "y": 2},
+                "short-description": "Move, Climb",
+                "description": "This does not allow levitation or grant you a completely immaterial, misty form. It does lighten your body so that moving and climbing is easy and can be done in combat without breaking style. It also transforms just enough of your body into wispy cloudstuff that spells have a hard time affecting you."
+            },
+            {   "name": "Fireball",
+                "must-rebalance": true,
+                "defense": [4],
+                "attack": [
+                    { "die": 10, "damage": {"body": 3} }
+                ],
+                "grid-position": {"x": 1, "y": 3},
+                "short-description": "3 (ranged); up to 5 targets in same area"
+            },
+            {   "name": "Summon Storm",
+                "rebalancing": true,
+                "defense": [4],
+                "magic-defense": [4],
+                "grid-position": {"x": 3, "y": 3},
+                "short-description": ""
+            },
+            {   "name": "Wall of Fire",
+                "defense": [4],
+                "grid-position": {"x": 0, "y": 4},
+                "short-description": "10' high wall separates two areas; d12 magic attack for 3 damage against any crossing the wall (lasts until you are forced to re-cast)",
+                "description": "The wall must be vertical. It can curve, but it cannot lie flat or form a circle that closes on itself so as to trap those inside. It is translucent, and spells can be cast through it."
+            },
+            {   "name": "Intensify",
+                "defense": [4],
+                "magic-defense": [6],
+                "grid-position": {"x": 1, "y": 4},
+                "short-description": ""
+            },
+            {   "name": "Fire Nova",
                 "must-rebalance": true,
                 "mastery": true,
                 "defense": [4],
-                "attack": [
-                    { "die": 4, "damage": {"body": 2} }
+                "magic-attack": [
+                    { "die": 12, "damage": {"body": 3} }
                 ],
-                "grid-position": {"x": 0, "y": 0},
-                "short-description": "1",
-                "description": ""
+                "grid-position": {"x": 2, "y": 4},
+                "short-description": "3; up to 5 targets in your area",
+                "description": "The fire bursts from within the targets' hearts. There is no fan of flames or flying ball that can be dodged."
             }
         ]
     }
