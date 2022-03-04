@@ -4,9 +4,18 @@
     "identifier": "druidic",
     "type": "fighting",
     "description": "",
-    "requirements": [""],
-    "info": [""],
-    "grid": {"width": 5, "height": 5},
+    "requirements": ["sickle", "no shield", "Reason 6", "Magic 7"],
+    "info": [
+        "All are ranged except Sickle Slash.", 
+        "Sacrifice requires plant or animal to burn or wine to pour."
+    ],
+    "grid": {"width": 5.4, "height": 5},
+    "grid-arrows": [
+        {"from": {"x": 2.4, "y": 1}, "to": {"x": 2, "y": 0.5}},
+        {"from": {"x": 3, "y": 1}, "to": {"x": 3.4, "y": 0.5}},
+        {"from": {"x": 2.2, "y": 1.5}, "to": {"x": 2, "y": 2}},
+        {"from": {"x": 3.2, "y": 1.5}, "to": {"x": 3.4, "y": 2}}
+    ],
     "maneuvers": {
         "basic": [
            {
@@ -41,17 +50,123 @@
             }
         ],
         "style": [
-            {   "name": "",
-                "rebalancing": true,
+            {   "name": "Birth",
+                "must-rebalance": true,
+                "mastery": true,
+                "defense": [2],
+                "magic-attack": [
+                    { "die": 8, "damage": {"body": 0} }
+                ],
+                "grid-position": {"x": 0, "y": 0},
+                "short-description": "Stunted Freak Twin erupts from target's flesh: Freak, Bite d10/d4, 1 dmg 0 Mood, 0 armor, 3 Body",
+                "description": "Crazed with jealousy or bestial bloodlust, a stunted freak twin bursts from the target's skin.\nUsually the freak twin is a tiny head with misshapen hands on spindly arms and a torso that melds with the host's body. The Freak has 3 Body, rolls a d4 defense each round, and bites its host or an adjacent ally at d10 for 1 point of damage each round. In special cases, the GM may assign other qualities, defenses, or attacks to the freak."
+            },
+            {   "name": "Fertility",
+                "must-rebalance": true,
+                "mastery": true,
+                "defense": [2],
+                "magic-attack": [
+                    { "die": 4, "damage": {"quickness": 1} }
+                ],
+                "grid-position": {"x": 1, "y": 0},
+                "short-description": "Swelling: -1 Qck per round until Birth",
+                "description": "Something quickens subcutaneously in your target; the swelling causes 1 point of Quickness damage. After the target has taken 3 points of Quickness damage from this spell, you can cast Birth on him. The Quickness damage need not be in consecutive rounds."
+            },
+            {   "name": "Distant Cut",
+                "defense": [6],
+                "magic-attack": [
+                    { "die": 6, "damage": {"body": 2} }
+                ],
+                "grid-position": {"x": 3.4, "y": 0},
+                "short-description": "2 Ranged"
+            },
+            {   "name": "Sickle Reap",
+                "must-rebalance": true,
+                "defense": [6],
+                "magic-attack": [
+                    { "die": 8, "damage": {"body": 3, "strength": 1} }
+                ],
+                "grid-position": {"x": 4.4, "y": 0},
+                "short-description": "3 + 1 Str Ranged"
+            },
+            {   "name": "Sacrifice",
+                "defense": [2],
+                "attack": [
+                    { "die": "charisma", "vs": "doom", "damage": {"body": 0} }
+                ],
+                "grid-position": {"x": 2.2, "y": 1},
+                "short-description": "+1 Mood to self",
+                "description": "You must burn a plant (preferably mistletoe, but it need not be), slaughter an animal (mouse-size or larger), or pour a libation. If you do not have any of these things at hand, you cannot cast this spell."
+            },
+            {   "name": "Chill Bog",
+                "must-rebalance": true,
+                "mastery": true,
+                "defense": [2],
+                "attack": [
+                    { "die": 8 }
+                ],
+                "grid-position": {"x": 0, "y": 1.5},
+                "short-description": "1 + rebalance and as Bog",
+                "description": "This has the same effects as a bog.\nIn addition, the freezing peat and miasmal morass makes a d8 attack that is physical, not magical, each round. The attack goes against all in the area affected, be they friend or foe, and it does 1 point of damage and forces a rebalance on a hit."
+            },
+            {   "name": "Bog",
+                "defense": [2],
+                "grid-position": {"x": 1, "y": 1.5},
+                "short-description": "1 area becomes bog (Str. vs. Doom to move) Lasts until you re-cast",
+                "description": "A character can exit or enter the area only after making a successful Strength vs. Doom roll."
+            },
+            {   "name": "Sun's Blessing",
+                "defense": [4],
+                "grid-position": {"x": 3.4, "y": 1.5},
+                "short-description": "Ally does +1 damage next round"
+            },
+            {   "name": "Sun's Bounty",
                 "must-rebalance": true,
                 "mastery": true,
                 "defense": [4],
+                "grid-position": {"x": 4.4, "y": 1.5},
+                "short-description": "Up to 5 allies do +2 damage next round",
+                "description": "As usual, the bonus damage applies to each attack. So if the druid's 5 allies each execute a maneuver with two attacks next round and all attacks hit, this spell supplies a total of 20 points of extra damage."
+            },
+            {   "name": "Harvest Cant",
+                "rebalancing": true,
+                "defense": [6],
+                "grid-position": {"x": 2.2, "y": 2},
+                "short-description": "+1 damage until forced to recast"
+            },
+            {   "name": "Sickle Slash",
+                "rebalancing": true,
+                "defense": [4],
                 "attack": [
-                    { "die": 4, "damage": {"body": 2} }
+                    { "die": 4 }
                 ],
-                "grid-position": {"x": 0, "y": 0},
-                "short-description": "1",
-                "description": ""
+                "grid-position": {"x": 2.2, "y": 3},
+                "short-description": "1"
+            },
+            {   "name": "Sun and Fire Glare",
+                "must-rebalance": true,
+                "defense": [4],
+                "magic-attack": [
+                    { "die": 8, "damage": {"body": 0} }
+                ],
+                "grid-position": {"x": 1.2, "y": 4},
+                "short-description": "-2 attack die size next round Attack 3 targets"
+            },
+            {   "name": "Burn Mistletoe",
+                "rebalancing": true,
+                "defense": [2],
+                "grid-position": {"x": 2.2, "y": 4},
+                "short-description": "",
+                "description": "This spell has no effect other than to burn the mistletoe. Next round, you fan the flames into a Gale of Fire or flare them into an enemy's eyes with the Sun and Fire Glare spell."
+            },
+            {   "name": "Gale of Fire",
+                "must-rebalance": true,
+                "defense": [2],
+                "magic-attack": [
+                    { "die": 8, "damage": {"body": 2} }
+                ],
+                "grid-position": {"x": 3.2, "y": 4},
+                "short-description": "2; Attack 5 targets in same area"
             }
         ]
     }

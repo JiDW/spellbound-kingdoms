@@ -22,6 +22,7 @@
                     {{else}}
                         d{{localize (sk_strconcat "SK.STAT.SHORT." attack.die)}}
                     {{/if}}
+                    {{#unless (eq attack.vs 'defense')}}{{localize "SK.LABEL.VS"}} {{localize (sk_strconcat "SK.STAT.SHORT." attack.vs)}}{{/unless}}
                 {{/each}}
             </div>
             <div class="maneuver-magic-defense" title="{{localize "SK.LABEL.MAGIC_DEFENSE"}}">
