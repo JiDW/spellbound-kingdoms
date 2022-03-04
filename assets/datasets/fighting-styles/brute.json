@@ -2,11 +2,15 @@
 {
     "name": "Brute",
     "identifier": "brute",
-    "type": "fighting",
+    "type": "monster",
     "description": "",
-    "requirements": [""],
-    "info": [""],
-    "grid": {"width": 5, "height": 5},
+    "requirements": ["Strength 5"],
+    "info": ["Hack and Bash maneuvers require a weapon.", "Slam and Brutal maneuvers do not."],
+    "grid": {"width": 6, "height": 3},
+    "grid-arrows": [
+        {"from": {"x": 5, "y": 1.5}, "to": {"x": 5.5, "y": 2}},
+        {"from": {"x": 4.5, "y": 2}, "to": {"x": 5, "y": 2.5}}
+    ],
     "maneuvers": {
         "basic": [
            {
@@ -41,17 +45,92 @@
             }
         ],
         "style": [
-            {   "name": "",
-                "rebalancing": true,
-                "must-rebalance": true,
+            {   "name": "Overhead Bash, Below-the-belt Knee",
+                "defense": [6],
+                "attack": [
+                    { "die": 6, "damage": {"body": 2} },
+                    { "die": 4 }
+                ],
+                "grid-position": {"x": 1, "y": 0},
+                "short-description": "2/1"
+            },
+            {   "name": "Hack at the Head",
                 "mastery": true,
                 "defense": [4],
                 "attack": [
-                    { "die": 4, "damage": {"body": 2} }
+                    { "die": 4, "damage": {"body": 4} }
                 ],
-                "grid-position": {"x": 0, "y": 0},
-                "short-description": "1",
-                "description": ""
+                "grid-position": {"x": 2, "y": 0},
+                "short-description": "4"
+            },
+            {   "name": "Slam",
+                "rebalancing": true,
+                "defense": [6],
+                "attack": [
+                    { "die": 4 }
+                ],
+                "grid-position": {"x": 4, "y": 0},
+                "short-description": "1"
+            },
+            {   "name": "Haymaker",
+                "must-rebalance": true,
+                "defense": [6],
+                "attack": [
+                    { "die": 4, "damage": {"body": 3} }
+                ],
+                "grid-position": {"x": 5, "y": 0},
+                "short-description": "3"
+            },
+            {   "name": "Block and Bash",
+                "defense": [8],
+                "attack": [
+                    { "die": 4 }
+                ],
+                "grid-position": {"x": 0, "y": 1},
+                "short-description": "1"
+            },
+            {   "name": "Hack",
+                "rebalancing": true,
+                "defense": [4],
+                "attack": [
+                    { "die": 6 }
+                ],
+                "grid-position": {"x": 1, "y": 1},
+                "short-description": "1"
+            },
+            {   "name": "Brutal Throw",
+                "defense": [4],
+                "attack": [
+                    { "die": 6 }
+                ],
+                "grid-position": {"x": 3, "y": 1},
+                "short-description": "Move target one area"
+            },
+            {   "name": "Brutal Grab",
+                "defense": [6],
+                "attack": [
+                    { "die": 4 }
+                ],
+                "grid-position": {"x": 4, "y": 1},
+                "short-description": "1 + Grabbed"
+            },
+            {   "name": "Headbutt",
+                "must-rebalance": true,
+                "defense": [6],
+                "attack": [
+                    { "die": 4, "damage": {"body": 0} }
+                ],
+                "grid-position": {"x": 1, "y": 2},
+                "short-description": "Rebalance"
+            },
+            {   "name": "Shake and Shield",
+                "mastery": true,
+                "defense": [8],
+                "attack": [
+                    { "die": 6, "damage": {"body": 2} }
+                ],
+                "grid-position": {"x": 5, "y": 2},
+                "short-description": "2 + Grabbed"
             }
         ]
     }
