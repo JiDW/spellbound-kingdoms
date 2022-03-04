@@ -2,11 +2,14 @@
 {
     "name": "Weremagic",
     "identifier": "weremagic",
-    "type": "fighting",
+    "type": "magic",
     "description": "",
-    "requirements": [""],
-    "info": [""],
-    "grid": {"width": 5, "height": 5},
+    "requirements": ["no weapon", "no shield", "Quickness 6", "Magic 7"],
+    "info": [
+        "Spells in the left fang (Inconstant Moon, Lunacy, etc.) are ranged.",
+        "Right fang spells/maneuvers are melee."
+    ],
+    "grid": {"width": 5, "height": 4},
     "maneuvers": {
         "basic": [
            {
@@ -41,17 +44,105 @@
             }
         ],
         "style": [
-            {   "name": "",
+            {   "name": "Inconstant Moon",
                 "rebalancing": true,
-                "must-rebalance": true,
-                "mastery": true,
-                "defense": [4],
+                "defense": [6],
+                "grid-position": {"x": 0, "y": 0},
+                "short-description": "Move"
+            },
+            {   "name": "Corrupting Light",
+                "defense": [2],
+                "magic-attack": [
+                    { "die": 8, "damage": {"body": 1, "strength": 2} }
+                ],
+                "grid-position": {"x": 1, "y": 0},
+                "short-description": "1 + 2 Str (2 Str is next round only)",
+                "description": "The shaft of light weakens the target for one round only."
+            },
+            {   "name": "Claw/Claw",
+                "defense": [6],
                 "attack": [
+                    { "die": 6, "damage": {"body": 2} },
+                    { "die": 6, "damage": {"body": 2} }
+                ],
+                "grid-position": {"x": 3, "y": 0},
+                "short-description": "2/2"
+            },
+            {   "name": "Transformation",
+                "rebalancing": true,
+                "defense": [4],
+                "grid-position": {"x": 4, "y": 0},
+                "short-description": "",
+                "description": "This spell requires the bloodlust of combat. If you cast this spell to transform into your wereshape and do not engage in combat on the subsequent rounds, you take 2 Reason damage per round. When you reach 2 Reason, you are of a beast mind; hand your character sheet to the GM until she determines that your mind has healed. Every wizard has one wereshape which is chosen upon first learning this Magic style; it cannot change thereafter."
+            },
+            {   "name": "Lunacy",
+                "defense": [2],
+                "magic-attack": [
+                    { "die": 6, "damage": {"body": 0} }
+                ],
+                "grid-position": {"x": 0, "y": 1},
+                "short-description": "Tgt attacks his ally next round with random attack",
+                "description": "The target attacks one of his allies with a randomly determined attack in his current style. The attack must be accessible from the current maneuver, as always."
+            },
+            {   "name": "Gibbous Swell",
+                "defense": [4],
+                "grid-position": {"x": 1, "y": 1},
+                "short-description": "+2 damage until you are forced to re-cast",
+                "description": ""
+            },
+            {   "name": "Bite",
+                "defense": [6],
+                "attack": [
+                    { "die": 10, "damage": {"body": 3} }
+                ],
+                "grid-position": {"x": 3, "y": 1},
+                "short-description": "3"
+            },
+            {   "name": "Spring",
+                "defense": [4],
+                "grid-position": {"x": 4, "y": 1},
+                "short-description": "Move, Climb"
+            },
+            {   "name": "Warp Flesh",
+                "defense": [2],
+                "magic-attack": [
                     { "die": 4, "damage": {"body": 2} }
                 ],
-                "grid-position": {"x": 0, "y": 0},
-                "short-description": "1",
+                "grid-position": {"x": 1, "y": 2},
+                "short-description": "2 + appear as anthropomorhic creature until you are forced to re-cast",
+                "description": "Your spell twists your target's flesh, ripping it, inflicting 2 points of damage, and causing it, if you wish, to take on the appearance of a werecreature. Victims typically appear half-transformed into anthropomorphic wolves, rats, or bears. The warped flesh does not prevent using weapons or manipulating objects, but the lycanthropic appearance influences social interactions, typically using yourr Magic roll as either a bonus or penalty die, depending on the situation."
+            },
+            {   "name": "Shred",
+                "defense": [10],
+                "attack": [
+                    { "die": 10 }
+                ],
+                "grid-position": {"x": 3, "y": 2},
+                "short-description": "1 + 3 to armor quality",
+                "description": "A history check against the Doom suffices to repair armor after the battle."
+            },
+            {   "name": "Wolf Curse",
+                "must-rebalance": true,
+                "mastery": true,
+                "defense": [2],
+                "magic-attack": [
+                    { "die": 4, "damage": {"body": 0} }
+                ],
+                "grid-position": {"x": 1, "y": 3},
+                "short-description": "Target becomes wolf, gains Claw/Claw/Bite ghting style, Rsn vs. your Mgc to retain mind (otherwise attacks randomly), lasts until you are forced to re-cast",
                 "description": ""
+            },
+            {   "name": "Frenzy",
+                "mastery": true,
+                "defense": [6],
+                "attack": [
+                    { "die": 8 },
+                    { "die": 8 },
+                    { "die": 12, "damage": {"body": 2} }
+                ],
+                "grid-position": {"x": 3, "y": 3},
+                "short-description": "1/1/2 and infected with werevenom (p. 143)",
+                "description": "Only the d12 attack delivers werevenom."
             }
         ]
     }
