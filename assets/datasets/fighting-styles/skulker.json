@@ -2,11 +2,11 @@
 {
     "name": "Skulker",
     "identifier": "skulker",
-    "type": "fighting",
+    "type": "monster",
     "description": "",
-    "requirements": [""],
-    "info": [""],
-    "grid": {"width": 5, "height": 5},
+    "requirements": ["Quickness 5", "weapon", "no shield"],
+    "info": ["Skulker does 1 point less damage per hit if the attacking weapon is lower Quality  than the defending armor."],
+    "grid": {"width": 4, "height": 3},
     "maneuvers": {
         "basic": [
            {
@@ -41,17 +41,59 @@
             }
         ],
         "style": [
-            {   "name": "",
-                "rebalancing": true,
-                "must-rebalance": true,
+            {   "name": "Stab and Flit",
                 "mastery": true,
+                "defense": [8],
+                "attack": [
+                    { "die": 8, "damage": {"body": 2} }
+                ],
+                "grid-position": {"x": 3, "y": 0},
+                "short-description": "2 + Move"
+            },
+            {   "name": "Sneak and Stab",
+                "must-rebalance": true,
+                "defense": ["quickness"],
+                "attack": [
+                    { "die": 8, "damage": {"body": 2} }
+                ],
+                "grid-position": {"x": 0, "y": 1},
+                "short-description": "2"
+            },
+            {   "name": "Flit Through Shadows",
+                "rebalancing": true,
+                "defense": [8],
+                "grid-position": {"x": 1, "y": 1},
+                "short-description": "Move, Climb"
+            },
+            {   "name": "Stab",
+                "rebalancing": true,
                 "defense": [4],
                 "attack": [
-                    { "die": 4, "damage": {"body": 2} }
+                    { "die": 4 }
                 ],
-                "grid-position": {"x": 0, "y": 0},
-                "short-description": "1",
-                "description": ""
+                "grid-position": {"x": 2, "y": 1},
+                "short-description": "1"
+            },
+            {   "name": "Focus from Shadows",
+                "defense": [8],
+                "grid-position": {"x": 3, "y": 1},
+                "short-description": "+1 damage next round"
+            },
+            {   "name": "Shoot from Shadows",
+                "defense": [8],
+                "attack": [
+                    { "die": 8 }
+                ],
+                "grid-position": {"x": 1, "y": 2},
+                "short-description": "1 (ranged)"
+            },
+            {   "name": "Deadeye Shot",
+                "defense": [2],
+                "attack": [
+                    { "die": 10, "damage": {"body": 2} }
+                ],
+                "grid-position": {"x": 3, "y": 2},
+                "short-description": "2 (ranged)"
             }
         ]
     }
