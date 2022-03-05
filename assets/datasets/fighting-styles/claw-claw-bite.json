@@ -2,11 +2,24 @@
 {
     "name": "Claw Claw Bite",
     "identifier": "claw-claw-bite",
-    "type": "fighting",
+    "type": "monster",
     "description": "",
-    "requirements": [""],
+    "requirements": ["Strength 4", "Quickenss 5"],
     "info": [""],
-    "grid": {"width": 5, "height": 5},
+    "grid": {"width": 5, "height": 4.2},
+    "grid-arrows": [
+        {"from": {"x": 2, "y": 0.5}, "to": {"x": 2.5, "y": 1}},
+        {"from": {"x": 1.5, "y": 1}, "to": {"x": 2, "y": 1.5}},
+        
+        {"from": {"x": 3, "y": 0.5}, "to": {"x": 2.5, "y": 1}},
+        {"from": {"x": 3.5, "y": 1}, "to": {"x": 3, "y": 1.5}},
+        
+        {"from": {"x": 0.5, "y": 3.5}, "to": {"x": 0.1, "y": 3}},
+        {"from": {"x": 1.5, "y": 3.5}, "to": {"x": 1.9, "y": 3}},
+        
+        {"from": {"x": 3.5, "y": 3.5}, "to": {"x": 3.1, "y": 3}},
+        {"from": {"x": 4.5, "y": 3.5}, "to": {"x": 4.9, "y": 3}}
+    ],
     "maneuvers": {
         "basic": [
            {
@@ -41,17 +54,87 @@
             }
         ],
         "style": [
-            {   "name": "",
+            {   "name": "Bite",
                 "rebalancing": true,
-                "must-rebalance": true,
-                "mastery": true,
                 "defense": [4],
                 "attack": [
                     { "die": 4, "damage": {"body": 2} }
                 ],
-                "grid-position": {"x": 0, "y": 0},
-                "short-description": "1",
-                "description": ""
+                "grid-position": {"x": 1, "y": 0},
+                "short-description": "2"
+            },
+            {   "name": "Bounding Sprint",
+                "rebalancing": true,
+                "defense": [6],
+                "grid-position": {"x": 3, "y": 0},
+                "short-description": "Move, Climb"
+            },
+            {   "name": "Claw/Feint/Bite",
+                "defense": [4],
+                "attack": [
+                    { "die": 6 },
+                    { "die": 8, "damage": {"body": 2} }
+                ],
+                "grid-position": {"x": 2, "y": 1},
+                "short-description": "1/2; All bite attacks d10 until forced to rebalance"
+            },
+            {   "name": "Swipe",
+                "mastery": true,
+                "defense": [4],
+                "attack": [
+                    { "die": 6, "damage": {"body": 0} }
+                ],
+                "grid-position": {"x": 0, "y": 2},
+                "short-description": "Disarm"
+            },
+            {   "name": "Claw/Claw",
+                "defense": [4],
+                "attack": [
+                    { "die": 8 },
+                    { "die": 6 }
+                ],
+                "grid-position": {"x": 1, "y": 2},
+                "short-description": "1/1"
+            },
+            {   "name": "Claw/Claw/Bite",
+                "defense": [6],
+                "attack": [
+                    { "die": 6 }
+                    { "die": 6 }
+                    { "die": 8, "damage": {"body": 2} }
+                ],
+                "grid-position": {"x": 2, "y": 2},
+                "short-description": "1/1/2"
+            },
+            {   "name": "Pounce",
+                "defense": [6],
+                "grid-position": {"x": 3, "y": 2},
+                "short-description": "Move; +1 damage next round"
+            },
+            {   "name": "Foreclaw Rush",
+                "must-rebalance": true,
+                "mastery": true,
+                "defense": [4],
+                "attack": [
+                    { "die": 6, "damage": {"body": 0} }
+                ],
+                "grid-position": {"x": 4, "y": 2},
+                "short-description": "Both move 1 area together"
+            },
+            {   "name": "Claw",
+                "rebalancing": true,
+                "defense": [4],
+                "attack": [
+                    { "die": 6 }
+                ],
+                "grid-position": {"x": 1.5, "y": 3.2},
+                "short-description": "1"
+            },
+            {   "name": "Circle",
+                "rebalancing": true,
+                "defense": [8],
+                "grid-position": {"x": 3.5, "y": 3.2},
+                "short-description": ""
             }
         ]
     }
