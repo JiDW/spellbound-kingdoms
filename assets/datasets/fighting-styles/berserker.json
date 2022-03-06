@@ -2,11 +2,14 @@
 {
     "name": "Berserker",
     "identifier": "berserker",
-    "type": "fighting",
+    "type": "monster",
     "description": "",
-    "requirements": [""],
+    "requirements": ["Strength 5", "Quickness 5", "weapon"],
     "info": [""],
-    "grid": {"width": 5, "height": 5},
+    "grid": {"width": 6, "height": 3},
+    "grid-arrows": [
+        {"from": {"x":4, "y": 2.5}, "to": {"x": 1, "y": 2.5}}
+    ],
     "maneuvers": {
         "basic": [
            {
@@ -41,17 +44,80 @@
             }
         ],
         "style": [
-            {   "name": "",
-                "rebalancing": true,
+            {   "name": "Final Rage",
+                "defense": [4],
+                "grid-position": {"x": 0, "y": 0},
+                "short-description": "+2 damage until forced to rebalance (does not stack with Berserk Rage)"
+            },
+            {   "name": "Rage Harder",
+                "defense": [6],
+                "grid-position": {"x": 1, "y": 0},
+                "short-description": "+2 Mood (1/scene)"
+            },
+            {   "name": "Leaping Stab",
                 "must-rebalance": true,
+                "defense": [2],
+                "attack": [
+                    { "die": 8 }
+                ],
+                "grid-position": {"x": 3, "y": 0},
+                "short-description": "1 + Move"
+            },
+            {   "name": "Berserk Rage",
+                "rebalancing": true,
+                "defense": [6],
+                "grid-position": {"x": 1, "y": 1},
+                "short-description": "+1 damage until forced to rebalance"
+            },
+            {   "name": "Cross-Body Slash",
+                "rebalancing": true,
+                "defense": [2],
+                "attack": [
+                    { "die": 8 }
+                ],
+                "grid-position": {"x": 2, "y": 1},
+                "short-description": "1"
+            },
+            {   "name": "Charge",
+                "rebalancing": true,
+                "defense": [6],
+                "grid-position": {"x": 3, "y": 1},
+                "short-description": "Move"
+            },
+            {   "name": "Spin and Slash",
+                "defense": [2],
+                "attack": [
+                    { "die": 8 },
+                    { "die": 6 }
+                ],
+                "grid-position": {"x": 4, "y": 1},
+                "short-description": "1/1"
+            },
+            {   "name": "Reckless Thrust",
+                "must-rebalance": true,
+                "defense": [2],
+                "attack": [
+                    { "die": 10, "damage": {"body": 2} }
+                ],
+                "grid-position": {"x": 5, "y": 1},
+                "short-description": "2"
+            },
+            {   "name": "Bite Face Off",
                 "mastery": true,
+                "defense": [2],
+                "attack": [
+                    { "die": 8, "damage": {"body": 2, "charisma": 1, "mood": 1} }
+                ],
+                "grid-position": {"x": 0, "y": 2},
+                "short-description": "2 + grabbed + 1 Cha + 1 Mood (Mood vs. all enemies watching) (targets tripped foe only)"
+            },
+            {   "name": "Trip",
                 "defense": [4],
                 "attack": [
-                    { "die": 4, "damage": {"body": 2} }
+                    { "die": 6, "damage": {"body": 0} }
                 ],
-                "grid-position": {"x": 0, "y": 0},
-                "short-description": "1",
-                "description": ""
+                "grid-position": {"x": 4, "y": 2},
+                "short-description": "Rebalance"
             }
         ]
     }
