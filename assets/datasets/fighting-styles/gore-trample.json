@@ -1,12 +1,12 @@
 
 {
-    "name": "Gore Trample",
+    "name": "Gore & Trample",
     "identifier": "gore-trample",
-    "type": "fighting",
+    "type": "monster",
     "description": "",
-    "requirements": [""],
+    "requirements": ["Strength 6", "horns or similar"],
     "info": [""],
-    "grid": {"width": 5, "height": 5},
+    "grid": {"width": 5, "height": 3},
     "maneuvers": {
         "basic": [
            {
@@ -41,17 +41,73 @@
             }
         ],
         "style": [
-            {   "name": "",
+            {   "name": "Hoof/Hoof",
                 "rebalancing": true,
-                "must-rebalance": true,
-                "mastery": true,
                 "defense": [4],
                 "attack": [
-                    { "die": 4, "damage": {"body": 2} }
+                    { "die": 4 },
+                    { "die": 4 }
                 ],
                 "grid-position": {"x": 0, "y": 0},
-                "short-description": "1",
-                "description": ""
+                "short-description": "1/1"
+            },
+            {   "name": "Charge",
+                "rebalancing": true,
+                "defense": [6],
+                "grid-position": {"x": 0, "y": 1},
+                "short-description": "+2 damage next round + Move"
+            },
+            {   "name": "Charging Gore",
+                "defense": [6],
+                "attack": [
+                    { "die": 8 }
+                ],
+                "grid-position": {"x": 1, "y": 1},
+                "short-description": "1 + Move"
+            },
+            {   "name": "Trample",
+                "must-rebalance": true,
+                "defense": [6],
+                "attack": [
+                    { "die": 6 }
+                ],
+                "grid-position": {"x": 2, "y": 1},
+                "short-description": "1 + rebalance; 3 targets"
+            },
+            {   "name": "Head Butt",
+                "must-rebalance": true,
+                "defense": [4],
+                "attack": [
+                    { "die": 8 }
+                ],
+                "grid-position": {"x": 3, "y": 1},
+                "short-description": "1 + move target one area"
+            },
+            {   "name": "Impale",
+                "mastery": true,
+                "defense": [2],
+                "attack": [
+                    { "die": 6, "damage": {"body": 2} }
+                ],
+                "grid-position": {"x": 4, "y": 1},
+                "short-description": "2 + grabbed"
+            },
+            {   "name": "Gore",
+                "rebalancing": true,
+                "defense": [4],
+                "attack": [
+                    { "die": 6 }
+                ],
+                "grid-position": {"x": 0, "y": 2},
+                "short-description": "1"
+            },
+            {   "name": "Flip",
+                "defense": [6],
+                "attack": [
+                    { "die": 8 }
+                ],
+                "grid-position": {"x": 1, "y": 2},
+                "short-description": "1 + move gored target one area"
             }
         ]
     }

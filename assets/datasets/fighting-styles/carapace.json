@@ -2,11 +2,11 @@
 {
     "name": "Carapace",
     "identifier": "carapace",
-    "type": "fighting",
+    "type": "monster",
     "description": "",
-    "requirements": [""],
+    "requirements": ["Strength 6", "carapace, armored hide, or similar"],
     "info": [""],
-    "grid": {"width": 5, "height": 5},
+    "grid": {"width": 5, "height": 3},
     "maneuvers": {
         "basic": [
            {
@@ -41,17 +41,73 @@
             }
         ],
         "style": [
-            {   "name": "",
-                "rebalancing": true,
+            {   "name": "Shielded Flurry",
                 "must-rebalance": true,
-                "mastery": true,
+                "defense": [6, 6],
+                "attack": [
+                    { "die": 4, "damage": {"body": 2} },
+                    { "die": 4 }
+                ],
+                "short-description": "2/1",
+                "grid-position": {"x": 0, "y": 0}
+            },
+            {   "name": "Bracing Stance",
+                "defense": [6],
+                "short-description": "Ignore 1 point of damage this round",
+                "grid-position": {"x": 1, "y": 0}
+            },
+            {   "name": "Carapace Defense",
+                "rebalancing": true,
+                "defense": [8],
+                "short-description": "",
+                "grid-position": {"x": 2, "y": 0}
+            },
+            {   "name": "Blocking Stance",
+                "defense": [10],
+                "short-description": "",
+                "grid-position": {"x": 3, "y": 0}
+            },
+            {   "name": "Heedless Swing",
+                "rebalancing": true,
                 "defense": [4],
                 "attack": [
-                    { "die": 4, "damage": {"body": 2} }
+                    { "die": 4 }
                 ],
-                "grid-position": {"x": 0, "y": 0},
                 "short-description": "1",
-                "description": ""
+                "grid-position": {"x": 4, "y": 0}
+            },
+            {   "name": "Slap Away",
+                "defense": [8],
+                "attack": [
+                    { "die": 6, "damage": {"body": 0} }
+                ],
+                "short-description": "Disarm",
+                "grid-position": {"x": 1, "y": 1}
+            },
+            {   "name": "Slam",
+                "defense": [8],
+                "attack": [
+                    { "die": 8, "damage": {"body": 2} }
+                ],
+                "short-description": "2",
+                "grid-position": {"x": 3, "y": 1}
+            },
+            {   "name": "Bash Back",
+                "mastery": true,
+                "defense": [10],
+                "attack": [
+                    { "die": 6 }
+                ],
+                "short-description": "1 + move target 1 area",
+                "grid-position": {"x": 1, "y": 2}
+            },
+            {   "name": "Careful Crush",
+                "defense": [10],
+                "attack": [
+                    { "die": 4, "damage": {"body": 3} }
+                ],
+                "short-description": "3",
+                "grid-position": {"x": 3, "y": 2}
             }
         ]
     }
