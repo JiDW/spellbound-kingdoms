@@ -2,11 +2,11 @@
 {
     "name": "Poison Sting",
     "identifier": "poison-sting",
-    "type": "fighting",
+    "type": "monster",
     "description": "",
-    "requirements": [""],
+    "requirements": ["Quickness 5", "Strength 5", "poison"],
     "info": [""],
-    "grid": {"width": 5, "height": 5},
+    "grid": {"width": 5, "height": 3},
     "maneuvers": {
         "basic": [
            {
@@ -41,17 +41,78 @@
             }
         ],
         "style": [
-            {   "name": "",
+            {   "name": "Stinger Lunge",
                 "rebalancing": true,
-                "must-rebalance": true,
+                "defense": [2],
+                "attack": [
+                    { "die": 6, "damage": {"body": 2} }
+                ],
+                "short-description": "2 + poison",
+                "grid-position": {"x": 2, "y": 0}
+            },
+            {   "name": "Snap/Snap/Sting",
+                "defense": [4],
+                "attack": [
+                    { "die": 4 },
+                    { "die": 4 },
+                    { "die": 6, "damage": {"body": 2} }
+                ],
+                "short-description": "1/1/2+poison",
+                "grid-position": {"x": 0, "y": 1}
+            },
+            {   "name": "Stinger Feint",
+                "defense": [6],
+                "short-description": "+1 attack die size until rebalance",
+                "grid-position": {"x": 1, "y": 1}
+            },
+            {   "name": "Snap",
+                "rebalancing": true,
+                "defense": [4],
+                "attack": [
+                    { "die": 6 }
+                ],
+                "short-description": "1",
+                "grid-position": {"x": 2, "y": 1}
+            },
+            {   "name": "Skitter",
+                "rebalancing": true,
+                "defense": [6],
+                "short-description": "Move, Climb",
+                "grid-position": {"x": 3, "y": 1}
+            },
+            {   "name": "Twisting Leap",
+                "defense": [10],
+                "short-description": "Move, Climb, +1 damage next round",
+                "grid-position": {"x": 4, "y": 1}
+            },
+            {   "name": "Whiplash",
                 "mastery": true,
                 "defense": [4],
                 "attack": [
+                    { "die": 4 },
                     { "die": 4, "damage": {"body": 2} }
                 ],
-                "grid-position": {"x": 0, "y": 0},
-                "short-description": "1",
-                "description": ""
+                "short-description": "1 + rebalance / 2 + poison",
+                "grid-position": {"x": 0, "y": 2}
+            },
+            {   "name": "Double Sting",
+                "must-rebalance": true,
+                "defense": [6],
+                "attack": [
+                    { "die": 4, "damage": {"body": 2} },
+                    { "die": 4, "damage": {"body": 2} }
+                ],
+                "short-description": "2 + poison / 2 + poison",
+                "grid-position": {"x": 1, "y": 2}
+            },
+            {   "name": "Grab and Pierce",
+                "defense": [6],
+                "attack": [
+                    { "die": 6, "damage": {"body": 3} },
+                    { "die": 6, "damage": {"body": 0} }
+                ],
+                "short-description": "3 + poison / Grabbed (Attacker must rebalance if the grab misses)",
+                "grid-position": {"x": 4, "y": 2}
             }
         ]
     }
