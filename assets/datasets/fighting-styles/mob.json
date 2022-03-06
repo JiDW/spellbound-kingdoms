@@ -2,11 +2,22 @@
 {
     "name": "Mob",
     "identifier": "mob",
-    "type": "fighting",
+    "type": "monster",
     "description": "",
-    "requirements": [""],
-    "info": [""],
+    "requirements": ["mob"],
+    "info": [
+        "Mobs below 15 body cannot use Mastery maneuvers.",
+        "Mobs are forced to rebalance only when they take 1 damage/5 body in a round. That is, a Mob with 23 body is forced to rebalance after it takes 4 or more points of damage in a round.",
+        "A maneuver with attacks that target multiple creatures can direct all of those attacks against a mob."
+    ],
     "grid": {"width": 5, "height": 5},
+    "grid-arrows": [
+        {"from": {"x": 1, "y": 2.5}, "to": {"x": 0.5, "y": 3}},
+        {"from": {"x": 1.5, "y": 3}, "to": {"x": 1, "y": 3.5}},
+
+        {"from": {"x": 4, "y": 2.5}, "to": {"x": 4.5, "y": 3}},
+        {"from": {"x": 3.5, "y": 3}, "to": {"x": 4, "y": 3.5}}
+    ],
     "maneuvers": {
         "basic": [
            {
@@ -41,17 +52,95 @@
             }
         ],
         "style": [
-            {   "name": "",
+            {   "name": "Stone and Detritus Barrage",
                 "rebalancing": true,
-                "must-rebalance": true,
+                "defense": [4],
+                "attack": [
+                    { "die": 6 }
+                ],
+                "short-description": "1 ranged",
+                "grid-position": {"x": 0, "y": 0}
+            },
+            {   "name": "Inflame",
+                "rebalancing": true,
+                "defense": [6],
+                "short-description": "+1 Mood to mob",
+                "grid-position": {"x": 4, "y": 0}
+            },
+            {   "name": "Trample",
+                "defense": [4],
+                "attack": [
+                    { "die": 8, "damage": {"body": 2} }
+                ],
+                "short-description": "2",
+                "grid-position": {"x": 2, "y": 1}
+            },
+            {   "name": "Crush",
+                "defense": [2],
+                "attack": [
+                    { "die": 10, "damage": {"body": 2} }
+                ],
+                "short-description": "2",
+                "grid-position": {"x": 1, "y": 2}
+            },
+            {   "name": "Engulf",
+                "rebalancing": true,
+                "defense": [4],
+                "attack": [
+                    { "die": 8 }
+                ],
+                "short-description": "1",
+                "grid-position": {"x": 2, "y": 2}
+            },
+            {   "name": "Sweep",
+                "defense": [4],
+                "attack": [
+                    { "die": 6, "damage": {"body": 0} }
+                ],
+                "short-description": "Move and move target with mob 1 area",
+                "grid-position": {"x": 3, "y": 2}
+            },
+            {   "name": "Crush and Rend",
+                "defense": [2],
+                "attack": [
+                    { "die": 8, "damage": {"body": 2, "strength": 1} }
+                ],
+                "short-description": "2 + 1 Str + rebalance",
+                "grid-position": {"x": 0, "y": 3}
+            },
+            {   "name": "Rush",
+                "rebalancing": true,
+                "defense": [4],
+                "short-description": "Move",
+                "grid-position": {"x": 2, "y": 3}
+            },
+            {   "name": "Throw",
                 "mastery": true,
                 "defense": [4],
                 "attack": [
-                    { "die": 4, "damage": {"body": 2} }
+                    { "die": 10, "damage": {"body": 2} }
                 ],
-                "grid-position": {"x": 0, "y": 0},
-                "short-description": "1",
-                "description": ""
+                "short-description": "2 + move Swept target one area",
+                "grid-position": {"x": 4, "y": 3}
+            },
+            {   "name": "Hysterical Crush",
+                "mastery": true,
+                "defense": [4],
+                "attack": [
+                    { "die": 12, "damage": {"body": 3} }
+                ],
+                "short-description": "3 + rebalance + 1 Mood to Mob",
+                "grid-position": {"x": 0, "y": 4}
+            },
+            {   "name": "Lunatic Pursuit",
+                "must-rebalance": true,
+                "mastery": true,
+                "defense": [2],
+                "attack": [
+                    { "die": 12, "damage": {"body": 5} }
+                ],
+                "short-description": "Move onto Thrown target + 5 damage",
+                "grid-position": {"x": 4, "y": 4}
             }
         ]
     }
