@@ -2,10 +2,10 @@
 {
     "name": "Giant",
     "identifier": "giant",
-    "type": "fighting",
+    "type": "monster",
     "description": "",
-    "requirements": [""],
-    "info": [""],
+    "requirements": ["Strength 9", "giant size"],
+    "info": ["A giant gains a Strength bonus die against any physical attempt to force him to rebalance or move."],
     "grid": {"width": 5, "height": 5},
     "maneuvers": {
         "basic": [
@@ -41,17 +41,119 @@
             }
         ],
         "style": [
-            {   "name": "",
+            {   "name": "Leap Up and Dodge",
+                "defense": [8],
+                "grid-position": {"x": 1, "y": 0},
+                "short-description": ""
+            },
+            {   "name": "Slam",
                 "rebalancing": true,
+                "defense": [4],
+                "attack": [
+                    { "die": 6, "damage": {"body": 2} }
+                ],
+                "grid-position": {"x": 2, "y": 0},
+                "short-description": "2"
+            },
+            {   "name": "Clobber Walk",
+                "defense": [4],
+                "attack": [
+                    { "die": 4, "damage": {"body": 2} },
+                    { "die": 4, "damage": {"body": 2} }
+                ],
+                "grid-position": {"x": 3, "y": 0},
+                "short-description": "2/2 + Move"
+            },
+            {   "name": "Smash Landing",
+                "must-rebalance": true,
+                "defense": [2],
+                "attack": [
+                    { "die": 12, "damage": {"body": 3} }
+                ],
+                "grid-position": {"x": 1, "y": 1},
+                "short-description": "3 + rebalance"
+            },
+            {   "name": "Giant Rampage",
                 "must-rebalance": true,
                 "mastery": true,
+                "defense": [2],
+                "attack": [
+                    { "die": 6, "damage": {"body": 3} },
+                    { "die": 6, "damage": {"body": 3} }
+                ],
+                "grid-position": {"x": 3, "y": 1},
+                "short-description": "3/3 + Move"
+            },
+            {   "name": "Reaching Sweep",
+                "rebalancing": true,
+                "must-rebalance": true,
+                "defense": [4],
+                "attack": [
+                    { "die": 4 }
+                ],
+                "grid-position": {"x": 0, "y": 2},
+                "short-description": "3 targets up to one area away"
+            },
+            {   "name": "Block the Way",
+                "rebalancing": true,
+                "defense": [4],
+                "attack": [
+                    { "die": 8, "damage": {"body": 0} }
+                ],
+                "grid-position": {"x": 2, "y": 2},
+                "short-description": "Target can't enter or leave your area"
+            },
+            {   "name": "Wind Up",
+                "rebalancing": true,
+                "defense": [4],
+                "grid-position": {"x": 4, "y": 2},
+                "short-description": ""
+            },
+            {   "name": "Reaching Slam",
+                "rebalancing": true,
+                "must-rebalance": true,
                 "defense": [4],
                 "attack": [
                     { "die": 4, "damage": {"body": 2} }
                 ],
-                "grid-position": {"x": 0, "y": 0},
-                "short-description": "1",
-                "description": ""
+                "grid-position": {"x": 0, "y": 3},
+                "short-description": "2; Up to 1 area away"
+            },
+            {   "name": "Kick",
+                "defense": [6],
+                "attack": [
+                    { "die": 6, "damage": {"body": 3} }
+                ],
+                "grid-position": {"x": 2, "y": 3},
+                "short-description": "3"
+            },
+            {   "name": "Bat",
+                "must-rebalance": true,
+                "defense": [6],
+                "attack": [
+                    { "die": 6, "damage": {"body": 2} }
+                ],
+                "grid-position": {"x": 4, "y": 3},
+                "short-description": "2 + move target 2 areas"
+            },
+            {   "name": "Hurl Boulder",
+                "rebalancing": true,
+                "defense": [4],
+                "attack": [
+                    { "die": 8, "damage": {"body": 2} }
+                ],
+                "grid-position": {"x": 0, "y": 4},
+                "short-description": "2 (ranged)"
+            },
+            {   "name": "Two-handed Overhead Smash",
+                "must-rebalance": true,
+                "mastery": true,
+                "defense": [4],
+                "attack": [
+                    { "die": 6, "damage": {"body": 4, "strength": 1} }
+                ],
+                "grid-position": {"x": 4, "y": 4},
+                "short-description": "4 + 1 Str + rebalance"
             }
         ]
     }
