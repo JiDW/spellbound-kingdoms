@@ -90,9 +90,9 @@
 
     <div class="fighting-style-footer">
         <div class="fighting-style-requirements">
-            {{localize "SK.LABEL.REQUIRES"}}
             {{#each fighting-style.data.data.requirements as |requirement key|}}
-            {{#unless @first}}, {{/unless}}
+                {{#if @first}}{{localize "SK.LABEL.REQUIRES"}}{{/if}}
+                {{#unless @first}}, {{/unless}}
                 {{requirement}}{{#if @last}}.{{/if}}
             {{/each}}
         </div>

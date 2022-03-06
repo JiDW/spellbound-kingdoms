@@ -2,11 +2,18 @@
 {
     "name": "Undead",
     "identifier": "undead",
-    "type": "fighting",
+    "type": "monster",
     "description": "",
-    "requirements": [""],
+    "requirements": [],
     "info": [""],
-    "grid": {"width": 5, "height": 5},
+    "grid": {"width": 4, "height": 5},
+    "grid-arrows": [
+        {"from": {"x": 2.5, "y": 1}, "to": {"x": 3, "y": 0.5}},
+        {"from": {"x": 3, "y": 1.5}, "to": {"x": 3.5, "y": 1}},
+        
+        {"from": {"x": 2.5, "y": 4}, "to": {"x": 3, "y": 4.5}},
+        {"from": {"x": 3, "y": 3.5}, "to": {"x": 3.5, "y": 4}}
+    ],
     "maneuvers": {
         "basic": [
            {
@@ -41,17 +48,83 @@
             }
         ],
         "style": [
-            {   "name": "",
-                "rebalancing": true,
-                "must-rebalance": true,
-                "mastery": true,
+            {   "name": "Rip and Tear",
                 "defense": [4],
                 "attack": [
-                    { "die": 4, "damage": {"body": 2} }
+                    { "die": 10 },
+                    { "die": 4, "damage": {"body": 3} }
                 ],
-                "grid-position": {"x": 0, "y": 0},
+                "short-description": "1/3",
+                "grid-position": {"x": 1, "y": 0}
+            },
+            {   "name": "Drink/Feed/Gnaw/Chew",
+                "defense": [4],
+                "attack": [
+                    { "die": "strength", "damage": {"body": 2, "strength": 1} },
+                    { "die": "strength", "damage": {"body": 0} }
+                ],
+                "short-description": "2 + 1 Str / Grabbed",
+                "grid-position": {"x": 3, "y": 0}
+            },
+            {   "name": "Swing",
+                "rebalancing": true,
+                "defense": [4],
+                "attack": [
+                    { "die": 6 }
+                ],
                 "short-description": "1",
-                "description": ""
+                "grid-position": {"x": 1, "y": 1}
+            },
+            {   "name": "Death Grip",
+                "defense": [4],
+                "attack": [
+                    { "die": "strength", "damage": {"body": 0} }
+                ],
+                "short-description": "Grabbed",
+                "grid-position": {"x": 2, "y": 1}
+            },
+            {   "name": "Lunge",
+                "rebalancing": true,
+                "defense": [2],
+                "attack": [
+                    { "die": 12 }
+                ],
+                "short-description": "1",
+                "grid-position": {"x": 0, "y": 2}
+            },
+            {   "name": "Hunger",
+                "rebalancing": true,
+                "mastery": true,
+                "defense": [6],
+                "short-description": "+1 dmg until forced to rebalance",
+                "grid-position": {"x": 1, "y": 2}
+            },
+            {   "name": "Scream/Moan/Slough Body Part",
+                "defense": [4],
+                "attack": [
+                    { "die": 8, "vs": "reason", "damage": {"mood": 1} }
+                ],
+                "short-description": "1 Mood vs 5 enemies watching",
+                "grid-position": {"x": 1, "y": 3}
+            },
+            {   "name": "Twitch",
+                "defense": [2],
+                "short-description": "",
+                "grid-position": {"x": 2, "y": 3}
+            },
+            {   "name": "Shamble/Stalk",
+                "rebalancing": true,
+                "defense": [6],
+                "short-description": "Move",
+                "grid-position": {"x": 1, "y": 4}
+            },
+            {   "name": "Exploding Head",
+                "defense": [4],
+                "attack": [
+                    { "die": 4, "damage": {"body": 3, "mood": 2} }
+                ],
+                "short-description": "3 dmg + 2 mood to all in area",
+                "grid-position": {"x": 3, "y": 4}
             }
         ]
     }
