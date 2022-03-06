@@ -2,11 +2,11 @@
 {
     "name": "Aerial",
     "identifier": "aerial",
-    "type": "fighting",
+    "type": "monster",
     "description": "",
-    "requirements": [""],
+    "requirements": ["Quickness 5", "Strength 4"],
     "info": [""],
-    "grid": {"width": 5, "height": 5},
+    "grid": {"width": 6, "height": 3},
     "maneuvers": {
         "basic": [
            {
@@ -41,17 +41,90 @@
             }
         ],
         "style": [
-            {   "name": "",
+            {   "name": "Dive",
                 "rebalancing": true,
+                "defense": [6],
+                "short-description": "+1 damage next round; Requires altitude",
+                "grid-position": {"x": 1, "y": 0}
+            },
+            {   "name": "Talon Frenzy",
                 "must-rebalance": true,
-                "mastery": true,
                 "defense": [4],
                 "attack": [
-                    { "die": 4, "damage": {"body": 2} }
+                    { "die": 8, "damage": {"body": 2} },
+                    { "die": 6, "damage": {"body": 2} }
                 ],
-                "grid-position": {"x": 0, "y": 0},
-                "short-description": "1",
-                "description": ""
+                "short-description": "2/2",
+                "grid-position": {"x": 2, "y": 0}
+            },
+            {   "name": "Slam into Target",
+                "must-rebalance": true,
+                "defense": [4],
+                "attack": [
+                    { "die": 8 }
+                ],
+                "short-description": "1 + rebalance",
+                "grid-position": {"x": 3, "y": 0}
+            },
+            {   "name": "Snatch Object",
+                "must-rebalance": true,
+                "defense": [6],
+                "attack": [
+                    { "die": 6, "damage": {"body": 0} }
+                ],
+                "short-description": "Take one item form target",
+                "grid-position": {"x": 4, "y": 0}
+            },
+            {   "name": "Fly",
+                "rebalancing": true,
+                "defense": [6],
+                "short-description": "Fly 2 areas",
+                "grid-position": {"x": 0, "y": 1}
+            },
+            {   "name": "Crashing Swoop",
+                "must-rebalance": true,
+                "mastery": true,
+                "defense": [6],
+                "attack": [
+                    { "die": 6 }
+                ],
+                "short-description": "1 + move opponent 1 area",
+                "grid-position": {"x": 5, "y": 1}
+            },
+            {   "name": "Talon Rake",
+                "rebalancing": true,
+                "defense": [6],
+                "attack": [
+                    { "die": 6 }
+                ],
+                "short-description": "1 + fly",
+                "grid-position": {"x": 1, "y": 2}
+            },
+            {   "name": "Eye Scratch",
+                "defense": [8],
+                "attack": [
+                    { "die": 4 }
+                ],
+                "short-description": "1 + blind next round + fly",
+                "grid-position": {"x": 2, "y": 2}
+            },
+            {   "name": "Talon/Talon/Beak",
+                "defense": [4],
+                "attack": [
+                    { "die": 6 },
+                    { "die": 6 },
+                    { "die": 6, "damage": {"body": 2} }
+                ],
+                "short-description": "1/1/2",
+                "grid-position": {"x": 3, "y": 2}
+            },
+            {   "name": "Swoop",
+                "defense": [8],
+                "attack": [
+                    { "die": 8, "damage": {"body": 2} }
+                ],
+                "short-description": "2",
+                "grid-position": {"x": 4, "y": 2}
             }
         ]
     }

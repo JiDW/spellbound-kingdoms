@@ -2,11 +2,11 @@
 {
     "name": "Slasher",
     "identifier": "slasher",
-    "type": "fighting",
+    "type": "monster",
     "description": "",
-    "requirements": [""],
+    "requirements": ["Quickenss 5", "weapon (for humanoid)"],
     "info": [""],
-    "grid": {"width": 5, "height": 5},
+    "grid": {"width": 5, "height": 3},
     "maneuvers": {
         "basic": [
            {
@@ -41,17 +41,78 @@
             }
         ],
         "style": [
-            {   "name": "",
+            {   "name": "Double jab",
+                "defense": [4],
+                "attack": [
+                    { "die": 8 },
+                    { "die": 8 }
+                ],
+                "short-description": "1/1",
+                "grid-position": {"x": 0, "y": 0}
+            },
+            {   "name": "Guard and Counter",
+                "defense": [8],
+                "attack": [
+                    { "die": 6 }
+                ],
+                "short-description": "1; Only attack those who attack you. Up to 3 targets.",
+                "grid-position": {"x": 1, "y": 0}
+            },
+            {   "name": "Feint",
                 "rebalancing": true,
+                "defense": [6],
+                "short-description": "",
+                "grid-position": {"x": 2, "y": 0}
+            },
+            {   "name": "Cut Low",
+                "must-rebalance": true,
+                "defense": [8],
+                "attack": [
+                    { "die": 10, "damage": {"body": 1, "quickness": 1, "strength": 1} }
+                ],
+                "short-description": "1 + 1 Qck + 1 Str",
+                "grid-position": {"x": 0, "y": 1}
+            },
+            {   "name": "Slash",
+                "rebalancing": true,
+                "defense": [4],
+                "attack": [
+                    { "die": 6 }
+                ],
+                "short-description": "1",
+                "grid-position": {"x": 2, "y": 1}
+            },
+            {   "name": "Whirl",
+                "defense": [6],
+                "short-description": "+2 damage next round",
+                "grid-position": {"x": 3, "y": 1}
+            },
+            {   "name": "Crosscut Slash",
+                "defense": [6],
+                "attack": [
+                    { "die": 8 }
+                ],
+                "short-description": "1",
+                "grid-position": {"x": 4, "y": 1}
+            },
+            {   "name": "Raking Assault",
+                "defense": [6],
+                "attack": [
+                    { "die": 8 },
+                    { "die": 8 }
+                ],
+                "short-description": "1/1",
+                "grid-position": {"x": 3, "y": 2}
+            },
+            {   "name": "Lunging Feint",
                 "must-rebalance": true,
                 "mastery": true,
                 "defense": [4],
                 "attack": [
-                    { "die": 4, "damage": {"body": 2} }
+                    { "die": 10, "damage": {"body": 0} }
                 ],
-                "grid-position": {"x": 0, "y": 0},
-                "short-description": "1",
-                "description": ""
+                "short-description": "Rebalance",
+                "grid-position": {"x": 4, "y": 2}
             }
         ]
     }
