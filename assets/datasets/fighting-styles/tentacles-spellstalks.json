@@ -1,12 +1,12 @@
 
 {
-    "name": "Tentacles Spellstalks",
+    "name": "Tentacles/Spellstalks",
     "identifier": "tentacles-spellstalks",
-    "type": "fighting",
+    "type": "monster",
     "description": "",
     "requirements": [""],
     "info": [""],
-    "grid": {"width": 5, "height": 5},
+    "grid": {"width": 5, "height": 4},
     "maneuvers": {
         "basic": [
            {
@@ -41,17 +41,90 @@
             }
         ],
         "style": [
-            {   "name": "",
+            {   "name": "Sickening Undulation",
                 "rebalancing": true,
+                "defense": [4],
+                "attack": [
+                    { "die": "charisma", "vs": "reason", "damage": {"body": 2} }
+                ],
+                "short-description": "Move, climb, 1 Mood",
+                "grid-position": {"x": 0, "y": 0}
+            },
+            {   "name": "Thrash",
                 "must-rebalance": true,
+                "defense": [6],
+                "attack": [
+                    { "die": 8 },
+                    { "die": 8 },
+                    { "die": 4, "damage": {"body": 2} },
+                    { "die": 4, "damage": {"body": 2} }
+                ],
+                "short-description": "1/1/2/2",
+                "grid-position": {"x": 2, "y": 0}
+            },
+            {   "name": "Whiplash",
+                "rebalancing": true,
+                "defense": [6],
+                "attack": [
+                    { "die": 6 }
+                ],
+                "short-description": "1",
+                "grid-position": {"x": 2, "y": 1}
+            },
+            {   "name": "Align with the Ear",
+                "rebalancing": true,
+                "defense": [4],
+                "short-description": "",
+                "grid-position": {"x": 3, "y": 1}
+            },
+            {   "name": "Align with the Mouth",
+                "rebalancing": true,
+                "defense": [4],
+                "short-description": "",
+                "grid-position": {"x": 1, "y": 2}
+            },
+            {   "name": "Drill the Ear",
+                "defense": [6],
+                "attack": [
+                    { "die": 6 }
+                ],
+                "short-description": "1",
+                "grid-position": {"x": 3, "y": 2}
+            },
+            {   "name": "Suck Tissue",
+                "must-rebalance": true,
+                "defense": [6],
+                "attack": [
+                    { "die": 10, "damage": {"body": 3, "reason": 1} }
+                ],
+                "short-description": "3 + 1 Reason + rebalance + learn secret (learn secret applies only for masters of the style)",
+                "grid-position": {"x": 4, "y": 2}
+            },
+            {   "name": "Fibrous Invasion to Brainstem",
                 "mastery": true,
                 "defense": [4],
                 "attack": [
-                    { "die": 4, "damage": {"body": 2} }
+                    { "die": 8 },
+                    { "die": 4, "vs": "reason" }
                 ],
-                "grid-position": {"x": 0, "y": 0},
+                "short-description": "1 / Act as tentacles' puppet, attacking ally next round",
+                "grid-position": {"x": 0, "y": 3}
+            },
+            {   "name": "Shoot the Mouth",
+                "defense": [4],
+                "attack": [
+                    { "die": 8 }
+                ],
                 "short-description": "1",
-                "description": ""
+                "grid-position": {"x": 1, "y": 3}
+            },
+            {   "name": "Tunnel and Burst",
+                "defense": [6],
+                "attack": [
+                    { "die": 12, "damage": {"body": 3} }
+                ],
+                "short-description": "3",
+                "grid-position": {"x": 2, "y": 3}
             }
         ]
     }

@@ -2,11 +2,19 @@
 {
     "name": "Swarm",
     "identifier": "swarm",
-    "type": "fighting",
+    "type": "monster",
     "description": "",
     "requirements": [""],
-    "info": [""],
-    "grid": {"width": 5, "height": 5},
+    "info": [
+        "Swarms cannot be damaged by individual physical weapons.",
+        "Area of effect weapons, environment tricks, and spells can damage swarms.",
+        "Basic attacks (Str/d2) with torches or similar can damage a swarm (1 point)."
+    ],
+    "grid": {"width": 4, "height": 3},
+    "grid-arrows": [
+        {"from": {"x": 2.5, "y": 1}, "to": {"x": 3, "y": 0.5}},
+        {"from": {"x": 3, "y": 1.5}, "to": {"x": 3.5, "y": 1}}
+    ],
     "maneuvers": {
         "basic": [
            {
@@ -41,17 +49,54 @@
             }
         ],
         "style": [
-            {   "name": "",
-                "rebalancing": true,
-                "must-rebalance": true,
-                "mastery": true,
+            {   "name": "Devour",
                 "defense": [4],
                 "attack": [
-                    { "die": 4, "damage": {"body": 2} }
+                    { "die": 12, "damage": {"body": 3} }
                 ],
-                "grid-position": {"x": 0, "y": 0},
+                "short-description": "3",
+                "grid-position": {"x": 3, "y": 0}
+            },
+            {   "name": "Overrun",
+                "defense": [2],
+                "attack": [
+                    { "die": 8 }
+                ],
+                "short-description": "1 + Move",
+                "grid-position": {"x": 0, "y": 1}
+            },
+            {   "name": "Rush",
+                "rebalancing": true,
+                "defense": [2],
+                "short-description": "Move, Climb",
+                "grid-position": {"x": 1, "y": 1}
+            },
+            {   "name": "Engulf",
+                "rebalancing": true,
+                "defense": [4],
+                "attack": [
+                    { "die": 10 }
+                ],
                 "short-description": "1",
-                "description": ""
+                "grid-position": {"x": 2, "y": 1}
+            },
+            {   "name": "Invade Orifice",
+                "defense": [6],
+                "attack": [
+                    { "die": 8, "damage": {"body": 2, "mood": 2} }
+                ],
+                "short-description": "2 + 2 Mood",
+                "grid-position": {"x": 2, "y": 2}
+            },
+            {   "name": "Emerge from Orifice",
+                "must-rebalance": true,
+                "defense": [2],
+                "attack": [
+                    { "die": 10, "damage": {"body": 3} },
+                    { "die": 8, "vs": "reason", "damage": {"mood": 1} }
+                ],
+                "short-description": "3 + rebalance / 1 Mood to enemies watching",
+                "grid-position": {"x": 3, "y": 2}
             }
         ]
     }
