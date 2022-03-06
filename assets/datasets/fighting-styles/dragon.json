@@ -2,11 +2,21 @@
 {
     "name": "Dragon",
     "identifier": "dragon",
-    "type": "fighting",
+    "type": "monster",
     "description": "",
-    "requirements": [""],
-    "info": [""],
-    "grid": {"width": 5, "height": 5},
+    "requirements": ["dragon"],
+    "info": ["A dragon gains a Strength bonus die against any physical attempt to force it to rebalance or move."],
+    "grid": {"width": 5, "height": 5.5},
+    "grid-arrows": [
+        {"from": {"x": 1, "y": 1.3}, "to": {"x": 1.5, "y": 1}},
+        {"from": {"x": 4, "y": 1.3}, "to": {"x": 3.5, "y": 1}},
+
+        {"from": {"x": 2, "y": 4}, "to": {"x": 1.5, "y": 4.5}},
+        {"from": {"x": 2.5, "y": 4.5}, "to": {"x": 2, "y": 5}},
+
+        {"from": {"x": 3, "y": 4}, "to": {"x": 3.5, "y": 4.5}},
+        {"from": {"x": 2.5, "y": 4.5}, "to": {"x": 3, "y": 5}}
+    ],
     "maneuvers": {
         "basic": [
            {
@@ -41,17 +51,146 @@
             }
         ],
         "style": [
-            {   "name": "",
-                "rebalancing": true,
+            {   "name": "Carry O",
+                "defense": [6],
+                "attack": [
+                    { "die": 10, "damage": {"body": 0} }
+                ],
+                "grid-position": {"x": 1.2, "y": 0},
+                "short-description": "Grabbed + fly you and target 1 area"
+            },
+            {   "name": "Draconic Frenzy",
                 "must-rebalance": true,
+                "defense": [6],
+                "attack": [
+                    { "die": 10, "damage": {"body": 3} },
+                    { "die": 10, "damage": {"body": 3} },
+                    { "die": 12, "damage": {"body": 3} }
+                ],
+                "grid-position": {"x": 2.8, "y": 0},
+                "short-description": "3/3/3"
+            },
+            {   "name": "Grasp",
+                "defense": [6],
+                "attack": [
+                    { "die": "strength", "damage": {"body": 0} }
+                ],
+                "grid-position": {"x": 0, "y": 0.5},
+                "short-description": "Grabbed"
+            },
+            {   "name": "Slam",
+                "defense": [6],
+                "attack": [
+                    { "die": 20, "damage": {"body": 3} }
+                ],
+                "grid-position": {"x": 4, "y": 0.5},
+                "short-description": "3 + rebalance"
+            },
+            {   "name": "Claw",
+                "rebalancing": true,
+                "defense": [8],
+                "attack": [
+                    { "die": 10, "damage": {"body": 2} }
+                ],
+                "grid-position": {"x": 0, "y": 1.5},
+                "short-description": "2"
+            },
+            {   "name": "Fire Claw",
                 "mastery": true,
+                "defense": [10],
+                "attack": [
+                    { "die": 12, "damage": {"body": 3, "magic": 2} }
+                ],
+                "grid-position": {"x": 1, "y": 1.5},
+                "short-description": "3 + 2 Magic"
+            },
+            {   "name": "Shroud of Flames",
+                "mastery": true,
+                "defense": [8],
+                "grid-position": {"x": 2, "y": 1.5},
+                "short-description": "d10 attack for 1 flame damage against any who target you until you rebalance"
+            },
+            {   "name": "Wings Fan the Firestorm",
+                "mastery": true,
+                "defense": [10],
+                "attack": [
+                    { "die": 8, "damage": {"body": 2} }
+                ],
+                "grid-position": {"x": 3, "y": 1.5},
+                "short-description": "2 + rebalance to all in area"
+            },
+            {   "name": "Dive",
+                "rebalancing": true,
+                "defense": [6],
+                "grid-position": {"x": 4, "y": 1.5},
+                "short-description": "+2 damage next round Requires altitude"
+            },
+            {   "name": "Bite",
+                "rebalancing": true,
+                "defense": [6],
+                "attack": [
+                    { "die": 8, "damage": {"body": 3} }
+                ],
+                "grid-position": {"x": 0, "y": 2.5},
+                "short-description": "3"
+            },
+            {   "name": "Roar",
+                "rebalancing": true,
+                "defense": [10],
+                "grid-position": {"x": 2, "y": 2.5},
+                "short-description": "+1 Mood to self"
+            },
+            {   "name": "Fly",
+                "rebalancing": true,
+                "defense": [6],
+                "grid-position": {"x": 4, "y": 2.5},
+                "short-description": "Fly 2 areas"
+            },
+            {   "name": "Claw/Claw/Bite",
+                "defense": [10],
+                "attack": [
+                    { "die": 12, "damage": {"body": 2} },
+                    { "die": 12, "damage": {"body": 2} },
+                    { "die": 8, "damage": {"body": 3} }
+                ],
+                "grid-position": {"x": 0, "y": 3.5},
+                "short-description": "2/2/3"
+            },
+            {   "name": "Breathe Fire",
                 "defense": [4],
                 "attack": [
-                    { "die": 4, "damage": {"body": 2} }
+                    { "die": 12, "damage": {"body": 3} }
                 ],
-                "grid-position": {"x": 0, "y": 0},
-                "short-description": "1",
-                "description": ""
+                "grid-position": {"x": 2, "y": 3.5},
+                "short-description": "3"
+            },
+            {   "name": "Shadow Pass",
+                "must-rebalance": true,
+                "defense": [6],
+                "attack": [
+                    { "die": 8, "vs": "reason", "damage": {"mood": 1} }
+                ],
+                "grid-position": {"x": 4, "y": 3.5},
+                "short-description": "1 Mood to all enemies in area + fly"
+            },
+            {   "name": "Breathe Fire (Cone)",
+                "must-rebalance": true,
+                "defense": [12],
+                "attack": [
+                    { "die": 20, "damage": {"body": 5} }
+                ],
+                "grid-position": {"x": 1, "y": 4.5},
+                "short-description": "5 to all in area"
+            },
+            {   "name": "Breathe Fire (Melt)",
+                "must-rebalance": true,
+                "defense": [12],
+                "attack": [
+                    { "die": 20, "damage": {"body": 5} },
+                    { "die": 20, "damage": {"body": 0} }
+                ],
+                "grid-position": {"x": 3, "y": 4.5},
+                "short-description": "5 to target/3 Quality to all of target's gear"
             }
         ]
     }
