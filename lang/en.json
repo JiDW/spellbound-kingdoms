@@ -79,6 +79,7 @@
     "SK.LABEL.OTHER": "Other",
     "SK.LABEL.MOUNT_QUALITY": "Mount Quality",
     "SK.LABEL.IS_HIGH_SPELL": "Is High Spell",
+    "SK.LABEL.HIGH_SPELL": "High Spell",
   
     "SK.TYPE.HISTORY": "History",
     "SK.TYPE.REPUTATION": "Reputation",
@@ -157,6 +158,7 @@
     "SK.TOOLTIP.INCREASE_COOLDOWNS": "Increase all wealth slot cooldowns by 1",
     "SK.TOOLTIP.DECREASE_COOLDOWNS": "Decrease all wealth slot cooldowns by 1",
     "SK.TOOLTIP.COOLDOWN_CONTROLS": "Cooldown Controls",
+    "SK.TOOLTIP.MASTERY": "Mastery Spell",
   
     "SK.HINT.IDENTIFIER": "Identifier is used for referencing in datasets. Do not translate it.",
   

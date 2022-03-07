@@ -48,6 +48,7 @@ export class SpellboundKingdomsCharacterSheet extends SpellboundKingdomsActorShe
         data.data.allFightingStyles = this.getAllFightingStyles();
         data.data.stats = this.getStatsForCharateristicsBlock(data.data.data.stats);
         data.data.data.itemsByType = this.categorizeItems();
+        data.data.spellsBySchool = this.getSpellsBySchool(data.data.data.itemsByType.spell);
         this.computeTalentData(data.data);
         data.data.itemsByType['fighting-style'] = this.appendDataToFightingStyles(data.data.itemsByType['fighting-style']);
         return data;
@@ -58,6 +59,7 @@ export class SpellboundKingdomsCharacterSheet extends SpellboundKingdomsActorShe
 
         html.find('.add-talent').click(this.handleAddTalent.bind(this));
         html.find('.character-abilities-fill').click(this.handleFillAbilities.bind(this));
+        html.find('.character-spells-fill').click(this.handleFillSpells.bind(this));
         html.find('.fighting-style-option').click(this.handleToggleFightingStyle.bind(this));
         html.find('.fighting-style-proficiency').change(this.handleChangeFightingStyleLevel.bind(this));
         html.find('.fighting-style-maneuver').click(this.handleSelectManeuver.bind(this));
@@ -259,7 +261,30 @@ export class SpellboundKingdomsCharacterSheet extends SpellboundKingdomsActorShe
         this.actor.createEmbeddedDocuments("Item", abilityItems);
     }
 
+    handleFillSpells(e) {
+        let schoolIdentifiers = this.actor.data.items.filter(i => i.type === 'fighting-style' && i.data.data.type === 'magic').map(i => i.data.data.identifier);
+        let existingSpellNames = this.actor.data.items.filter(i => i.type === 'spell').map(i => i.name);
+        let spellItems = game.items.filter(
+            i => i.type === 'spell' && schoolIdentifiers.includes(i.data.data.school) && !existingSpellNames.includes(i.name)
+        ).map(i => i.data);
+        
+        this.actor.createEmbeddedDocuments("Item", spellItems);
+    }
+
     // ********** PREPARE DATA *************
+
+    getSpellsBySchool(spells) {
+        return Object.keys(spells).reduce(
+            (obj, key) => {
+                if (obj[spells[key].data.data.school] === undefined) {
+                    obj[spells[key].data.data.school] = [];
+                }
+                obj[spells[key].data.data.school].push(spells[key]);
+                return obj;
+            },
+            {}
+        );
+    }
 
     appendDataToFightingStyles(fightingStyles) {
         let stylesByIdentifier = Object.values(fightingStyles).reduce(

@@ -378,6 +378,39 @@ input.grid-input { width: 81%; }
 
 /* ##### END OF INVENTORY TAB ###### */
 
+
+/* ##### SPELL TAB ###### */
+
+.spellbound-kingdoms .character .spell-list {
+    column-count: 3;
+    column-fill: auto;
+
+    height: 100%;
+}
+.spellbound-kingdoms .character .spell-list .spell-item-title {
+    font-weight: bold;
+}
+.spellbound-kingdoms .character .spell-list .spell-item {
+    display: grid;
+    grid-template-columns: repeat(2, auto) min-content;
+    grid-template-rows: auto;
+    grid-column-gap: 2px;
+    grid-row-gap: 0px;
+}
+
+.spellbound-kingdoms .character .spell-list .spell-item .item-controls-right {
+    white-space: nowrap;
+}
+
+.spellbound-kingdoms .character .character-spells-fill {
+    height: 24px;
+    line-height: 20px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+/* ##### END OF SPELL TAB ###### */
+
 .spellbound-kingdoms a.item-create {
     color: black;
 }
