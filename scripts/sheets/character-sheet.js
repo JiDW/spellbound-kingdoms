@@ -274,7 +274,7 @@ export class SpellboundKingdomsCharacterSheet extends SpellboundKingdomsActorShe
     // ********** PREPARE DATA *************
 
     getSpellsBySchool(spells) {
-        return Object.keys(spells).reduce(
+        let spellsBySchool = Object.keys(spells).reduce(
             (obj, key) => {
                 if (obj[spells[key].data.data.school] === undefined) {
                     obj[spells[key].data.data.school] = [];
@@ -284,6 +284,22 @@ export class SpellboundKingdomsCharacterSheet extends SpellboundKingdomsActorShe
             },
             {}
         );
+
+        for (let [, spells] of Object.entries(spellsBySchool)) {
+            spells.sort(
+                (s1, s2) => {
+                    if (s1.data.data.mastery !== s2.data.data.mastery) {
+                        return s1.data.data.mastery ? 1 : -1;
+                    }
+                    if (s1.data.data.high !== s2.data.data.high) {
+                        return s1.data.data.high ? 1 : -1;
+                    }
+                    return s1.name.localeCompare(s2.name);
+                }
+            );
+        }
+
+        return spellsBySchool;
     }
 
     appendDataToFightingStyles(fightingStyles) {
