@@ -62,7 +62,8 @@ If the zombies win the battle, or if there is no mass resistance, then every org
 
 Dramba
 Close spells.
-Brick Dust Line. You pour out a line of brick dust while invoking the loa. Whenever a creature matching the conditions you set crosses the brick dust line, you are aware of it (and waken if asleep). The conditions you set may be broad or narrow, general or specific, anything from "all creatures" to "that seradynn with the red horns I met at the AllBelow." Burn Doll. You can, of course, use this spell out of combat to purify a target, provided it is cast quickly enough.
+Brick Dust Line. You pour out a line of brick dust while invoking the loa. Whenever a creature matching the conditions you set crosses the brick dust line, you are aware of it (and waken if asleep). The conditions you set may be broad or narrow, general or specific, anything from "all creatures" to "that seradynn with the red horns I met at the AllBelow."
+Burn Doll. You can, of course, use this spell out of combat to purify a target, provided it is cast quickly enough.
 Loa Walk. You spend time walking with the loa, listening to their whispers and drumbeats, moving in their abstruse rhythms. You can converse with the loa, who may or may not be willing to answer questions.
 The GM should develop loa spirits as NPCs like any other, and you may run a social scene or quick social combat with the loa in order to coax them to cooperate.
 The loa spirits generally have access to regions up to one dozen miles around the caster, and they can appear to any spellbound creature visually, but not audibly, within that range. If you are a houngan, that is, a master of the dramba style, you can ask the loa to bring you a material item through the spirit realm.
