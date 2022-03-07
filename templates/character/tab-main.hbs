@@ -35,11 +35,12 @@
     <div class="frame frame-inspirations">
         <div class="frame-label">
             {{localize "SK.LABEL.INSPIRATIONS"}}
-            <button class="item-create" data-type="inspiration">+</button>
+            <a class="item-create" data-type="inspiration" title="{{localize 'SK.BUTTON.ADD'}}"><i class="far fa-plus-square"></i></a>
+            <a class="refresh-inspirations" title="{{localize 'SK.LABEL.REFRESH'}}"><i class="fas fa-sync-alt"></i></a>
         </div>
         <div class="character-inspirations">
             {{#each data.itemsByType.inspiration as |inspiration key|}}
-                {{> systems/spellbound-kingdoms/templates/character/partial/narrative-item.hbs type="inspiration" item=inspiration faded=false key=key}}
+                {{> systems/spellbound-kingdoms/templates/character/partial/narrative-item.hbs type="inspiration" item=inspiration faded=(eq inspiration.data.data.uses.value 0) key=key}}
             {{/each}}
         </div>
     </div>

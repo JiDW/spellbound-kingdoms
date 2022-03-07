@@ -24,8 +24,8 @@ Character Sheet
             [done] Talent selection UI
     [done] Combat Tab
         [done] Fighting/Magic Styles
-    [    ] Magic Tab
-        [    ] Spells
+    [done] Magic Tab
+        [done] Spells
     [done] Inventory Tab
         [done] Gear Form
         [done] Weapons
@@ -35,7 +35,7 @@ Character Sheet
         [done] Fashion
         [done] Vehicles
         [done] "Purchace" interface
-    [    ] Implement inspiration usage tracking
+    [done] Implement inspiration usage tracking
     [    ] Implement "Post to Chat"
         [    ] inspiration
         [    ] history/reputation
@@ -51,7 +51,7 @@ Character Sheet
     [    ] Abilities
     [    ] Items
 
-[    ] Gear Sheet
+[done] Gear Sheet
 [done] Fighting Style Sheet
     type: "fighting", "magic", "monster"
     level: 1 - neophyte, 2 - apprentice, 3 - master

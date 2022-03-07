@@ -63,6 +63,7 @@ export class SpellboundKingdomsCharacterSheet extends SpellboundKingdomsActorShe
         html.find('.fighting-style-option').click(this.handleToggleFightingStyle.bind(this));
         html.find('.fighting-style-proficiency').change(this.handleChangeFightingStyleLevel.bind(this));
         html.find('.fighting-style-maneuver').click(this.handleSelectManeuver.bind(this));
+        html.find('.refresh-inspirations').click(this.handleRefreshInspiraitons.bind(this));
 
 
         html.find('.ability-delete').click(this.handleRemoveItem.bind(this));
@@ -98,6 +99,18 @@ export class SpellboundKingdomsCharacterSheet extends SpellboundKingdomsActorShe
     }
 
     // ********** HANDLERS *************
+
+    handleRefreshInspiraitons(event) {
+        let updates = [];
+        let inspirations = this.actor.data.items.filter(i => i.data.type === 'inspiration');
+        for(let item of inspirations.values()) {
+            updates.push({
+                '_id': item.id,
+                'data.uses.value': item.data.data.uses.max,
+            });
+        }
+        this.actor.updateEmbeddedDocuments('Item', updates);
+    }
 
     handleSelectManeuver(event) {        
         const el = event.currentTarget;
