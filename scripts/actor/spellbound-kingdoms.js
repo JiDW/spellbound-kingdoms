@@ -4,6 +4,8 @@ export class SpellboundKingdomsActor extends Actor {
     _onCreateEmbeddedDocuments(type, documents, result, options, userId) {
         super._onCreateEmbeddedDocuments(type, documents, result, options, userId);
 
+        if (type !== 'Item') return;
+
         let slot;
         for (let [, item] of Object.entries(documents)) {
             if (!SpellboundKingdomsItem.purchasableItems.includes(item.type)) continue;
@@ -24,6 +26,8 @@ export class SpellboundKingdomsActor extends Actor {
     _onUpdateEmbeddedDocuments(type, documents, result, options, userId) {
         super._onUpdateEmbeddedDocuments(type, documents, result, options, userId);
 
+        if (type !== 'Item') return;
+
         let idsToDelete = [];
         documents.forEach(function (item) {
             if (item.type !== 'wealth-slot-cooldown') return;
@@ -41,6 +45,8 @@ export class SpellboundKingdomsActor extends Actor {
     /** @inheritdoc */
     _preDeleteEmbeddedDocuments(embeddedName, result, options, userId) {
         super._preDeleteEmbeddedDocuments(embeddedName, result, options, userId);
+
+        if (embeddedName !== 'Item') return;
         
         let item;
         for (let [, itemId] of Object.entries(result)) {
