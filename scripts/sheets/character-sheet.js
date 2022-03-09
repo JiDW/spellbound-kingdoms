@@ -63,6 +63,7 @@ export class SpellboundKingdomsCharacterSheet extends SpellboundKingdomsActorShe
         html.find('.fighting-style-option').click(this.handleToggleFightingStyle.bind(this));
         html.find('.fighting-style-proficiency').change(this.handleChangeFightingStyleLevel.bind(this));
         html.find('.fighting-style-maneuver').click(this.handleSelectManeuver.bind(this));
+        html.find('.fighting-style-grid').click(this.handleDeselectManeuver.bind(this));
         html.find('.refresh-inspirations').click(this.handleRefreshInspiraitons.bind(this));
 
 
@@ -112,7 +113,7 @@ export class SpellboundKingdomsCharacterSheet extends SpellboundKingdomsActorShe
         this.actor.updateEmbeddedDocuments('Item', updates);
     }
 
-    handleSelectManeuver(event) {        
+    handleSelectManeuver(event) {
         const el = event.currentTarget;
         const data = duplicate(el.dataset);
         if (data.entityId !== undefined) {
@@ -120,6 +121,16 @@ export class SpellboundKingdomsCharacterSheet extends SpellboundKingdomsActorShe
         } else {
             this.actor.update({ 'data.selected-maneuver.id': data.fightingStyleId + data.entityName });
         }
+    }
+
+    handleDeselectManeuver(event) {
+        event.stopPropagation();
+        let el = $(event.target);
+        if (!el.hasClass('fighting-style-grid')) {
+            return;
+        }
+
+        this.actor.update({ 'data.selected-maneuver.id': "" });
     }
 
     handleChangeFightingStyleLevel(event) {        
