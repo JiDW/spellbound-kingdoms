@@ -32,6 +32,9 @@
 .header-section .character-class-2      { grid-area: 2 / 6 / 3 / 8; }
 
 input.grid-input { width: 81%; }
+.header-section .character-avatar img {
+    max-height: 76px;
+}
 
 .spellbound-kingdoms .character-class select {
     width: 140px;

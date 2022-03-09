@@ -5,7 +5,8 @@
             {{#if maneuver.data.data.rebalancing}}rebalancing{{/if}}
             {{#if maneuver.data.data.mastery}}mastery{{/if}}
             {{#if maneuver.data.data.selected}}selected{{/if}}
-            {{#if maneuver.data.data.locked}}faded{{/if}}" 
+            {{#if maneuver.data.data.locked}}faded{{/if}}
+            {{#if maneuver.data.data.locked-in}}locked-in{{/if}}" 
             style="
                 width: {{../fighting-style.data.data.grid.xSize}}px;
                 height: {{../fighting-style.data.data.grid.ySize}}px;
@@ -82,8 +83,6 @@
                 top: {{fighting-style.data.data.toolbar.y}}px;"
             data-entity-id="{{fighting-style.data.data.toolbar.entity-id}}"
         >
-            <button class="maneuver-toolbar-lock-in{{#if actorData.selected-maneuver.locked-in}} locked{{/if}}"><i class="fas fa-check"></i></button>
-            <button class="maneuver-toolbar-target"><i class="fas fa-bullseye"></i></button>
             <a class="item-control item-edit" title="{{localize 'Edit'}}"><i class="fas fa-edit"></i></a>
         </div>
     </div>
@@ -112,6 +111,13 @@
                     {{/select}}
                 </select>
             </div>
+            <button class="maneuver-toolbar-lock-in{{#if (eq ../actorData.locked-in-maneuver.id fighting-style.data.data.toolbar.entity-id)}} locked-in{{/if}}" 
+                title="{{localize "SK.TOOLTIP.LOCK_IN"}}"
+                data-selected-maneuver="{{actorData.selected-maneuver.id}}"
+                {{#unless actorData.selected-maneuver.id}}disabled="disabled"{{/unless}}
+            >
+                <i class="fas fa-check"></i>{{localize "SK.BUTTON.LOCK_IN"}}
+            </button>
         </div>
         <div class="fighting-style-basic-actions">
             {{#each fighting-style.data.data.maneuvers.basic as |maneuver key|}}

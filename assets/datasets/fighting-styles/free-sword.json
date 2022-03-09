@@ -101,7 +101,7 @@
                     { "die": 8 }
                 ],
                 "grid-position": {"x": 3, "y": 2},
-                "short-description": "1 + d12 defense against any terrain eect, move, or rebalance",
+                "short-description": "1 + d12 defense against any terrain effect, move, or rebalance",
                 "description": "This attack's sure-footed stance grants the bonus defense die against any attack or environmental factor, physical or magical, that causes you to move, rebalance, fall, trip, slip, be swept away, etc. To be clear, the bonus die is also to be rolled on any check you make against such effects, whether or not the effect is described as an attack."
             },
             {

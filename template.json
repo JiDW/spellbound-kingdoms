@@ -95,8 +95,10 @@
         }
       },
       "selected-maneuver": {
-          "id": "",
-          "locked-in": false
+          "id": ""
+      },
+      "locked-in-maneuver": {
+          "id": ""
       }
     },
     "organization": {

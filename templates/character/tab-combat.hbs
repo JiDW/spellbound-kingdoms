@@ -7,11 +7,11 @@
 </div>
 <div class="fighting-style-body">
     {{#each data.itemsByType.fighting-style as |fighting-style key|}}
-        {{> systems/spellbound-kingdoms/templates/character/combat/fighting-style.hbs fighting-style=fighting-style key=key}}
+        {{> systems/spellbound-kingdoms/templates/character/combat/fighting-style.hbs fighting-style=fighting-style actorData=../data.data key=key}}
     {{/each}}
     <div class="tab tab-add-fighting-style" data-group="fighting-style" data-tab="add-fighting-style">
         {{#each data.allFightingStyles as |fighting-style key|}}
-            {{> systems/spellbound-kingdoms/templates/character/combat/partial/fighting-style-option.hbs fighting-style=fighting-style actorData=data.data.data}}
+            {{> systems/spellbound-kingdoms/templates/character/combat/partial/fighting-style-option.hbs fighting-style=fighting-style actorData=../data.data}}
         {{/each}}
     </div>
 </div>

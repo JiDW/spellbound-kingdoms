@@ -111,7 +111,7 @@
     "SK.BUTTON.DELETE": "Delete",
     "SK.BUTTON.FILL": "Fill",
     "SK.BUTTON.ADD": "Add",
-    "SK.BUTTON.LOCK_IN": "Lock In",
+    "SK.BUTTON.LOCK_IN": "Lock In Selected Maneuver",
   
     "SK.TAB.MAIN": "MAIN",
     "SK.TAB.COMBAT": "COMBAT",
@@ -161,6 +161,7 @@
     "SK.TOOLTIP.DECREASE_COOLDOWNS": "Decrease all wealth slot cooldowns by 1",
     "SK.TOOLTIP.COOLDOWN_CONTROLS": "Cooldown Controls",
     "SK.TOOLTIP.MASTERY": "Mastery Spell",
+    "SK.TOOLTIP.LOCK_IN": "Lock In",
   
     "SK.HINT.IDENTIFIER": "Identifier is used for referencing in datasets. Do not translate it.",
   

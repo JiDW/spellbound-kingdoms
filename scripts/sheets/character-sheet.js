@@ -65,17 +65,7 @@ export class SpellboundKingdomsCharacterSheet extends SpellboundKingdomsActorShe
         html.find('.fighting-style-maneuver').click(this.handleSelectManeuver.bind(this));
         html.find('.fighting-style-grid').click(this.handleDeselectManeuver.bind(this));
         html.find('.refresh-inspirations').click(this.handleRefreshInspiraitons.bind(this));
-
-
-        html.find('.ability-delete').click(this.handleRemoveItem.bind(this));
-        html.find('.use-item').click(this.handleUseItem.bind(this));
-        html.find('.use-weapon').click(this.handleUseWeapon.bind(this));
-
-        html.find('.skill-delete').click(this.handleRemoveItem.bind(this));
-        html.find('.use-skill').click(this.handleUseSkill.bind(this));
-        html.find('.use-skill-hard').click(this.handleUseSkillHard.bind(this));
-
-        html.find('.character-creation-wizard').click(this.handleCharacterCreation.bind(this));
+        html.find('.maneuver-toolbar-lock-in').click(this.handleToggleLockInManeuver.bind(this));
     }
 
     /**
@@ -100,6 +90,17 @@ export class SpellboundKingdomsCharacterSheet extends SpellboundKingdomsActorShe
     }
 
     // ********** HANDLERS *************
+
+    handleToggleLockInManeuver(event) {
+        const div = $(event.currentTarget);
+        const selectedManeuverId = div.data('selected-maneuver');
+
+        if (selectedManeuverId === this.actor.data.data['locked-in-maneuver'].id) {
+            this.actor.update({ 'data.locked-in-maneuver.id': "" });
+        } else {
+            this.actor.update({ 'data.locked-in-maneuver.id': selectedManeuverId });
+        }
+    }
 
     handleRefreshInspiraitons(event) {
         let updates = [];
@@ -203,43 +204,6 @@ export class SpellboundKingdomsCharacterSheet extends SpellboundKingdomsActorShe
         }
     }
 
-    async handleUseItem(e) {
-        const div = $(e.currentTarget).parents(".item");
-        const entityId = div.data("entity-id");
-        let item = this.actor.items.get(entityId);
-        if (parseInt(item.data.data.uses.value) === 0) return;
-
-        this._reduceItemUses(item);
-        this._postItemUse(item);
-    }
-
-    async handleUseWeapon(e) {
-        const div = $(e.currentTarget).parents(".item");
-        const entityId = div.data("entity-id");
-        let item = this.actor.items.get(entityId);
-        let that = this;
-
-        const defaultBehaviour = game.settings.get("spellbound-kingdoms", "shiftClickMoreAp");
-        const doUseWeapon = async function (ap) {
-            const ammoHasBeenSpent = await that._spendAmmo(item);
-            if (ammoHasBeenSpent) {
-                that.actor.reduceAP(ap);
-            }
-            that._postWeaponUse(item, ammoHasBeenSpent, ap);
-        }
-
-        if (e.shiftKey && defaultBehaviour || !e.shiftKey && !defaultBehaviour) {
-            ApPerSkillDialog.show(
-                game.i18n.localize('BH.HOW_MANY'),
-                Math.min(game.settings.get("spellbound-kingdoms", "maxApPerSkill"), this.actor.data.data.bio.ap.value),
-                doUseWeapon
-            );
-            return;
-        }
-
-        await doUseWeapon(1);
-    }
-
     handleAddTalent() {
         let that = this;
         let d = AddTalentDialog.show(
@@ -340,6 +304,7 @@ export class SpellboundKingdomsCharacterSheet extends SpellboundKingdomsActorShe
         let maneuversByStyle = {}, toolbar = {x: 0, y: 0}, activeStyle, selectedManeuver;
         for (const [, maneuver] of Object.entries(maneuvers)) {
             maneuver.data.data.selected = maneuver.id === this.actor.data.data['selected-maneuver']?.id;
+            maneuver.data.data['locked-in'] = maneuver.id === this.actor.data.data['locked-in-maneuver']?.id;
             if (maneuver.data.data.selected) {
                 toolbar = JSON.parse(JSON.stringify(maneuver.data.data['grid-position']));
                 activeStyle = maneuver.data.data['fighting-style'];
@@ -367,12 +332,13 @@ export class SpellboundKingdomsCharacterSheet extends SpellboundKingdomsActorShe
             style.data.data.toolbar = JSON.parse(JSON.stringify(toolbar));
             style.data.data.toolbar.x = style.data.data.toolbar.x * style.data.data.grid.xSize - style.data.data.toolbar.x;
             style.data.data.toolbar.y = style.data.data.toolbar.y * style.data.data.grid.ySize - style.data.data.toolbar.y;
-            style.data.data.toolbar.y += (style.data.data.toolbar.y === 0 ? style.data.data.grid.ySize : -26); // where 26 is toolbar height
+            style.data.data.toolbar.y += (style.data.data.toolbar.y === 0 ? style.data.data.grid.ySize : -19); // where 26 is toolbar height
             style.data.data.toolbar.visible = style.data.data.identifier === activeStyle;
             style.data.data.toolbar['entity-id'] = selectedManeuver?.id;
 
             for (const [, maneuver] of Object.entries(style.data.data.maneuvers.basic)) {
                 maneuver.selected = (style.id + maneuver.name) === this.actor.data.data['selected-maneuver']?.id;
+                maneuver['locked-in'] = (style.id + maneuver.name) === this.actor.data.data['locked-in-maneuver']?.id;
             }
 
             for (const [, arrow] of Object.entries(style.data.data['grid-arrows'])) {
