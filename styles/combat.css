@@ -1,7 +1,11 @@
 .locked-in-status {
     height: 100%;
     font-size: 40px;
+    flex: 0;
 }
 .locked-in-maneuver {
     height: 100%;
+    text-align: center;
+    white-space: nowrap;
+    overflow-x: hidden;
 }

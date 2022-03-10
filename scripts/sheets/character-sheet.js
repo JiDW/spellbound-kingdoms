@@ -125,7 +125,7 @@ export class SpellboundKingdomsCharacterSheet extends SpellboundKingdomsActorShe
         if (data.entityId !== undefined) {
             this.actor.update({ 'data.selected-maneuver.id': data.entityId });
         } else {
-            this.actor.update({ 'data.selected-maneuver.id': data.fightingStyleId + data.entityName });
+            this.actor.update({ 'data.selected-maneuver.id': data.fightingStyleId + '|||' + data.entityName });
         }
         
     }
@@ -343,8 +343,8 @@ export class SpellboundKingdomsCharacterSheet extends SpellboundKingdomsActorShe
             style.data.data.toolbar['entity-id'] = selectedManeuver?.id;
 
             for (const [, maneuver] of Object.entries(style.data.data.maneuvers.basic)) {
-                maneuver.selected = (style.id + maneuver.name) === this.actor.data.data['selected-maneuver']?.id;
-                maneuver['locked-in'] = (style.id + maneuver.name) === this.actor.data.data['locked-in-maneuver']?.id;
+                maneuver.selected = (style.id + '|||' + maneuver.name) === this.actor.data.data['selected-maneuver']?.id;
+                maneuver['locked-in'] = (style.id + '|||' + maneuver.name) === this.actor.data.data['locked-in-maneuver']?.id;
             }
 
             for (const [, arrow] of Object.entries(style.data.data['grid-arrows'])) {
