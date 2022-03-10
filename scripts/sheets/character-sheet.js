@@ -95,11 +95,16 @@ export class SpellboundKingdomsCharacterSheet extends SpellboundKingdomsActorShe
         const div = $(event.currentTarget);
         const selectedManeuverId = div.data('selected-maneuver');
 
+        let promise;
         if (selectedManeuverId === this.actor.data.data['locked-in-maneuver'].id) {
-            this.actor.update({ 'data.locked-in-maneuver.id': "" });
+            promise = this.actor.update({ 'data.locked-in-maneuver.id': "" });
         } else {
-            this.actor.update({ 'data.locked-in-maneuver.id': selectedManeuverId });
+            promise = this.actor.update({ 'data.locked-in-maneuver.id': selectedManeuverId });
         }
+
+        promise.then(
+            v => ui.combat.render()
+        );
     }
 
     handleRefreshInspiraitons(event) {
@@ -122,6 +127,7 @@ export class SpellboundKingdomsCharacterSheet extends SpellboundKingdomsActorShe
         } else {
             this.actor.update({ 'data.selected-maneuver.id': data.fightingStyleId + data.entityName });
         }
+        
     }
 
     handleDeselectManeuver(event) {

@@ -1,30 +1,7 @@
-.combat-phase {
-  min-height: 50px;
-  border: 2px dotted gray;
-  color: gray;
+.locked-in-status {
+    height: 100%;
+    font-size: 40px;
 }
-
-.combat-phase.active {
-  border: 2px solid white;
-  color: white;
-}
-
-.phase-title {
-  text-align: center;
-}
-
-.phase-control {
-  max-width: 48px;
-  text-align: center;
-  color: white;
-}
-
-.fast-draw, .cancel-fast-draw {
-  font-size: 14px;
-  line-height: 14px;
-  padding-top: 10px;
-}
-
-#combat li.combatant .token-image {
-  width: 50px;
+.locked-in-maneuver {
+    height: 100%;
 }

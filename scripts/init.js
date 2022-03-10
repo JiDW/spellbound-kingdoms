@@ -1,4 +1,7 @@
 import { SpellboundKingdomsActor, SpellboundKingdomsItem } from "./actor/spellbound-kingdoms.js";
+import { SkCombatTracker } from "./components/combat-tracker/sk-combat-tracker.js";
+import { SkCombatant } from "./components/combat-tracker/sk-combatant.js";
+import { SkTokenDocument } from "./components/combat-tracker/sk-token-document.js";
 import { SKRollHandler } from "./components/roll-engine/engine.js";
 import { SKDie } from "./components/roll-engine/sk-die.js";
 import { SKRoll } from "./components/roll-engine/sk-roll.js";
@@ -14,6 +17,10 @@ Hooks.once("init", () => {
     CONFIG.Actor.documentClass = SpellboundKingdomsActor;
     CONFIG.Item.documentClass = SpellboundKingdomsItem;
     CONFIG.Dice.terms["d"] = SKDie;
+
+    CONFIG.Combatant.documentClass = SkCombatant;
+    CONFIG.ui.combat = SkCombatTracker;
+    CONFIG.Token.documentClass = SkTokenDocument;
 
     CONFIG.Dice.rolls[0] = SKRoll;
     CONFIG.Dice.rolls[0].CHAT_TEMPLATE = 'systems/spellbound-kingdoms/templates/components/roll-engine/chat-card.hbs';
