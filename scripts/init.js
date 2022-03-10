@@ -53,6 +53,18 @@ Hooks.once("ready", async () => {
     });
 });
 
+Hooks.on("updateCombat", async (app, html) => {
+    console.log('UPDATE COMBAT');
+
+    let token;
+    if (app.current.round !== app.previous.round) {
+        for (let turn of app.turns) {
+            token = canvas.tokens.get(turn.data.tokenId);
+            token.actor.update({'data.locked-in-maneuver.id': ''});
+        }
+    }
+});
+
 Hooks.on("renderChatMessage", async (app, html) => {
     const postedItem = html.find(".chat-item")[0];
     if (postedItem) {
