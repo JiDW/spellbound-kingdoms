@@ -1,5 +1,6 @@
 import { SpellboundKingdomsActor, SpellboundKingdomsItem } from "./actor/spellbound-kingdoms.js";
 import { SkCombatTracker } from "./components/combat-tracker/sk-combat-tracker.js";
+import { SkCombat } from "./components/combat-tracker/sk-combat.js";
 import { SkCombatant } from "./components/combat-tracker/sk-combatant.js";
 import { SkTokenDocument } from "./components/combat-tracker/sk-token-document.js";
 import { SKRollHandler } from "./components/roll-engine/engine.js";
@@ -18,6 +19,7 @@ Hooks.once("init", () => {
     CONFIG.Item.documentClass = SpellboundKingdomsItem;
     CONFIG.Dice.terms["d"] = SKDie;
 
+    CONFIG.Combat.documentClass = SkCombat;
     CONFIG.Combatant.documentClass = SkCombatant;
     CONFIG.ui.combat = SkCombatTracker;
     CONFIG.Token.documentClass = SkTokenDocument;
@@ -118,5 +120,16 @@ Hooks.on("renderChatMessage", async (app, html) => {
                 }
             });
         };
+    }
+
+    const tokenLinks = html.find('.token-link');
+    if (tokenLinks.length > 0) {
+        for (const tokenLink of tokenLinks) {
+            tokenLink.addEventListener("click", async (e) => {
+                let tokenId = e.currentTarget.dataset["tokenId"]
+                let token = canvas.tokens.get(tokenId)
+                canvas.animatePan({x: token.x, y: token.y, duration: 100});
+            });
+        }
     }
 });

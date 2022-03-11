@@ -77,7 +77,7 @@
             {{#if this.isLockedIn}}
                 <i class="fas fa-check-circle"></i>
             {{else}}
-                <i class="fas fa-question-circle"></i>
+                <i class="far fa-question-circle"></i>
             {{/if}}
             </div>
             <div class="locked-in-maneuver">
@@ -95,6 +95,7 @@
             {{#if round}}
             <a class="combat-control" title="{{localize 'COMBAT.RoundPrev'}}" data-control="previousRound"><i class="fas fa-step-backward"></i></a>
             <a class="combat-control center" title="{{localize 'COMBAT.End'}}" data-control="endCombat">{{localize 'COMBAT.End'}}</a>
+            <a class="combat-control center" title="{{localize 'SK.COMBAT.POST_MANEUVERS'}}" data-control="postManeuvers">{{localize 'SK.COMBAT.POST_MANEUVERS'}}</a>
             <a class="combat-control" title="{{localize 'COMBAT.RoundNext'}}" data-control="nextRound"><i class="fas fa-step-forward"></i></a>
             {{else}}
             <a class="combat-control center" title="{{localize 'COMBAT.Begin'}}" data-control="startCombat">{{localize 'COMBAT.Begin'}}</a>

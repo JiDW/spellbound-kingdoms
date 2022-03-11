@@ -166,8 +166,9 @@
     "SK.HINT.IDENTIFIER": "Identifier is used for referencing in datasets. Do not translate it.",
   
     "SHEET.HEADER.POST_ITEM": "Post Item",
-  
-    
+
+    "SK.COMBAT.POST_MANEUVERS": "Post Maneuvers",
+      
   
     "":""
 }

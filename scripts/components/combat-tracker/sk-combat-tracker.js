@@ -19,4 +19,18 @@ export class SkCombatTracker extends CombatTracker {
 
         return data;
     }
+
+    async postManeuvers() {
+        const combat = this.viewed;
+        const hasCombat = combat !== null;
+        if (!hasCombat) return;
+
+        let templateData = {maneuvers: {}};
+        for ( let [i, combatant] of combat.turns.entries() ) {
+            if ( !combatant.visible ) continue;
+
+            templateData.maneuvers[combatant.id] = combatant.data.lockedInManeuver;
+        }
+        console.log(templateData.maneuvers);
+    }
 }

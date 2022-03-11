@@ -123,7 +123,6 @@ export class SpellboundKingdomsCharacterSheet extends SpellboundKingdomsActorShe
         } else {
             this.actor.update({ 'data.selected-maneuver.id': data.fightingStyleId + '|||' + data.entityName });
         }
-        
     }
 
     handleDeselectManeuver(event) {

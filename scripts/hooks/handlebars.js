@@ -39,6 +39,9 @@ function preloadHandlebarsTemplates() {
         "systems/spellbound-kingdoms/templates/components/dialog/item-picker.hbs",
         "systems/spellbound-kingdoms/templates/components/dialog/talent-picker.hbs",
         "systems/spellbound-kingdoms/templates/components/dialog/partial/item-picker-item.hbs",
+
+        "systems/spellbound-kingdoms/templates/chat/gear.hbs",
+        "systems/spellbound-kingdoms/templates/chat/locked-in-maneuvers.hbs",
     ];
     return loadTemplates(templatePaths);
 }
