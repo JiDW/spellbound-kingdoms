@@ -36,7 +36,7 @@ export class SpellboundKingdomsActor extends Actor {
                 idsToDelete.push(item.id);
             }
         });
-        
+
         if (idsToDelete.length > 0) {
             this.deleteEmbeddedDocuments('Item', idsToDelete);
         }
@@ -47,7 +47,7 @@ export class SpellboundKingdomsActor extends Actor {
         super._preDeleteEmbeddedDocuments(embeddedName, result, options, userId);
 
         if (embeddedName !== 'Item') return;
-        
+
         let item;
         for (let [, itemId] of Object.entries(result)) {
             item = this.data.items.get(itemId);
@@ -65,7 +65,7 @@ export class SpellboundKingdomsActor extends Actor {
         }
     }
 }
-  
+
 export class SpellboundKingdomsItem extends Item {
 
     static get purchasableItems() {
@@ -77,26 +77,25 @@ export class SpellboundKingdomsItem extends Item {
     }
 
     async sendToChat() {
-      // let templateMap = {
-      //   gear: 'systems/spellbound-kingdoms/templates/chat/item.hbs',
-      //   weapon: 'systems/spellbound-kingdoms/templates/chat/weapon.hbs',
-      //   skill: 'systems/spellbound-kingdoms/templates/chat/skill.hbs',
-      //   ability: 'systems/spellbound-kingdoms/templates/chat/ability.hbs',
-      //   cargo: 'systems/spellbound-kingdoms/templates/chat/cargo.hbs',
-      // };
-      // if (templateMap[this.type] === undefined) return;
+        let templateMap = {
+            gear: 'systems/spellbound-kingdoms/templates/chat/gear.hbs',
+            // weapon: 'systems/spellbound-kingdoms/templates/chat/weapon.hbs',
+            // skill: 'systems/spellbound-kingdoms/templates/chat/skill.hbs',
+            // ability: 'systems/spellbound-kingdoms/templates/chat/ability.hbs',
+            // cargo: 'systems/spellbound-kingdoms/templates/chat/cargo.hbs',
+        };
+        if (templateMap[this.type] === undefined) return;
 
-      // let chatCard = await renderTemplate(
-      //   templateMap[this.type], 
-      //   {item: this.data}
-      // );
-      // let chatData = {
-      //   speaker:  this.actor 
-      //     ? {actor: this.actor.id} 
-      //     : {actor: game.user._id, alias: game.user.name},
-      //   content: chatCard,
-      // };
-      // ChatMessage.create(chatData, {});
+        let chatCard = await renderTemplate(
+            templateMap[this.type],
+            { item: this.data }
+        );
+        let chatData = {
+            speaker: this.actor
+                ? { actor: this.actor.id }
+                : { actor: game.user._id, alias: game.user.name },
+            content: chatCard,
+        };
+        ChatMessage.create(chatData, {});
     }
 }
-  

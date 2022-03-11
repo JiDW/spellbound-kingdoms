@@ -1,0 +1,25 @@
+<div class="item gear-item" data-entity-id="{{item.id}}">
+    <div class="gear-item-quality" title="{{localize "SK.LABEL.QUALITY"}}">
+        {{item.data.quality.value}}
+    </div>
+    <div class="gear-item-name" title="{{item.name}}">
+        {{item.name}}
+    </div> 
+    <div class="gear-item-type">
+        ({{item.data.type}}{{#unless (eq item.data.subtype '')}}/{{item.data.subtype}}{{/unless}})
+    </div> 
+    <div class="gear-requirements {{#unless item.data.requirements-met}}red{{/unless}}" title="{{localize 'SK.LABEL.STAT_REQUIREMENTS'}}">
+        {{#each item.data.stat-requirement as |value statIdentifier|}}
+            {{#if value}}
+            <span>{{localize (sk_strconcat "SK.STAT.SHORT." statIdentifier)}} {{value}}</span>
+            {{/if}}
+        {{/each}}
+    </div>
+    <div class="gear-item-wealth-level" title="{{localize "SK.LABEL.PURCHASED_WITH"}}">
+        <span>{{localize "SK.STAT.SHORT.WEALTH_LEVEL"}}</span>
+        <span>{{item.data.wealth-level.value}}</span>
+    </div>
+    <div class="gear-item-description">
+        {{item.data.description}}
+    </div>
+</div>
