@@ -1,0 +1,65 @@
+<div class="fighting-style-maneuver
+    {{#if maneuver.data.data.rebalancing}}rebalancing{{/if}}
+    {{#if maneuver.data.data.mastery}}mastery{{/if}}
+    {{#if maneuver.data.data.selected}}selected{{/if}}
+    {{#if maneuver.data.data.locked}}faded{{/if}}
+    {{#if maneuver.data.data.locked-in}}locked-in{{/if}}" 
+    {{#if absolute}}
+    style="
+        width: {{fighting-style.data.data.grid.xSize}}px;
+        height: {{fighting-style.data.data.grid.ySize}}px;
+        left: calc({{fighting-style.data.data.grid.xSize}}px*{{maneuver.data.data.grid-position.x}} - {{maneuver.data.data.grid-position.x}}px); 
+        top: calc({{fighting-style.data.data.grid.ySize}}px*{{maneuver.data.data.grid-position.y}} - {{maneuver.data.data.grid-position.y}}px);"
+    {{/if}}
+    data-entity-id="{{maneuver.id}}"
+>
+
+    <div class="maneuver-magic-attack" title="{{localize "SK.LABEL.MAGIC_ATTACK"}}">
+        {{#each maneuver.data.data.magic-attack as |attack key|}}
+            {{#if @first}}<i class="fas fa-magic"></i>{{else}}/{{/if}}
+            {{#if (isNumber attack.die)}}
+                d{{attack.die}}
+            {{else}}
+                d{{localize (sk_strconcat "SK.STAT.SHORT." attack.die)}}
+            {{/if}}
+            {{#unless (eq attack.vs 'defense')}}{{localize "SK.LABEL.VS"}} {{localize (sk_strconcat "SK.STAT.SHORT." attack.vs)}}{{/unless}}
+        {{/each}}
+    </div>
+    <div class="maneuver-magic-defense" title="{{localize "SK.LABEL.MAGIC_DEFENSE"}}">
+        {{#each maneuver.data.data.magic-defense as |defense key|}}
+            {{#if @first}}<i class="fas fa-shield-virus"></i>{{else}}/{{/if}}
+            {{#if (isNumber defense)}}
+                d{{defense}}
+            {{else}}
+                d{{localize (sk_strconcat "SK.STAT.SHORT." defense)}}
+            {{/if}}
+        {{/each}}
+    </div>
+    <div class="maneuver-attack" title="{{localize "SK.LABEL.ATTACK"}}">
+        {{#each maneuver.data.data.attack as |attack key|}}
+            {{#if @first}}<i class="fas fa-gavel"></i>{{else}}/{{/if}}
+            {{#if (isNumber attack.die)}}
+                d{{attack.die}}
+            {{else}}
+                d{{localize (sk_strconcat "SK.STAT.SHORT." attack.die)}}
+            {{/if}}
+            {{#unless (eq attack.vs 'defense')}}{{localize "SK.LABEL.VS"}} {{localize (sk_strconcat "SK.STAT.SHORT." attack.vs)}}{{/unless}}
+        {{/each}}
+    </div>
+    <div class="maneuver-defense" title="{{localize "SK.LABEL.DEFENSE"}}">
+        {{#each maneuver.data.data.defense as |defense key|}}
+            {{#if @first}}<i class="fas fa-shield-alt"></i>{{else}}/{{/if}}
+            {{#if (isNumber defense)}}
+                d{{defense}}
+            {{else}}
+                d{{localize (sk_strconcat "SK.STAT.SHORT." defense)}}
+            {{/if}}
+        {{/each}}
+    </div>
+    <div class="maneuver-name">
+        {{maneuver.name}} {{#if maneuver.data.data.must-rebalance}}(r){{/if}}
+    </div>
+    <div class="maneuver-description">
+        {{~maneuver.data.data.short-description~}}
+    </div>
+</div>
