@@ -2,6 +2,7 @@ import { SpellboundKingdomsActorSheet } from "./actor-sheet.js";
 import { SpellboundKingdomsActor } from "../actor/spellbound-kingdoms.js";
 import { AddItemDialog } from "../components/dialog/add-item-dialog.js";
 import { AddTalentDialog } from "../components/dialog/add-talent-dialog.js";
+import { SKRollHandler } from "../components/roll-engine/engine.js";
 
 export class SpellboundKingdomsCharacterSheet extends SpellboundKingdomsActorSheet {
 
@@ -66,6 +67,7 @@ export class SpellboundKingdomsCharacterSheet extends SpellboundKingdomsActorShe
         html.find('.fighting-style-grid').click(this.handleDeselectManeuver.bind(this));
         html.find('.refresh-inspirations').click(this.handleRefreshInspiraitons.bind(this));
         html.find('.maneuver-toolbar-lock-in').click(this.handleToggleLockInManeuver.bind(this));
+        html.find('.maneuver-roll').click(this.handleManeuverRoll.bind(this));
     }
 
     /**
@@ -90,6 +92,20 @@ export class SpellboundKingdomsCharacterSheet extends SpellboundKingdomsActorShe
     }
 
     // ********** HANDLERS *************
+
+    handleManeuverRoll(event) {
+        const rollData = event.currentTarget.dataset;
+        const data = {
+            title: rollData.title,
+            base: {
+                label: rollData.label,
+                value: Number.isNumeric(rollData.value) 
+                    ? rollData.value 
+                    : (this.actor.data.data.stats[rollData.value] ? this.actor.data.data.stats[rollData.value].value : 4),
+            },
+        };
+        return SKRollHandler.createRoll(data, {}/*options*/);
+    }
 
     handleToggleLockInManeuver(event) {
         const div = $(event.currentTarget);

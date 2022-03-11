@@ -1,6 +1,6 @@
 <div class="locked-in-maneuvers">
     {{#each maneuvers as |maneuver tokenId|}}
-    <div class="locked-in-maneuver">
+    <div class="locked-in-maneuver" data-token-id="{{tokenId}}">
         <div class="combatant-name">
             <a class="token-link" data-token-id="{{tokenId}}">{{maneuver.combatant.name}}</a>
         </div>

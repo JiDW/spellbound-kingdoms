@@ -17,43 +17,53 @@
     <div class="maneuver-magic-attack" title="{{localize "SK.LABEL.MAGIC_ATTACK"}}">
         {{#each maneuver.data.data.magic-attack as |attack key|}}
             {{#if @first}}<i class="fas fa-magic"></i>{{else}}/{{/if}}
+            
+            <a class="maneuver-roll" data-title="{{../maneuver.name}}" data-label="{{localize "SK.LABEL.MAGIC_ATTACK"}}" data-value="{{attack.die}}">
             {{#if (isNumber attack.die)}}
                 d{{attack.die}}
             {{else}}
                 d{{localize (sk_strconcat "SK.STAT.SHORT." attack.die)}}
             {{/if}}
+            </a>
             {{#unless (eq attack.vs 'defense')}}{{localize "SK.LABEL.VS"}} {{localize (sk_strconcat "SK.STAT.SHORT." attack.vs)}}{{/unless}}
         {{/each}}
     </div>
     <div class="maneuver-magic-defense" title="{{localize "SK.LABEL.MAGIC_DEFENSE"}}">
         {{#each maneuver.data.data.magic-defense as |defense key|}}
             {{#if @first}}<i class="fas fa-shield-virus"></i>{{else}}/{{/if}}
+            <a class="maneuver-roll" data-title="{{../maneuver.name}}" data-label="{{localize "SK.LABEL.MAGIC_DEFENSE"}}" data-value="{{defense}}">
             {{#if (isNumber defense)}}
                 d{{defense}}
             {{else}}
                 d{{localize (sk_strconcat "SK.STAT.SHORT." defense)}}
             {{/if}}
+            </a>
         {{/each}}
     </div>
     <div class="maneuver-attack" title="{{localize "SK.LABEL.ATTACK"}}">
         {{#each maneuver.data.data.attack as |attack key|}}
             {{#if @first}}<i class="fas fa-gavel"></i>{{else}}/{{/if}}
+            <a class="maneuver-roll" data-title="{{../maneuver.name}}" data-label="{{localize "SK.LABEL.ATTACK"}}" data-value="{{attack.die}}">
             {{#if (isNumber attack.die)}}
                 d{{attack.die}}
             {{else}}
                 d{{localize (sk_strconcat "SK.STAT.SHORT." attack.die)}}
             {{/if}}
+            </a>
             {{#unless (eq attack.vs 'defense')}}{{localize "SK.LABEL.VS"}} {{localize (sk_strconcat "SK.STAT.SHORT." attack.vs)}}{{/unless}}
         {{/each}}
     </div>
     <div class="maneuver-defense" title="{{localize "SK.LABEL.DEFENSE"}}">
         {{#each maneuver.data.data.defense as |defense key|}}
             {{#if @first}}<i class="fas fa-shield-alt"></i>{{else}}/{{/if}}
+            
+            <a class="maneuver-roll" data-title="{{../maneuver.name}}" data-label="{{localize "SK.LABEL.DEFENSE"}}" data-value="{{defense}}">
             {{#if (isNumber defense)}}
                 d{{defense}}
             {{else}}
                 d{{localize (sk_strconcat "SK.STAT.SHORT." defense)}}
             {{/if}}
+            </a>
         {{/each}}
     </div>
     <div class="maneuver-name">

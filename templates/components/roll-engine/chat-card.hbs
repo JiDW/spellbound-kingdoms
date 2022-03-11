@@ -1,39 +1,41 @@
 <div class="dice-roll">
-	<div class="dice-formula">
-		{{#if flavor}}
-			{{flavor}}
-		{{else}}
-			{{formula}}
-		{{/if}}
-	</div>
-  <div class="dice-roll-improvement">
-    {{#if roll.inspired}}
-			<span>{{localize "INSPIRED"}}</span>
-		{{/if}}
-    {{#if roll.mooded}}
-			<span>{{localize "EMOTIONAL"}}</span>
-		{{/if}}
-  </div>
-	<div class="dice-result">
-			{{{tooltip}}}
-      <h4 class="dice-total">{{total}}</h4>
-	</div>
+    <div class="dice-formula">
+        {{#if flavor}}
+        {{flavor}}
+        {{else}}
+        {{formula}}
+        {{/if}}
+    </div>
+    <div class="dice-roll-improvement">
+        {{#if roll.inspired}}
+        <span>{{localize "INSPIRED"}}</span>
+        {{/if}}
+        {{#if roll.mooded}}
+        <span>{{localize "EMOTIONAL"}}</span>
+        {{/if}}
+    </div>
+    <div class="dice-result">
+        {{{tooltip}}}
+        <h4 class="dice-total">{{total}}</h4>
+    </div>
 </div>
 
 {{#if isSkRoll}}
 <div class="dice-buttons">
-  {{#if moodable}}
+    {{#if moodable}}
     <button class="sk-button mood" data-action="mood" title="{{localize 'SK.TOOLTIP.USE_MOOD'}}">
-      <i class="fas fa-laugh"></i></i>
+        <i class="fas fa-laugh"></i></i>
     </button>
-  {{/if}}
-  {{#if inspirable}}
-    <button class="sk-button weak-inspiration" data-action="weak-inspiration" title="{{localize 'SK.TOOLTIP.USE_WEAK_INSPIRATION'}}">
-      <i class="far fa-lightbulb"></i>
+    {{/if}}
+    {{#if inspirable}}
+    <button class="sk-button weak-inspiration" data-action="weak-inspiration"
+        title="{{localize 'SK.TOOLTIP.USE_WEAK_INSPIRATION'}}">
+        <i class="far fa-lightbulb"></i>
     </button>
-    <button class="sk-button strong-inspiration" data-action="strong-inspiration" title="{{localize 'SK.TOOLTIP.USE_STRONG_INSPIRATION'}}">
-      <i class="fas fa-lightbulb"></i>
+    <button class="sk-button strong-inspiration" data-action="strong-inspiration"
+        title="{{localize 'SK.TOOLTIP.USE_STRONG_INSPIRATION'}}">
+        <i class="fas fa-lightbulb"></i>
     </button>
-  {{/if}}
+    {{/if}}
 </div>
-  {{/if}}
+{{/if}}

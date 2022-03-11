@@ -242,7 +242,7 @@ export class SpellboundKingdomsActorSheet extends ActorSheet {
     rollStat(statIdentifier) {
         const data = {
             title: this.actor.data.data.stats[statIdentifier].label,
-            stat: this.getStat(statIdentifier),
+            base: this.getStat(statIdentifier),
         };
         // const options = {
         // 	...this.getRollOptions(statIdentifier),

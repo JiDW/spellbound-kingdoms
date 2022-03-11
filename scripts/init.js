@@ -132,4 +132,26 @@ Hooks.on("renderChatMessage", async (app, html) => {
             });
         }
     }
+    const maneuverRolls = html.find('.maneuver-roll');
+    if (maneuverRolls.length > 0) {
+        for (const maneuverRoll of maneuverRolls) {
+            maneuverRoll.addEventListener("click", async (e) => {
+                const rollData = e.currentTarget.dataset;
+                const actor = canvas.tokens.get(
+                    $(e.currentTarget).closest('.locked-in-maneuver').data('token-id')
+                ).document?.actor;
+
+                const data = {
+                    title: rollData.title,
+                    base: {
+                        label: rollData.label,
+                        value: Number.isNumeric(rollData.value) 
+                            ? rollData.value 
+                            : (actor.data.data.stats[rollData.value] ? actor.data.data.stats[rollData.value].value : 4),
+                    },
+                };
+                return SKRollHandler.createRoll(data, {}/*options*/);
+            });
+        }
+    }
 });

@@ -9,20 +9,18 @@ import { SKRoll } from "./sk-roll.js";
  export class SKRollHandler extends Application {
 	constructor(
 		{
-			stat = { label: "DICE.BASE", value: 0 }, // die that initiates the roll
+			base = { label: "DICE.BASE", value: 0 }, // die that initiates the roll
 			penalty = [], // array of penalty dice { label: "", value: 0 }
 			bonus = [], // array of bonus dice { label: "", value: 0 }
-			spell = {},
 		},
 		options = {}, // This object includes information that may be required to create the roll instance but not the dice rolled.
 	) {
 		super(options);
 		this.roll = {};
-		this.base = stat;
+		this.base = base;
 		this.bonus = bonus;
 		this.penalty = penalty;
 		this.damage = options.damage ?? 0;
-		this.spell = spell;
 	}
 
 	/**
@@ -144,7 +142,7 @@ import { SKRoll } from "./sk-roll.js";
 
 		const roll = SKRoll.create(
 			formula,
-			{name: this.title, type: 'sk'} /* We pass no "data" for the roll to evaluate */,
+			{name: this.title, type: 'sk'},
 			this.getRollOptions(),
 		);
 		// Roll the dice!
@@ -153,7 +151,7 @@ import { SKRoll } from "./sk-roll.js";
 	}
 
 	getRollOptions() {
-		return {name: this.title, type: 'sk'};
+		return {name: this.title, type: 'sk', base: this.base};
 	}
 
 	/* -------------------------------------- */
