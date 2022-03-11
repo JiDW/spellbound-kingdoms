@@ -11,4 +11,16 @@ export class SkTokenDocument extends TokenDocument {
             ui.combat.render();
         }
     }
+
+    /** @override */
+    _onUpdateTokenActor(data, options, userId) {
+        super._onUpdateTokenActor(data, options, userId);
+
+        // Update combat locked in status
+        const c = this.combatant;
+        if (c && foundry.utils.hasProperty(data.data || {}, 'locked-in-maneuver')) {
+            c.updateLockedInStatus();
+            ui.combat.render();
+        }
+    }
 }

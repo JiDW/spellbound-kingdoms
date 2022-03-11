@@ -101,10 +101,6 @@ export class SpellboundKingdomsCharacterSheet extends SpellboundKingdomsActorShe
         } else {
             promise = this.actor.update({ 'data.locked-in-maneuver.id': selectedManeuverId });
         }
-
-        promise.then(
-            v => ui.combat.render()
-        );
     }
 
     handleRefreshInspiraitons(event) {

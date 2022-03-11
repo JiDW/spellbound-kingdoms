@@ -37,6 +37,7 @@
 }
 
 /* ################ POST TO CHAT ################### */
+
 /* --- GEAR --- */
 
 .chat-message .item.gear-item {
@@ -80,3 +81,5 @@
 .chat-message .item.gear-item .gear-requirements {
     text-align: center;
 }
+
+/* ---  --- */

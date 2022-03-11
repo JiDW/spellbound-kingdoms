@@ -75,7 +75,7 @@
     background-color: var(--light-main-color);
 }
 
-.fighting-style-body .fighting-style-grid .fighting-style-maneuver {
+.fighting-style-grid .fighting-style-maneuver {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(4, 1fr);
@@ -166,13 +166,13 @@
     line-height: 18px;
 }
 
-.fighting-style-maneuver:hover {
+.fighting-style-body .fighting-style-maneuver:hover {
     box-shadow: inset 0 0 10px 10px rgba(0, 0, 0, 0.4);
 }
-.fighting-style-maneuver.selected {
+.fighting-style-body .fighting-style-maneuver.selected {
     box-shadow: inset 0 0 10px 10px rgba(255, 255, 255, 1);
 }
-.fighting-style-maneuver.locked-in {
+.fighting-style-body .fighting-style-maneuver.locked-in {
     border: 6px groove sandybrown;
 }
 
