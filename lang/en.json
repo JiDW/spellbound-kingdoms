@@ -174,6 +174,7 @@
     "SK.DISPLAY_TYPE.INSPIRATION": "Inspiration",
     "SK.DISPLAY_TYPE.HISTORY": "History/Skill",
     "SK.DISPLAY_TYPE.REPUTATION": "Reputation",
+    "SK.DISPLAY_TYPE.TALENT": "Talent",
 
     "EFFECT.StatusRebalance": "Forced to Rebalance",
     "EFFECT.StatusDisarm": "Disarmed",

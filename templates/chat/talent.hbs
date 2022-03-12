@@ -1,0 +1,17 @@
+<div class="item talent-item" data-entity-id="{{item.id}}">
+    <div class="item-type">
+        {{localize type}}
+    </div>
+    <div class="talent-item-name" title="{{item.name}}">
+        {{item.name}}
+    </div> 
+    <div class="talent-item-type">
+        {{localize (sk_strconcat "SK.TYPE." (toUpperCase item.data.type))}}
+    </div> 
+    <div class="talent-item-level">
+        {{localize item.data.levelName}}
+    </div> 
+    <div class="talent-item-description">
+        {{~ plaintextToHTML item.data.description ~}}
+    </div>
+</div>

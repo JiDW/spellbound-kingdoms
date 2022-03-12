@@ -81,12 +81,13 @@ export class SpellboundKingdomsItem extends Item {
             gear: 'systems/spellbound-kingdoms/templates/chat/gear.hbs',
             inspiration: 'systems/spellbound-kingdoms/templates/chat/narrative-item.hbs',
             history: 'systems/spellbound-kingdoms/templates/chat/narrative-item.hbs',
+            talent: 'systems/spellbound-kingdoms/templates/chat/talent.hbs',
         };
         if (templateMap[this.type] === undefined) return;
 
         let chatCard = await renderTemplate(
             templateMap[this.type],
-            { item: this.data, type: this.getDisplayType() }
+            { item: this.getItemData(), type: this.getDisplayType() }
         );
         let chatData = {
             speaker: this.actor
@@ -105,6 +106,17 @@ export class SpellboundKingdomsItem extends Item {
                 return "SK.DISPLAY_TYPE.INSPIRATION";
             case 'history':
                 return "SK.DISPLAY_TYPE." + this.data.data.type.toUpperCase();
+            case 'talent':
+                return "SK.DISPLAY_TYPE.TALENT";
         }
+    }
+
+    getItemData() {
+        const talentLevels = ['', 'SK.LABEL.MINOR', 'SK.LABEL.MAJOR', 'SK.LABEL.GRAND'];
+        switch (this.type) {
+            case 'talent':
+                this.data.data.levelName = talentLevels[parseInt(this.data.data.level)];
+        }
+        return this.data;
     }
 }
