@@ -305,16 +305,19 @@ input.grid-input { width: 81%; }
 
 /* *** gear list *** */
 
-.spellbound-kingdoms .character .tab-inventory .main-column .frame {
+.spellbound-kingdoms .character .tab-inventory .item-list.frame {
     height: 440px;
     max-height: 440px;
     overflow-y: scroll;
+
+    column-count: 3;
+    column-fill: auto;
 }
-.spellbound-kingdoms .character .tab-inventory .main-column .frame-label {
+.spellbound-kingdoms .character .tab-inventory .item-list .frame-label {
     border-top: 2px solid;
     border-bottom: none;
 }
-.spellbound-kingdoms .character .tab-inventory .main-column .subtype {
+.spellbound-kingdoms .character .tab-inventory .item-list .subtype {
     font-size: 16px;
     font-weight: bold;
     font-style: italic;

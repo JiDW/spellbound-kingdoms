@@ -57,20 +57,14 @@ export class SpellboundKingdomsActorSheet extends ActorSheet {
 
     getInventory(itemsByType) {
         let inventory = {
-            column1: {
-                armor: this.subcategorize(itemsByType.armor, 'subtype'),
-                weapon: this.subcategorize(itemsByType.weapon, 'subtype'),
-                fashion: this.subcategorize(itemsByType.fashion, 'subtype'),
-            },
-            column2: {
-                alchemy: this.subcategorize(itemsByType.alchemy, 'subtype'),
-                engineering: this.subcategorize(itemsByType.engineering, 'subtype'),
-            },
-            column3: {
-                vehicle: {'': itemsByType.vehicle},
-                building: this.subcategorize(itemsByType.building, 'subtype'),
-                wonder: {'': itemsByType.wonder},
-            },
+            armor: this.subcategorize(itemsByType.armor, 'subtype'),
+            weapon: this.subcategorize(itemsByType.weapon, 'subtype'),
+            fashion: this.subcategorize(itemsByType.fashion, 'subtype'),
+            alchemy: this.subcategorize(itemsByType.alchemy, 'subtype'),
+            engineering: this.subcategorize(itemsByType.engineering, 'subtype'),
+            vehicle: {'': itemsByType.vehicle},
+            building: this.subcategorize(itemsByType.building, 'subtype'),
+            wonder: {'': itemsByType.wonder},
         };
         
         return inventory;
