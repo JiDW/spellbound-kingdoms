@@ -35,10 +35,81 @@ Hooks.once("init", () => {
     //   CONFIG.Dice.terms["12"] = SKDie;
     //   CONFIG.Dice.terms["20"] = SKDie;
 
+    setupStatusEffects();
+
     registerSheets();
     initializeHandlebars();
     registerSettings();
 });
+
+function setupStatusEffects() {
+    let coreEffects = [
+        {
+            id: "dead",
+            label: "EFFECT.StatusDead",
+            icon: "icons/svg/skull.svg"
+        },
+        {
+            id: "unconscious",
+            label: "EFFECT.StatusUnconscious",
+            icon: "icons/svg/unconscious.svg"
+        },
+        {
+            id: "rebalance",
+            label: "EFFECT.StatusRebalance",
+            icon: "icons/svg/falling.svg"
+        },
+        {
+            id: 'disarm',
+            label: 'EFFECT.StatusDisarm',
+            icon: 'systems/spellbound-kingdoms/assets/images/icons/status-effects/drop-weapon.svg',
+        },
+        {
+            id: 'increase-die',
+            label: 'EFFECT.StatusIncreaseDie',
+            icon: 'systems/spellbound-kingdoms/assets/images/icons/status-effects/perspective-dice-six-faces-random-green.svg',
+        },
+        {
+            id: 'increase-die-long',
+            label: 'EFFECT.StatusIncreaseDieLong',
+            icon: 'systems/spellbound-kingdoms/assets/images/icons/status-effects/perspective-dice-six-faces-random-blue.svg',
+        },
+        {
+            id: 'decrease-die',
+            label: 'EFFECT.StatusDecreaseDie',
+            icon: 'systems/spellbound-kingdoms/assets/images/icons/status-effects/perspective-dice-six-faces-random-red.svg',
+        },
+        {
+            id: 'increase-defense-die',
+            label: 'EFFECT.StatusIncreaseDefenseDie',
+            icon: 'systems/spellbound-kingdoms/assets/images/icons/status-effects/dice-shield-green.svg',
+        },
+        {
+            id: 'increase-defense-die-long',
+            label: 'EFFECT.StatusIncreaseDefenseDieLong',
+            icon: 'systems/spellbound-kingdoms/assets/images/icons/status-effects/dice-shield-blue.svg',
+        },
+        {
+            id: 'decrease-defense-die',
+            label: 'EFFECT.StatusDecreaseDefenseDie',
+            icon: 'systems/spellbound-kingdoms/assets/images/icons/status-effects/dice-shield-red.svg',
+        },
+        {
+            id: 'increase-damage',
+            label: 'EFFECT.StatusIncreaseDamage',
+            icon: 'systems/spellbound-kingdoms/assets/images/icons/status-effects/sparkling-sabre-green.svg',
+        },
+        {
+            id: 'increase-damage-long',
+            label: 'EFFECT.StatusIncreaseDamageLong',
+            icon: 'systems/spellbound-kingdoms/assets/images/icons/status-effects/sparkling-sabre-blue.svg',
+        },
+    ];
+
+    console.log(CONFIG.statusEffects);
+    CONFIG.statusEffects = coreEffects.concat(CONFIG.statusEffects);
+    console.log(CONFIG.statusEffects);
+};
 
 Hooks.once("ready", async () => {
     // migrateWorld();
