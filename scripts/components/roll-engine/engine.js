@@ -9,7 +9,7 @@ import { SKRoll } from "./sk-roll.js";
  export class SKRollHandler extends Application {
 	constructor(
 		{
-			base = { label: "DICE.BASE", value: 0 }, // die that initiates the roll
+			base = { label: "SK.DICE.BASE", value: 4 }, // die that initiates the roll
 			penalty = [], // array of penalty dice { label: "", value: 0 }
 			bonus = [], // array of bonus dice { label: "", value: 0 }
 		},
@@ -167,7 +167,7 @@ import { SKRoll } from "./sk-roll.js";
 	 */
 	static createRoll(data = {}, options = {}) {
 		if (!data) console.warn("No roll data passed. Executing generic roll.");
-		return new SKRollHandler(data, { ...options, title: game.i18n.localize(data.title) || "ACTION.GENERIC" }).render(
+		return new SKRollHandler(data, { ...options, title: game.i18n.localize(data.title) || "SK.ROLL.GENERIC" }).render(
 			true,
 		);
 	}

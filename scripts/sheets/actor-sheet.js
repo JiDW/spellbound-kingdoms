@@ -5,8 +5,17 @@ import { SKRollHandler } from "../components/roll-engine/engine.js";
 
 export class SpellboundKingdomsActorSheet extends ActorSheet {
 
-    static setupSocketListeners() {
-        game.socket.on("system.spellbound-kingdoms", SpellboundKingdomsActorSheet.doItemTransfer);
+    _getHeaderButtons() {
+        let buttons = super._getHeaderButtons();
+        buttons = [
+            {
+                label: game.i18n.localize("SHEET.HEADER.ROLL"),
+                class: "generic-roll",
+                icon: "fas fa-dice-d6",
+                onclick: (ev) => SKRollHandler.createRoll({}, {}),
+            },
+        ].concat(buttons);
+        return buttons;
     }
 
     activateListeners(html) {

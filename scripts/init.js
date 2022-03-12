@@ -115,7 +115,6 @@ Hooks.once("ready", async () => {
     // migrateWorld();
     loadSystemSettings();
     window.TextEditor.activateListeners();
-    SpellboundKingdomsActorSheet.setupSocketListeners();
 
     $('body').on('click', '.help-popup-trigger', function (e) {
         const content = $(e.currentTarget).parent().find('.help-popup-content');

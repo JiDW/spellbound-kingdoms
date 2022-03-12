@@ -154,6 +154,7 @@
     "SK.DICE.BONUS": "Bonus",
     "SK.DICE.CANCEL": "Cancel",
     "SK.DICE.ROLL": "Roll",
+    "SK.ROLL.GENERIC": "Generic Roll",
   
     "SK.TOOLTIP.USE_MOOD": "Spend 1 Mood to maximize one die (no explosion)",
     "SK.TOOLTIP.USE_WEAK_INSPIRATION": "Use weak inspiration (of value 1 or not narrated) to roll Heart as a bonus die",
@@ -167,6 +168,7 @@
     "SK.HINT.IDENTIFIER": "Identifier is used for referencing in datasets. Do not translate it.",
   
     "SHEET.HEADER.POST_ITEM": "Post Item",
+    "SHEET.HEADER.ROLL": "Roll",
 
     "SK.COMBAT.POST_MANEUVERS": "Post Maneuvers",
 
