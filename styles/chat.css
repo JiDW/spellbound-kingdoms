@@ -40,14 +40,23 @@
 
 /* ################ POST TO CHAT ################### */
 
+.chat-message .item .item-type {
+    background-color: rgba(120, 120, 120, 0.5);
+    
+    font-family: Mordred-Bold;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 18px;
+}
+
 /* --- GEAR --- */
 
 .chat-message .item.gear-item {
     display: grid;
     grid-template-columns: 33px repeat(4, auto);
-    grid-template-rows: repeat(3, auto);
+    grid-template-rows: repeat(4, auto);
     grid-column-gap: 2px;
-    grid-row-gap: 0px;
+    grid-row-gap: 2px;
 
     margin-bottom: 4px;
     padding-right: 2px;
@@ -56,12 +65,13 @@
     padding: 2px;
 }
     
-.chat-message .item.gear-item .gear-item-quality      { grid-area: 1 / 1 / 3 / 2; }
-.chat-message .item.gear-item .gear-item-name         { grid-area: 1 / 2 / 2 / 4; }
-.chat-message .item.gear-item .gear-item-type         { grid-area: 1 / 4 / 2 / 6; }
-.chat-message .item.gear-item .gear-requirements      { grid-area: 2 / 2 / 3 / 5; }
-.chat-message .item.gear-item .gear-item-wealth-level { grid-area: 2 / 5 / 3 / 6; }
-.chat-message .item.gear-item .gear-item-description  { grid-area: 3 / 1 / 4 / 6; }
+.chat-message .item.gear-item .item-type              { grid-area: 1 / 1 / 2 / 6; }
+.chat-message .item.gear-item .gear-item-quality      { grid-area: 2 / 1 / 4 / 2; }
+.chat-message .item.gear-item .gear-item-name         { grid-area: 2 / 2 / 3 / 4; }
+.chat-message .item.gear-item .gear-item-type         { grid-area: 2 / 4 / 3 / 6; }
+.chat-message .item.gear-item .gear-requirements      { grid-area: 3 / 2 / 4 / 5; }
+.chat-message .item.gear-item .gear-item-wealth-level { grid-area: 3 / 5 / 4 / 6; }
+.chat-message .item.gear-item .gear-item-description  { grid-area: 4 / 1 / 5 / 6; }
 
 .chat-message .item.gear-item .gear-item-name {
     max-height: 17px;
@@ -82,6 +92,35 @@
 .chat-message .item.gear-item .gear-item-wealth-level,
 .chat-message .item.gear-item .gear-requirements {
     text-align: center;
+}
+
+/* --- narrative item --- */
+
+.chat-message .item.narrative-item-item {
+    display: grid;
+    grid-template-columns: 33px auto;
+    grid-template-rows: repeat(3, auto);
+    grid-column-gap: 2px;
+    grid-row-gap: 0px;
+
+    margin-bottom: 4px;
+    padding-right: 2px;
+
+    border: 1px solid;
+    padding: 2px;
+}
+    
+.chat-message .item.narrative-item-item .narrative-item-item-type        { grid-area: 1 / 1 / 2 / 3; }
+.chat-message .item.narrative-item-item .narrative-item-item-value       { grid-area: 2 / 1 / 4 / 2; }
+.chat-message .item.narrative-item-item .narrative-item-item-name        { grid-area: 2 / 2 / 3 / 3; }
+.chat-message .item.narrative-item-item .narrative-item-item-description { grid-area: 3 / 2 / 4 / 3; }
+
+.chat-message .item.narrative-item-item .narrative-item-item-value {
+    font-family: KingsCross;
+    font-weight: bold;
+    text-align: center;
+    border: 2px groove;
+    font-size: 25px;
 }
 
 /* ---  --- */

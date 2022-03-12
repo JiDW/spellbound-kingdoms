@@ -112,6 +112,7 @@
     "SK.BUTTON.FILL": "Fill",
     "SK.BUTTON.ADD": "Add",
     "SK.BUTTON.LOCK_IN": "Lock In Selected Maneuver",
+    "SK.BUTTON.POST_TO_CHAT": "Post to Chat",
   
     "SK.TAB.MAIN": "MAIN",
     "SK.TAB.COMBAT": "COMBAT",
@@ -168,6 +169,11 @@
     "SHEET.HEADER.POST_ITEM": "Post Item",
 
     "SK.COMBAT.POST_MANEUVERS": "Post Maneuvers",
+
+    "SK.DISPLAY_TYPE.ITEM": "Item",
+    "SK.DISPLAY_TYPE.INSPIRATION": "Inspiration",
+    "SK.DISPLAY_TYPE.HISTORY": "History/Skill",
+    "SK.DISPLAY_TYPE.REPUTATION": "Reputation",
       
   
     "":""

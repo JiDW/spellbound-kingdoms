@@ -79,12 +79,14 @@ export class SpellboundKingdomsItem extends Item {
     async sendToChat() {
         let templateMap = {
             gear: 'systems/spellbound-kingdoms/templates/chat/gear.hbs',
+            inspiration: 'systems/spellbound-kingdoms/templates/chat/narrative-item.hbs',
+            history: 'systems/spellbound-kingdoms/templates/chat/narrative-item.hbs',
         };
         if (templateMap[this.type] === undefined) return;
 
         let chatCard = await renderTemplate(
             templateMap[this.type],
-            { item: this.data }
+            { item: this.data, type: this.getDisplayType() }
         );
         let chatData = {
             speaker: this.actor
@@ -93,5 +95,16 @@ export class SpellboundKingdomsItem extends Item {
             content: chatCard,
         };
         ChatMessage.create(chatData, {});
+    }
+
+    getDisplayType() {
+        switch (this.type) {
+            case 'gear':
+                return "SK.DISPLAY_TYPE.ITEM";
+            case 'inspiration':
+                return "SK.DISPLAY_TYPE.INSPIRATION";
+            case 'history':
+                return "SK.DISPLAY_TYPE." + this.data.data.type.toUpperCase();
+        }
     }
 }
