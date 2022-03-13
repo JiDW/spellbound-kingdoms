@@ -172,11 +172,12 @@
 
     "SK.COMBAT.POST_MANEUVERS": "Post Maneuvers",
 
-    "SK.DISPLAY_TYPE.ITEM": "Item",
+    "SK.DISPLAY_TYPE.GEAR": "Item",
     "SK.DISPLAY_TYPE.INSPIRATION": "Inspiration",
     "SK.DISPLAY_TYPE.HISTORY": "History/Skill",
     "SK.DISPLAY_TYPE.REPUTATION": "Reputation",
     "SK.DISPLAY_TYPE.TALENT": "Talent",
+    "SK.DISPLAY_TYPE.SCAR": "Scar",
 
     "EFFECT.StatusRebalance": "Forced to Rebalance",
     "EFFECT.StatusDisarm": "Disarmed",

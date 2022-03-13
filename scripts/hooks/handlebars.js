@@ -44,6 +44,7 @@ function preloadHandlebarsTemplates() {
         "systems/spellbound-kingdoms/templates/chat/gear.hbs",
         "systems/spellbound-kingdoms/templates/chat/narrative-item.hbs",
         "systems/spellbound-kingdoms/templates/chat/talent.hbs",
+        "systems/spellbound-kingdoms/templates/chat/scar.hbs",
         "systems/spellbound-kingdoms/templates/chat/locked-in-maneuvers.hbs",
     ];
     return loadTemplates(templatePaths);

@@ -37,13 +37,13 @@ Character Sheet
         [done] "Purchace" interface
     [done] Implement inspiration usage tracking
     [    ] Implement "Post to Chat"
-        [    ] inspiration
-        [    ] history/reputation
+        [done] inspiration
+        [done] history/reputation
         [    ] scars
-        [    ] talent
+        [done] talent
         [    ] ability
-        [    ] items
-    [    ] Add generic Roll button to char cheet header
+        [done] items
+    [done] Add generic Roll button to char cheet header
     [ ?? ] Display class title
 
 [    ] Packs

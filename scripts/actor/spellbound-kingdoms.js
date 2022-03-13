@@ -82,6 +82,7 @@ export class SpellboundKingdomsItem extends Item {
             inspiration: 'systems/spellbound-kingdoms/templates/chat/narrative-item.hbs',
             history: 'systems/spellbound-kingdoms/templates/chat/narrative-item.hbs',
             talent: 'systems/spellbound-kingdoms/templates/chat/talent.hbs',
+            scar: 'systems/spellbound-kingdoms/templates/chat/scar.hbs',
         };
         if (templateMap[this.type] === undefined) return;
 
@@ -100,15 +101,11 @@ export class SpellboundKingdomsItem extends Item {
 
     getDisplayType() {
         switch (this.type) {
-            case 'gear':
-                return "SK.DISPLAY_TYPE.ITEM";
-            case 'inspiration':
-                return "SK.DISPLAY_TYPE.INSPIRATION";
             case 'history':
                 return "SK.DISPLAY_TYPE." + this.data.data.type.toUpperCase();
-            case 'talent':
-                return "SK.DISPLAY_TYPE.TALENT";
         }
+
+        return "SK.DISPLAY_TYPE." + this.type.toUpperCase();
     }
 
     getItemData() {

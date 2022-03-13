@@ -1,0 +1,11 @@
+<div class="item scar-item" data-entity-id="{{item.id}}">
+    <div class="item-type scar-item-type">
+        {{localize type}}
+    </div>
+    <div class="scar-item-name" title="{{item.name}}">
+        {{item.name}}
+    </div> 
+    <div class="scar-item-description">
+        {{~plaintextToHTML item.data.description~}}
+    </div>
+</div>
